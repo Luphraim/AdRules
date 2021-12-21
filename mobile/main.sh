@@ -2,6 +2,7 @@
 cd mobile/rules
 
 # Start Download
+curl -o user-rules.dd https://raw.githubusercontent.com/Cats-Team/AdRules/main/script/adblock/src/user-rules.dd
 # curl -o i1.txt https://filters.adtidy.org/android/filters/2_optimized.txt
 # curl -o i2.txt https://filters.adtidy.org/android/filters/11_optimized.txt
 # curl -o i3.txt https://filters.adtidy.org/android/filters/3_optimized.txt
@@ -32,7 +33,7 @@ num=`cat rules.txt | wc -l`
 # Start Add title and date
 echo "! Version: `date +"%Y-%m-%d %H:%M:%S"`" >> tpdate.txt
 echo "! Total count: $num" >> tpdate.txt
-cat title.dd tpdate.txt rules.txt > ../../mobile.txt
+cat title.dd tpdate.txt user-rules.dd rules.txt > ../../mobile.txt
 rm *.txt
 cd ../../
 exit
