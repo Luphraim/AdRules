@@ -1,0 +1,31 @@
+name: Update Rules
+on:
+  schedule:
+    - cron: "0 22,10 * * *"
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+jobs:
+  myjob:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: Update AdKiller
+        run: |
+          bash ./pc/main.sh
+      - name: Update AdGuard
+        run: |
+          bash ./mobile/main.sh
+      - name: Update DNSFilter
+        run: |
+          bash ./dns/main.sh
+      - name: Git push assets to Github and Coding
+        run: |
+          git branch -m main
+          git add --all
+          git commit -m "Auto Updated at $(date)"
+          git fetch --unshallow origin
+          git push -u -f origin --all
