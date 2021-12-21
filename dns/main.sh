@@ -13,9 +13,10 @@ curl -o i8.txt https://paulgb.github.io/BarbBlock/blacklists/hosts-file.txt
 
 # Start Merge and Duplicate Removal
 cat i*.txt > mergd.txt
-cat mergd.txt | grep '^|' | grep -v './' | grep -v '.\$' > block.txt
-cat mergd.txt | grep '^@' | grep -v './' | grep -v '.\$' > allow.txt
-cat block.txt allow.txt > all.txt
+# cat mergd.txt | grep '^|' | grep -v './' | grep -v '.\$' > block.txt
+# cat mergd.txt | grep '^@' | grep -v './' | grep -v '.\$' > allow.txt
+# cat block.txt allow.txt > all.txt
+cat mergd.txt | grep -v '^!' | grep -v '^！' | grep -v '^# ' | grep -v '^# ' | grep -v '^\[' | grep -v '^\【' > all.txt
 sort -n all.txt | uniq > rules.txt
 
 # Start Count Rules
