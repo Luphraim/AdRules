@@ -2,6 +2,7 @@
 cd pc/rules
 
 # Start Download
+curl -o user-rules.dd https://raw.githubusercontent.com/Cats-Team/AdRules/main/script/adblock/src/user-rules.dd
 curl -o i1.txt https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-pc.txt
 curl -o i2.txt https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-edentw.txt
 curl -o i3.txt https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt
