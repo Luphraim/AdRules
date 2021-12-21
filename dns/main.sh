@@ -5,7 +5,7 @@ cd dns/rules
 curl -o i1.txt https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
 curl -o i2.txt https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts
 curl -o i3.txt https://raw.githubusercontent.com/badmojr/1Hosts/master/lite/adblock.txt
-curl -o i4.txt https://cdn.jsdelivr.net/gh/neoFelhz/neohosts@gh-pages/full/hosts.txt
+curl -o i4.txt https://cdn.jsdelivr.net/gh/neoFelhz/neohosts@gh-pages/127.0.0.1/full/hosts
 curl -o i5.txt https://adaway.org/hosts.txt
 curl -o i6.txt https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt
 curl -o i7.txt https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host
