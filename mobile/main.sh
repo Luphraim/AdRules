@@ -32,7 +32,7 @@ num=`cat rules.txt | wc -l`
 
 # Start Add title and date
 echo "! Version: `date +"%Y-%m-%d %H:%M:%S"`" >> tpdate.txt
-echo "! Total count: $num" \n>> tpdate.txt
+echo "! Total count: $num \n" >> tpdate.txt
 cat title.dd tpdate.txt user-rules.dd rules.txt > ../../mobile.txt
 rm *.txt
 cd ../../
