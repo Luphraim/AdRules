@@ -22,7 +22,7 @@ num=`cat rules.txt | wc -l`
 
 # Merge title, date, and rules
 echo "! Version: `date +"%Y-%m-%d %H:%M:%S"`" >> tpdate.txt
-echo "! Total count: $num" >> tpdate.txt
+echo "! Total count: $num" \n>> tpdate.txt
 cat title.dd tpdate.txt rules.txt > ../../dns.txt
 rm *.txt
 cd ../../
