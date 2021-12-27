@@ -7,6 +7,7 @@ curl -o i2.txt https://cdn.jsdelivr.net/gh/neoFelhz/neohosts@gh-pages/127.0.0.1/
 curl -o i3.txt https://adaway.org/hosts.txt
 curl -o i4.txt https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host
 curl -o i5.txt https://paulgb.github.io/BarbBlock/blacklists/hosts-file.txt
+curl -o i6.txt https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt
 
 # Start Merge and Duplicate Removal
 cat i*.txt > mergd.txt

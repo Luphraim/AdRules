@@ -6,7 +6,7 @@
 
 | 名称              | 描述                                                  | 订阅                                                                         |
 | ----------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------- |
-| DNSFilter         | 适用于 AdGuard Home                                   | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/dns.txt)    |
-| DNSHosts          | 广告过滤 hosts ，重定向至 127.0.0.1 ， 兼容性好       | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/hosts.txt)  |
 | AdKiller          | 推荐用于 PC 端，如 AdGuard, Ublock Origin, AdBlock 等 | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/filter.txt) |
 | AdKiller (Mobile) | 推荐用于移动端，包括 AdGuard For Android, via 等      | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/mobile.txt) |
+| DNSFilter         | 适用于 AdGuard Home                                   | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/dns.txt)    |
+| DNSHosts          | 广告过滤 hosts ，重定向至 127.0.0.1 ，兼容性好        | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/hosts.txt)  |
