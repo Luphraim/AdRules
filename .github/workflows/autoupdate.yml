@@ -22,6 +22,9 @@ jobs:
       - name: Update DNSFilter
         run: |
           bash ./dns/main.sh
+      - name: Update DNSHosts
+        run: |
+          bash ./hosts/main.sh
       - name: Git push assets to Github
         run: |
           git config --local user.name "PhoenixLjw"
