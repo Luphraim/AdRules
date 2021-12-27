@@ -1,5 +1,5 @@
 #!/bin/bash
-cd dns/rules
+cd hosts/rules
 
 # Start Download
 curl -o i1.txt https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts
