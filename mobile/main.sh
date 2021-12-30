@@ -21,6 +21,8 @@ curl -o i15.txt https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/mast
 curl -o i16.txt https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt
 curl -o i17.txt https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-adguard.txt
 curl -o i18.txt https://raw.githubusercontent.com/badmojr/1Hosts/master/Lite/adblock.txt
+curl -o i19.txt https://www.i-dont-care-about-cookies.eu/abp/
+curl -o i20.txt https://easylist-downloads.adblockplus.org/antiadblockfilters.txt
 
 # Start Merge and Duplicate Removal
 cat i*.txt > mergd.txt

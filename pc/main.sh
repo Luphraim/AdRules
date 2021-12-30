@@ -16,7 +16,8 @@ curl -o i10.txt https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/fi
 curl -o i11.txt https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_adblocker
 curl -o i12.txt https://paulgb.github.io/BarbBlock/blacklists/hosts-file.txt
 curl -o i13.txt https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-adguard.txt
-# curl -o i17.txt https://www.i-dont-care-about-cookies.eu/abp/
+curl -o i14.txt https://www.i-dont-care-about-cookies.eu/abp/
+curl -o i15.txt https://easylist-downloads.adblockplus.org/antiadblockfilters.txt
 
 # Start Merge and Duplicate Removal
 cat i*.txt > mergd.txt

@@ -6,6 +6,7 @@ curl -o i1.txt https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.tx
 curl -o i2.txt https://raw.githubusercontent.com/badmojr/1Hosts/master/lite/adblock.txt
 curl -o i3.txt https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt
 curl -o i4.txt https://curben.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt
+curl -o i5.txt https://easylist-downloads.adblockplus.org/antiadblockfilters.txt
 
 # Start Merge and Duplicate Removal
 cat i*.txt > mergd.txt
