@@ -2,7 +2,7 @@
 cd pc/rules
 
 # Start Download
-curl -o user-rules.dd https://raw.githubusercontent.com/Cats-Team/AdRules/main/script/adblock/src/user-rules.dd
+curl -o Cats-Team.dd https://raw.githubusercontent.com/Cats-Team/AdRules/main/script/adblock/src/user-rules.dd
 curl -o i1.txt https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-pc.txt
 curl -o i2.txt https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-edentw.txt
 curl -o i3.txt https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt
@@ -20,7 +20,8 @@ curl -o i14.txt https://www.i-dont-care-about-cookies.eu/abp/
 curl -o i15.txt https://easylist-downloads.adblockplus.org/antiadblockfilters.txt
 
 # Start Merge and Duplicate Removal
-cat i*.txt > mergd.txt
+cat *.txt > mergd.txt
+cat user-rules.dd >> mergd.txt
 cat mergd.txt | grep -v '^!' | grep -v '^！' | grep -v '^# ' | grep -v '^# ' | grep -v '^\[' | grep -v '^\【' > all.txt
 sort -n all.txt | uniq > rules.txt
 
@@ -31,7 +32,7 @@ num=`cat rules.txt | wc -l`
 echo "! Version: `date +"%Y-%m-%d %H:%M:%S"`" >> tpdate.txt
 echo "! Total count: $num " >> tpdate.txt
 echo " " >> tpdate.txt
-cat title.dd tpdate.txt user-rules.dd rules.txt > ../../filter.txt
-rm *.txt
+cat title.dd tpdate.txt Cats-Team.dd rules.txt > ../../filter.txt
+rm i*.txt
 cd ../../
 exit
