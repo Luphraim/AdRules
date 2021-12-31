@@ -20,7 +20,7 @@ curl -o i14.txt https://www.i-dont-care-about-cookies.eu/abp/
 curl -o i15.txt https://easylist-downloads.adblockplus.org/antiadblockfilters.txt
 
 # Start Merge and Duplicate Removal
-cat *.txt > mergd.txt
+cat i*.txt > mergd.txt
 cat user-rules.dd >> mergd.txt
 cat mergd.txt | grep -v '^!' | grep -v '^！' | grep -v '^# ' | grep -v '^# ' | grep -v '^\[' | grep -v '^\【' > all.txt
 sort -n all.txt | uniq > rules.txt
@@ -33,6 +33,6 @@ echo "! Version: `date +"%Y-%m-%d %H:%M:%S"`" >> tpdate.txt
 echo "! Total count: $num " >> tpdate.txt
 echo " " >> tpdate.txt
 cat title.dd tpdate.txt Cats-Team.dd rules.txt > ../../filter.txt
-rm i*.txt
+rm *.txt
 cd ../../
 exit
