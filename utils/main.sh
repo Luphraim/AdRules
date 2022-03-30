@@ -216,7 +216,7 @@ do
   curl --parallel --parallel-immediate -k -L -C - -o "adblock_lite${i}.txt" --connect-timeout 60 -s "${adblock_lite[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock_full${i}.txt" --connect-timeout 60 -s "${adblock_full[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "dns${i}.txt" --connect-timeout 60 -s "${dns[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "hosts${i}.txt" --connect-timeout 60 -s "${hosts[$i]}" &
+  # curl --parallel --parallel-immediate -k -L -C - -o "hosts${i}.txt" --connect-timeout 60 -s "${hosts[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "allow${i}.txt" --connect-timeout 60 -s "${allow[$i]}" &
   # shellcheck disable=SC2181
 done
@@ -293,16 +293,16 @@ cat dns*.txt \
  | sort -n | uniq | awk '!a[$0]++' > pre-dns.txt
 
 # 合并HOSTS过滤规则
-cat hosts*.txt \
-#  | sed '/^$/d' |grep '^||\|^[0-9]' | grep -v '\*'\
-#  | grep -v './'| grep -v '^\[' | grep -v '.!' \
-#  | grep -v '.\$'|grep -Ev "([0-9]{1,3}.){3}[0-9]{1,3}" \
- | grep -v '^!' | grep -v '.!' | grep -v '^！' \
- | grep -v '^# ' | grep -v '^# ' | grep -v '^\[' \
- | grep -v '^\【' | grep -v 'local.adguard.org' \
- | sed 's/||/127.0.0.1 /' | sed 's/\^//' | grep -v "^|" \
- | sed 's/\^|/\^/' | sed 's/0.0.0.0/127.0.0.1/g' | sed 's/  / /g' \
- | sort -n | uniq | awk '!a[$0]++' > pre-hosts.txt
+# cat hosts*.txt \
+# #  | sed '/^$/d' |grep '^||\|^[0-9]' | grep -v '\*'\
+# #  | grep -v './'| grep -v '^\[' | grep -v '.!' \
+# #  | grep -v '.\$'|grep -Ev "([0-9]{1,3}.){3}[0-9]{1,3}" \
+#  | grep -v '^!' | grep -v '.!' | grep -v '^！' \
+#  | grep -v '^# ' | grep -v '^# ' | grep -v '^\[' \
+#  | grep -v '^\【' | grep -v 'local.adguard.org' \
+#  | sed 's/||/127.0.0.1 /' | sed 's/\^//' | grep -v "^|" \
+#  | sed 's/\^|/\^/' | sed 's/0.0.0.0/127.0.0.1/g' | sed 's/  / /g' \
+#  | sort -n | uniq | awk '!a[$0]++' > pre-hosts.txt
 
 # 合并Allow List
 cat allow*.txt \
@@ -316,7 +316,7 @@ echo '移动规则到Pre目录'
 cd ../
 mkdir -p ./pre/
 mv ./tmp/pre-*.txt ./pre
-rm -rf ./tmp
+# rm -rf ./tmp
 cd ./pre
 echo '移动完成'
 
