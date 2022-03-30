@@ -148,8 +148,6 @@ adblock_full=(
   "https://raw.githubusercontent.com/Cats-Team/AdRule/main/url-filter.txt"
   # Abp rule (Adblocker syntax)
   "https://abp.oisd.nl/basic/"
-  # Online Malicious URL Blocklist (uBlock Origin)
-  "https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt"
 )
 
 # DNS过滤规则
@@ -268,7 +266,7 @@ cat hosts*.txt \
  | sort -n | uniq > pre-hosts.txt
 
 # 合并Allow List
-cat allow*.txt \
+cat *.txt \
  | grep '^@' \
  | sort -n | uniq | awk '!a[$0]++' > pre-allow.txt
 
