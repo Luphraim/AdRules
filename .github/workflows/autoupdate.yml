@@ -13,18 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-      - name: Update AdKiller
+      - name: Update Rules
         run: |
-          bash ./pc/main.sh
-      - name: Update AdGuard
-        run: |
-          bash ./mobile/main.sh
-      - name: Update DNSFilter
-        run: |
-          bash ./dns/main.sh
-      - name: Update DNSHosts
-        run: |
-          bash ./hosts/main.sh
+          bash ./utils/main.sh
       - name: Git push assets to Github
         run: |
           git config --local user.name "PhoenixLjw"
