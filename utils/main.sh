@@ -126,8 +126,6 @@ adblock_lite=(
   "https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt"
   # 百度超级净化 @坂本大佬
   "https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt"
-  # 1Hosts(Lite)
-  # "https://raw.githubusercontent.com/badmojr/1Hosts/master/Lite/adblock.txt"
   # ADFILT
   # "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
   # ADFILT
@@ -172,26 +170,22 @@ dns=(
   "https://raw.githubusercontent.com/Cats-Team/AdRule/main/url-filter.txt"
   # ADFILT
   # "https://raw.githubusercontent.com/DandlionSprout/adfilt/master/AdGuard%20Home%20Compilation%20List/AdGuardHomeCompilationList-Notifications.txt"
-  # 1Hosts(Lite)
-  # "https://raw.githubusercontent.com/badmojr/1Hosts/master/lite/adblock.txt"
 )
 
 # HOSTS过滤
 hosts=(
   # 大圣净化规则
   "https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts"
-  # neoHosts - 包含全部数据，仅推荐强迫症使用。广告域名会被定向至 127.0.0.1 而不是 0.0.0.0，兼容性更好。
-  "https://cdn.jsdelivr.net/gh/neoFelhz/neohosts@gh-pages/127.0.0.1/full/hosts"
+  # neoHosts - Basic Hosts 基础、克制的数据，推荐所有用户使用。
+  "https://cdn.jsdelivr.net/gh/neoFelhz/neohosts@gh-pages/basic/hosts.txt"
   # AdAway
   "https://adaway.org/hosts.txt"
-  # NEO DEV HOST - Lite version (Without Dead Domain inside) 精简版（不包含过期域名）
+  # NEO DEV HOST - Lite version (Without Dead Domain inside)
   "https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host"
   # BarbBlock
   "https://paulgb.github.io/BarbBlock/blacklists/hosts-file.txt"
   # NoCoin adblock list
   "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"
-  # Abp rule
-  # "https://raw.githubusercontent.com/ookangzheng/dbl-oisd-nl/master/hosts.txt"
 )
 
 allow=(
