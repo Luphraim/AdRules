@@ -118,8 +118,6 @@ adblock=(
 
 # 元素过滤规则(mobile)
 adblock_lite=(
-  # NEO DEV HOST - Lite version (Without Dead Domain inside) 精简版（不包含过期域名）
-  # "https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_adblocker"
   # 主要去除手机盗版网站广告 @酷安：大萌主
   "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt"
   # 去 APP 下载广告规则
@@ -144,12 +142,14 @@ adblock_full=(
   "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-ublock.txt"
   # (ABP专用) chinese.txt (CJX's Annoyance List的补充。)
   # "https://raw.githubusercontent.com/cjx82630/cjxlist/master/chinese.txt"
-  # NEO DEV HOST - Full version (With Dead Domain inside) 完整版（包含过期域名）
-  # "https://raw.githubusercontent.com/neodevpro/neodevhost/master/adblocker"
   # BarbBlock For uBlock Origin
   "https://paulgb.github.io/BarbBlock/blacklists/ublock-origin.txt"
   # url过滤器 by Hacamer
   "https://raw.githubusercontent.com/Cats-Team/AdRule/main/url-filter.txt"
+  # Abp rule (Adblocker syntax)
+  "https://abp.oisd.nl/basic/"
+  # Online Malicious URL Blocklist (uBlock Origin)
+  "https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt"
 )
 
 # DNS过滤规则
@@ -158,8 +158,6 @@ dns=(
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt"
   # AdGuard DNS filter
   "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt"
-  # 1Hosts(Lite)
-  # "https://raw.githubusercontent.com/badmojr/1Hosts/master/lite/adblock.txt"
   # Anti-AD for AdGuardHome（DNS过滤）
   "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt"
   # Online Malicious URL Blocklist (AdGuard Home)
@@ -168,14 +166,16 @@ dns=(
   "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
   # Fanboy's Annoyance List
   "https://easylist.to/easylist/fanboy-annoyance.txt"
-  # Abp rule (Adblocker syntax)
-  "https://abp.oisd.nl/basic/"
   # LWJ's black list
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
   # Spam404
   "https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt"
+  # url过滤器 by Hacamer
+  "https://raw.githubusercontent.com/Cats-Team/AdRule/main/url-filter.txt"
   # ADFILT
   # "https://raw.githubusercontent.com/DandlionSprout/adfilt/master/AdGuard%20Home%20Compilation%20List/AdGuardHomeCompilationList-Notifications.txt"
+  # 1Hosts(Lite)
+  # "https://raw.githubusercontent.com/badmojr/1Hosts/master/lite/adblock.txt"
 )
 
 # HOSTS过滤
@@ -216,7 +216,7 @@ do
   curl --parallel --parallel-immediate -k -L -C - -o "adblock_lite${i}.txt" --connect-timeout 60 -s "${adblock_lite[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock_full${i}.txt" --connect-timeout 60 -s "${adblock_full[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "dns${i}.txt" --connect-timeout 60 -s "${dns[$i]}" &
-  # curl --parallel --parallel-immediate -k -L -C - -o "hosts${i}.txt" --connect-timeout 60 -s "${hosts[$i]}" &
+  curl --parallel --parallel-immediate -k -L -C - -o "hosts${i}.txt" --connect-timeout 60 -s "${hosts[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "allow${i}.txt" --connect-timeout 60 -s "${allow[$i]}" &
   # shellcheck disable=SC2181
 done
@@ -239,7 +239,7 @@ cat ../mod/tieba.txt adblock*.txt \
  | sort -n | uniq | awk '!a[$0]++' > tmp-adblock.txt
 
 # 合并AdKiller (PC)元素过滤规则
-cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
+cat tmp-adblock.txt ublock*.txt adguard_ubo*.txt adblock_full*.txt \
  | grep -v '^!' | grep -v '.!' | grep -v '^！' \
  | grep -v '^# ' | grep -v '^# ' | grep -v '^\[' \
  | grep -v '^\【' | grep -v 'local.adguard.org' \
@@ -299,11 +299,10 @@ for i in $diffFile; do
  echo "! Total count: $n" > $i-tpdate.txt
  cat ../../utils/title/$new ./tpdate.txt ./$i-tpdate.txt ./$i \
  | awk '!a[$0]++' | sed '/^$/d' > ../../$new
- rm $i *tpdate.txt
 done
 
 echo '规则处理完成'
 
 cd ../
-# rm -rf pre
+rm -rf ./pre
 exit
