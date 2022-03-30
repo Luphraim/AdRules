@@ -297,9 +297,9 @@ cat hosts*.txt \
  | sed '/^$/d' |grep '^||\|^[0-9]' | grep -v '\*'\
  | grep -v './'| grep -v '^\[' | grep -v '.!' \
  | grep -v '.\$'|grep -Ev "([0-9]{1,3}.){3}[0-9]{1,3}" \
- |sed 's/||/127.0.0.1 /' | sed 's/\^//' | grep -v "^|" \
- | sed 's/\^|/\^/' | sed 's/0.0.0.0/127.0.0.1/g' | sed 's/  / /g'
- |sort -n | uniq | awk '!a[$0]++' > pre-hosts.txt
+ | sed 's/||/127.0.0.1 /' | sed 's/\^//' | grep -v "^|" \
+ | sed 's/\^|/\^/' | sed 's/0.0.0.0/127.0.0.1/g' | sed 's/  / /g' \
+ | sort -n | uniq | awk '!a[$0]++' > pre-hosts.txt
 
 # 合并Allow List
 cat allow*.txt \
