@@ -53,21 +53,21 @@ adguard=(
 # Adguard For uBlock Origin 规则
 adguard_ubo=(
   # 基础过滤器
-  "https://filters.adtidy.org/extension/ublock/filters/2.txt"
+  "https://filters.adtidy.org/extension/ublock/filters/2_optimized.txt"
   # 移动设备过滤器
-  "https://filters.adtidy.org/extension/ublock/filters/11.txt"
+  # "https://filters.adtidy.org/extension/ublock/filters/11_optimized.txt"
   # 防跟踪保护过滤器
-  "https://filters.adtidy.org/extension/ublock/filters/3.txt"
+  "https://filters.adtidy.org/extension/ublock/filters/3_optimized.txt"
   # URL跟踪过滤器
-  "https://filters.adtidy.org/extension/ublock/filters/17.txt"
+  "https://filters.adtidy.org/extension/ublock/filters/17_optimized.txt"
   # 社交媒体过滤器
-  "https://filters.adtidy.org/extension/ublock/filters/4.txt"
+  "https://filters.adtidy.org/extension/ublock/filters/4_optimized.txt"
   # 恼人广告过滤器
-  "https://filters.adtidy.org/extension/ublock/filters/14.txt"
+  "https://filters.adtidy.org/extension/ublock/filters/14_optimized.txt"
   # 中文过滤器
-  "https://filters.adtidy.org/extension/ublock/filters/224.txt"
+  "https://filters.adtidy.org/extension/ublock/filters/224_optimized.txt"
   # 实验性过滤器
-  "https://filters.adtidy.org/extension/ublock/filters/5.txt"
+  "https://filters.adtidy.org/extension/ublock/filters/5_optimized.txt"
 )
 
 # Adguard For PC 规则
@@ -119,7 +119,7 @@ adblock=(
 # 元素过滤规则(mobile)
 adblock_lite=(
   # NEO DEV HOST - Lite version (Without Dead Domain inside) 精简版（不包含过期域名）
-  "https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_adblocker"
+  # "https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_adblocker"
   # 主要去除手机盗版网站广告 @酷安：大萌主
   "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt"
   # 去 APP 下载广告规则
@@ -145,7 +145,7 @@ adblock_full=(
   # (ABP专用) chinese.txt (CJX's Annoyance List的补充。)
   # "https://raw.githubusercontent.com/cjx82630/cjxlist/master/chinese.txt"
   # NEO DEV HOST - Full version (With Dead Domain inside) 完整版（包含过期域名）
-  "https://raw.githubusercontent.com/neodevpro/neodevhost/master/adblocker"
+  # "https://raw.githubusercontent.com/neodevpro/neodevhost/master/adblocker"
   # BarbBlock For uBlock Origin
   "https://paulgb.github.io/BarbBlock/blacklists/ublock-origin.txt"
   # url过滤器 by Hacamer
@@ -228,41 +228,8 @@ curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4
  | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts998.txt
 echo '规则下载完成'
 
-# # Pre Fix rules
-# echo '处理规则中...'
-# cat hosts*.txt | grep -v -E "^((#.*)|(\s*))$" \
-#  | grep -v -E "^[0-9\.:]+\s+(ip6\-)?(localhost|loopback)$" \
-#  | sed s/127.0.0.1/0.0.0.0/g | sed s/::/0.0.0.0/g | sort \
-#  | uniq >base-src-hosts.txt
-
-# Hosts规则转ABP规则
-# cat base-src-hosts.txt | grep -Ev '#|\$|@|!|/|\\|\*'\
-#  | grep -v -E "^((#.*)|(\s*))$" \
-#  | grep -v -E "^[0-9\.:]+\s+(ip6\-)?(localhost|loopback)$" \
-#  | sed 's/127.0.0.1 //' | sed 's/0.0.0.0 //' \
-#  | sed "s/^/||&/g" |sed "s/$/&^/g"| sed '/^$/d' \
-#  | grep -v '^#' | grep -v 'local' \
-#  | sort -n | uniq | awk '!a[$0]++' > abp-hosts.txt
-
-# 将允许域名转换为ABP规则
-# cat allow-domains*.txt | grep -v '#' \
-#  | sed "s/^/@@||&/g" | sed "s/$/&^/g"  \
-#  | sort -n | uniq | awk '!a[$0]++' >> pre-allow.txt
-
-# 将允许域名转换为ABP规则
-# cat allow-domains0.txt | grep -v "#" \
-#  |sed "s/^/@@||&/g" | sed "s/$/&^/g" | sort -n \
-#  | uniq | awk '!a[$0]++' >> pre-allow1.txt
-
-# cat *.txt |grep '^/' |grep '.\.$' \
-#  |grep -v './\|.?\|.\$\|.js\|._\|.\*\|.(php|png)\|.[0-9]\|.\^\|.=\|.~\|.[A-Z]\|.-' \
-#  |sort -u > l.txt
-
-#cat l.txt
-
 
 # Start Merge and Duplicate Removal
-#set LC_ALL='C'
 echo 开始合并
 # 合并通用元素过滤规则
 cat ../mod/tieba.txt adblock*.txt \
@@ -272,7 +239,7 @@ cat ../mod/tieba.txt adblock*.txt \
  | sort -n | uniq | awk '!a[$0]++' > tmp-adblock.txt
 
 # 合并AdKiller (PC)元素过滤规则
-cat tmp-adblock.txt ublock*.txt adguard_ubo*.txt adblock_full*.txt \
+cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
  | grep -v '^!' | grep -v '.!' | grep -v '^！' \
  | grep -v '^# ' | grep -v '^# ' | grep -v '^\[' \
  | grep -v '^\【' | grep -v 'local.adguard.org' \
