@@ -1,0 +1,78 @@
+! Title: CJX's uBlock list
+! Expires: 4 days
+! Homepage: https://github.com/cjx82630/cjxlist
+! Licence: https://github.com/cjx82630/cjxlist/blob/master/LICENSE
+! 
+! Supplement for "EasyList China+EasyList" & "EasyPrivacy" & "CJX's Annoyance List"
+! Removed Ads,Anti-adblock,Annoyances,Self-promotion & Privacy Protection on Chinese Websites
+! Filters optimized for uBlock
+! Email (cjxlist@gmail.com)
+!--------------------------General blocking filters---------------------------!
+!------------------------General element hiding rules-------------------------!
+!-----------------------------Union&third-party-------------------------------!
+!---------------------------Popups--------------------------------------------!
+!--------------------------Specific blocking filters--------------------------!
+1010jiajiao.com##+js(aopr,jdrand)
+3g.163.com##+js(set,specialHideAd,true)
+3cinfo.net##+js(acis,eval,split)
+4399.com##+js(aopr,defaultbackgroundimg)
+1111.baidu.com,bdimg.com,tieba.baidu.com,tieba.com,xingqu.baidu.com##.special_conf_skin .wrap1:style(background:none !important;)
+1111.baidu.com,bdimg.com,tieba.baidu.com,tieba.com,xingqu.baidu.com###plat_recom_carousel[style$="380px;"]:style(height:80px !important;)
+233tw.com##+js(acis,onload)
+ahri8.top##+js(acis,document.querySelectorAll,popMagic)
+bingfeng.tw##+js(nostif,newtag)
+bukaivip.com,zhenbuka2.com##+js(aopr,ad_load_success)
+chinaz.com###imgbd:style(background:none !important;)
+chinaz.com##.CCtop:style(margin-top:10px !important;)
+chinaz.com##.CClose
+cocomanhua.com##+js(aopr,jQuery.fn.html)
+cocomanhua.com##+js(aopr,__cad.cpm_popunder)
+cocomanhua.com##+js(aopr,__ad)
+ddrk.me##+js(aopr,Object.prototype.ads.isInAdMode)
+dlkoo.com##+js(acis,setTimeout,testad)
+fpbsnc.com,lsntzzy3.com##+js(set,ps,noopFunc)
+ip.cn##img[src*="/img/"]:style(height:101px !important;)
+juxia.com##.mian_body:style(background-image:none !important;)
+league-funny.com##+js(aopr,onload)
+52bdys.com##+js(aopr,onload)
+bde4.icu##+js(aopr,onload)
+!https://bbs.kafan.cn/thread-2180923-1-1.html
+nfmovies.com##+js(set,initAd,noopFunc)
+nfmovies.com##+js(set,adTime,0)
+nfmovies.com##+js(acis,$myui,probe)
+nfmovies.com###adright:style(margin-right:9000px !important;)
+bbs.pcbeta.com##div[style="width:998px;height:75px;border:1px solid #cdcdcd;border-top:3px solid #009ad9;margin:0 0 10px 0;background:#fff;"] + style + div[class]:style(height:270px !important;)
+qq.com##+js(json-prune,ad,errCode)
+rjno1.com##+js(acis, setTimeout)
+rjno1.com##+js(acis, onload)
+rjno1.com#?#div:-abp-has(> p:-abp-contains(ad block))
+ruanyifeng.com##+js(aopr, setTimeout)
+tianya.cn##+js(acis,src,apk)
+tingfm.com##+js(aopr,localStorage.removeItem)
+tingfm.com##+js(aopr,localStorage.wndt_adblocked_user)
+tingfm.com##+js(aopr,google_ads)
+tingfm.com##iframe:style(background:none !important;)
+zhenbuka3.com##+js(set, ad_load_success, trueFunc)
+!#Novels
+!------------------------Specific element hiding rules------------------------!
+!---------------------------------CSS Whitelist-------------------------------!
+!---------------------------------URL Whitelist-------------------------------!
+@@||tanx.com/ex?i=$script,domain=dlkoo.com,badfilter
+@@||bingfeng.tw^$generichide,badfilter
+!--------------------------------Tracking Systems-----------------------------!
+!https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt
+||cibntv.net/youku/*$media,redirect=noopmp3-0.1s,domain=youku.com
+||valipl.cp31.ott.cibntv.net^$media,redirect=noopmp3-0.1s,domain=youku.com
+youku.com##+js(nano-stb, , ,0)
+@@||valipl.cp31.ott.cibntv.net^$xhr,domain=youku.com
+*$image,redirect-rule=1x1.gif,domain=youku.com
+!https://github.com/uBlockOrigin/uAssets/issues/7136
+iqiyi.com##+js(set, Object.prototype.parseXML, noopFunc)
+iqiyi.com#@#+js(aopr, DOMParser)
+iqiyi.com##+js(nano-sib)
+||data.video.iqiyi.com/videos/other/*$xhr,1p
+||static.iqiyi.com/js/common/mars_v.js$script,1p
+@@||t7z.cupid.iqiyi.com/show$script,1p
+iqiyi.com##div[data-adzone][adid]
+qq.com##+js(json-prune, ad, vinfo)
+!----------------------------------The End------------------------------------!
