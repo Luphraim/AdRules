@@ -294,9 +294,12 @@ cat dns*.txt \
 
 # 合并HOSTS过滤规则
 cat hosts*.txt \
- | sed '/^$/d' |grep '^||\|^[0-9]' | grep -v '\*'\
- | grep -v './'| grep -v '^\[' | grep -v '.!' \
- | grep -v '.\$'|grep -Ev "([0-9]{1,3}.){3}[0-9]{1,3}" \
+#  | sed '/^$/d' |grep '^||\|^[0-9]' | grep -v '\*'\
+#  | grep -v './'| grep -v '^\[' | grep -v '.!' \
+#  | grep -v '.\$'|grep -Ev "([0-9]{1,3}.){3}[0-9]{1,3}" \
+ | grep -v '^!' | grep -v '.!' | grep -v '^！' \
+ | grep -v '^# ' | grep -v '^# ' | grep -v '^\[' \
+ | grep -v '^\【' | grep -v 'local.adguard.org' \
  | sed 's/||/127.0.0.1 /' | sed 's/\^//' | grep -v "^|" \
  | sed 's/\^|/\^/' | sed 's/0.0.0.0/127.0.0.1/g' | sed 's/  / /g' \
  | sort -n | uniq | awk '!a[$0]++' > pre-hosts.txt
@@ -327,33 +330,13 @@ for i in $diffFile; do
  echo "! Version: $(TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S')（北京时间） " >> tpdate.txt
  new=$(echo "$i" |sed 's/pre-//g')
  echo "! Total count: $n" > $i-tpdate.txt
- cat ../../utils/title/$i ./tpdate.txt ./$i-tpdate.txt ./$i \
+ cat ../../utils/title/$new ./tpdate.txt ./$i-tpdate.txt ./$i \
  | awk '!a[$0]++' | sed '/^$/d' > ../../$new
  rm $i *tpdate.txt
 done
 
-# Add Title and MD5
-# cd ../
-# mkdir -p ./md5/
-# diffFile="$(ls pre |sort -u)"
-# for i in $diffFile; do
-#  titleName=$(echo "$i" |sed 's#.txt#-title.txt#')
-#  cat ./mod/title/$titleName ./pre/$i | awk '!a[$0]++'> ./$i
-#  sed -i '/^$/d' $i
-#  md5sum $i | sed "s/$i//" > ./md5/$i.md5
-#  perl ./script/addchecksum.pl ./$i
-#  #echo "合并${i}的标题中"
-# done
 echo '规则处理完成'
-# Check Rules
-# a=`cat dns.txt |wc -l`
-# b=1000
-# if [ "$a" -lt "$b" ]
-# then
-#  bash ./script/update-rules.sh
-# else
-#  echo Check PASS
-# fi
+
 cd ../
-rm -rf pre
+# rm -rf pre
 exit
