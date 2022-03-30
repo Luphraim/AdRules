@@ -193,7 +193,7 @@ hosts=(
   # NoCoin adblock list
   "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"
   # Abp rule
-  "https://raw.githubusercontent.com/ookangzheng/dbl-oisd-nl/master/hosts.txt"
+  # "https://raw.githubusercontent.com/ookangzheng/dbl-oisd-nl/master/hosts.txt"
 )
 
 allow=(
@@ -265,7 +265,7 @@ echo '规则下载完成'
 #set LC_ALL='C'
 echo 开始合并
 # 合并通用元素过滤规则
-cat ../mod/rules/tieba.txt adblock*.txt \
+cat ../mod/tieba.txt adblock*.txt \
  | grep -v '^!' | grep -v '.!' | grep -v '^！' \
  | grep -v '^# ' | grep -v '^# ' | grep -v '^\[' \
  | grep -v '^\【' | grep -v 'local.adguard.org' \
@@ -313,6 +313,7 @@ echo '移动规则到Pre目录'
 cd ../
 mkdir -p ./pre/
 mv ./tmp/pre-*.txt ./pre
+rm -rf ./tmp
 cd ./pre
 echo '移动完成'
 
