@@ -5,8 +5,8 @@
 ! Expires: 12 Hours
 ! Description: 误杀白名单
 ! Description: 该规则合并自所有上游规则列表的白名单规则, AdGuard Chinese Filters whitelist, AdGuard Spyware Filters whitelist, LWJ's white list和一些额外规则
-! Version: 2022-04-05 06:21:43（北京时间） 
-! Total count: 14051
+! Version: 2022-04-05 18:21:46（北京时间） 
+! Total count: 14054
 @@$app=com.x.addon.cast
 @@$csp=worker-src 'none',domain=uptostream.com
 @@$generichide,domain=heapfiles.com|vidoza.co|vidoza.net
@@ -315,6 +315,7 @@
 @@/progress.php?callback=$script,domain=ytmp3.cc
 @@/pub/ad/*$domain=ruten.com.tw
 @@/pub1/??$domain=banggo.com
+@@/pubads*theguardian.com
 @@/rutorrent/plugins/rss/*$image,~third-party
 @@/s_code_acdc.js$domain=adobe.com
 @@/script/advert.js$domain=sunbtc.space|weatherx.co.in
@@ -592,7 +593,6 @@
 @@||3.bp.blogspot.com/*.jpg#/adaffiliate_/adops/ad/adsales/ad/adsby./adtest./$domain=f1fanklub.pl
 @@||300mbfilms.co^$generichide
 @@||31vcd.com/player/kuyun.js
-@@||321sprzedane.pl/public/bundle/*/CookieConsent*.js
 @@||3332222.ru/cookie-popup.$script,stylesheet
 @@||360buyimg.com/ad/$domain=jd.com
 @@||360buyimg.com/ads/$domain=jd.com
@@ -931,6 +931,7 @@
 @@||addthis.com/js/*/addthis_widget.js$domain=lennox.com
 @@||addthis.com/js/*/addthis_widget.js$domain=litres.ru
 @@||addthis.com/js/*/addthis_widget.js$domain=mutfaksirlari.com
+@@||addthis.com/js/*/addthis_widget.js$domain=nacongaming.com
 @@||addthis.com/js/*/addthis_widget.js$domain=politico.com
 @@||addthis.com/js/*/addthis_widget.js$script,domain=amd.com
 @@||addthis.com/js/*/addthis_widget.js$script,domain=plotaroute.com
@@ -1224,7 +1225,6 @@
 @@||advert.popunder.ru/banners/advert.php$domain=coingamez.com,subdocument,image
 @@||advert.popunder.ru/banners/advert.php$image,subdocument,domain=proaudioz2.audio
 @@||advert.popunder.ru/banners/advert.php$image,subdocument,domain=torrent-rutor.org
-@@||advert.vg.no/1v*.js?v=$~third-party
 @@||advertisement.taobao.com^
 @@||advertisement.vg.no/1v*.js?v=$~third-party
 @@||adverts.eclypsia.com/www/delivery/spcjs.php$script
@@ -1784,6 +1784,7 @@
 @@||api.paymentwall.com^$domain=adguard.com
 @@||api.perfops.net^$script,xmlhttprequest,domain=cdnperf.com|dnsperf.com
 @@||api.permutive.com/*/batch/$xhr,domain=reuters.com
+@@||api.permutive.com/v*/geoip$xhr,domain=watch.globaltv.com
 @@||api.pinger.com$stealth
 @@||api.privacy-center.org/v*/events$domain=programme-television.org
 @@||api.rikka.app^$important
@@ -2857,11 +2858,13 @@
 @@||cdn.intergi.com/hera/*$xhr,domain=duellinksmeta.com
 @@||cdn.intergi.com/pageos/pageos.js$script,domain=abcya.com
 @@||cdn.iubenda.com/*.js$domain=repubblica.it
+@@||cdn.iubenda.com/cs/*.json$domain=atlantico.fr
 @@||cdn.iubenda.com/cs/tcf/$domain=ilmessaggero.it
 @@||cdn.iubenda.com/cs/tcf/$domain=movieplayer.it
 @@||cdn.iubenda.com^$domain=105.net
 @@||cdn.iubenda.com^$domain=video.repubblica.it
 @@||cdn.iubenda.com^$domain=virginradio.it
+@@||cdn.iubenda.com^$script,domain=atlantico.fr
 @@||cdn.jsdelivr.net/*/clappr^
 @@||cdn.jsdelivr.net/clappr
 @@||cdn.jsdelivr.net/combine/npm/jquery
@@ -4360,6 +4363,7 @@
 @@||edge-enterprise.activity.windows.com^
 @@||edge.activity.windows.com^
 @@||edge.microsoft.com/translate/auth
+@@||edge.permutive.app^$script,domain=watch.globaltv.com
 @@||edge1.certona.net/*$script,domain=sephora.com
 @@||edgecastcdn.net^$script,frame
 @@||edgedatg.com/aws/assets/cp/web/assets/js/*/AppMeasurement.js$script,domain=disneynow.go.com
@@ -5476,7 +5480,6 @@
 @@||google-analytics.com/analytics.js$domain=chainreactioncycles.com
 @@||google-analytics.com/analytics.js$domain=cheatengine.org
 @@||google-analytics.com/analytics.js$domain=chess24.com
-@@||google-analytics.com/analytics.js$domain=chip.com.tr
 @@||google-analytics.com/analytics.js$domain=chocotv.com.tw
 @@||google-analytics.com/analytics.js$domain=chowhound.com
 @@||google-analytics.com/analytics.js$domain=cildimveben.com
@@ -5536,7 +5539,6 @@
 @@||google-analytics.com/analytics.js$domain=infoq.com
 @@||google-analytics.com/analytics.js$domain=janusnotes.com
 @@||google-analytics.com/analytics.js$domain=joblo.com
-@@||google-analytics.com/analytics.js$domain=jula.no
 @@||google-analytics.com/analytics.js$domain=jump.com.tr
 @@||google-analytics.com/analytics.js$domain=karwan.tv
 @@||google-analytics.com/analytics.js$domain=keepassium.com
@@ -5815,9 +5817,8 @@
 @@||google.com/maps/api/$stealth
 @@||google.com/maps/embed/v*/place?key=$stealth
 @@||google.com/payments/*/adwords.$document,subdocument
-@@||google.com/recaptcha/$csp,subdocument
+@@||google.com/recaptcha/$csp,script,subdocument
 @@||google.com/recaptcha/$domain=vidoza.net
-@@||google.com/recaptcha/api.js
 @@||google.com/recaptcha/api2/$document
 @@||google.com/settings/ads/onweb$urlblock
 @@||google.com/translate_$media,third-party,xmlhttprequest
@@ -6034,6 +6035,7 @@
 @@||googletagmanager.com/gtm.js$domain=evofone.com
 @@||googletagmanager.com/gtm.js$domain=falkirkherald.co.uk
 @@||googletagmanager.com/gtm.js$domain=filgoal.com
+@@||googletagmanager.com/gtm.js$domain=filmzie.com
 @@||googletagmanager.com/gtm.js$domain=flo.com.tr
 @@||googletagmanager.com/gtm.js$domain=flyingv.cc
 @@||googletagmanager.com/gtm.js$domain=fooda.com
@@ -6321,7 +6323,6 @@
 @@||googletagservices.com/tag/js/gpt.js$domain=hardware.info|hdblog.it|hdmotori.it
 @@||googletagservices.com/tag/js/gpt.js$domain=ikitesurf.com
 @@||googletagservices.com/tag/js/gpt.js$domain=imgur.com
-@@||googletagservices.com/tag/js/gpt.js$domain=livexlive.com
 @@||googletagservices.com/tag/js/gpt.js$domain=nbcsports.com
 @@||googletagservices.com/tag/js/gpt.js$domain=news.tvb.com
 @@||googletagservices.com/tag/js/gpt.js$domain=nfl.com
@@ -6411,7 +6412,7 @@
 @@||gstatic.com/brandstudio/kato/cookie_choice_component/cookie_consent_bar.v2.js$domain=deepmind.com
 @@||gstatic.com/cast/sdk/libs/sender/*/cast_framework.js$domain=pornhub.com|pornhub.org|pornhub.net|pornhubthbh7ap3u.onion
 @@||gstatic.com/chrome/webstore/images/share_$domain=google.com
-@@||gstatic.com/chrome/webstore/images/share_$domain=google.com! Checksum: MUTDsIhW4DTqNXow+oNXsA
+@@||gstatic.com/chrome/webstore/images/share_$domain=google.com! Checksum: VTzkjiWQ4Az+c5ZDwtmPog
 @@||gstatic.com/chrome/webstore/images/share_$domain=google.com![Adblock Plus 2.0]
 @@||gstatic.com/cv/js/sender/*/cast_sender.js$domain=pornhub.com|pornhub.org|pornhub.net|pornhubthbh7ap3u.onion
 @@||gstatic.com/images/branding/$image
@@ -6985,7 +6986,6 @@
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=lenta.ru
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=lifehacker.com
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=linetv.tw
-@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=livexlive.com
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=loot.tv
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=m.pandora.tv
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=m.timesofindia.com
@@ -7509,6 +7509,7 @@
 @@||itv.com/itv/tserver/$~third-party
 @@||itv.com/itv/tserver/*size=*/*/viewid=
 @@||itworld.com/elqnow/elq*.js
+@@||iubenda.com/cookie-solution/confs/js/$domain=atlantico.fr
 @@||iubenda.com/cookie-solution/confs/js/*.js$domain=movieplayer.it
 @@||iubenda.com/cookie_solution/$script,domain=iphoneitalia.com|quotidiano.net
 @@||iubenda.com^$domain=mediaset.it
@@ -7548,6 +7549,7 @@
 @@||jav777.xyz/advertise/
 @@||javaguides.net^$ghide
 @@||javbucks.com^$css,domain=javhd.com
+@@||javhdonline.com^$generichide
 @@||javmost.com/ad*.php$frame,1p
 @@||javmost.com/ad*.php$subdocument,~third-party
 @@||javpee.com/*.js|$script
@@ -8110,7 +8112,6 @@
 @@||login-ishare.iask.com.cn^
 @@||login.abc.net.au^$stealth
 @@||login.aliexpress.com^$stealth,domain=aliexpress.ru|aliexpress.com
-@@||login.bible.com^$stealth,domain=bible.com
 @@||login.gaijin.net^
 @@||login.ingbank.pl/*/vendor/dtm/*$script,1p
 @@||login.ingbank.pl^*/satelliteLib-$script
@@ -9271,7 +9272,7 @@
 @@||onesecond.designly.com/img/*.gif$~third-party
 @@||onesignal.com/api/$script,domain=clash.ninja
 @@||onesignal.com/sdks/OneSignalSDK.js$domain=wowbiz.ro
-@@||onet.pl/?utm_source=$removeparam! Checksum: q4AZoX38VWFp2FyqWUvkZA
+@@||onet.pl/?utm_source=$removeparam! Checksum: 7uUN0Tm21LFqqcME0c+2Yg
 @@||onet.pl/?utm_source=$removeparam![Adblock Plus 2.0]
 @@||onet.pl/?utm_source=$stealth
 @@||onetag-sys.com/prebid-request$domain=aternos.org
@@ -10681,7 +10682,7 @@
 @@||research.de.com/bb-mx/prime$xhr,domain=joyn.de
 @@||researchintel.com^*/feedback.asp$xmlhttprequest,domain=intel.com
 @@||reseguiden.se^*.siteCatalyst.js
-@@||reseguiden.se^*.siteCatalyst.js! Checksum: NhsDVhXwropptNzHzgSt9Q
+@@||reseguiden.se^*.siteCatalyst.js! Checksum: dLXH6LivSN/w/mXXd39xAw
 @@||reseguiden.se^*.siteCatalyst.js![Adblock Plus 2.0]
 @@||reshade.me/media/plg_system_eprivacy/
 @@||resolver.msg.xiaomi.net^$important
@@ -10692,6 +10693,7 @@
 @@||retailmenot.com/__wsm.gif$ping,xmlhttprequest
 @@||retailmenot.com^$jsinject
 @@||retrogames.cc/js/cookieconsent.min.js$~third-party
+@@||retweetpicker.com^$generichide
 @@||reuters.com/ads.js|
 @@||reuters.com^$generichide
 @@||reutersmedia.net/*/js/rcom-scroll-tracker.js$script,domain=reuters.com
@@ -11175,7 +11177,6 @@
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=hdblog.it
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=hdmotori.it
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=irctc.co.in
-@@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=livexlive.com
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=midomi.com
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=navbharattimes.indiatimes.com
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=news.tvb.com
@@ -12407,6 +12408,7 @@
 @@||the-japan-news.com/modules/js/lib/fgp/fingerprint2.js
 @@||the-man.gr^$ghide
 @@||the-race.com^$ghide
+@@||theantiadblocker.com^$generichide
 @@||theatlantic.com^$generichide
 @@||thebluealliance.com/images/icons/$image,domain=thebluealliance.com
 @@||thebookee.net^$generichide
@@ -12428,6 +12430,7 @@
 @@||thehulltruth.com/clientscript/vbulletin_analytics.js
 @@||theinterview-movie.com/images/btn_youtube.png
 @@||thekickass.org^$generichide
+@@||themarker.com/htz/js/advertisement.js
 @@||themarker.com/logger/p.gif?$image,xmlhttprequest
 @@||themarker.com/logger/p.gif?*=COMMENTS$xmlhttprequest
 @@||themarker.com/logger/p.gif?a=$image
