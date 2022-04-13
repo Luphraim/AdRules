@@ -53,21 +53,21 @@ adguard=(
 # Adguard For uBlock Origin 规则
 adguard_ubo=(
   # 基础过滤器
-  "https://filters.adtidy.org/extension/ublock/filters/2_optimized.txt"
+  "https://filters.adtidy.org/extension/ublock/filters/2.txt"
   # 移动设备过滤器
-  # "https://filters.adtidy.org/extension/ublock/filters/11_optimized.txt"
+  # "https://filters.adtidy.org/extension/ublock/filters/11.txt"
   # 防跟踪保护过滤器
-  "https://filters.adtidy.org/extension/ublock/filters/3_optimized.txt"
+  "https://filters.adtidy.org/extension/ublock/filters/3.txt"
   # URL跟踪过滤器
-  "https://filters.adtidy.org/extension/ublock/filters/17_optimized.txt"
+  "https://filters.adtidy.org/extension/ublock/filters/17.txt"
   # 社交媒体过滤器
-  "https://filters.adtidy.org/extension/ublock/filters/4_optimized.txt"
+  "https://filters.adtidy.org/extension/ublock/filters/4.txt"
   # 恼人广告过滤器
-  "https://filters.adtidy.org/extension/ublock/filters/14_optimized.txt"
+  "https://filters.adtidy.org/extension/ublock/filters/14.txt"
   # 中文过滤器
-  "https://filters.adtidy.org/extension/ublock/filters/224_optimized.txt"
+  "https://filters.adtidy.org/extension/ublock/filters/224.txt"
   # 实验性过滤器
-  "https://filters.adtidy.org/extension/ublock/filters/5_optimized.txt"
+  "https://filters.adtidy.org/extension/ublock/filters/5.txt"
 )
 
 # Adguard For PC 规则
@@ -100,8 +100,6 @@ adblock=(
   "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
   # Anti-Adblock Killer
   "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt"
-  # Anti-AD for Adguard
-  "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-adguard.txt"
   # 乘风通用过滤规则，适用于UBO或ADG
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt"
   # 乘风视频过滤规则，适用于UBO或ADG
@@ -118,6 +116,8 @@ adblock=(
 
 # 元素过滤规则(mobile)
 adblock_lite=(
+  # Anti-AD for Adguard
+  "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-adguard.txt"
   # adgk规则 @坂本大佬
   "https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt"
   # 百度超级净化 @坂本大佬
@@ -225,7 +225,7 @@ echo '规则下载完成'
 # Start Merge and Duplicate Removal
 echo 开始合并
 # 合并通用元素过滤规则
-cat adblock*.txt \
+cat ../mod/tieba.txt adblock*.txt \
  | grep -v '^!' | grep -v '.!' | grep -v '^！' \
  | grep -v '^# ' | grep -v '^# ' | grep -v '^\[' \
  | grep -v '^\【' | grep -v 'local.adguard.org' \

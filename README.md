@@ -15,7 +15,7 @@
 | AdKiller          | 推荐用于 PC 端，如 AdGuard, Ublock Origin, AdBlock 等 | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/filter.txt) |
 | AdKiller (Mobile) | 推荐用于移动端，包括 AdGuard For Android, via 等      | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/mobile.txt) |
 | DNSFilter         | 适用于 AdGuard Home                                   | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/dns.txt)    |
-| DNSHosts          | 广告过滤 hosts ，重定向至 0.0.0.0                     | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/hosts.txt)  |
+| Hosts             | 广告过滤 hosts ，重定向至 0.0.0.0                     | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/hosts.txt)  |
 | Allow             | 过滤白名单，防止误杀                                  | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/allow.txt)  |
 
 ### 上游规则
@@ -49,7 +49,6 @@
 |                                | [I don't care about cookies](https://www.i-dont-care-about-cookies.eu/abp/)                                                                       |
 |                                | [Adblock Warning Removal List](https://easylist-downloads.adblockplus.org/antiadblockfilters.txt)                                                 |
 |                                | [Anti-Adblock Killer](https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt)                          |
-|                                | [Anti-AD for Adguard](https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-adguard.txt)                              |
 |                                | [乘风通用过滤规则](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt)，适用于 UBO 或 ADG                                |
 |                                | [乘风视频过滤规则](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt)，适用于 UBO 或 ADG                                  |
 |                                | [EasyList](https://easylist-downloads.adblockplus.org/easylist.txt) (反广告主规则列表。主要面向英文网站，包含大量通用规则)                        |
@@ -58,6 +57,7 @@
 |                                | [CJX's Annoyance List](https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt) (反自我推广,移除 anti adblock,防跟踪规则列表) |
 | 元素过滤规则，推荐移动端       | [adgk 规则](https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt) @坂本大佬                                                         |
 |                                | [百度超级净化](https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt) @坂本大佬                                             |
+|                                | [Anti-AD for Adguard](https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-adguard.txt)                              |
 |                                | [主要去除手机盗版网站广告](https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt) @酷安：大萌主                                     |
 |                                | [去 APP 下载广告规则](https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt)                                          |
 | 元素过滤规则，推荐 PC 端       | (ubo 专用) [CJX's uBlock list](https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-ublock.txt) (CJX's Annoyance List 的补充。)          |
@@ -83,4 +83,4 @@
 |                                | [AdGuard Chinese Filters whitelist](https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/whitelist.txt)     |
 |                                | [AdGuard Spyware Filters whitelist](https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/whitelist.txt)     |
 |                                | 上述所有规则里的白名单规则                                                                                                                        |
-| 其他（rules/mod 下)            | 百度贴吧相关规则（tieba.txt，不使用，似乎存在严重误杀）                                                                                           |
+| 其他（rules/mod 下)            | 百度贴吧相关规则（tieba.txt）                                                                                                                     |
