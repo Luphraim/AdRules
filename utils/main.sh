@@ -118,14 +118,14 @@ adblock=(
 
 # 元素过滤规则(mobile)
 adblock_lite=(
-  # 主要去除手机盗版网站广告 @酷安：大萌主
-  "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt"
-  # 去 APP 下载广告规则
-  "https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt"
   # adgk规则 @坂本大佬
   "https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt"
   # 百度超级净化 @坂本大佬
   "https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt"
+  # 主要去除手机盗版网站广告 @酷安：大萌主
+  "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt"
+  # 去 APP 下载广告规则
+  "https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt"
   # ADFILT
   # "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
   # ADFILT
@@ -188,6 +188,7 @@ hosts=(
   "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"
 )
 
+# 白名单规则
 allow=(
   # LWJ's white list
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt"
@@ -224,7 +225,7 @@ echo '规则下载完成'
 # Start Merge and Duplicate Removal
 echo 开始合并
 # 合并通用元素过滤规则
-cat ../mod/tieba.txt adblock*.txt \
+cat adblock*.txt \
  | grep -v '^!' | grep -v '.!' | grep -v '^！' \
  | grep -v '^# ' | grep -v '^# ' | grep -v '^\[' \
  | grep -v '^\【' | grep -v 'local.adguard.org' \
