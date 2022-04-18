@@ -46,8 +46,6 @@ adguard=(
   "https://filters.adtidy.org/android/filters/14_optimized.txt"
   # 中文过滤器
   "https://filters.adtidy.org/android/filters/224_optimized.txt"
-  # 实验性过滤器
-  "https://filters.adtidy.org/android/filters/5_optimized.txt"
 )
 
 # Adguard For uBlock Origin 规则
@@ -66,8 +64,6 @@ adguard_ubo=(
   "https://filters.adtidy.org/extension/ublock/filters/14.txt"
   # 中文过滤器
   "https://filters.adtidy.org/extension/ublock/filters/224.txt"
-  # 实验性过滤器
-  "https://filters.adtidy.org/extension/ublock/filters/5.txt"
 )
 
 # Adguard For PC 规则
@@ -86,8 +82,6 @@ adguard_full=(
   "https://filters.adtidy.org/windows/filters/14.txt"
   # 中文过滤器
   "https://filters.adtidy.org/windows/filters/224.txt"
-  # 实验性过滤器
-  "https://filters.adtidy.org/windows/filters/5.txt"
 )
 
 # 元素过滤规则
@@ -104,8 +98,6 @@ adblock=(
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt"
   # 乘风视频过滤规则，适用于UBO或ADG
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt"
-  # EasyList (反广告主规则列表。主要面向英文网站，包含大量通用规则)
-  "https://easylist-downloads.adblockplus.org/easylist.txt"
   # Easylist China (反广告主规则列表的补充。主要面向中文网站)
   "https://easylist-downloads.adblockplus.org/easylistchina.txt"
   # EasyPrivacy (防隐私跟踪挖矿规则列表)
@@ -116,6 +108,8 @@ adblock=(
 
 # 元素过滤规则(mobile)
 adblock_lite=(
+  # EasyList Lite(去广告主规则列表的精简版，只保留简体中文网站触发的规则，建议非桌面浏览器才选用。)
+  "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjxlist.txt"
   # Anti-AD for Adguard
   "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-adguard.txt"
   # adgk规则 @坂本大佬
@@ -136,16 +130,16 @@ adblock_lite=(
 
 # 元素过滤规则(PC)
 adblock_full=(
+  # EasyList (反广告主规则列表。主要面向英文网站，包含大量通用规则)
+  "https://easylist-downloads.adblockplus.org/easylist.txt"
   # (ubo专用) CJX's uBlock list (CJX's Annoyance List的补充。)
   "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-ublock.txt"
-  # (ABP专用) chinese.txt (CJX's Annoyance List的补充。)
-  # "https://raw.githubusercontent.com/cjx82630/cjxlist/master/chinese.txt"
+  # Fanboy's Social Blocking List (去社交媒体图标列表，去“分享”按钮)
+  "https://easylist-downloads.adblockplus.org/fanboy-social.txt"
   # BarbBlock For uBlock Origin
   "https://paulgb.github.io/BarbBlock/blacklists/ublock-origin.txt"
   # url过滤器 by Hacamer
   "https://raw.githubusercontent.com/Cats-Team/AdRule/main/url-filter.txt"
-  # Abp rule (Adblocker syntax)
-  "https://abp.oisd.nl/basic/"
 )
 
 # DNS过滤规则
@@ -158,16 +152,12 @@ dns=(
   "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt"
   # Online Malicious URL Blocklist (AdGuard Home)
   "https://curben.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt"
-  # Adblock Warning Removal List
-  "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
-  # Fanboy's Annoyance List
-  "https://easylist.to/easylist/fanboy-annoyance.txt"
   # LWJ's black list
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
   # Spam404
   "https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt"
-  # url过滤器 by Hacamer
-  "https://raw.githubusercontent.com/Cats-Team/AdRule/main/url-filter.txt"
+  # Hacamer's URL Filter
+  "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
   # ADFILT
   # "https://raw.githubusercontent.com/DandlionSprout/adfilt/master/AdGuard%20Home%20Compilation%20List/AdGuardHomeCompilationList-Notifications.txt"
 )
@@ -225,7 +215,7 @@ echo '规则下载完成'
 # Start Merge and Duplicate Removal
 echo 开始合并
 # 合并通用元素过滤规则
-cat ../mod/tieba.txt adblock*.txt \
+cat ../mod/element.txt adblock*.txt \
  | grep -v '^!' | grep -v '.!' | grep -v '^！' \
  | grep -v '^# ' | grep -v '^# ' | grep -v '^\[' \
  | grep -v '^\【' | grep -v 'local.adguard.org' \
@@ -246,7 +236,7 @@ cat tmp-adblock.txt adguard*.txt adblock_lite*.txt \
  | sort -n | uniq | awk '!a[$0]++' > pre-mobile.txt
 
 # 合并DNS过滤规则
-cat dns*.txt \
+cat ../mod/dns.txt dns*.txt \
  | grep -v '^!' | grep -v '.!' | grep -v '^！' \
  | grep -v '^# ' | grep -v '^# ' | grep -v '^\[' \
  | grep -v '^\【' | grep -v 'local.adguard.org' \
@@ -261,7 +251,7 @@ cat hosts*.txt \
  | sort -n | uniq > pre-hosts.txt
 
 # 合并Allow List
-cat *.txt \
+cat ../mod/allowlist.txt *.txt \
  | grep '^@' \
  | sort -n | uniq | awk '!a[$0]++' > pre-allow.txt
 
