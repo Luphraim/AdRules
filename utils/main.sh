@@ -138,8 +138,8 @@ adblock_full=(
   "https://easylist-downloads.adblockplus.org/fanboy-social.txt"
   # BarbBlock For uBlock Origin
   "https://paulgb.github.io/BarbBlock/blacklists/ublock-origin.txt"
-  # url过滤器 by Hacamer
-  "https://raw.githubusercontent.com/Cats-Team/AdRule/main/url-filter.txt"
+  # Hacamer's URL Filter
+  "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
 )
 
 # DNS过滤规则

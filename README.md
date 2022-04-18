@@ -61,7 +61,7 @@
 |                                | (ubo 专用) [CJX's uBlock list](https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-ublock.txt) (CJX's Annoyance List 的补充。)                                 |
 |                                | [Fanboy's Social Blocking List](https://easylist-downloads.adblockplus.org/fanboy-social.txt) (去社交媒体图标列表，去“分享”按钮)                                         |
 |                                | [BarbBlock For uBlock Origin](https://paulgb.github.io/BarbBlock/blacklists/ublock-origin.txt)                                                                           |
-|                                | [url 过滤器](https://raw.githubusercontent.com/Cats-Team/AdRule/main/url-filter.txt) by Hacamer                                                                          |
+|                                | [Hacamer's URL Filter](https://raw.githubusercontent.com/Cats-Team/AdRule/main/url-filter.txt)                                                                           |
 | DNS 过滤规则                   | [Cats-Team 自定义 DNS 过滤规则](https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt)                                                        |
 |                                | [AdGuard DNS filter](https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt)                                                                                 |
 |                                | [Anti-AD for AdGuardHome](https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt)（DNS 过滤）                                    |
