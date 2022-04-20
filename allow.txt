@@ -5,8 +5,8 @@
 ! Expires: 12 Hours
 ! Description: 误杀白名单
 ! Description: 该规则合并自所有上游规则列表的白名单规则, AdGuard Chinese Filters whitelist, AdGuard Spyware Filters whitelist, LWJ's white list和一些额外规则
-! Version: 2022-04-20 18:24:42（北京时间） 
-! Total count: 16973
+! Version: 2022-04-21 06:23:00（北京时间） 
+! Total count: 16978
 @@$app=com.x.addon.cast
 @@$csp=worker-src 'none',domain=uptostream.com
 @@$generichide,domain=heapfiles.com|vidoza.co|vidoza.net
@@ -31,6 +31,7 @@
 @@*$ghide,domain=imgalor.xyz|imgirx.xyz|imgjut.buzz|imgkaka.xyz|imgkane.buzz|imgkia.*|imgklx.xyz|imgkoka.buzz|imgkuiw.xyz|imglina.xyz|imgtoyou.icu|imgtrw.buzz|imgveni.xyz|imgweika.buzz|imgwex.buzz
 @@*$ghide,domain=pomponik.pl|iplsc.com
 @@*$ghide,domain=ppss.kr|ygosu.com|tgd.kr|inven.co.kr|loawa.com
+@@*$ghide,domain=wp.pl|money.pl|o2.pl|parenting.pl|pudelek.pl|autokult.pl|gadzetomania.pl|fotoblogia.pl|komorkomania.pl|polygamia.pl
 @@*$image,3p,domain=aupetitparieur.com|cancan.ro|designbump.com|gamersheroes.com|thedesigninspiration.com|ciao.ro|newsweek.ro|prosport.ro
 @@*$image,domain=a2zupload.com
 @@*$image,domain=wstream.video
@@ -3582,7 +3583,6 @@
 @@||cdn.opencmp.net^$domain=stimme.de
 @@||cdn.opencmp.net^$domain=tz.de
 @@||cdn.optimizely.com/datafiles/*.json$domain=talktalk.co.uk
-@@||cdn.optimizely.com/datafiles/*.json$xhr,domain=es.wallapop.com
 @@||cdn.optimizely.com/datafiles/*.json$xhr,domain=myaccount.amfam.com
 @@||cdn.optimizely.com/datafiles/*.json/tag.js$domain=nike.com
 @@||cdn.optimizely.com/js/$domain=account.microsoft.com
@@ -3844,6 +3844,7 @@
 @@||cdn01js.dziennikwschodni.pl/js/showads.min.js
 @@||cdn1.pron.tv/xjs/advertisement.js$domain=pron.tv
 @@||cdn13.com/*.mp4?$domain=xhamster.com
+@@||cdn13.com^$stealth,media
 @@||cdn3.iplex.pl/iplex3/static/js/ads.js$script
 @@||cdn4.tennistemple.com/js/advert.js|$script,~third-party
 @@||cdnads.com^$image,subdocument,domain=bitzfree.com
@@ -5080,6 +5081,7 @@
 @@||dorzeczy.pl/dorzeczy/_i/button-125x40-app-store.png
 @@||dorzeczy.pl/dorzeczy/_i/button-125x40-google-play.png
 @@||dosgamezone.com/ads/banner1.gif
+@@||dostavista.ru^$stealth
 @@||dot.ro^$generichide
 @@||dotice.me/*.m3u8$stealth
 @@||dotice.me/*.ts$stealth
@@ -6294,6 +6296,7 @@
 @@||gamer-cds.cdn.hinet.net/vod/gamer/*.m3u8^$domain=ani.gamer.com.tw
 @@||gamer-cds.cdn.hinet.net/vod/gamer/*.ts^$domain=ani.gamer.com.tw
 @@||gamerch.com/s3-assets/library/js/fingerprint2.min.js
+@@||gamerch.com/s3-assets/library/js/fingerprint2.min.js?$script,~third-party
 @@||gamerotic.com^$ghide
 @@||gamersboard.com.br^$ghide
 @@||gamersglobal.de/wbg/www/delivery/spcjs.js$script
@@ -7703,7 +7706,7 @@
 @@||gstatic.com/brandstudio/kato/cookie_choice_component/cookie_consent_bar.v2.js$domain=deepmind.com
 @@||gstatic.com/cast/sdk/libs/sender/*/cast_framework.js$domain=pornhub.com|pornhub.org|pornhub.net|pornhubthbh7ap3u.onion
 @@||gstatic.com/chrome/webstore/images/share_$domain=google.com
-@@||gstatic.com/chrome/webstore/images/share_$domain=google.com! Checksum: QmBuYGXaNG1YXQ1+dXipgg
+@@||gstatic.com/chrome/webstore/images/share_$domain=google.com! Checksum: 1CWdSIYDqm/7ninKUcAK0Q
 @@||gstatic.com/cv/js/sender/*/cast_sender.js$domain=pornhub.com|pornhub.org|pornhub.net|pornhubthbh7ap3u.onion
 @@||gstatic.com/cv/js/sender/v1/cast_sender.js$domain=kora-online.tv
 @@||gstatic.com/images/branding/$image
@@ -10428,7 +10431,6 @@
 @@||money.it^$generichide
 @@||money.it^$ghide
 @@||money.pl^$generichide
-@@||money.pl^$ghide
 @@||money18.on.cc/js/ad/liveinfo_page/
 @@||money18.on.cc/js/adbanner.js
 @@||moneymorning.com/wp-content/plugins/mm-social-share/$stylesheet
@@ -10532,7 +10534,6 @@
 @@||mssl.fwmrm.net/crossdomain.xml$domain=msn.com
 @@||mssl.fwmrm.net/crossdomain.xml$domain=vplayer.nbcsports.com
 @@||mssl.fwmrm.net/libs/adm/*/LinkTag2.js$domain=play.tv3.lt
-@@||mssl.fwmrm.net/p/MTG_Brightcove_HTML5/AdManager.js$domain=tv3play.tv3.ee
 @@||mssl.fwmrm.net/p/abc_live/$script,domain=abc.go.com
 @@||mssl.fwmrm.net/p/abc_live/AdManager.js$domain=abc.go.com
 @@||mssl.fwmrm.net/p/c4_live/*.swf$object,domain=channel4.com
@@ -11115,7 +11116,7 @@
 @@||onesignal.com/api/$script,domain=clash.ninja
 @@||onesignal.com/sdks/OneSignalSDK.js$domain=wowbiz.ro
 @@||onet.pl/?utm_source=$removeparam
-@@||onet.pl/?utm_source=$removeparam! Checksum: EDADTcF+CDhV3DhR/FvkMg
+@@||onet.pl/?utm_source=$removeparam! Checksum: MEC43aZ+Cd2VaRposww+Rw
 @@||onet.pl/?utm_source=$removeparam![Adblock Plus 2.0]
 @@||onet.pl/?utm_source=$stealth
 @@||onetag-sys.com/prebid-request$domain=aternos.org
@@ -11203,7 +11204,7 @@
 @@||optimize.webtrends.com^$domain=peterboroughtoday.co.uk
 @@||optimized-by.rubiconproject.com/a/10926/26000/$subdocument,domain=onemanga.me
 @@||optimizely.addmilk.nl^$image,domain=simyo.nl
-@@||optimizely.com/datafiles/$domain=nike.com|talktalk.co.uk
+@@||optimizely.com/datafiles/$domain=nike.com|talktalk.co.uk|wallapop.com
 @@||optimizely.com/js/geo2.js$domain=cbs.com
 @@||optimizely.com^$script,domain=kabeleins.de|prosieben.de|prosiebenmaxx.de|ran.de|sat1.de|sixx.de
 @@||optimost.com/counter/*/event.js?$domain=bebo.com
@@ -12058,6 +12059,9 @@
 @@||play.ludigames.com^*/pc_share_$image
 @@||play.nova.bg/prebid-ads.js
 @@||play.nova.bg^$1p,script
+@@||play.tv3.ee/static/scripts/adroot/dfp.min.js
+@@||play.tv3.ee/static/scripts/adroot/facebook.net/fbevents.js
+@@||play.tv3.ee/static/scripts/adroot/imasdk.googleapis.com/js/sdkloader/ima3.js
 @@||play.tv3.lt/ad/banner/*.ad.json$domain=play.tv3.lt
 @@||play.tv3.lt/static/scripts/ima3.js
 @@||play.vidyard.com^$stealth
@@ -12272,6 +12276,7 @@
 @@||port.hu/js/advert.min.js
 @@||port.hu^$ghide
 @@||portal.autotrader.co.uk/advert/$~third-party
+@@||portal.azure.com/*/resource/subscriptions/$stealth
 @@||portal.mail.ru^$stealth
 @@||portal.pixelfederation.com/*/login.php^$document
 @@||portalbici.es/lib/angulartics-google-analytics/dist/angulartics-ga.min.js
@@ -12883,7 +12888,7 @@
 @@||research.de.com/bb-mx/prime$xhr,domain=joyn.de
 @@||researchintel.com^*/feedback.asp$xmlhttprequest,domain=intel.com
 @@||reseguiden.se^*.siteCatalyst.js
-@@||reseguiden.se^*.siteCatalyst.js! Checksum: c46609r4oJ3SMzfu926uvQ
+@@||reseguiden.se^*.siteCatalyst.js! Checksum: e0CqjDrCgbxIIWjWHwrSTg
 @@||reseguiden.se^*.siteCatalyst.js![Adblock Plus 2.0]
 @@||reshade.me/media/plg_system_eprivacy/
 @@||resolver.msg.xiaomi.net^$important
@@ -13108,6 +13113,7 @@
 @@||s3.amazonaws.com/assets.sidearmsports.com/plugins/detector.min.js?$domain=bigten.org|greenbayphoenix.com|umterps.com
 @@||s3.amazonaws.com/assets.sidearmsports.com/statcollector/statcollector.min.js$script,domain=bigten.org
 @@||s3.amazonaws.com/khachack/*.js$script,domain=ndtv.com
+@@||s3.amazonaws.com^$stealth,domain=informationisbeautiful.net
 @@||s7.addthis.com/icons/official-addthis-angularjs/current/dist/official-addthis-angularjs.min.js$domain=senac.br
 @@||s7.addthis.com/static/r07/$script,stylesheet,domain=majorgeeks.com
 @@||s7.addthis.com^*/addthis_widget.js$domain=carsom.nl|channelnewsasia.com|hatsandcaps.co.uk|politico.com|ticketmaster.nl|washingtonexaminer.com
@@ -15689,7 +15695,7 @@
 @@||urlex.org^$generichide
 @@||urlex.org^$ghide
 @@||urlgalleries.net^$generichide
-@@||urlgalleries.net^$generichide! Checksum: 6kvq/JmLzSAnTTE3GAjPeg
+@@||urlgalleries.net^$generichide! Checksum: lsYJD082nzSyu/IoARlPXQ
 @@||urlgalleries.net^$generichide![Adblock Plus 2.0]
 @@||urlpay.net/wp-content/plugins/*/assets/fuckadblock.js
 @@||usaa.com^$document
@@ -15761,7 +15767,6 @@
 @@||v.fwmrm.net/ad/g/1$domain=medialaancdn.be
 @@||v.fwmrm.net/ad/g/1$domain=player.theplatform.com
 @@||v.fwmrm.net/ad/g/1$domain=stream.nbcsports.com
-@@||v.fwmrm.net/ad/g/1$domain=tv3play.tv3.ee
 @@||v.fwmrm.net/ad/g/1$domain=tv3sport.dk,important
 @@||v.fwmrm.net/ad/g/1$domain=uktvplay.uktv.co.uk
 @@||v.fwmrm.net/ad/g/1$domain=viafree.dk|viafree.fi|viafree.no|viafree.se
@@ -16086,9 +16091,8 @@
 @@||voldffgkdsllkjthlkjt.b-cdn.net/ads/ads.js
 @@||volksfreund.de/assets/adsbygoogle.js$script,1p
 @@||volksfreund.de^$ghide
-@@||volkswagen-electrique.fr/img/share/share.jpg
 @@||volkswagen-electrique.fr/img/share/share.jpg! Title: BarbBlock
-@@||volkswagen-electrique.fr/img/share/share.jpgial-profiles-container
+@@||volkswagen-electrique.fr/img/share/share.jpgock
 @@||volterra.io^*/advertise_policy$~third-party
 @@||volterra.us^*/advertise_policy$~third-party
 @@||vorname.com^$ghide
@@ -16647,6 +16651,7 @@
 @@||www3.doubleclick.net/|$xmlhttprequest,domain=shaalaa.com
 @@||www3.doubleclick.net/|$xmlhttprequest,domain=vn.trueid.net
 @@||www3.doubleclick.net^|$domain=mac2sell.net
+@@||www3.doubleclick.net^|$domain=mmastreams-100.tv|mlbstreams100.com|boxingstreams100.com|nbastreams-100.tv
 @@||www3.doubleclick.net^|$domain=soccerstreams-100.tv
 @@||www3.doubleclick.net^|$xmlhttprequest,other,domain=thingiverse.com
 @@||wwwjuwanshe.pp8.com^$3p,domain=juwanshe.com
