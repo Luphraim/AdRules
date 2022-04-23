@@ -88,6 +88,7 @@ adguard_full=(
 adblock=(
   # Cats-Team 自定义元素过滤规则
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
+  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
   # I don't care about cookies
   "https://www.i-dont-care-about-cookies.eu/abp/"
   # Adblock Warning Removal List
@@ -98,18 +99,12 @@ adblock=(
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt"
   # 乘风视频过滤规则，适用于UBO或ADG
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt"
-  # Easylist China (反广告主规则列表的补充。主要面向中文网站)
-  "https://easylist-downloads.adblockplus.org/easylistchina.txt"
-  # EasyPrivacy (防隐私跟踪挖矿规则列表)
-  "https://easylist-downloads.adblockplus.org/easyprivacy.txt"
-  # CJX's Annoyance List (反自我推广,移除anti adblock,防跟踪规则列表)
-  "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt"
 )
 
 # 元素过滤规则(mobile)
 adblock_lite=(
   # EasyList Lite(去广告主规则列表的精简版，只保留简体中文网站触发的规则，建议非桌面浏览器才选用。)
-  "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjxlist.txt"
+  # "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjxlist.txt"
   # Anti-AD for Adguard
   "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-adguard.txt"
   # adgk规则 @坂本大佬
@@ -132,6 +127,12 @@ adblock_lite=(
 adblock_full=(
   # EasyList (反广告主规则列表。主要面向英文网站，包含大量通用规则)
   "https://easylist-downloads.adblockplus.org/easylist.txt"
+  # Easylist China (反广告主规则列表的补充。主要面向中文网站)
+  "https://easylist-downloads.adblockplus.org/easylistchina.txt"
+  # EasyPrivacy (防隐私跟踪挖矿规则列表)
+  "https://easylist-downloads.adblockplus.org/easyprivacy.txt"
+  # CJX's Annoyance List (反自我推广,移除anti adblock,防跟踪规则列表)
+  "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt"
   # (ubo专用) CJX's uBlock list (CJX's Annoyance List的补充。)
   "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-ublock.txt"
   # Fanboy's Social Blocking List (去社交媒体图标列表，去“分享”按钮)
@@ -180,6 +181,8 @@ hosts=(
 
 # 白名单规则
 allow=(
+  # Cats-Team 自定义白名单规则
+  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/allowlist.txt"
   # LWJ's white list
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt"
   # AdGuard Chinese Filters whitelist
