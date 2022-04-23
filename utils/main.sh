@@ -222,7 +222,7 @@ cat ../mod/element.txt adblock*.txt \
  | sort -n | uniq | awk '!a[$0]++' > tmp-adblock.txt
 
 # 合并AdKiller (PC)元素过滤规则
-cat tmp-adblock.txt ublock*.txt adguard_ubo*.txt adblock_full*.txt \
+cat tmp-adblock.txt adblock_full*.txt \
  | grep -v '^!' | grep -v '.!' | grep -v '^！' \
  | grep -v '^# ' | grep -v '^# ' | grep -v '^\[' \
  | grep -v '^\【' | grep -v 'local.adguard.org' \
