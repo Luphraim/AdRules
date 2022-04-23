@@ -93,7 +93,7 @@ adblock=(
   # Adblock Warning Removal List
   "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
   # Anti-Adblock Killer
-  "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt"
+  # "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt"
   # 乘风通用过滤规则，适用于UBO或ADG
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt"
   # 乘风视频过滤规则，适用于UBO或ADG
