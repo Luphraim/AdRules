@@ -218,45 +218,36 @@ echo '规则下载完成'
 # Start Merge and Duplicate Removal
 echo 开始合并
 # 合并通用元素过滤规则
-cat adblock*.txt \
- | grep -v '^!' | grep -v '.!' | grep -v '^！' \
- | grep -v '^# ' | grep -v '^# ' | grep -v '^\[' \
- | grep -v '^\【' | grep -v 'local.adguard.org' \
- | sort -n | uniq | awk '!a[$0]++' > tmp-adblock.txt
+cat ../mod/element.txt adblock*.txt \
+ | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' 
+ |grep -E -v "^[\.||]+[com]+[\^]$" \
+ | sort -n | uniq >> tmp-adblock.txt
 
 # 合并AdKiller (PC)元素过滤规则
 cat tmp-adblock.txt adblock_full*.txt \
- | grep -v '^!' | grep -v '.!' | grep -v '^！' \
- | grep -v '^# ' | grep -v '^# ' | grep -v '^\[' \
- | grep -v '^\【' | grep -v 'local.adguard.org' \
- | sort -n | uniq | awk '!a[$0]++' > pre-filter.txt
+ |grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
+ | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-filter.txt
 
 # 合并AdKiller (Mobile)元素过滤规则
-cat tmp-adblock.txt adguard*.txt adblock_lite*.txt \
- | grep -v '^!' | grep -v '.!' | grep -v '^！' \
- | grep -v '^# ' | grep -v '^# ' | grep -v '^\[' \
- | grep -v '^\【' | grep -v 'local.adguard.org' \
- | sort -n | uniq | awk '!a[$0]++' > pre-mobile.txt
+cat tmp-adblock.txt adguard*.txt adblock_lite*.txt \\
+ |grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
+ | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-mobile.txt
 
 # 合并DNS过滤规则
-cat ../mod/dns.txt dns*.txt \
- | grep -v '^!' | grep -v '.!' | grep -v '^！' \
- | grep -v '^# ' | grep -v '^# ' | grep -v '^\[' \
- | grep -v '^\【' | grep -v 'local.adguard.org' \
- | sort -n | uniq | awk '!a[$0]++' > pre-dns.txt
+cat ../mod/dns.txt dns*.txt 
+ |grep -v '^!' \
+ |sort -n |uniq > pre-dns.txt
 
 # 合并HOSTS过滤规则
 cat hosts*.txt \
- | sort -n| sed '/^$/d' | grep -v -E "^((#.*)|(\s*))$" \
- | grep -v -E "^[0-9\.:]+\s+(ip6\-)?(localhost|loopback)$" \
- | sed s/127.0.0.1/0.0.0.0/g | sed s/::/0.0.0.0/g \
- | grep '0.0.0.0' |grep -Ev '.0.0.0.0 ' \
+ | sed '/^$/d' |grep -E "^([0-9].*)|^((\|\|)[^\/\^]+\^$)" \
+ | sed 's/||/0.0.0.0 /' | sed 's/127.0.0.1/0.0.0.0/' | sed 's/\^//' \
  | sort -n | uniq > pre-hosts.txt
 
 # 合并Allow List
 cat ../mod/allowlist.txt *.txt \
  | grep '^@' \
- | sort -n | uniq | awk '!a[$0]++' > pre-allow.txt
+ | sort -n | uniq > pre-allow.txt
 
 echo 规则合并完成
 
