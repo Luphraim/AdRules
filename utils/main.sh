@@ -196,7 +196,7 @@ for i in "${!ublock[@]}" "${!adguard[@]}" "${!adguard_ubo[@]}" "${!adguard_full[
 do
   curl --parallel --parallel-immediate -k -L -C - -o "ublock${i}.txt" --connect-timeout 60 -s "${ublock[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adguard${i}.txt" --connect-timeout 60 -s "${adguard[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "adguard_ubo${i}.txt" --connect-timeout 60 -s "${adguard_ubo[$i]}" &
+  # curl --parallel --parallel-immediate -k -L -C - -o "adguard_ubo${i}.txt" --connect-timeout 60 -s "${adguard_ubo[$i]}" &
   # curl --parallel --parallel-immediate -k -L -C - -o "adguard_full${i}.txt" --connect-timeout 60 -s "${adguard_full[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock${i}.txt" --connect-timeout 60 -s "${adblock[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock_lite${i}.txt" --connect-timeout 60 -s "${adblock_lite[$i]}" &
@@ -219,18 +219,18 @@ echo '规则下载完成'
 echo 开始合并
 # 合并通用元素过滤规则
 cat ../mod/element.txt adblock*.txt \
- | grep -Ev "^((\!)|(\！))|(\[)).*" | grep -v 'local.adguard.org' \
+ | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
  | grep -E -v "^[\.||]+[com]+[\^]$" \
  | sort -n | uniq >> tmp-adblock.txt
 
 # 合并AdKiller (PC)元素过滤规则
-cat tmp-adblock.txt ublock*.txt adguard_ubo*.txt adblock_full*.txt \
- | grep -Ev "^((\!)|(\！))|(\[)).*" | grep -v 'local.adguard.org' \
+cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
+ | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
  | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-filter.txt
 
 # 合并AdKiller (Mobile)元素过滤规则
 cat tmp-adblock.txt adguard*.txt adblock_lite*.txt \
- | grep -Ev "^((\!)|(\！))|(\[)).*" | grep -v 'local.adguard.org' \
+ | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
  | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-mobile.txt
 
 # 合并DNS过滤规则
@@ -240,8 +240,8 @@ cat ../mod/dns.txt dns*.txt \
 
 # 合并HOSTS过滤规则
 cat hosts*.txt \
- | sed '/^$/d' |grep -E "^([0-9].*)|^((\|\|)[^\/\^]+\^$)" \
- | sed 's/||/0.0.0.0 /' | sed 's/127.0.0.1/0.0.0.0/' | sed 's/\^//' \
+ | sed '/^$/d' | grep -E "^([0-9].*)|^((\|\|)[^\/\^]+\^$)" \
+ | sed 's/127.0.0.1/0.0.0.0/' | sed 's/\^//' \
  | sort -n | uniq > pre-hosts.txt
 
 # 合并Allow List
