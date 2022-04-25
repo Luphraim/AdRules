@@ -136,7 +136,7 @@ adblock_full=(
   # (ubo专用) CJX's uBlock list (CJX's Annoyance List的补充。)
   "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-ublock.txt"
   # Fanboy's Social Blocking List (去社交媒体图标列表，去“分享”按钮)
-  "https://easylist-downloads.adblockplus.org/fanboy-social.txt"
+  # "https://easylist-downloads.adblockplus.org/fanboy-social.txt"
   # BarbBlock For uBlock Origin
   "https://paulgb.github.io/BarbBlock/blacklists/ublock-origin.txt"
   # Hacamer's URL Filter
@@ -194,7 +194,7 @@ allow=(
 
 for i in "${!ublock[@]}" "${!adguard[@]}" "${!adguard_ubo[@]}" "${!adguard_full[@]}" "${!adblock[@]}" "${!adblock_lite[@]}" "${!adblock_full[@]}" "${!dns[@]}" "${!hosts[@]}" "${!allow[@]}"
 do
-  # curl --parallel --parallel-immediate -k -L -C - -o "ublock${i}.txt" --connect-timeout 60 -s "${ublock[$i]}" &
+  curl --parallel --parallel-immediate -k -L -C - -o "ublock${i}.txt" --connect-timeout 60 -s "${ublock[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adguard${i}.txt" --connect-timeout 60 -s "${adguard[$i]}" &
   # curl --parallel --parallel-immediate -k -L -C - -o "adguard_ubo${i}.txt" --connect-timeout 60 -s "${adguard_ubo[$i]}" &
   # curl --parallel --parallel-immediate -k -L -C - -o "adguard_full${i}.txt" --connect-timeout 60 -s "${adguard_full[$i]}" &
@@ -224,7 +224,7 @@ cat ../mod/element.txt adblock*.txt \
  | sort -n | uniq >> tmp-adblock.txt
 
 # 合并AdKiller (PC)元素过滤规则
-cat tmp-adblock.txt adblock_full*.txt \
+cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
  | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
  | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-filter.txt
 
