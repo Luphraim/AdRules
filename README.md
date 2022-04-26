@@ -10,13 +10,13 @@
 
 ### 规则说明
 
-| 名称              | 描述                                                  | 订阅                                                                         |
-| ----------------- | ----------------------------------------------------- | ---------------------------------------------------------------------------- |
-| AdKiller          | 推荐用于 PC 端，如 AdGuard, Ublock Origin, AdBlock 等 | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/filter.txt) |
-| AdKiller (Mobile) | 推荐用于移动端，包括 AdGuard For Android, via 等      | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/mobile.txt) |
-| DNSFilter         | 适用于 AdGuard Home                                   | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/dns.txt)    |
-| Hosts             | 广告过滤 hosts ，重定向至 0.0.0.0                     | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/hosts.txt)  |
-| Allow             | 过滤白名单，防止误杀                                  | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/allow.txt)  |
+| 名称               | 描述                                                        | 订阅                                                                          |
+| ------------------ | ----------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| AdKiller           | 推荐用于 PC 端浏览器，如 AdGuard, Ublock Origin, AdBlock 等 | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/filter.txt)  |
+| AdKiller (Mobile)  | 推荐用于移动端 AdGuard，主要为 Adguard For Android          | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/mobile.txt)  |
+| AdKiller (Browser) | 推荐用于移动端浏览器，如 via, Vivaldi, X Browser 等         | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/browser.txt) |
+| DNSFilter          | 适用于 AdGuard Home                                         | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/dns.txt)     |
+| Hosts              | 广告过滤 hosts ，重定向至 0.0.0.0                           | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/hosts.txt)   |
 
 ### 上游规则
 
@@ -45,7 +45,6 @@
 | 通用元素过滤规则               | [Cats-Team 自定义元素过滤规则](https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt)                              |
 |                                | [I don't care about cookies](https://www.i-dont-care-about-cookies.eu/abp/)                                                                       |
 |                                | [Adblock Warning Removal List](https://easylist-downloads.adblockplus.org/antiadblockfilters.txt)                                                 |
-|                                | [Anti-Adblock Killer](https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt)                          |
 |                                | [乘风通用过滤规则](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt)，适用于 UBO 或 ADG                                |
 |                                | [乘风视频过滤规则](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt)，适用于 UBO 或 ADG                                  |
 | 元素过滤规则，推荐移动端       | [adgk 规则](https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt) @坂本大佬                                                         |
@@ -61,10 +60,11 @@
 |                                | [Fanboy's Social Blocking List](https://easylist-downloads.adblockplus.org/fanboy-social.txt) (去社交媒体图标列表，去“分享”按钮)                  |
 |                                | [BarbBlock For uBlock Origin](https://paulgb.github.io/BarbBlock/blacklists/ublock-origin.txt)                                                    |
 |                                | [Hacamer's URL Filter](https://raw.githubusercontent.com/Cats-Team/AdRule/main/url-filter.txt)                                                    |
+|                                | [Online Malicious URL Blocklist](https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt) URL-based                                     |
 | DNS 过滤规则                   | [Cats-Team 自定义 DNS 过滤规则](https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt)                                 |
 |                                | [AdGuard DNS filter](https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt)                                                          |
 |                                | [Anti-AD for AdGuardHome](https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt)（DNS 过滤）             |
-|                                | [Online Malicious URL Blocklist](https://curben.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt) (AdGuard Home)                            |
+|                                | [Online Malicious URL Blocklist](https://curben.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt) Domain-based (AdGuard Home)               |
 |                                | [LWJ's black list](https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt)                                                      |
 |                                | [Spam404](https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt)                                                              |
 |                                | [Hacamer's URL Filter](https://raw.githubusercontent.com/Cats-Team/AdRule/main/url-filter.txt)                                                    |
