@@ -153,6 +153,8 @@ adblock_lite=(
   "https://easylist-downloads.adblockplus.org/easyprivacy.txt"
   # CJX's Annoyance List (反自我推广,移除anti adblock,防跟踪规则列表)
   "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt"
+  # Adblock Warning Removal List
+  "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
   # Hacamer's URL Filter
   "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
   # Online Malicious URL Blocklist URL-based (Vivaldi)
@@ -241,18 +243,18 @@ echo '规则下载完成'
 # Start Merge and Duplicate Removal
 echo 开始合并
 # 预处理自定义规则
-cat ../mod/element.txt \
- | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
- | grep -E -v "^[\.||]+[com]+[\^]$" \
- | sort -n | uniq > ../mod/element.txt
-cat ../mod/dns.txt \
- | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
- | grep -E -v "^[\.||]+[com]+[\^]$" \
- | sort -n | uniq > ../mod/dns.txt
-cat ../mod/allowlist.txt \
- | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
- | grep -E -v "^[\.||]+[com]+[\^]$" \
- | sort -n | uniq > ../mod/allowlist.txt
+# cat ../mod/element.txt \
+#  | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
+#  | grep -E -v "^[\.||]+[com]+[\^]$" \
+#  | sort -n | uniq > ../mod/element.txt
+# cat ../mod/dns.txt \
+#  | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
+#  | grep -E -v "^[\.||]+[com]+[\^]$" \
+#  | sort -n | uniq > ../mod/dns.txt
+# cat ../mod/allowlist.txt \
+#  | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
+#  | grep -E -v "^[\.||]+[com]+[\^]$" \
+#  | sort -n | uniq > ../mod/allowlist.txt
 
 # 合并白名单规则
 cat ../mod/allowlist.txt *.txt \
@@ -276,7 +278,7 @@ cat tmp-adblock.txt adguard*.txt adblock_mo*.txt \
  | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-mobile.txt
 
 # 合并AdKiller (Browser)元素过滤规则
-cat tmp-adblock.txt adblock_lite*.txt \
+cat adblock_lite*.txt \
  | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
  | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-browser.txt
 
