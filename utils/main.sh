@@ -141,6 +141,8 @@ adblock_full=(
   "https://paulgb.github.io/BarbBlock/blacklists/ublock-origin.txt"
   # Hacamer's URL Filter
   "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
+  # Online Malicious URL Blocklist URL-based
+  "https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt"
 )
 
 # DNS过滤规则
@@ -151,7 +153,7 @@ dns=(
   "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt"
   # Anti-AD for AdGuardHome（DNS过滤）
   "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt"
-  # Online Malicious URL Blocklist (AdGuard Home)
+  # Online Malicious URL Blocklist Domain-based (AdGuard Home)
   "https://curben.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt"
   # LWJ's black list
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
@@ -196,7 +198,7 @@ for i in "${!ublock[@]}" "${!adguard[@]}" "${!adguard_ubo[@]}" "${!adguard_full[
 do
   curl --parallel --parallel-immediate -k -L -C - -o "ublock${i}.txt" --connect-timeout 60 -s "${ublock[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adguard${i}.txt" --connect-timeout 60 -s "${adguard[$i]}" &
-  # curl --parallel --parallel-immediate -k -L -C - -o "adguard_ubo${i}.txt" --connect-timeout 60 -s "${adguard_ubo[$i]}" &
+  curl --parallel --parallel-immediate -k -L -C - -o "adguard_ubo${i}.txt" --connect-timeout 60 -s "${adguard_ubo[$i]}" &
   # curl --parallel --parallel-immediate -k -L -C - -o "adguard_full${i}.txt" --connect-timeout 60 -s "${adguard_full[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock${i}.txt" --connect-timeout 60 -s "${adblock[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock_lite${i}.txt" --connect-timeout 60 -s "${adblock_lite[$i]}" &
@@ -238,7 +240,7 @@ cat ../mod/element.txt adblock*.txt \
  | sort -n | uniq >> tmp-adblock.txt
 
 # 合并AdKiller (PC)元素过滤规则
-cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
+cat tmp-adblock.txt ublock*.txt adguard_ubo*.txt adblock_full*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" | grep -v 'local.adguard.org' \
  | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-filter.txt
 
