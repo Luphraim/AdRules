@@ -217,6 +217,20 @@ echo '规则下载完成'
 
 # Start Merge and Duplicate Removal
 echo 开始合并
+# 预处理自定义规则
+cat ../mod/element.txt \
+ | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
+ | grep -E -v "^[\.||]+[com]+[\^]$" \
+ | sort -n | uniq > ../mod/element.txt
+cat ../mod/dns.txt \
+ | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
+ | grep -E -v "^[\.||]+[com]+[\^]$" \
+ | sort -n | uniq > ../mod/dns.txt
+cat ../mod/allowlist.txt \
+ | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
+ | grep -E -v "^[\.||]+[com]+[\^]$" \
+ | sort -n | uniq > ../mod/allowlist.txt
+ 
 # 合并通用元素过滤规则
 cat ../mod/element.txt adblock*.txt \
  | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
@@ -241,7 +255,7 @@ cat ../mod/dns.txt dns*.txt \
 # 合并HOSTS过滤规则
 cat hosts*.txt \
  | sed '/^$/d' | grep -E "^([0-9].*)|^((\|\|)[^\/\^]+\^$)" \
- | sed 's/127.0.0.1/0.0.0.0/' | sed 's/\^//' \
+ | sed 's/127.0.0.1/0.0.0.0/' | sed 's/\^//' | sed 's/  / /' \
  | sort -n | uniq > pre-hosts.txt
 
 # 合并Allow List
