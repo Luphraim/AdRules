@@ -66,29 +66,13 @@ ad_ubo=(
   "https://filters.adtidy.org/extension/ublock/filters/224.txt"
 )
 
-# Adguard For PC 规则
-adguard_full=(
-  # 基础过滤器
-  "https://filters.adtidy.org/windows/filters/2.txt"
-  # 移动设备过滤器
-  "https://filters.adtidy.org/windows/filters/11.txt"
-  # 防跟踪保护过滤器
-  "https://filters.adtidy.org/windows/filters/3.txt"
-  # URL跟踪过滤器
-  "https://filters.adtidy.org/windows/filters/17.txt"
-  # 社交媒体过滤器
-  "https://filters.adtidy.org/windows/filters/4.txt"
-  # 恼人广告过滤器
-  "https://filters.adtidy.org/windows/filters/14.txt"
-  # 中文过滤器
-  "https://filters.adtidy.org/windows/filters/224.txt"
-)
-
 # 元素过滤规则
 adblock=(
   # Cats-Team 自定义元素过滤规则
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
+  # LWJ's black list
+  "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
   # 乘风通用过滤规则，适用于UBO或ADG
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt"
   # 乘风视频过滤规则，适用于UBO或ADG
@@ -165,6 +149,15 @@ adblock_lite=(
   "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt"
   # 去 APP 下载广告规则
   "https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt"
+  # Cats-Team 自定义元素过滤规则
+  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
+  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
+  # Cats-Team 自定义白名单规则
+  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/allowlist.txt"
+  # LWJ's black list
+  "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
+  # LWJ's white list
+  "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt"
 )
 
 # DNS过滤规则
@@ -221,7 +214,6 @@ do
   curl --parallel --parallel-immediate -k -L -C - -o "ublock${i}.txt" --connect-timeout 60 -s "${ublock[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adguard${i}.txt" --connect-timeout 60 -s "${adguard[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "ad_ubo${i}.txt" --connect-timeout 60 -s "${ad_ubo[$i]}" &
-  # curl --parallel --parallel-immediate -k -L -C - -o "adguard_full${i}.txt" --connect-timeout 60 -s "${adguard_full[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock${i}.txt" --connect-timeout 60 -s "${adblock[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock_mo${i}.txt" --connect-timeout 60 -s "${adblock_mo[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock_pc${i}.txt" --connect-timeout 60 -s "${adblock_pc[$i]}" &
@@ -263,23 +255,23 @@ cat ../mod/allowlist.txt *.txt \
 
 # 合并通用元素过滤规则与白名单规则
 cat ../mod/element.txt allowlist.txt adblock*.txt \
- | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
+ | grep -Ev "^((\!)|(\！)|(\[)).*" | grep -v 'local.adguard.org' \
  | grep -E -v "^[\.||]+[com]+[\^]$" \
  | sort -n | uniq >> tmp-adblock.txt
 
 # 合并AdKiller (PC)元素过滤规则
 cat tmp-adblock.txt ublock*.txt ad_ubo*.txt adblock_pc*.txt \
- | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
+ | grep -Ev "^((\!)|(\！)|(\[)).*" | grep -v 'local.adguard.org' \
  | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-filter.txt
 
 # 合并AdKiller (Mobile)元素过滤规则
 cat tmp-adblock.txt adguard*.txt adblock_mo*.txt \
- | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
+ | grep -Ev "^((\!)|(\！)|(\[)).*" | grep -v 'local.adguard.org' \
  | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-mobile.txt
 
 # 合并AdKiller (Browser)元素过滤规则
-cat adblock_lite*.txt \
- | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
+cat ../mod/element.txt ../mod/allowlist.txt adblock_lite*.txt \
+ | grep -Ev "^((\!)|(\！)|(\[)).*" | grep -v 'local.adguard.org' \
  | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-browser.txt
 
 # 合并DNS过滤规则
