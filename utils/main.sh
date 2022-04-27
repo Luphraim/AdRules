@@ -49,7 +49,7 @@ adguard=(
 )
 
 # Adguard For uBlock Origin 规则
-ad_ubo=(
+ag_ubo=(
   # 基础过滤器
   "https://filters.adtidy.org/extension/ublock/filters/2.txt"
   # 移动设备过滤器
@@ -85,8 +85,8 @@ adblock=(
   # "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt"
 )
 
-# 元素过滤规则(mobile)
-adblock_mo=(
+# 元素过滤规则 (AdGuard)
+adblock_ag=(
   # Anti-AD for Adguard
   "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-adguard.txt"
   # adgk规则 @坂本大佬
@@ -105,8 +105,8 @@ adblock_mo=(
   # "https://easylist-downloads.adblockplus.org/fanboy-notifications.txt"
 )
 
-# 元素过滤规则(PC)
-adblock_pc=(
+# 元素过滤规则 (PC)
+adblock_full=(
   # EasyList (反广告主规则列表。主要面向英文网站，包含大量通用规则)
   "https://easylist-downloads.adblockplus.org/easylist.txt"
   # Easylist China (反广告主规则列表的补充。主要面向中文网站)
@@ -127,9 +127,9 @@ adblock_pc=(
   "https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt"
 )
 
-# 元素过滤规则(Browser)
+# 元素过滤规则 (Mobile)
 adblock_lite=(
-  # EasyList Lite(去广告主规则列表的精简版，只保留简体中文网站触发的规则，建议非桌面浏览器才选用。)
+  # EasyList Lite (去广告主规则列表的精简版，只保留简体中文网站触发的规则，建议非桌面浏览器才选用。)
   "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjxlist.txt"
   # Easylist China (反广告主规则列表的补充。主要面向中文网站)
   "https://easylist-downloads.adblockplus.org/easylistchina.txt"
@@ -209,14 +209,14 @@ allow=(
 )
 
 
-for i in "${!ublock[@]}" "${!adguard[@]}" "${!ad_ubo[@]}" "${!adguard_full[@]}" "${!adblock[@]}" "${!adblock_mo[@]}" "${!adblock_pc[@]}" "${!adblock_lite[@]}" "${!dns[@]}" "${!hosts[@]}" "${!allow[@]}"
+for i in "${!ublock[@]}" "${!adguard[@]}" "${!ag_ubo[@]}" "${!adguard_full[@]}" "${!adblock[@]}" "${!adblock_ag[@]}" "${!adblock_full[@]}" "${!adblock_lite[@]}" "${!dns[@]}" "${!hosts[@]}" "${!allow[@]}"
 do
   curl --parallel --parallel-immediate -k -L -C - -o "ublock${i}.txt" --connect-timeout 60 -s "${ublock[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adguard${i}.txt" --connect-timeout 60 -s "${adguard[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "ad_ubo${i}.txt" --connect-timeout 60 -s "${ad_ubo[$i]}" &
+  curl --parallel --parallel-immediate -k -L -C - -o "ag_ubo${i}.txt" --connect-timeout 60 -s "${ag_ubo[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock${i}.txt" --connect-timeout 60 -s "${adblock[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "adblock_mo${i}.txt" --connect-timeout 60 -s "${adblock_mo[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "adblock_pc${i}.txt" --connect-timeout 60 -s "${adblock_pc[$i]}" &
+  curl --parallel --parallel-immediate -k -L -C - -o "adblock_ag${i}.txt" --connect-timeout 60 -s "${adblock_ag[$i]}" &
+  curl --parallel --parallel-immediate -k -L -C - -o "adblock_full${i}.txt" --connect-timeout 60 -s "${adblock_full[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock_lite${i}.txt" --connect-timeout 60 -s "${adblock_lite[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "dns${i}.txt" --connect-timeout 60 -s "${dns[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "hosts${i}.txt" --connect-timeout 60 -s "${hosts[$i]}" &
@@ -259,20 +259,20 @@ cat ../mod/element.txt allowlist.txt adblock*.txt \
  | grep -E -v "^[\.||]+[com]+[\^]$" \
  | sort -n | uniq >> tmp-adblock.txt
 
-# 合并AdKiller (PC)元素过滤规则
-cat tmp-adblock.txt ublock*.txt ad_ubo*.txt adblock_pc*.txt \
+# 合并AdGuard元素过滤规则
+cat tmp-adblock.txt adguard*.txt adblock_ag*.txt \
+ | grep -Ev "^((\!)|(\！)|(\[)).*" | grep -v 'local.adguard.org' \
+ | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-adguard.txt
+
+# 合并AdKiller元素过滤规则
+cat tmp-adblock.txt ublock*.txt ag_ubo*.txt adblock_full*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" | grep -v 'local.adguard.org' \
  | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-filter.txt
 
-# 合并AdKiller (Mobile)元素过滤规则
-cat tmp-adblock.txt adguard*.txt adblock_mo*.txt \
- | grep -Ev "^((\!)|(\！)|(\[)).*" | grep -v 'local.adguard.org' \
- | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-mobile.txt
-
-# 合并AdKiller (Browser)元素过滤规则
+# 合并AdKiller-Lite元素过滤规则
 cat ../mod/element.txt ../mod/allowlist.txt adblock_lite*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" | grep -v 'local.adguard.org' \
- | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-browser.txt
+ | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-filter-lite.txt
 
 # 合并DNS过滤规则
 cat ../mod/dns.txt dns*.txt \
