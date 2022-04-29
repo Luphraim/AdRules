@@ -68,9 +68,6 @@ ag_ubo=(
 
 # 元素过滤规则
 adblock=(
-  # Cats-Team 自定义元素过滤规则
-  # "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
-  # "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
   # LWJ's black list
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
   # 乘风通用过滤规则，适用于UBO或ADG
@@ -168,8 +165,6 @@ adblock_lite=(
 
 # DNS过滤规则
 dns=(
-  # Cats-Team 自定义DNS过滤规则
-  # "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt"
   # AdGuard DNS filter
   "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt"
   # Anti-AD for AdGuardHome（DNS过滤）
@@ -203,7 +198,7 @@ hosts=(
   # yhosts 智能设备专用(更全,用电脑看视频网站可能出错)
   "https://raw.githubusercontent.com/VeleSila/yhosts/master/hosts"
   # GoodbyeAds
-  "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt"
+  # "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt"
   # GoodbyeAds YouTube Adblock
   "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-YouTube-AdBlock.txt"
   # GoodbyeAds Spotify AdBlock

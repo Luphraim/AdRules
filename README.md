@@ -76,6 +76,8 @@
 |                                | [BarbBlock](https://paulgb.github.io/BarbBlock/blacklists/hosts-file.txt)                                                                         |
 |                                | [NoCoin adblock list](https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt)                                           |
 |                                | [yhosts](https://raw.githubusercontent.com/VeleSila/yhosts/master/hosts) 智能设备专用(更全,用电脑看视频网站可能出错)                              |
+|                                | [GoodbyeAds YouTube Adblock](https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-YouTube-AdBlock.txt)               |
+|                                | [GoodbyeAds Spotify AdBlock](https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-Spotify-AdBlock.txt)               |
 | 白名单规则                     | [LWJ's white list](https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt)                                                      |
 |                                | [AdGuard Chinese Filters whitelist](https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/whitelist.txt)     |
 |                                | [AdGuard Spyware Filters whitelist](https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/whitelist.txt)     |
