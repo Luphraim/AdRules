@@ -83,12 +83,6 @@ adblock=(
   "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
   # Anti-Adblock Killer
   # "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt"
-  # GoodbyeAds
-  "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt"
-  # GoodbyeAds YouTube Adblock
-  "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-YouTube-AdBlock.txt"
-  # GoodbyeAds Spotify AdBlock
-  "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-Spotify-AdBlock.txt"
 )
 
 # 元素过滤规则 (AdGuard)
@@ -208,6 +202,12 @@ hosts=(
   "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"
   # yhosts 智能设备专用(更全,用电脑看视频网站可能出错)
   "https://raw.githubusercontent.com/VeleSila/yhosts/master/hosts"
+  # GoodbyeAds
+  "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt"
+  # GoodbyeAds YouTube Adblock
+  "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-YouTube-AdBlock.txt"
+  # GoodbyeAds Spotify AdBlock
+  "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-Spotify-AdBlock.txt"
 )
 
 # 白名单规则
