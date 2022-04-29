@@ -69,8 +69,8 @@ ag_ubo=(
 # 元素过滤规则
 adblock=(
   # Cats-Team 自定义元素过滤规则
-  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
-  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
+  # "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
+  # "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
   # LWJ's black list
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
   # 乘风通用过滤规则，适用于UBO或ADG
@@ -83,6 +83,12 @@ adblock=(
   "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
   # Anti-Adblock Killer
   # "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt"
+  # GoodbyeAds
+  "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt"
+  # GoodbyeAds YouTube Adblock
+  "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-YouTube-AdBlock.txt"
+  # GoodbyeAds Spotify AdBlock
+  "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-Spotify-AdBlock.txt"
 )
 
 # 元素过滤规则 (AdGuard)
@@ -97,6 +103,8 @@ adblock_ag=(
   "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt"
   # 去 APP 下载广告规则
   "https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt"
+  # GOODBYEADS Rules For Android
+  # "https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/Android.txt"
   # ADFILT
   # "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
   # ADFILT
@@ -125,6 +133,8 @@ adblock_full=(
   "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
   # Online Malicious URL Blocklist URL-based
   "https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt"
+  # GOODBYEADS Rules For PC
+  # "https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/PC.txt"
 )
 
 # 元素过滤规则 (Mobile)
@@ -158,12 +168,14 @@ adblock_lite=(
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
   # LWJ's white list
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt"
+  # GOODBYEADS Rules For Android
+  # "https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/Android.txt"
 )
 
 # DNS过滤规则
 dns=(
   # Cats-Team 自定义DNS过滤规则
-  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt"
+  # "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt"
   # AdGuard DNS filter
   "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt"
   # Anti-AD for AdGuardHome（DNS过滤）
@@ -194,6 +206,8 @@ hosts=(
   "https://paulgb.github.io/BarbBlock/blacklists/hosts-file.txt"
   # NoCoin adblock list
   "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"
+  # yhosts 智能设备专用(更全,用电脑看视频网站可能出错)
+  "https://raw.githubusercontent.com/VeleSila/yhosts/master/hosts"
 )
 
 # 白名单规则
