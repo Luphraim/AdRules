@@ -100,8 +100,6 @@ adblock_ag=(
   # "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
   # ADFILT
   # "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt"
-  # Fanboy's Notifications Blocking List
-  # "https://easylist-downloads.adblockplus.org/fanboy-notifications.txt"
 )
 
 # 元素过滤规则 (PC)
@@ -116,16 +114,16 @@ adblock_full=(
   "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt"
   # (ubo专用) CJX's uBlock list (CJX's Annoyance List的补充。)
   "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-ublock.txt"
-  # Fanboy's Social Blocking List (去社交媒体图标列表，去“分享”按钮)
-  # "https://easylist-downloads.adblockplus.org/fanboy-social.txt"
   # BarbBlock For uBlock Origin
-  "https://paulgb.github.io/BarbBlock/blacklists/ublock-origin.txt"
+  # "https://paulgb.github.io/BarbBlock/blacklists/ublock-origin.txt"
   # Hacamer's URL Filter
   "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
   # Online Malicious URL Blocklist URL-based
   "https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt"
   # GOODBYEADS Rules For PC
   # "https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/PC.txt"
+  # NoCoin adblock list
+  "https://github.com/hoshsadiq/adblock-nocoin-list/raw/master/nocoin-ublock.txt"
 )
 
 # 元素过滤规则 (Mobile)
@@ -151,10 +149,10 @@ adblock_lite=(
   # 去 APP 下载广告规则
   "https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt"
   # Cats-Team 自定义元素过滤规则
-  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
-  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
+  # "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
+  # "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
   # Cats-Team 自定义白名单规则
-  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/allowlist.txt"
+  # "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/allowlist.txt"
   # LWJ's black list
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
   # LWJ's white list
@@ -192,7 +190,7 @@ hosts=(
   # NEO DEV HOST - Lite version (Without Dead Domain inside)
   "https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host"
   # BarbBlock
-  "https://paulgb.github.io/BarbBlock/blacklists/hosts-file.txt"
+  # "https://paulgb.github.io/BarbBlock/blacklists/hosts-file.txt"
   # NoCoin adblock list
   "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"
   # yhosts 智能设备专用(更全,用电脑看视频网站可能出错)
@@ -200,9 +198,9 @@ hosts=(
   # GoodbyeAds
   # "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt"
   # GoodbyeAds YouTube Adblock
-  "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-YouTube-AdBlock.txt"
+  # "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-YouTube-AdBlock.txt"
   # GoodbyeAds Spotify AdBlock
-  "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-Spotify-AdBlock.txt"
+  # "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-Spotify-AdBlock.txt"
 )
 
 # 白名单规则
@@ -213,8 +211,6 @@ allow=(
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt"
   # AdGuard Chinese Filters whitelist
   "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/whitelist.txt"
-  # AdGuard Spyware Filters whitelist
-  "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/whitelist.txt"
 )
 
 
@@ -222,7 +218,7 @@ for i in "${!ublock[@]}" "${!adguard[@]}" "${!ag_ubo[@]}" "${!adguard_full[@]}" 
 do
   curl --parallel --parallel-immediate -k -L -C - -o "ublock${i}.txt" --connect-timeout 60 -s "${ublock[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adguard${i}.txt" --connect-timeout 60 -s "${adguard[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "ag_ubo${i}.txt" --connect-timeout 60 -s "${ag_ubo[$i]}" &
+  # curl --parallel --parallel-immediate -k -L -C - -o "ag_ubo${i}.txt" --connect-timeout 60 -s "${ag_ubo[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock${i}.txt" --connect-timeout 60 -s "${adblock[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock_ag${i}.txt" --connect-timeout 60 -s "${adblock_ag[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock_full${i}.txt" --connect-timeout 60 -s "${adblock_full[$i]}" &
@@ -274,7 +270,7 @@ cat tmp-adblock.txt adguard*.txt adblock_ag*.txt \
  | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-adguard.txt
 
 # 合并AdKiller元素过滤规则
-cat tmp-adblock.txt ublock*.txt ag_ubo*.txt adblock_full*.txt \
+cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" | grep -v 'local.adguard.org' \
  | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-filter.txt
 
