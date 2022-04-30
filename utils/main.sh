@@ -74,10 +74,6 @@ adblock=(
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt"
   # 乘风视频过滤规则，适用于UBO或ADG
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt"
-  # I don't care about cookies
-  "https://www.i-dont-care-about-cookies.eu/abp/"
-  # Adblock Warning Removal List
-  "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
   # Anti-Adblock Killer
   # "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt"
 )
@@ -94,8 +90,6 @@ adblock_ag=(
   "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt"
   # 去 APP 下载广告规则
   "https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt"
-  # GOODBYEADS Rules For Android
-  # "https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/Android.txt"
   # ADFILT
   # "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
   # ADFILT
@@ -105,25 +99,27 @@ adblock_ag=(
 # 元素过滤规则 (PC)
 adblock_full=(
   # EasyList (反广告主规则列表。主要面向英文网站，包含大量通用规则)
-  "https://easylist-downloads.adblockplus.org/easylist.txt"
+  "https://easylist.to/easylist/easylist.txt"
   # Easylist China (反广告主规则列表的补充。主要面向中文网站)
   "https://easylist-downloads.adblockplus.org/easylistchina.txt"
   # EasyPrivacy (防隐私跟踪挖矿规则列表)
-  "https://easylist-downloads.adblockplus.org/easyprivacy.txt"
+  "https://easylist.to/easylist/easyprivacy.txt"
   # CJX's Annoyance List (反自我推广,移除anti adblock,防跟踪规则列表)
   "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt"
   # (ubo专用) CJX's uBlock list (CJX's Annoyance List的补充。)
   "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-ublock.txt"
-  # BarbBlock For uBlock Origin
-  # "https://paulgb.github.io/BarbBlock/blacklists/ublock-origin.txt"
+  # Adblock Warning Removal List
+  "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
   # Hacamer's URL Filter
   "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
-  # Online Malicious URL Blocklist URL-based
-  "https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt"
-  # GOODBYEADS Rules For PC
-  # "https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/PC.txt"
   # NoCoin adblock list
   "https://github.com/hoshsadiq/adblock-nocoin-list/raw/master/nocoin-ublock.txt"
+  # I don't care about cookies
+  "https://www.i-dont-care-about-cookies.eu/abp/"
+  # Online Malicious URL Blocklist URL-based
+  # "https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt"
+  # BarbBlock For uBlock Origin
+  # "https://paulgb.github.io/BarbBlock/blacklists/ublock-origin.txt"
 )
 
 # 元素过滤规则 (Mobile)
@@ -141,18 +137,13 @@ adblock_lite=(
   # Hacamer's URL Filter
   "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
   # Online Malicious URL Blocklist URL-based (Vivaldi)
-  "https://curben.gitlab.io/malware-filter/urlhaus-filter-vivaldi-online.txt"
+  # "https://curben.gitlab.io/malware-filter/urlhaus-filter-vivaldi-online.txt"
   # 百度超级净化 @坂本大佬
   "https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt"
   # 主要去除手机盗版网站广告 @酷安：大萌主
   "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt"
   # 去 APP 下载广告规则
   "https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt"
-  # Cats-Team 自定义元素过滤规则
-  # "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
-  # "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
-  # Cats-Team 自定义白名单规则
-  # "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/allowlist.txt"
   # LWJ's black list
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
   # LWJ's white list
@@ -189,12 +180,12 @@ hosts=(
   "https://adaway.org/hosts.txt"
   # NEO DEV HOST - Lite version (Without Dead Domain inside)
   "https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host"
-  # BarbBlock
-  # "https://paulgb.github.io/BarbBlock/blacklists/hosts-file.txt"
   # NoCoin adblock list
   "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"
   # yhosts 智能设备专用(更全,用电脑看视频网站可能出错)
   "https://raw.githubusercontent.com/VeleSila/yhosts/master/hosts"
+  # BarbBlock
+  # "https://paulgb.github.io/BarbBlock/blacklists/hosts-file.txt"
   # GoodbyeAds
   # "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt"
   # GoodbyeAds YouTube Adblock
@@ -226,69 +217,72 @@ do
   curl --parallel --parallel-immediate -k -L -C - -o "dns${i}.txt" --connect-timeout 60 -s "${dns[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "hosts${i}.txt" --connect-timeout 60 -s "${hosts[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "allow${i}.txt" --connect-timeout 60 -s "${allow[$i]}" &
-  # shellcheck disable=SC2181
 done
 wait
 
+# 其他规则
 curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list \
  | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts999.txt
 curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list \
  | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts998.txt
+
+# Cats-Team 自定义元素过滤规则
+curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt > element0.txt
+curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt > element1.txt
+# GOODBYEADS Rules For Android
+curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/Android.txt | grep -Ev "^(\#).*" > element2.txt
+# GOODBYEADS Rules For PC
+curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/PC.txt | grep -Ev "^(\#).*" > element3.txt
+# Cats-Team 自定义DNS过滤规则
+curl --connect-timeout 60 -s -o - https://github.com/Cats-Team/AdRules/raw/main/mod/rules/dns-rule-allow.txt > perdns0.txt
+curl --connect-timeout 60 -s -o - https://github.com/Cats-Team/AdRules/raw/main/mod/rules/dns-rules.txt > perdns1.txt
 echo '规则下载完成'
 
 
 # Start Merge and Duplicate Removal
 echo 开始合并
 # 预处理自定义规则
-# cat ../mod/element.txt \
-#  | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
-#  | grep -E -v "^[\.||]+[com]+[\^]$" \
-#  | sort -n | uniq > ../mod/element.txt
-# cat ../mod/dns.txt \
-#  | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
-#  | grep -E -v "^[\.||]+[com]+[\^]$" \
-#  | sort -n | uniq > ../mod/dns.txt
-# cat ../mod/allowlist.txt \
-#  | grep -Ev "^((\!)|(\[)).*" | grep -v 'local.adguard.org' \
-#  | grep -E -v "^[\.||]+[com]+[\^]$" \
-#  | sort -n | uniq > ../mod/allowlist.txt
+cat ../mod/static.txt element*.txt \
+ | grep -Ev "^((\!)|(\！)|(\[)).*" \
+ | sort -u > ../mod/element.txt
+cat perdns*.txt \
+ | grep -Ev "^((\!)|(\！)|(\[)).*" \
+ | sort -u > ../mod/dns.txt
 
 # 合并白名单规则
 cat ../mod/allowlist.txt *.txt \
- | grep '^@' \
- | sort -n | uniq > allowlist.txt
+ | grep '^@' | sort -u > allowlist.txt
 
 # 合并通用元素过滤规则与白名单规则
 cat ../mod/element.txt allowlist.txt adblock*.txt \
- | grep -Ev "^((\!)|(\！)|(\[)).*" | grep -v 'local.adguard.org' \
- | grep -E -v "^[\.||]+[com]+[\^]$" \
- | sort -n | uniq >> tmp-adblock.txt
+ | grep -Ev "^((\!)|(\！)|(\[)).*" \
+ | sort -u > tmp-adblock.txt
 
 # 合并AdGuard元素过滤规则
 cat tmp-adblock.txt adguard*.txt adblock_ag*.txt \
- | grep -Ev "^((\!)|(\！)|(\[)).*" | grep -v 'local.adguard.org' \
- | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-adguard.txt
+ | grep -Ev "^((\!)|(\！)|(\[)).*" \
+ | sort -u > pre-adguard.txt
 
 # 合并AdKiller元素过滤规则
 cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
- | grep -Ev "^((\!)|(\！)|(\[)).*" | grep -v 'local.adguard.org' \
- | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-filter.txt
+ | grep -Ev "^((\!)|(\！)|(\[)).*" \
+ | sort -u > pre-filter.txt
 
 # 合并AdKiller-Lite元素过滤规则
 cat ../mod/element.txt ../mod/allowlist.txt adblock_lite*.txt \
- | grep -Ev "^((\!)|(\！)|(\[)).*" | grep -v 'local.adguard.org' \
- | sort -u | sort -n | uniq | awk '!a[$0]++' > pre-filter-lite.txt
+ | grep -Ev "^((\!)|(\！)|(\[)).*" \
+ | sort -u > pre-filter-lite.txt
 
 # 合并DNS过滤规则
 cat ../mod/dns.txt dns*.txt \
  | grep -v '^!' \
- | sort -n | uniq > pre-dns.txt
+ | sort -u > pre-dns.txt
 
 # 合并HOSTS过滤规则
 cat hosts*.txt \
  | sed '/^$/d' | grep -E "^([0-9].*)|^((\|\|)[^\/\^]+\^$)" \
  | sed 's/127.0.0.1/0.0.0.0/' | sed 's/\^//' | sed 's/  / /' \
- | sort -n | uniq > pre-hosts.txt
+ | sort -u > pre-hosts.txt
 
 
 echo 规则合并完成
@@ -313,7 +307,7 @@ for i in $diffFile; do
  new=$(echo "$i" |sed 's/pre-//g')
  echo "! Total count: $n" > $i-tpdate.txt
  cat ../../utils/title/$new ./tpdate.txt ./$i-tpdate.txt ./$i \
- | awk '!a[$0]++' | sed '/^$/d' > ../../$new
+ | sed '/^$/d' > ../../$new
 done
 
 echo '规则处理完成'
