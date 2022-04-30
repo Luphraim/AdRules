@@ -67,15 +67,13 @@ ag_ubo=(
 )
 
 # 元素过滤规则
-adblock=(
+common=(
   # LWJ's black list
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
   # 乘风通用过滤规则，适用于UBO或ADG
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt"
   # 乘风视频过滤规则，适用于UBO或ADG
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt"
-  # Anti-Adblock Killer
-  # "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt"
 )
 
 # 元素过滤规则 (AdGuard)
@@ -110,6 +108,8 @@ adblock_full=(
   "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-ublock.txt"
   # Adblock Warning Removal List
   "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
+  # Anti-Adblock Killer
+  # "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt"
   # Hacamer's URL Filter
   "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
   # NoCoin adblock list
@@ -119,7 +119,7 @@ adblock_full=(
   # Online Malicious URL Blocklist URL-based
   "https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt"
   # BarbBlock For uBlock Origin
-  # "https://paulgb.github.io/BarbBlock/blacklists/ublock-origin.txt"
+  "https://paulgb.github.io/BarbBlock/blacklists/ublock-origin.txt"
 )
 
 # 元素过滤规则 (Mobile)
@@ -148,8 +148,6 @@ adblock_lite=(
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
   # LWJ's white list
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt"
-  # GOODBYEADS Rules For Android
-  # "https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/Android.txt"
 )
 
 # DNS过滤规则
@@ -205,12 +203,12 @@ allow=(
 )
 
 
-for i in "${!ublock[@]}" "${!adguard[@]}" "${!ag_ubo[@]}" "${!adguard_full[@]}" "${!adblock[@]}" "${!adblock_ag[@]}" "${!adblock_full[@]}" "${!adblock_lite[@]}" "${!dns[@]}" "${!hosts[@]}" "${!allow[@]}"
+for i in "${!ublock[@]}" "${!adguard[@]}" "${!ag_ubo[@]}" "${!adguard_full[@]}" "${!common[@]}" "${!adblock_ag[@]}" "${!adblock_full[@]}" "${!adblock_lite[@]}" "${!dns[@]}" "${!hosts[@]}" "${!allow[@]}"
 do
   curl --parallel --parallel-immediate -k -L -C - -o "ublock${i}.txt" --connect-timeout 60 -s "${ublock[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adguard${i}.txt" --connect-timeout 60 -s "${adguard[$i]}" &
   # curl --parallel --parallel-immediate -k -L -C - -o "ag_ubo${i}.txt" --connect-timeout 60 -s "${ag_ubo[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "adblock${i}.txt" --connect-timeout 60 -s "${adblock[$i]}" &
+  curl --parallel --parallel-immediate -k -L -C - -o "common${i}.txt" --connect-timeout 60 -s "${common[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock_ag${i}.txt" --connect-timeout 60 -s "${adblock_ag[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock_full${i}.txt" --connect-timeout 60 -s "${adblock_full[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock_lite${i}.txt" --connect-timeout 60 -s "${adblock_lite[$i]}" &
@@ -254,7 +252,7 @@ cat ../mod/allowlist.txt *.txt \
  | grep '^@' | sort -u > allowlist.txt
 
 # 合并通用元素过滤规则与白名单规则
-cat ../mod/element.txt allowlist.txt adblock*.txt \
+cat ../mod/element.txt allowlist.txt common*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
  | sort -u > tmp-adblock.txt
 
@@ -269,7 +267,7 @@ cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
  | sort -u > pre-filter.txt
 
 # 合并AdKiller-Lite元素过滤规则
-cat ../mod/element.txt ../mod/allowlist.txt adblock_lite*.txt \
+cat ../mod/element.txt allowlist.txt adblock_lite*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
  | sort -u > pre-filter-lite.txt
 
