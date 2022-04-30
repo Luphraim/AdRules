@@ -216,6 +216,7 @@ cat ../mod/static.txt element*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
  | sort -u > ../mod/element.txt
 cat ../mod/element.txt perdns*.txt \
+ | grep "\/" \
  | grep -E "^[\||].*[\^]$" \
  | sort -u > ../mod/dns.txt
 
@@ -258,7 +259,7 @@ cat allowlist.txt tmp-domains.txt \
  | sort -u > pre-dns.txt
 
 # 合并并转化为HOSTS过滤规则
-cat hosts*.txt \
+cat tmp-domains.txt \
  | grep -Ev "^@" \
  | sed 's/||/0.0.0.0 /g' | sed 's/\^//g' \
  | sort -u > pre-hosts.txt
