@@ -36,8 +36,6 @@
 |                          | [社交媒体过滤器](https://filters.adtidy.org/android/filters/4_optimized.txt)                                                                      |
 |                          | [恼人广告过滤器](https://filters.adtidy.org/android/filters/14_optimized.txt)                                                                     |
 |                          | [中文过滤器](https://filters.adtidy.org/android/filters/224_optimized.txt)                                                                        |
-|                          | [I don't care about cookies](https://www.i-dont-care-about-cookies.eu/abp/)                                                                       |
-|                          | [Adblock Warning Removal List](https://easylist-downloads.adblockplus.org/antiadblockfilters.txt)                                                 |
 | 通用元素过滤规则         | [乘风通用过滤规则](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt)，适用于 UBO 或 ADG                                |
 |                          | [乘风视频过滤规则](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt)，适用于 UBO 或 ADG                                  |
 | 元素过滤规则，推荐移动端 | [adgk 规则](https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt) @坂本大佬                                                         |
@@ -52,16 +50,12 @@
 |                          | (ubo 专用) [CJX's uBlock list](https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-ublock.txt) (CJX's Annoyance List 的补充。)          |
 |                          | [Hacamer's URL Filter](https://raw.githubusercontent.com/Cats-Team/AdRule/main/url-filter.txt)                                                    |
 |                          | [Online Malicious URL Blocklist](https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt) URL-based                                     |
-|                          | [NoCoin adblock list](https://github.com/hoshsadiq/adblock-nocoin-list/raw/master/nocoin-ublock.txt)                                              |
 |                          | [I don't care about cookies](https://www.i-dont-care-about-cookies.eu/abp/)                                                                       |
 |                          | [Adblock Warning Removal List](https://easylist-downloads.adblockplus.org/antiadblockfilters.txt)                                                 |
 |                          | [Anti-Adblock Killer](https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt)                          |
-|                          | [BarbBlock For uBlock Origin](https://paulgb.github.io/BarbBlock/blacklists/ublock-origin.txt)                                                    |
 | DNS 过滤规则             | [AdGuard DNS filter](https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt)                                                          |
 |                          | [Anti-AD for AdGuardHome](https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt)（DNS 过滤）             |
 |                          | [Online Malicious URL Blocklist](https://curben.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt) Domain-based (AdGuard Home)               |
-|                          | [Spam404](https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt)                                                              |
-|                          | [Hacamer's URL Filter](https://raw.githubusercontent.com/Cats-Team/AdRule/main/url-filter.txt)                                                    |
 | HOSTS 过滤               | [大圣净化规则](https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts)                                                                   |
 |                          | [neoHosts - Basic Hosts](https://cdn.jsdelivr.net/gh/neoFelhz/neohosts@gh-pages/basic/hosts.txt) 基础、克制的数据，推荐所有用户使用。             |
 |                          | [AdAway](https://adaway.org/hosts.txt)                                                                                                            |

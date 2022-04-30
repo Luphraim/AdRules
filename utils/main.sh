@@ -88,8 +88,6 @@ adblock_ag=(
   "https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt"
   # ADFILT
   # "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
-  # ADFILT
-  # "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt"
 )
 
 # 元素过滤规则 (PC)
@@ -110,32 +108,20 @@ adblock_full=(
   "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt"
   # Hacamer's URL Filter
   "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
-  # NoCoin adblock list
-  "https://github.com/hoshsadiq/adblock-nocoin-list/raw/master/nocoin-ublock.txt"
   # I don't care about cookies
   "https://www.i-dont-care-about-cookies.eu/abp/"
   # Online Malicious URL Blocklist URL-based
   "https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt"
-  # BarbBlock For uBlock Origin
-  "https://paulgb.github.io/BarbBlock/blacklists/ublock-origin.txt"
 )
 
 # 元素过滤规则 (Mobile)
 adblock_lite=(
-  # EasyList Lite (去广告主规则列表的精简版，只保留简体中文网站触发的规则，建议非桌面浏览器才选用。)
-  "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjxlist.txt"
-  # Easylist China (反广告主规则列表的补充。主要面向中文网站)
-  "https://easylist-downloads.adblockplus.org/easylistchina.txt"
-  # EasyPrivacy (防隐私跟踪挖矿规则列表)
-  "https://easylist-downloads.adblockplus.org/easyprivacy.txt"
-  # CJX's Annoyance List (反自我推广,移除anti adblock,防跟踪规则列表)
-  "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt"
+  # halflife规则，[推荐移动端]合并自乘风视频广告过滤规则、EasylistChina、EasylistLite、CJX'sAnnoyance，以及补充的一些规则
+  "https://raw.githubusercontents.com/o0HalfLife0o/list/master/ad.txt"
   # Adblock Warning Removal List
   "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
   # Hacamer's URL Filter
   "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
-  # Online Malicious URL Blocklist URL-based (Vivaldi)
-  # "https://curben.gitlab.io/malware-filter/urlhaus-filter-vivaldi-online.txt"
   # 百度超级净化 @坂本大佬
   "https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt"
   # 主要去除手机盗版网站广告 @酷安：大萌主
@@ -152,12 +138,6 @@ dns=(
   "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt"
   # Online Malicious URL Blocklist Domain-based (AdGuard Home)
   "https://curben.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt"
-  # Spam404
-  "https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt"
-  # Hacamer's URL Filter
-  "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
-  # ADFILT
-  # "https://raw.githubusercontent.com/DandlionSprout/adfilt/master/AdGuard%20Home%20Compilation%20List/AdGuardHomeCompilationList-Notifications.txt"
 )
 
 # HOSTS过滤
@@ -174,8 +154,6 @@ hosts=(
   "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"
   # yhosts 智能设备专用(更全,用电脑看视频网站可能出错)
   "https://raw.githubusercontent.com/VeleSila/yhosts/master/hosts"
-  # BarbBlock
-  # "https://paulgb.github.io/BarbBlock/blacklists/hosts-file.txt"
   # GoodbyeAds
   # "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt"
   # GoodbyeAds YouTube Adblock
@@ -237,8 +215,8 @@ echo 开始合并
 cat ../mod/static.txt element*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
  | sort -u > ../mod/element.txt
-cat perdns*.txt \
- | grep -Ev "^((\!)|(\！)|(\[)).*" \
+cat ../mod/element.txt perdns*.txt \
+ | grep -E "^[\||].*[\^]$" \
  | sort -u > ../mod/dns.txt
 
 # 合并白名单规则
@@ -265,15 +243,24 @@ cat tmp-adblock.txt adblock_lite*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
  | sort -u > pre-filter-lite.txt
 
-# 合并DNS过滤规则
-cat ../mod/dns.txt allowlist.txt dns*.txt \
- | grep -v '^!' \
+# 预处理DNS规则和HOSTS规则
+cat ../mod/dns.txt dns*.txt hosts*.txt \
+ | grep -Ev "^((#.*)|(\s*))$" \
+ | grep -Ev "^[0-9f\.:]+\s+(ip6\-)|(localhost|local|loopback)$" \
+ | grep -Ev "local.*\.local.*$" \
+ | grep -Ev "^((\!)|(\！)|(\[)).*" \
+ | sed s/127.0.0.1/0.0.0.0/ | sed s/::/0.0.0.0/g | sed 's/  / /' \
+ | sort -u > tmp-domains.txt
+
+# 合并并转化为DNS过滤规则
+cat allowlist.txt tmp-domains.txt \
+ | sed 's/0.0.0.0 /||/g' | sed 's/$/&^/g' \
  | sort -u > pre-dns.txt
 
-# 合并HOSTS过滤规则
+# 合并并转化为HOSTS过滤规则
 cat hosts*.txt \
- | sed '/^$/d' | grep -E "^([0-9].*)|^((\|\|)[^\/\^]+\^$)" \
- | sed 's/127.0.0.1/0.0.0.0/' | sed 's/\^//' | sed 's/  / /' \
+ | grep -Ev "^@" \
+ | sed 's/||/0.0.0.0 /g' | sed 's/\^//g' \
  | sort -u > pre-hosts.txt
 
 
