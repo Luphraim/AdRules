@@ -36,23 +36,25 @@
 |                          | [社交媒体过滤器](https://filters.adtidy.org/android/filters/4_optimized.txt)                                                                      |
 |                          | [恼人广告过滤器](https://filters.adtidy.org/android/filters/14_optimized.txt)                                                                     |
 |                          | [中文过滤器](https://filters.adtidy.org/android/filters/224_optimized.txt)                                                                        |
-| 通用元素过滤规则         | [I don't care about cookies](https://www.i-dont-care-about-cookies.eu/abp/)                                                                       |
+|                          | [I don't care about cookies](https://www.i-dont-care-about-cookies.eu/abp/)                                                                       |
 |                          | [Adblock Warning Removal List](https://easylist-downloads.adblockplus.org/antiadblockfilters.txt)                                                 |
-|                          | [乘风通用过滤规则](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt)，适用于 UBO 或 ADG                                |
+| 通用元素过滤规则         | [乘风通用过滤规则](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt)，适用于 UBO 或 ADG                                |
 |                          | [乘风视频过滤规则](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt)，适用于 UBO 或 ADG                                  |
 | 元素过滤规则，推荐移动端 | [adgk 规则](https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt) @坂本大佬                                                         |
 |                          | [百度超级净化](https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt) @坂本大佬                                             |
 |                          | [Anti-AD for Adguard](https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-adguard.txt)                              |
 |                          | [主要去除手机盗版网站广告](https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt) @酷安：大萌主                                     |
 |                          | [去 APP 下载广告规则](https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt)                                          |
-| 元素过滤规则，推荐 PC 端 | [EasyList](https://easylist-downloads.adblockplus.org/easylist.txt) (反广告主规则列表。主要面向英文网站，包含大量通用规则)                        |
+| 元素过滤规则，推荐 PC 端 | [EasyList](https://easylist.to/easylist/easylist.txt) (反广告主规则列表。主要面向英文网站，包含大量通用规则)                                      |
 |                          | [Easylist China](https://easylist-downloads.adblockplus.org/easylistchina.txt) (反广告主规则列表的补充。主要面向中文网站)                         |
-|                          | [EasyPrivacy](https://easylist-downloads.adblockplus.org/easyprivacy.txt) (防隐私跟踪挖矿规则列表)                                                |
+|                          | [EasyPrivacy](https://easylist.to/easylist/easyprivacy.txt) (防隐私跟踪挖矿规则列表)                                                              |
 |                          | [CJX's Annoyance List](https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt) (反自我推广,移除 anti adblock,防跟踪规则列表) |
 |                          | (ubo 专用) [CJX's uBlock list](https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-ublock.txt) (CJX's Annoyance List 的补充。)          |
 |                          | [Hacamer's URL Filter](https://raw.githubusercontent.com/Cats-Team/AdRule/main/url-filter.txt)                                                    |
 |                          | [Online Malicious URL Blocklist](https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt) URL-based                                     |
 |                          | [NoCoin adblock list](https://github.com/hoshsadiq/adblock-nocoin-list/raw/master/nocoin-ublock.txt)                                              |
+|                          | [I don't care about cookies](https://www.i-dont-care-about-cookies.eu/abp/)                                                                       |
+|                          | [Adblock Warning Removal List](https://easylist-downloads.adblockplus.org/antiadblockfilters.txt)                                                 |
 | DNS 过滤规则             | [AdGuard DNS filter](https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt)                                                          |
 |                          | [Anti-AD for AdGuardHome](https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt)（DNS 过滤）             |
 |                          | [Online Malicious URL Blocklist](https://curben.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt) Domain-based (AdGuard Home)               |
@@ -67,7 +69,6 @@
 |                          | [yhosts](https://raw.githubusercontent.com/VeleSila/yhosts/master/hosts) 智能设备专用(更全,用电脑看视频网站可能出错)                              |
 | 白名单规则               | [LWJ's white list](https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt)                                                      |
 |                          | [AdGuard Chinese Filters whitelist](https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/whitelist.txt)     |
-|                          | [AdGuard Spyware Filters whitelist](https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/SpywareFilter/sections/whitelist.txt)     |
 |                          | 上述所有规则里的白名单规则                                                                                                                        |
 | 其他（rules/mod 下)      | 自定义元素过滤规则(element.txt)                                                                                                                   |
 |                          | 自定义 url 过滤规则(dns.txt)                                                                                                                      |

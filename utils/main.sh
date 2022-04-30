@@ -117,7 +117,7 @@ adblock_full=(
   # I don't care about cookies
   "https://www.i-dont-care-about-cookies.eu/abp/"
   # Online Malicious URL Blocklist URL-based
-  # "https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt"
+  "https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt"
   # BarbBlock For uBlock Origin
   # "https://paulgb.github.io/BarbBlock/blacklists/ublock-origin.txt"
 )
@@ -234,8 +234,8 @@ curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/8680/GOODBYE
 # GOODBYEADS Rules For PC
 curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/PC.txt | grep -Ev "^(\#).*" > element3.txt
 # Cats-Team 自定义DNS过滤规则
-curl --connect-timeout 60 -s -o - https://github.com/Cats-Team/AdRules/raw/main/mod/rules/dns-rule-allow.txt > perdns0.txt
-curl --connect-timeout 60 -s -o - https://github.com/Cats-Team/AdRules/raw/main/mod/rules/dns-rules.txt > perdns1.txt
+curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rule-allow.txt > perdns0.txt
+curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt > perdns1.txt
 echo '规则下载完成'
 
 
