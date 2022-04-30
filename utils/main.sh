@@ -263,7 +263,7 @@ cat allowlist.txt tmp-domains.txt \
 cat tmp-domains.txt \
  | grep -Ev "^@" \
  | sed 's/||/0.0.0.0 /g' | sed 's/\^//g' \
- | grep -E "^[0.0.0.0].*" \
+ | grep -E "^(0.0.0.0).*" \
  | sort -u > pre-hosts.txt
 
 
