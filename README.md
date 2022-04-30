@@ -55,10 +55,11 @@
 |                          | [NoCoin adblock list](https://github.com/hoshsadiq/adblock-nocoin-list/raw/master/nocoin-ublock.txt)                                              |
 |                          | [I don't care about cookies](https://www.i-dont-care-about-cookies.eu/abp/)                                                                       |
 |                          | [Adblock Warning Removal List](https://easylist-downloads.adblockplus.org/antiadblockfilters.txt)                                                 |
+|                          | [Anti-Adblock Killer](https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt)                          |
+|                          | [BarbBlock For uBlock Origin](https://paulgb.github.io/BarbBlock/blacklists/ublock-origin.txt)                                                    |
 | DNS 过滤规则             | [AdGuard DNS filter](https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt)                                                          |
 |                          | [Anti-AD for AdGuardHome](https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt)（DNS 过滤）             |
 |                          | [Online Malicious URL Blocklist](https://curben.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt) Domain-based (AdGuard Home)               |
-|                          | [LWJ's black list](https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt)                                                      |
 |                          | [Spam404](https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt)                                                              |
 |                          | [Hacamer's URL Filter](https://raw.githubusercontent.com/Cats-Team/AdRule/main/url-filter.txt)                                                    |
 | HOSTS 过滤               | [大圣净化规则](https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts)                                                                   |
@@ -67,9 +68,6 @@
 |                          | [NEO DEV HOST - Lite version](https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host) (Without Dead Domain inside)               |
 |                          | [NoCoin adblock list](https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt)                                           |
 |                          | [yhosts](https://raw.githubusercontent.com/VeleSila/yhosts/master/hosts) 智能设备专用(更全,用电脑看视频网站可能出错)                              |
-| 白名单规则               | [LWJ's white list](https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt)                                                      |
-|                          | [AdGuard Chinese Filters whitelist](https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/whitelist.txt)     |
-|                          | 上述所有规则里的白名单规则                                                                                                                        |
 | 其他（rules/mod 下)      | 自定义元素过滤规则(element.txt)                                                                                                                   |
 |                          | 自定义 url 过滤规则(dns.txt)                                                                                                                      |
 |                          | 自定义白名单规则(allowlist.txt)                                                                                                                   |

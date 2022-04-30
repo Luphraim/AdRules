@@ -68,8 +68,6 @@ ag_ubo=(
 
 # 元素过滤规则
 common=(
-  # LWJ's black list
-  "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
   # 乘风通用过滤规则，适用于UBO或ADG
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt"
   # 乘风视频过滤规则，适用于UBO或ADG
@@ -109,7 +107,7 @@ adblock_full=(
   # Adblock Warning Removal List
   "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
   # Anti-Adblock Killer
-  # "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt"
+  "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt"
   # Hacamer's URL Filter
   "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
   # NoCoin adblock list
@@ -144,10 +142,6 @@ adblock_lite=(
   "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt"
   # 去 APP 下载广告规则
   "https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt"
-  # LWJ's black list
-  "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
-  # LWJ's white list
-  "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt"
 )
 
 # DNS过滤规则
@@ -158,8 +152,6 @@ dns=(
   "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt"
   # Online Malicious URL Blocklist Domain-based (AdGuard Home)
   "https://curben.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt"
-  # LWJ's black list
-  "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
   # Spam404
   "https://raw.githubusercontent.com/Spam404/lists/master/main-blacklist.txt"
   # Hacamer's URL Filter
@@ -234,6 +226,8 @@ curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/8680/GOODBYE
 # Cats-Team 自定义DNS过滤规则
 curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rule-allow.txt > perdns0.txt
 curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt > perdns1.txt
+# LWJ's black list
+curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt > perdns2.txt
 echo '规则下载完成'
 
 
@@ -252,7 +246,7 @@ cat ../mod/allowlist.txt *.txt \
  | grep '^@' | sort -u > allowlist.txt
 
 # 合并通用元素过滤规则与白名单规则
-cat ../mod/element.txt allowlist.txt common*.txt \
+cat ../mod/element.txt ../mod/dns.txt allowlist.txt common*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
  | sort -u > tmp-adblock.txt
 
@@ -267,12 +261,12 @@ cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
  | sort -u > pre-filter.txt
 
 # 合并AdKiller-Lite元素过滤规则
-cat ../mod/element.txt allowlist.txt adblock_lite*.txt \
+cat tmp-adblock.txt adblock_lite*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
  | sort -u > pre-filter-lite.txt
 
 # 合并DNS过滤规则
-cat ../mod/dns.txt dns*.txt \
+cat ../mod/dns.txt allowlist.txt dns*.txt \
  | grep -v '^!' \
  | sort -u > pre-dns.txt
 
