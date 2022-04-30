@@ -216,7 +216,7 @@ cat ../mod/static.txt element*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
  | sort -u > ../mod/element.txt
 cat ../mod/element.txt perdns*.txt \
- | grep "\/" \
+ | grep -Ev "\/" \
  | grep -E "^[\||].*[\^]$" \
  | sort -u > ../mod/dns.txt
 
@@ -246,6 +246,7 @@ cat tmp-adblock.txt adblock_lite*.txt \
 
 # 预处理DNS规则和HOSTS规则
 cat ../mod/dns.txt dns*.txt hosts*.txt \
+ | grep -Ev "\/" \
  | grep -Ev "^((#.*)|(\s*))$" \
  | grep -Ev "^[0-9f\.:]+\s+(ip6\-)|(localhost|local|loopback)$" \
  | grep -Ev "local.*\.local.*$" \
@@ -262,6 +263,7 @@ cat allowlist.txt tmp-domains.txt \
 cat tmp-domains.txt \
  | grep -Ev "^@" \
  | sed 's/||/0.0.0.0 /g' | sed 's/\^//g' \
+ | grep -E "^[0.0.0.0].*" \
  | sort -u > pre-hosts.txt
 
 
