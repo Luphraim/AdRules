@@ -226,12 +226,14 @@ cat hosts*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
  | grep -Ev "^((#.*)|(\s*))$" \
  | grep -Ev "^[0-9f\.:]+\s+(ip6\-)|(localhost|loopback)$" \
- | sed s/127.0.0.1/0.0.0.0/ | sed s/::/0.0.0.0/g | sed 's/  / /' \
+ | sed s/127.0.0.1/0.0.0.0/ \
+ | sed s/::/0.0.0.0/g \
+ | sed 's/  / /' \
  | sort -u > tmp-hosts.txt
 
 # 合并白名单规则
 cat ../mod/allowlist.txt *.txt \
- | grep '^@' | sed 's/^^/^/g' \
+ | grep "^(\@\@).*" | sed 's/^^/^/g' \
  | sort -u > allowlist.txt
 
 # 合并通用过滤规则与白名单规则
@@ -281,13 +283,15 @@ cat tmp-ag-element*.txt \
 cat ../mod/dns.txt allowlist.txt dns*.txt tmp-hosts.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
  | sed 's/^^/^/g' \
- | sed 's/0.0.0.0 /||/g' | sed 's/$/&^/g' \
+ | sed 's/0.0.0.0 /||/g' \
+ | sed 's/$/&^/g' \
  | sort -u > pre-dns.txt
 
 # 合并并转化为HOSTS过滤规则
 cat pre-dns.txt tmp-hosts.txt \
- | grep -Ev "^@" \
- | sed 's/||/0.0.0.0 /g' | sed 's/\^//g' \
+ | grep -Ev "^(\@\@).*" \
+ | sed 's/||/0.0.0.0 /g' \
+ | sed 's/\^//g' \
  | grep -E "^(0.0.0.0).*" \
  | sort -u > pre-hosts.txt
 
@@ -306,7 +310,7 @@ echo '移动完成'
 
 # Start Add title and date
 diffFile="$(ls | sort -u)"
-echo "! Version: $(TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S') " > tpdate.txt
+echo "! Version: $(TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S')（北京时间） " > tpdate.txt
 for i in $diffFile;
 do
   n=`cat $i | wc -l`
