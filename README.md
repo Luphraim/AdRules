@@ -8,15 +8,19 @@
 
 个人使用对象分别为：PC 端的 uBlock Origin，移动端的 Adguard 及 via，DNS 层面的 Adguard Home，对其他使用方式未作适配，如有需求，可 fork 本仓库自行调整。
 
+移动端 AdGuard 推荐 AdGuard-DNS 和 AdGuard-Element 结合使用，不想开 DNS 过滤的只订阅 AdGuard 即可。
+
 ### 规则说明
 
-| 名称          | 描述                                                        | 订阅                                                                              |
-| ------------- | ----------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| AdGuard       | 推荐用于移动端 AdGuard，主要为 Adguard For Android          | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/adguard.txt)     |
-| AdKiller      | 推荐用于 PC 端浏览器，如 AdGuard, Ublock Origin, AdBlock 等 | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/filter.txt)      |
-| AdKiller-Lite | 推荐用于移动端浏览器，如 via, Vivaldi, X Browser 等         | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/filter-lite.txt) |
-| DNSFilter     | 适用于 AdGuard Home                                         | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/dns.txt)         |
-| Hosts         | 广告过滤 hosts ，重定向至 0.0.0.0                           | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/hosts.txt)       |
+| 名称            | 描述                                                        | 订阅                                                                                  |
+| --------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| AdGuard         | 推荐用于移动端 AdGuard，主要为 Adguard For Android          | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/adguard.txt)         |
+| AdKiller        | 推荐用于 PC 端浏览器，如 AdGuard, Ublock Origin, AdBlock 等 | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/filter.txt)          |
+| AdKiller-Lite   | 推荐用于移动端浏览器，如 via, Vivaldi, X Browser 等         | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/filter-lite.txt)     |
+| DNSFilter       | 适用于 AdGuard Home                                         | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/dns.txt)             |
+| Hosts           | 广告过滤 hosts ，重定向至 0.0.0.0                           | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/hosts.txt)           |
+| AdGuard-DNS     | AdGuard 的 DNS 提取规则，适用于 AdGuard 的 DNS 功能         | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/adguard-dns.txt)     |
+| AdGuard-Element | AdGuard 的元素提取规则，适用于 AdGuard 的内容拦截功能       | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/adguard-element.txt) |
 
 ### 上游规则
 
