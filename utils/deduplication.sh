@@ -215,12 +215,10 @@ echo 开始合并
 cat ../mod/static.txt element*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
  | sort -u > ../mod/element.txt
-wait
 cat ../mod/element.txt perdns*.txt \
- | grep -E "^([||]|@).*[\^]$" \
+ | grep -E "^(((\|\|)|(\@\@))\S+\^$)" \
  | grep -Ev "\/" \
  | sort -u > ../mod/dns.txt
-wait
 
 # 预处理HOSTS规则
 cat hosts*.txt \
@@ -229,72 +227,59 @@ cat hosts*.txt \
  | grep -Ev "^[0-9f\.:]+\s+(ip6\-)|(localhost|loopback)$" \
  | sed s/127.0.0.1/0.0.0.0/ | sed s/::/0.0.0.0/g | sed 's/  / /' \
  | sort -u > tmp-hosts.txt
-wait
 
 # 合并白名单规则
 cat ../mod/allowlist.txt *.txt \
  | grep '^@' | sort -u > allowlist.txt
-wait
 
 # 合并通用过滤规则与白名单规则
 cat ../mod/element.txt ../mod/dns.txt allowlist.txt common*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
  | sort -u > tmp-adblock.txt
-wait
 
 # 合并AdKiller过滤规则
 cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
  | sort -u > pre-filter.txt
-wait
 
 # 合并AdKiller-Lite过滤规则
 cat tmp-adblock.txt adblock_lite*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
  | sort -u > pre-filter-lite.txt
-wait
 
 # 合并AdGuard过滤规则
 cat tmp-adblock.txt adguard*.txt adblock_ag*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
  | sort -u > pre-adguard.txt
-wait
 
 # 分别提取AdGuard DNS规则和元素过滤规则
 cat pre-adguard.txt dns0.txt \
- | grep -E "^([||]|@).*[\^]$" \
+ | grep -E "^(((\|\|)|(\@\@))\S+\^$)" \
  | grep -Ev "(\/)|(&$)" \
  | sort -u > tmp-ag-dns.txt
-wait
 cat tmp-ag-dns.txt tmp-hosts.txt \
  | sed 's/0.0.0.0 /||/g' | sed 's/$/&^/g' \
  | sort -u > pre-adguard-dns.txt
-wait
 cat pre-adguard.txt \
- | grep -E "^([||]|@).*[\^]$" \
+ | grep -E "^(((\|\|)|(\@\@))\S+\^$)" \
  | grep -E "(\/)|(&$)" \
  | sort -u > tmp-ag-element0.txt
-wait
 cat pre-adguard.txt \
- | grep -Ev "^([||]|@).*[\^]$" \
+ | grep -Ev "^(((\|\|)|(\@\@))\S+\^$)" \
  | sort -u > tmp-ag-element1.txt
-wait
 cat tmp-ag-element*.txt \
  | sort -u > pre-adguard-element.txt
-wait
 
 # 预处理DNS规则和HOSTS规则
 cat ../mod/dns.txt dns*.txt \
- | grep -E "^([||]|@).*[\^]$" \
+ | grep -E "^(((\|\|)|(\@\@))\S+\^$)" \
  | grep -Ev "(\/)|(&$)" \
  | sort -u > tmp-dns.txt
-wait
 
 # 合并并转化为DNS过滤规则
 cat allowlist.txt tmp-dns.txt tmp-hosts.txt \
  | sed 's/0.0.0.0 /||/g' | sed 's/$/&^/g' \
  | sort -u > pre-dns.txt
-wait
 
 # 合并并转化为HOSTS过滤规则
 cat tmp-dns.txt tmp-hosts.txt \
@@ -302,10 +287,9 @@ cat tmp-dns.txt tmp-hosts.txt \
  | sed 's/||/0.0.0.0 /g' | sed 's/\^//g' \
  | grep -E "^(0.0.0.0).*" \
  | sort -u > pre-hosts.txt
-wait
 
+echo '规则合并去重处理完成'
 
-echo 规则合并完成
 
 # Move to Pre Filter
 echo '移动规则到Pre目录'
@@ -316,22 +300,19 @@ rm -rf ./tmp
 cd ./pre
 echo '移动完成'
 
-# Python 处理重复规则
-python ../../utils/deduplication.py
-echo '规则去重处理完成'
+
 # Start Add title and date
-diffFile="$(ls|sort -u)"
-for i in $diffFile; do
- n=`cat $i | wc -l`
- echo "! Version: $(TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S')（北京时间） " >> tpdate.txt
- new=$(echo "$i" |sed 's/pre-//g')
- echo "! Total count: $n" > $i-tpdate.txt
- cat ../../utils/title/$new ./tpdate.txt ./$i-tpdate.txt ./$i \
- | sed '/^$/d' > ../../$new
+diffFile="$(ls | sort -u)"
+for i in $diffFile;
+do
+  n=`cat $i | wc -l`
+  echo "! Version: $(TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S') " >> tpdate.txt
+  new=$(echo "$i" | sed 's/pre-//g')
+  echo "! Total count: $n" > $i-tpdate.txt
+  cat ../../utils/title/$new ./tpdate.txt ./$i-tpdate.txt ./$i \
+  | sed '/^$/d' > ../../$new
 done
-
-echo '规则处理完成'
-
 cd ../
 rm -rf ./pre
+echo '规则处理完成'
 exit
