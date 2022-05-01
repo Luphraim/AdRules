@@ -218,7 +218,7 @@ cat ../mod/static.txt element*.txt \
 cat ../mod/element.txt perdns*.txt \
  | grep -E "^(((\|\|)|(\@\@))\S+\^)" \
  | grep -Ev "(\/)|(&$)" \
- | sed 's/^^/^/g' \
+ | sed 's/\^\^/\^/g' \
  | sort -u > ../mod/dns.txt
 
 # 预处理HOSTS规则
@@ -233,38 +233,39 @@ cat hosts*.txt \
 
 # 合并白名单规则
 cat ../mod/allowlist.txt *.txt \
- | grep "^(\@\@).*" | sed 's/^^/^/g' \
+ | grep "^(\@\@).*" \
+ | sed 's/\^\^/\^/g' \
  | sort -u > allowlist.txt
 
 # 合并通用过滤规则与白名单规则
 cat ../mod/element.txt ../mod/dns.txt allowlist.txt common*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
- | sed 's/^^/^/g' \
+ | sed 's/\^\^/\^/g' \
  | sort -u > tmp-adblock.txt
 
 # 合并AdKiller过滤规则
 cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
- | sed 's/^^/^/g' \
+ | sed 's/\^\^/\^/g' \
  | sort -u > pre-filter.txt
 
 # 合并AdKiller-Lite过滤规则
 cat tmp-adblock.txt adblock_lite*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
- | sed 's/^^/^/g' \
+ | sed 's/\^\^/\^/g' \
  | sort -u > pre-filter-lite.txt
 
 # 合并AdGuard过滤规则
 cat tmp-adblock.txt adguard*.txt adblock_ag*.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
- | sed 's/^^/^/g' \
+ | sed 's/\^\^/\^/g' \
  | sort -u > pre-adguard.txt
 
 # 分别提取AdGuard DNS规则和元素过滤规则
 cat pre-adguard.txt dns0.txt \
  | grep -E "^(((\|\|)|(\@\@))\S+\^)" \
  | grep -Ev "(\/)|(&$)" \
- | sed 's/^^/^/g' \
+ | sed 's/\^\^/\^/g' \
  | sort -u > tmp-ag-dns.txt
 cat tmp-ag-dns.txt tmp-hosts.txt \
  | sed 's/0.0.0.0 /||/g' | sed 's/$/&^/g' \
@@ -282,7 +283,7 @@ cat tmp-ag-element*.txt \
 # 合并并转化为DNS过滤规则
 cat ../mod/dns.txt allowlist.txt dns*.txt tmp-hosts.txt \
  | grep -Ev "^((\!)|(\！)|(\[)).*" \
- | sed 's/^^/^/g' \
+ | sed 's/\^\^/\^/g' \
  | sed 's/0.0.0.0 /||/g' \
  | sed 's/$/&^/g' \
  | sort -u > pre-dns.txt
