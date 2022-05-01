@@ -1,13 +1,10 @@
 #!/bin/sh
 LC_ALL='C'
 
-cd ./rules
-rm *.txt
-rm -rf md5 tmp
 # Create temporary folder
 echo '新建TMP文件夹...'
-mkdir -p ./tmp/
-cd tmp
+mkdir -p ./rules/tmp/
+cd ./rules/tmp
 echo '新建TMP文件夹完成'
 
 # Start Download Filter File
@@ -198,9 +195,9 @@ curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4
 curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt > element0.txt
 curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt > element1.txt
 # GOODBYEADS Rules For Android
-curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/Android.txt | grep -Ev "^(\#).*" > element2.txt
+curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/Android.txt | grep -E -v "^(\#).*" > element2.txt
 # GOODBYEADS Rules For PC
-curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/PC.txt | grep -Ev "^(\#).*" > element3.txt
+curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/PC.txt | grep -E -v "^(\#).*" > element3.txt
 # Cats-Team 自定义DNS过滤规则
 curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rule-allow.txt > perdns0.txt
 curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt > perdns1.txt
@@ -213,23 +210,26 @@ echo '规则下载完成'
 echo 开始合并
 # 预处理自定义规则
 cat ../mod/static.txt element*.txt \
- | grep -Ev '^((\!)|(\！)|(\[)).*' \
+ | grep -E -v '^((\!)|(\！)|(\[)).*' \
  | sort -u > ../mod/element.txt
 cat ../mod/element.txt perdns*.txt \
- | grep -E '^((\|\|)|(\@\@))\S+\^' \
- | grep -Ev '(\/)|(\$)' \
+ | grep -E '^((\|\|)|(\@\@))' \
  | sed 's/\^\^/\^/g' \
  | sort -u > ../mod/dns.txt
 
 # 预处理HOSTS规则
 cat hosts*.txt \
- | grep -Ev '^((\!)|(\！)|(\[)).*' \
- | grep -Ev '^((#.*)|(\s*))$' \
- | grep -Ev '^[0-9f\.:]+\s+(ip6\-)|(localhost|loopback)$' \
+ | grep -E -v '^((\!)|(\！)|(\[)).*' \
+ | grep -E -v '^((#.*)|(\s*))$' \
+ | grep -E -v '^[0-9f\.:]+\s+(ip6\-)|(localhost|loopback|broadcasthost)$' \
  | sed s/127.0.0.1/0.0.0.0/ \
  | sed s/::/0.0.0.0/g \
  | sed 's/  / /' \
  | sort -u > tmp-hosts.txt
+cat tmp-hosts.txt \
+ | sed 's/0.0.0.0 /||/g' \
+ | sed 's/$/&^/g' \
+ | sort -u > tmp-dns.txt
 
 # 合并白名单规则
 cat ../mod/allowlist.txt *.txt \
@@ -239,89 +239,81 @@ cat ../mod/allowlist.txt *.txt \
 
 # 合并通用过滤规则与白名单规则
 cat ../mod/element.txt ../mod/dns.txt allowlist.txt common*.txt \
- | grep -Ev '^((\!)|(\！)|(\[)).*' \
+ | grep -E -v '^((\!)|(\！)|(\[)).*' \
  | sed 's/\^\^/\^/g' \
  | sort -u > tmp-adblock.txt
 
 # 合并AdKiller过滤规则
 cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
- | grep -Ev '^((\!)|(\！)|(\[)).*' \
+ | grep -E -v '^((\!)|(\！)|(\[)).*' \
  | sed 's/\^\^/\^/g' \
  | sort -u > pre-filter.txt
 
 # 合并AdKiller-Lite过滤规则
 cat tmp-adblock.txt adblock_lite*.txt \
- | grep -Ev '^((\!)|(\！)|(\[)).*' \
+ | grep -E -v '^((\!)|(\！)|(\[)).*' \
  | sed 's/\^\^/\^/g' \
  | sort -u > pre-filter-lite.txt
 
 # 合并AdGuard过滤规则
 cat tmp-adblock.txt adguard*.txt adblock_ag*.txt \
- | grep -Ev '^((\!)|(\！)|(\[)).*' \
+ | grep -E -v '^((\!)|(\！)|(\[)).*' \
  | sed 's/\^\^/\^/g' \
  | sort -u > pre-adguard.txt
 
 # 分别提取AdGuard DNS规则和元素过滤规则
 cat pre-adguard.txt dns0.txt \
- | grep -E '^((\|\|)|(\@\@))\S+\^' \
- | grep -Ev '(\/)|(\$)' \
+ | grep -E '^((\|\|)|(\@\@))' \
  | sort -u > tmp-ag-dns.txt
-cat tmp-ag-dns.txt tmp-hosts.txt \
- | sed 's/0.0.0.0 /||/g' \
- | sed 's/$/&^/g' \
+cat tmp-ag-dns.txt tmp-dns.txt \
  | sed 's/\^\^/\^/g' \
  | sort -u > pre-adguard-dns.txt
 cat pre-adguard.txt \
- | grep -E '^((\|\|)|(\@\@))\S+\^' \
- | grep -E @@|ads.adsterra.com^^ \
- | sort -u > tmp-ag-element0.txt
-cat pre-adguard.txt \
- | grep -Ev '^((\|\|)|(\@\@))\S+\^' \
- | sort -u > tmp-ag-element1.txt
-cat tmp-ag-element*.txt \
+ | grep -E -v '^((\|\|)|(\@\@))' \
  | sort -u > pre-adguard-element.txt
 
 # 合并并转化为DNS过滤规则
-cat ../mod/dns.txt allowlist.txt dns*.txt tmp-hosts.txt \
- | grep -Ev '^((\!)|(\！)|(\[)).*' \
- | sed 's/0.0.0.0 /||/g' \
- | sed 's/$/&^/g' \
+cat ../mod/dns.txt allowlist.txt dns*.txt tmp-dns.txt \
+ | grep -E -v '^((\!)|(\！)|(\[)).*' \
  | sed 's/\^\^/\^/g' \
  | sort -u > pre-dns.txt
 
 # 合并并转化为HOSTS过滤规则
 cat pre-dns.txt tmp-hosts.txt \
- | grep -Ev '^(\@\@).*' \
+ | grep -E -v '(^(\@\@).*)|(\/)|(\$)|(\*)' \
  | sed 's/||/0.0.0.0 /g' \
  | sed 's/\^//g' \
  | grep -E '^(0.0.0.0).*' \
  | sort -u > pre-hosts.txt
 
-echo '规则合并去重处理完成'
-
 
 # Move to Pre Filter
 echo '移动规则到Pre目录'
 cd ../
-mkdir -p ./pre/
+mkdir -p ./pre
+mkdir -p ./tpdate
 mv ./tmp/pre-*.txt ./pre
 rm -rf ./tmp
 cd ./pre
 echo '移动完成'
 
+python ../../utils/deduplication.py
+
+echo '规则合并去重处理完成'
+
 
 # Start Add title and date
 diffFile="$(ls | sort -u)"
-echo "! Version: $(TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S')（北京时间） " > tpdate.txt
 for i in $diffFile;
 do
   n=`cat $i | wc -l`
   new=$(echo "$i" | sed 's/pre-//g')
-  echo "! Total count: $n" > $i-tpdate.txt
-  cat ../../utils/title/$new ./tpdate.txt ./$i-tpdate.txt ./$i \
+  echo "! Version: $(TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S')（北京时间）" > ../tpdate/$i-tpdate.txt
+  echo "! Total count: $n" >> ../tpdate/$i-tpdate.txt
+  cat ../../utils/title/$new ../tpdate/$i-tpdate.txt ./$i \
   | sed '/^$/d' > ../../$new
 done
 cd ../
-rm -rf ./pre
+rm -rf ./pre ./tpdate
 echo '规则处理完成'
 exit
