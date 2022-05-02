@@ -92,6 +92,8 @@ adblock_ag=(
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt"
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
+  # NEO DEV HOST - Lite version (Without Dead Domain inside)
+  "https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_adblocker"
   # ADFILT
   # "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
 )
@@ -158,7 +160,7 @@ hosts=(
   # AdAway
   "https://adaway.org/hosts.txt"
   # NEO DEV HOST - Lite version (Without Dead Domain inside)
-  "https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host"
+  # "https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host"
   # NoCoin adblock list
   "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"
   # yhosts 智能设备专用(更全,用电脑看视频网站可能出错)
@@ -254,6 +256,8 @@ wait
 # 合并HOSTS过滤规则并转化为DNS过滤规则
 cat hosts*.txt \
  | grep -E -v '^((\!)|(\！)|(\[)).*' \
+ | grep -E -v '^((#.*)|(\s*))$' \
+ | grep -E -v '^[0-9f\.:]+\s+(ip6\-)|(localhost|loopback|broadcasthost)$' \
  | sed s/127.0.0.1/0.0.0.0/ \
  | sed s/::/0.0.0.0/g \
  | sed 's/  / /' \
