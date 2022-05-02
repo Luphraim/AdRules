@@ -261,7 +261,7 @@ cat hosts*.txt \
  | sed s/127.0.0.1/0.0.0.0/ \
  | sed s/::/0.0.0.0/g \
  | sed 's/  / /' \
- | grep -E '^(0.0.0.0 ).*'
+#  | grep -E '^(0.0.0.0 ).*'
  | sort -u > pre-hosts.txt
 wait
 cat pre-hosts.txt \
