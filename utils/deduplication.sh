@@ -71,8 +71,6 @@ common=(
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt"
   # 乘风视频过滤规则，适用于UBO或ADG
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt"
-  # LWJ's black list
-  "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
 )
 
 # 元素过滤规则 (AdGuard)
@@ -147,6 +145,8 @@ dns=(
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt"
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
+  # LWJ's black list
+  "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
 )
 
 # HOSTS过滤
