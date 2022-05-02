@@ -18,7 +18,7 @@
 | AdKiller        | 推荐用于 PC 端浏览器，如 AdGuard, Ublock Origin, AdBlock 等 | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/filter.txt)          |
 | AdKiller-Lite   | 推荐用于移动端浏览器，如 via, Vivaldi, X Browser 等         | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/filter-lite.txt)     |
 | DNSFilter       | 适用于 AdGuard Home                                         | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/dns.txt)             |
-| Hosts           | 广告过滤 hosts ，重定向至 0.0.0.0                           | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/hosts.txt)           |
+| Hosts           | 广告过滤 hosts ，重定向至 0.0.0.0                           | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/hosts)               |
 | AdGuard-DNS     | AdGuard 的 DNS 提取规则，适用于 AdGuard 的 DNS 功能         | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/adguard-dns.txt)     |
 | AdGuard-Element | AdGuard 的元素提取规则，适用于 AdGuard 的内容拦截功能       | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/adguard-element.txt) |
 
@@ -61,10 +61,11 @@
 |                          | [Online Malicious URL Blocklist](https://curben.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt) Domain-based (AdGuard Home)               |
 | HOSTS 过滤               | [大圣净化规则](https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts)                                                                   |
 |                          | [neoHosts - Basic Hosts](https://cdn.jsdelivr.net/gh/neoFelhz/neohosts@gh-pages/basic/hosts.txt) 基础、克制的数据，推荐所有用户使用。             |
-|                          | [AdAway](https://adaway.org/hosts.txt)                                                                                                            |
-|                          | [NEO DEV HOST - Lite version](https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host) (Without Dead Domain inside)               |
 |                          | [NoCoin adblock list](https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt)                                           |
 |                          | [yhosts](https://raw.githubusercontent.com/VeleSila/yhosts/master/hosts) 智能设备专用(更全,用电脑看视频网站可能出错)                              |
+|                          | [StevenBlack](https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts)                                                                   |
+| 白名单规则               | [Energized Protection - unblock](https://raw.githubusercontent.com/EnergizedProtection/unblock/master/basic/formats/filter)                       |
+|                          | [AdGuard Chinese Filters whitelist](https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/whitelist.txt)     |
 | 其他（rules/mod 下)      | 自定义元素过滤规则(element.txt)                                                                                                                   |
 |                          | 自定义 url 过滤规则(dns.txt)                                                                                                                      |
 |                          | 自定义白名单规则(allowlist.txt)                                                                                                                   |

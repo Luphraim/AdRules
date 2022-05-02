@@ -44,7 +44,7 @@ adguard=(
   # 中文过滤器
   "https://filters.adtidy.org/android/filters/224_optimized.txt"
   # DNS过滤器
-  "https://filters.adtidy.org/android/filters/15_optimized.txt"
+  # "https://filters.adtidy.org/android/filters/15_optimized.txt"
 )
 
 # Adguard For uBlock Origin 规则
@@ -66,10 +66,10 @@ ag_ubo=(
 )
 
 # 元素过滤规则
-common=(
-  # 乘风通用过滤规则，适用于UBO或ADG
+adblock_uni=(
+  # 乘风 广告过滤规则，适用于UBO或ADG
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt"
-  # 乘风视频过滤规则，适用于UBO或ADG
+  # 乘风 视频过滤规则，适用于UBO或ADG
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt"
 )
 
@@ -85,11 +85,6 @@ adblock_ag=(
   "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt"
   # 去 APP 下载广告规则
   "https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt"
-  # Cats-Team 自定义过滤规则
-  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rule-allow.txt"
-  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt"
-  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
-  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
   # ADFILT
   # "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
 )
@@ -132,14 +127,32 @@ adblock_lite=(
   "https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt"
 )
 
-# DNS过滤规则
-dns=(
+# HOSTS过滤
+hosts=(
+  # 大圣净化规则
+  "https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts"
+  # neoHosts - Basic Hosts 基础、克制的数据，推荐所有用户使用。
+  "https://cdn.jsdelivr.net/gh/neoFelhz/neohosts@gh-pages/basic/hosts.txt"
+  # NoCoin adblock list
+  "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"
+  # yhosts 智能设备专用(更全,用电脑看视频网站可能出错)
+  "https://raw.githubusercontent.com/VeleSila/yhosts/master/hosts"
+  # StevenBlack's hosts file
+  "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+  # NEO DEV HOST - Lite version (Without Dead Domain inside)
+  # "https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host"
+  # GoodbyeAds
+  # "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt"
+  # GoodbyeAds YouTube Adblock
+  # "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-YouTube-AdBlock.txt"
+  # GoodbyeAds Spotify AdBlock
+  # "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-Spotify-AdBlock.txt"
+)
+
+# DNS通用过滤规则
+dns_uni=(
   # AdGuard DNS filter
   "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt"
-  # Anti-AD for AdGuardHome（DNS过滤）
-  "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt"
-  # Online Malicious URL Blocklist Domain-based (AdGuard Home)
-  "https://curben.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt"
   # Cats-Team 自定义过滤规则
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rule-allow.txt"
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt"
@@ -149,26 +162,12 @@ dns=(
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
 )
 
-# HOSTS过滤
-hosts=(
-  # 大圣净化规则
-  "https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts"
-  # neoHosts - Basic Hosts 基础、克制的数据，推荐所有用户使用。
-  "https://cdn.jsdelivr.net/gh/neoFelhz/neohosts@gh-pages/basic/hosts.txt"
-  # AdAway
-  "https://adaway.org/hosts.txt"
-  # NEO DEV HOST - Lite version (Without Dead Domain inside)
-  "https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host"
-  # NoCoin adblock list
-  "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"
-  # yhosts 智能设备专用(更全,用电脑看视频网站可能出错)
-  "https://raw.githubusercontent.com/VeleSila/yhosts/master/hosts"
-  # GoodbyeAds
-  # "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt"
-  # GoodbyeAds YouTube Adblock
-  # "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-YouTube-AdBlock.txt"
-  # GoodbyeAds Spotify AdBlock
-  # "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-Spotify-AdBlock.txt"
+# DNS (AdGuard Home)过滤规则
+dns_agh=(
+  # Anti-AD for AdGuardHome（DNS过滤）
+  "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt"
+  # Online Malicious URL Blocklist Domain-based (AdGuard Home)
+  "https://curben.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt"
 )
 
 # 白名单规则
@@ -179,28 +178,31 @@ allow=(
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt"
   # AdGuard Chinese Filters whitelist
   "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/whitelist.txt"
+  # Energized Protection - unblock
+  "https://raw.githubusercontent.com/EnergizedProtection/unblock/master/basic/formats/filter"
 )
 
 
-for i in "${!ublock[@]}" "${!adguard[@]}" "${!ag_ubo[@]}" "${!adguard_full[@]}" "${!common[@]}" "${!adblock_ag[@]}" "${!adblock_full[@]}" "${!adblock_lite[@]}" "${!dns[@]}" "${!hosts[@]}" "${!allow[@]}"
+for i in "${!ublock[@]}" "${!adguard[@]}" "${!adblock_uni[@]}" "${!adblock_ag[@]}" "${!adblock_full[@]}" "${!adblock_lite[@]}" "${!hosts[@]}" "${!dns_uni[@]}" "${!dns_agh[@]}" "${!allow[@]}"
 do
   curl --parallel --parallel-immediate -k -L -C - -o "ublock${i}.txt" --connect-timeout 60 -s "${ublock[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "adguard${i}.txt" --connect-timeout 60 -s "${adguard[$i]}" &
+  curl --parallel --parallel-immediate -k -L -C - -o "adguard${i}.txt" --connect-timeout 60 -s "${adguard[$i]}" &  
   # curl --parallel --parallel-immediate -k -L -C - -o "ag_ubo${i}.txt" --connect-timeout 60 -s "${ag_ubo[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "common${i}.txt" --connect-timeout 60 -s "${common[$i]}" &
+  curl --parallel --parallel-immediate -k -L -C - -o "adblock_uni${i}.txt" --connect-timeout 60 -s "${adblock_uni[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock_ag${i}.txt" --connect-timeout 60 -s "${adblock_ag[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock_full${i}.txt" --connect-timeout 60 -s "${adblock_full[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "adblock_lite${i}.txt" --connect-timeout 60 -s "${adblock_lite[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "dns${i}.txt" --connect-timeout 60 -s "${dns[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "hosts${i}.txt" --connect-timeout 60 -s "${hosts[$i]}" &
+  curl --parallel --parallel-immediate -k -L -C - -o "dns_uni${i}.txt" --connect-timeout 60 -s "${dns_uni[$i]}" &
+  curl --parallel --parallel-immediate -k -L -C - -o "dns_agh${i}.txt" --connect-timeout 60 -s "${dns_agh[$i]}" &
   curl --parallel --parallel-immediate -k -L -C - -o "allow${i}.txt" --connect-timeout 60 -s "${allow[$i]}" &
 done
 
 # 其他规则
-# curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list \
-#  | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts999.txt
-# curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list \
-#  | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts998.txt
+curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list \
+ | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts999.txt
+curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list \
+ | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts998.txt
 
 # GOODBYEADS Rules For Android
 curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/Android.txt | grep -E -v "^(\#).*" > element0.txt
@@ -213,7 +215,7 @@ echo '规则下载完成'
 echo 开始合并
 # 预处理自定义规则
 cat ../mod/static.txt element*.txt \
- | grep -E -v '^((\!)|(\！)|(\[)).*' \
+ | grep -E -v '^((\!)|(\！)|(\[))' \
  | sort -u > ../mod/element.txt
 cat ../mod/element.txt perdns*.txt \
  | grep -E '^((\|\|)|(\@\@))' \
@@ -227,43 +229,48 @@ cat allow*.txt \
  | sort -u > tmp-allow.txt
 
 # 合并通用过滤规则
-cat ../mod/element.txt ../mod/dns.txt tmp-allow.txt common*.txt \
- | grep -E -v '^((\!)|(\！)|(\[)).*' \
+cat ../mod/element.txt ../mod/dns.txt tmp-allow.txt adblock_uni*.txt \
+ | grep -E -v '^((\!)|(\！)|(\[))' \
  | sed 's/\^\^/\^/g' \
  | sort -u > tmp-adblock.txt
 
 # 合并AdKiller过滤规则
 cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
- | grep -E -v '^((\!)|(\！)|(\[)).*' \
+ | grep -E -v '^((\!)|(\！)|(\[))' \
  | sed 's/\^\^/\^/g' \
  | sort -u > pre-filter.txt
 
 # 合并AdKiller-Lite过滤规则
 cat tmp-adblock.txt adblock_lite*.txt \
- | grep -E -v '^((\!)|(\！)|(\[)).*' \
+ | grep -E -v '^((\!)|(\！)|(\[))' \
  | sed 's/\^\^/\^/g' \
  | sort -u > pre-filter-lite.txt
  
 # 合并HOSTS过滤规则并转化为DNS过滤规则
 cat hosts*.txt \
- | sed s/127.0.0.1/0.0.0.0/ \
- | sed s/::/0.0.0.0/g \
+ | grep -E -v '(^#)|(\*$)|(\#)' \
+ | grep -E -v '^[0-9f\.:]+\s+(ip6\-)|(host|loopback)$' \
+ | grep -E -v '0.0.0.0 0.0.0.0' \
+ | sed 's/127.0.0.1/0.0.0.0/' \
+ | sed 's/::/0.0.0.0/g' \
  | sed 's/  / /' \
- | grep -E '^(0.0.0.0 ).*' \
  | sort -u > pre-hosts.txt
-cat pre-hosts.txt \
+# 合并DNS通用过滤规则
+cat pre-hosts.txt ../mod/dns.txt tmp-allow.txt dns_uni*.txt \
+ | grep -E -v '^((\!)|(\！)|(\[))' \
  | sed 's/0.0.0.0 /||/g' \
  | sed 's/$/&^/g' \
+ | sed 's/\^\^/\^/g' \
  | sort -u > tmp-dns.txt
 
 # 合并AdGuard过滤规则
 cat tmp-adblock.txt adguard*.txt adblock_ag*.txt \
- | grep -E -v '^((\!)|(\！)|(\[)).*' \
+ | grep -E -v '^((\!)|(\！)|(\[))' \
  | sed 's/\^\^/\^/g' \
  | sort -u > pre-adguard.txt
 
 # 分别提取AdGuard DNS规则和元素过滤规则
-cat pre-adguard.txt tmp-dns.txt \
+cat pre-adguard.txt tmp-dns.txt tmp-dns.txt \
  | grep -E '^((\|\|)|(\@\@))' \
  | sed 's/\^\^/\^/g' \
  | sort -u > pre-adguard-dns.txt
@@ -272,8 +279,8 @@ cat pre-adguard.txt \
  | sort -u > pre-adguard-element.txt
 
 # 合并DNS (AdGuard Home)过滤规则
-cat ../mod/dns.txt tmp-allow.txt dns*.txt \
- | grep -E -v '^((\!)|(\！)|(\[)).*' \
+cat tmp-dns.txt dns_agh*.txt \
+ | grep -E -v '^((\!)|(\！)|(\[))' \
  | sed 's/\^\^/\^/g' \
  | sort -u > pre-dns.txt
 
@@ -294,6 +301,16 @@ echo '规则合并去重处理完成'
 
 
 # Start Add title and date
+
+# 先处理HOSTS规则
+cp ../mod/hosts ../tpdate/hosts
+echo "# Version: $(TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S')（北京时间）" >> ../tpdate/hosts
+n=`cat pre-hosts.txt | wc -l`
+echo "# Total count: $n" >> ../tpdate/hosts
+cat ../../utils/title/hosts.txt ../tpdate/hosts ./pre-hosts.txt > ../../hosts
+rm ./pre-hosts.txt
+
+# 再处理剩下的规则
 diffFile="$(ls | sort -u)"
 for i in $diffFile;
 do
