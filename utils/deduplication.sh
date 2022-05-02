@@ -92,8 +92,6 @@ adblock_ag=(
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt"
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
-  # NEO DEV HOST - Lite version (Without Dead Domain inside)
-  "https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_adblocker"
   # ADFILT
   # "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
 )
@@ -160,7 +158,7 @@ hosts=(
   # AdAway
   "https://adaway.org/hosts.txt"
   # NEO DEV HOST - Lite version (Without Dead Domain inside)
-  # "https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host"
+  "https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host"
   # NoCoin adblock list
   "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"
   # yhosts 智能设备专用(更全,用电脑看视频网站可能出错)
