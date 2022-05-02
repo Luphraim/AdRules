@@ -133,6 +133,13 @@ dns=(
   "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt"
   # Online Malicious URL Blocklist Domain-based (AdGuard Home)
   "https://curben.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt"
+  # Cats-Team 自定义过滤规则
+  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rule-allow.txt"
+  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt"
+  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
+  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
+  # LWJ's black list
+  "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
 )
 
 # HOSTS过滤
@@ -189,18 +196,10 @@ curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4
 curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list \
  | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts998.txt
 
-# Cats-Team 自定义元素过滤规则
-curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt > element0.txt
-curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt > element1.txt
 # GOODBYEADS Rules For Android
-curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/Android.txt | grep -E -v "^(\#).*" > element2.txt
+curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/Android.txt | grep -E -v "^(\#).*" > element0.txt
 # GOODBYEADS Rules For PC
-curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/PC.txt | grep -E -v "^(\#).*" > element3.txt
-# Cats-Team 自定义DNS过滤规则
-curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rule-allow.txt > perdns0.txt
-curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt > perdns1.txt
-# LWJ's black list
-curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt > perdns2.txt
+curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/PC.txt | grep -E -v "^(\#).*" > element1.txt
 echo '规则下载完成'
 
 
@@ -230,7 +229,7 @@ cat tmp-hosts.txt \
  | sort -u > tmp-dns.txt
 
 # 合并白名单规则
-cat ../mod/allowlist.txt *.txt \
+cat *.txt \
  | grep '^(\@\@).*' \
  | sed 's/\^\^/\^/g' \
  | sort -u > allowlist.txt
