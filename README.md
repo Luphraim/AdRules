@@ -51,7 +51,6 @@
 |                          | [Easylist China](https://easylist-downloads.adblockplus.org/easylistchina.txt) (反广告主规则列表的补充。主要面向中文网站)                         |
 |                          | [EasyPrivacy](https://easylist.to/easylist/easyprivacy.txt) (防隐私跟踪挖矿规则列表)                                                              |
 |                          | [CJX's Annoyance List](https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt) (反自我推广,移除 anti adblock,防跟踪规则列表) |
-|                          | (ubo 专用) [CJX's uBlock list](https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-ublock.txt) (CJX's Annoyance List 的补充。)          |
 |                          | [Hacamer's URL Filter](https://raw.githubusercontent.com/Cats-Team/AdRule/main/url-filter.txt)                                                    |
 |                          | [Online Malicious URL Blocklist](https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt) URL-based                                     |
 |                          | [I don't care about cookies](https://www.i-dont-care-about-cookies.eu/abp/)                                                                       |

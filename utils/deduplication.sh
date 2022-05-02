@@ -97,8 +97,6 @@ adblock_full=(
   "https://easylist.to/easylist/easyprivacy.txt"
   # CJX's Annoyance List (反自我推广,移除anti adblock,防跟踪规则列表)
   "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt"
-  # (ubo专用) CJX's uBlock list (CJX's Annoyance List的补充。)
-  "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-ublock.txt"
   # Adblock Warning Removal List
   "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
   # Anti-Adblock Killer
