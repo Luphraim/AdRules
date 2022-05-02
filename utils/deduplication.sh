@@ -198,10 +198,10 @@ done
 wait
 
 # 其他规则
-curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list \
- | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts999.txt
-curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list \
- | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts998.txt
+# curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list \
+#  | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts999.txt
+# curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list \
+#  | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts998.txt
 
 # GOODBYEADS Rules For Android
 curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/Android.txt | grep -E -v "^(\#).*" > element0.txt
@@ -248,6 +248,8 @@ cat tmp-adblock.txt adblock_lite*.txt \
 # 合并HOSTS过滤规则并转化为DNS过滤规则
 cat hosts*.txt \
  | grep -E -v '^((\!)|(\！)|(\[)).*' \
+ | grep -E -v '^((#.*)|(\s*))$' \
+ | grep -E -v '^[0-9f\.:]+\s+(ip6\-)|(localhost|loopback|broadcasthost)$' \
  | sed s/127.0.0.1/0.0.0.0/ \
  | sed s/::/0.0.0.0/g \
  | sed 's/  / /' \
