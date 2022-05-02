@@ -248,13 +248,10 @@ cat tmp-adblock.txt adblock_lite*.txt \
  
 # 合并HOSTS过滤规则并转化为DNS过滤规则
 cat hosts*.txt \
- | grep -E -v '^((\!)|(\！)|(\[)).*' \
- | grep -E -v '^((#.*)|(\s*))$' \
- | grep -E -v '^[0-9f\.:]+\s+(ip6\-)|(localhost|loopback|broadcasthost)$' \
  | sed s/127.0.0.1/0.0.0.0/ \
  | sed s/::/0.0.0.0/g \
  | sed 's/  / /' \
- | grep -E '^(0.0.0.0 ).*'
+ | grep -E '^(0.0.0.0 ).*' \
  | sort -u > pre-hosts.txt
 cat pre-hosts.txt \
  | sed 's/0.0.0.0 /||/g' \
