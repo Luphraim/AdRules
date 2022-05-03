@@ -158,8 +158,6 @@ dns_uni=(
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt"
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
-  # LWJ's black list
-  "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
 )
 
 # DNS (AdGuard Home)过滤规则
@@ -168,14 +166,16 @@ dns_agh=(
   "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt"
   # Online Malicious URL Blocklist Domain-based (AdGuard Home)
   "https://curben.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt"
+  # LWJ's black list
+  "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
+  # LWJ's white list
+  "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt"
 )
 
 # 白名单规则
 allow=(
   # Cats-Team 自定义白名单规则
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/allowlist.txt"
-  # LWJ's white list
-  "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt"
   # AdGuard Chinese Filters whitelist
   "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/whitelist.txt"
   # Energized Protection - unblock
