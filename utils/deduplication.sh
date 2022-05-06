@@ -234,19 +234,19 @@ cat allow*.txt \
 
 # 合并通用过滤规则
 cat ../mod/element.txt ../mod/dns.txt tmp-allow.txt adblock_uni*.txt \
- | grep -E -v '^((\!)|(\！)|(\[))' \
+ | grep -E -v '^((\!)|(\！)|(\[)|(\ )|(\"))' \
  | sed 's/\^\^/\^/g' \
  | sort -u > tmp-adblock.txt
 
 # 合并AdKiller过滤规则
 cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
- | grep -E -v '^((\!)|(\！)|(\[))' \
+ | grep -E -v '^((\!)|(\！)|(\[)|(\ )|(\"))' \
  | sed 's/\^\^/\^/g' \
  | sort -u > pre-filter.txt
 
 # 合并AdKiller-Lite过滤规则
 cat tmp-adblock.txt adblock_lite*.txt \
- | grep -E -v '^((\!)|(\！)|(\[))' \
+ | grep -E -v '^((\!)|(\！)|(\[)|(\ )|(\"))' \
  | sed 's/\^\^/\^/g' \
  | sort -u > pre-filter-lite.txt
  
@@ -258,10 +258,11 @@ cat hosts*.txt \
  | sed 's/127.0.0.1/0.0.0.0/' \
  | sed 's/::/0.0.0.0/g' \
  | sed 's/  / /' \
+ | grep -E '^(0.0.0.0 )' \
  | sort -u > pre-hosts.txt
 # 合并DNS通用过滤规则
 cat pre-hosts.txt ../mod/dns.txt tmp-allow.txt dns_uni*.txt \
- | grep -E -v '^((\!)|(\！)|(\[))' \
+ | grep -E -v '^((\!)|(\！)|(\[)|(\ )|(\"))' \
  | sed 's/0.0.0.0 /||/g' \
  | sed 's/$/&^/g' \
  | sed 's/\^\^/\^/g' \
@@ -269,7 +270,7 @@ cat pre-hosts.txt ../mod/dns.txt tmp-allow.txt dns_uni*.txt \
 
 # 合并AdGuard过滤规则
 cat tmp-adblock.txt adguard*.txt adblock_ag*.txt \
- | grep -E -v '^((\!)|(\！)|(\[))' \
+ | grep -E -v '^((\!)|(\！)|(\[)|(\ )|(\"))' \
  | sed 's/\^\^/\^/g' \
  | sort -u > pre-adguard.txt
 
@@ -284,7 +285,7 @@ cat pre-adguard.txt \
 
 # 合并DNS (AdGuard Home)过滤规则
 cat tmp-dns.txt dns_agh*.txt \
- | grep -E -v '^((\!)|(\！)|(\[))' \
+ | grep -E -v '^((\!)|(\！)|(\[)|(\ )|(\"))' \
  | sed 's/\^\^/\^/g' \
  | sort -u > pre-dns.txt
 
