@@ -4,7 +4,7 @@
 
 本规则仅用于个人自用，参考了[Cats-Team](https://github.com/Cats-Team)/[AdRules](https://github.com/Cats-Team/AdRules)的脚本，出于对上游规则列表及使用途径的个人需求，对其进行自定义配置与修改。
 
-上游规则基本追溯到最上游规则，二次整合的规则基本不使用（如 halflife 的规则）。
+上游规则基本追溯到最上游规则，二次整合的规则基本不使用。
 
 个人使用对象分别为：PC 端的 uBlock Origin，移动端的 Adguard 及 via，DNS 层面的 Adguard Home，对其他使用方式未作适配，如有需求，可 fork 本仓库自行调整。
 

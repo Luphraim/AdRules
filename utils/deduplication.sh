@@ -92,17 +92,21 @@ adblock_ag=(
 # 元素过滤规则 (PC)
 adblock_full=(
   # EasyList (反广告主规则列表。主要面向英文网站，包含大量通用规则)
-  "https://easylist.to/easylist/easylist.txt"
+  # "https://easylist.to/easylist/easylist.txt"
   # Easylist China (反广告主规则列表的补充。主要面向中文网站)
-  "https://easylist-downloads.adblockplus.org/easylistchina.txt"
+  # "https://easylist-downloads.adblockplus.org/easylistchina.txt"
   # EasyPrivacy (防隐私跟踪挖矿规则列表)
-  "https://easylist.to/easylist/easyprivacy.txt"
+  # "https://easylist.to/easylist/easyprivacy.txt"
   # CJX's Annoyance List (反自我推广,移除anti adblock,防跟踪规则列表)
-  "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt"
+  # "https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt"
+  # halflife规则，[推荐桌面端]合并自乘风视频广告过滤规则、Easylist、EasylistChina、EasyPrivacy、CJX'sAnnoyance，以及补充的一些规则
+  "https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-pc.txt"
   # Adblock Warning Removal List
-  "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
+  # "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
   # Anti-Adblock Killer
-  "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt"
+  # "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt"
+  # halflife规则，合并自Adblock Warning Removal List、ABP filters、anti-adblock-killer-filters
+  "https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-edentw.txt"
   # Hacamer's URL Filter
   "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
   # I don't care about cookies
@@ -303,11 +307,11 @@ echo '规则合并去重处理完成'
 # Start Add title and date
 
 # 先处理HOSTS规则
-cp ../mod/hosts ../tpdate/hosts
+cp ../../utils/title/hosts.txt ../tpdate/hosts
 echo "# Version: $(TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S')（北京时间）" >> ../tpdate/hosts
 n=`cat pre-hosts.txt | wc -l`
 echo "# Total count: $n" >> ../tpdate/hosts
-cat ../../utils/title/hosts.txt ../tpdate/hosts ./pre-hosts.txt > ../../hosts
+cat ../tpdate/hosts ../mod/hosts ./pre-hosts.txt > ../../hosts
 rm ./pre-hosts.txt
 
 # 再处理剩下的规则
