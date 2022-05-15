@@ -1,5 +1,4 @@
 #!/bin/sh
-LC_ALL='C'
 
 # Create temporary folder
 echo '新建TMP文件夹...'
@@ -71,6 +70,8 @@ adblock_uni=(
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt"
   # 乘风 视频过滤规则，适用于UBO或ADG
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt"
+  # GOODBYEADS Rules
+  "https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/adblock.txt"
 )
 
 # 元素过滤规则 (AdGuard)
@@ -178,12 +179,14 @@ dns_agh=(
 
 # 白名单规则
 allow=(
-  # Cats-Team 自定义白名单规则
-  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/allowlist.txt"
   # AdGuard Chinese Filters whitelist
   "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/whitelist.txt"
   # Energized Protection - unblock
   "https://raw.githubusercontent.com/EnergizedProtection/unblock/master/basic/formats/filter"
+  # Cats-Team 自定义白名单规则
+  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/allowlist.txt"
+  # GOODBYEADS Rules
+  "https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/whitelist.txt"
 )
 
 
@@ -208,10 +211,6 @@ curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4
 curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list \
  | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts998.txt
 
-# GOODBYEADS Rules For Android
-curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/Android.txt | grep -E -v "^(\#).*" > element0.txt
-# GOODBYEADS Rules For PC
-curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/PC.txt | grep -E -v "^(\#).*" > element1.txt
 echo '规则下载完成'
 
 

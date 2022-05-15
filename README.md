@@ -1,26 +1,24 @@
-# AdRules
+# AdKiller
 
 ### 说明
 
 本规则仅用于个人自用，参考了[Cats-Team](https://github.com/Cats-Team)/[AdRules](https://github.com/Cats-Team/AdRules)的脚本，出于对上游规则列表及使用途径的个人需求，对其进行自定义配置与修改。
 
-上游规则基本追溯到最上游规则，二次整合的规则基本不使用。
-
-个人使用对象分别为：PC 端的 uBlock Origin，移动端的 Adguard 及 via，DNS 层面的 Adguard Home，对其他使用方式未作适配，如有需求，可 fork 本仓库自行调整。
+个人使用对象分别为：PC 端的 uBlock Origin，移动端的 Adguard 及 via，DNS 层面的 Adguard Home，对其他使用方式未作适配，如有需求，可自行调整。
 
 移动端 AdGuard 推荐 AdGuard-DNS 和 AdGuard-Element 结合使用，不想开 DNS 过滤的只订阅 AdGuard 即可。
 
 ### 规则说明
 
-| 名称            | 描述                                                        | 订阅                                                                                  |
-| --------------- | ----------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| AdGuard         | 推荐用于移动端 AdGuard，主要为 Adguard For Android          | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/adguard.txt)         |
-| AdKiller        | 推荐用于 PC 端浏览器，如 AdGuard, Ublock Origin, AdBlock 等 | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/filter.txt)          |
-| AdKiller-Lite   | 推荐用于移动端浏览器，如 via, Vivaldi, X Browser 等         | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/filter-lite.txt)     |
-| DNSFilter       | 适用于 AdGuard Home                                         | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/dns.txt)             |
-| Hosts           | 广告过滤 hosts ，重定向至 0.0.0.0                           | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/hosts)               |
-| AdGuard-DNS     | AdGuard 的 DNS 提取规则，适用于 AdGuard 的 DNS 功能         | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/adguard-dns.txt)     |
-| AdGuard-Element | AdGuard 的元素提取规则，适用于 AdGuard 的内容拦截功能       | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/adguard-element.txt) |
+| 名称            | 描述                                                         | 订阅                                                                                  |
+| --------------- | ------------------------------------------------------------ | ------------------------------------------------------------------------------------- |
+| AdGuard         | 推荐用于移动端 AdGuard，主要为 Adguard For Android           | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/adguard.txt)         |
+| AdKiller        | 推荐用于 PC 端浏览器，如 AdGuard, Ublock Origin, AdBlock 等  | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/filter.txt)          |
+| AdKiller-Lite   | 推荐用于移动端浏览器，如 via, Vivaldi, X Browser 等          | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/filter-lite.txt)     |
+| DNSFilter       | 适用于 AdGuard Home                                          | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/dns.txt)             |
+| Hosts           | 广告过滤 hosts ，可直接替换系统 hosts 文件，重定向至 0.0.0.0 | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/hosts)               |
+| AdGuard-DNS     | AdGuard 的 DNS 提取规则，适用于 AdGuard 的 DNS 功能          | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/adguard-dns.txt)     |
+| AdGuard-Element | AdGuard 的元素提取规则，适用于 AdGuard 的内容拦截功能        | [Link](https://raw.githubusercontent.com/PhoenixLjw/AdRules/main/adguard-element.txt) |
 
 ### 上游规则
 
@@ -69,3 +67,11 @@
 | 其他（rules/mod 下)      | 自定义元素过滤规则(element.txt)                                                                                                                   |
 |                          | 自定义 url 过滤规则(dns.txt)                                                                                                                      |
 |                          | 自定义白名单规则(allowlist.txt)                                                                                                                   |
+
+### 推荐项目
+
+以下推荐一些比较成熟的规则整合项目，主要面向中文过滤。
+
+- [anti-AD](https://anti-ad.net/)
+- [Cats-Team](https://github.com/Cats-Team)/[AdRules](https://github.com/Cats-Team/AdRules)
+- [NEO DEV HOST](https://github.com/neodevpro/neodevhost)
