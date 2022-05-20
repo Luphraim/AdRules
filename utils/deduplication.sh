@@ -269,9 +269,9 @@ cat tmp-adblock.txt adguard*.txt adblock_ag*.txt \
 
 # 分别提取AdGuard DNS规则和元素过滤规则
 cat pre-adguard.txt tmp-dns.txt \
- | grep -E '^((\|\|)|(\@\@))' > tmp-adguard-dns.txt
+ | grep -E '^((\|\|)|(\@\@)).*(\^)$' > tmp-adguard-dns.txt
 cat pre-adguard.txt \
- | grep -E -v '^((\|\|)|(\@\@))' > tmp-adguard-element.txt
+ | grep -E -v '^((\|\|)|(\@\@)).*(\^)$' > tmp-adguard-element.txt
 cat tmp-adguard-dns.txt \
  | grep -E '(\/)|(\$)' >> tmp-adguard-element.txt
 cat tmp-adguard-dns.txt \
