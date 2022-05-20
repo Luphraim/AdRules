@@ -211,7 +211,6 @@ curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4
 curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list \
  | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts998.txt
 
-curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ineo6/hosts/master/hosts > ../mod/github-hosts
 echo '规则下载完成'
 
 
@@ -271,13 +270,14 @@ cat tmp-adblock.txt adguard*.txt adblock_ag*.txt \
 # 分别提取AdGuard DNS规则和元素过滤规则
 cat pre-adguard.txt tmp-dns.txt \
  | grep -E '^((\|\|)|(\@\@)).*(\^)$' > tmp-adguard-dns.txt
+cat tmp-adguard-dns.txt \
+ | grep -E -v '(\/)|(\$)' \
+ | sort -u > pre-adguard-dns.txt
+
 cat pre-adguard.txt \
  | grep -E -v '^((\|\|)|(\@\@)).*(\^)$' > tmp-adguard-element.txt
 cat tmp-adguard-dns.txt \
  | grep -E '(\/)|(\$)' >> tmp-adguard-element.txt
-cat tmp-adguard-dns.txt \
- | grep -E -v '(\/)|(\$)' \
- | sort -u > pre-adguard-dns.txt
 cat tmp-adguard-element.txt \
  | sort -u > pre-adguard-element.txt
 
@@ -309,7 +309,7 @@ cp ../../utils/title/hosts.txt ../tpdate/hosts
 echo "# Version: $(TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S')（北京时间）" >> ../tpdate/hosts
 n=`cat pre-hosts.txt | wc -l`
 echo "# Total count: $n" >> ../tpdate/hosts
-cat ../tpdate/hosts ../mod/hosts ../mod/github-hosts ./pre-hosts.txt > ../../hosts
+cat ../tpdate/hosts ../mod/hosts ./pre-hosts.txt > ../../hosts
 rm ./pre-hosts.txt
 
 # 再处理剩下的规则
