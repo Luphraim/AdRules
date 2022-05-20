@@ -190,28 +190,28 @@ allow=(
 )
 
 
-for i in "${!ublock[@]}" "${!adguard[@]}" "${!adblock_uni[@]}" "${!adblock_ag[@]}" "${!adblock_full[@]}" "${!adblock_lite[@]}" "${!hosts[@]}" "${!dns_uni[@]}" "${!dns_agh[@]}" "${!allow[@]}"
-do
-  curl --parallel --parallel-immediate -k -L -C - -o "ublock${i}.txt" --connect-timeout 60 -s "${ublock[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "adguard${i}.txt" --connect-timeout 60 -s "${adguard[$i]}" &  
-  # curl --parallel --parallel-immediate -k -L -C - -o "ag_ubo${i}.txt" --connect-timeout 60 -s "${ag_ubo[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "adblock_uni${i}.txt" --connect-timeout 60 -s "${adblock_uni[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "adblock_ag${i}.txt" --connect-timeout 60 -s "${adblock_ag[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "adblock_full${i}.txt" --connect-timeout 60 -s "${adblock_full[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "adblock_lite${i}.txt" --connect-timeout 60 -s "${adblock_lite[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "hosts${i}.txt" --connect-timeout 60 -s "${hosts[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "dns_uni${i}.txt" --connect-timeout 60 -s "${dns_uni[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "dns_agh${i}.txt" --connect-timeout 60 -s "${dns_agh[$i]}" &
-  curl --parallel --parallel-immediate -k -L -C - -o "allow${i}.txt" --connect-timeout 60 -s "${allow[$i]}" &
-done
+# for i in "${!ublock[@]}" "${!adguard[@]}" "${!adblock_uni[@]}" "${!adblock_ag[@]}" "${!adblock_full[@]}" "${!adblock_lite[@]}" "${!hosts[@]}" "${!dns_uni[@]}" "${!dns_agh[@]}" "${!allow[@]}"
+# do
+#   curl --parallel --parallel-immediate -k -L -C - -o "ublock${i}.txt" --connect-timeout 60 -s "${ublock[$i]}" &
+#   curl --parallel --parallel-immediate -k -L -C - -o "adguard${i}.txt" --connect-timeout 60 -s "${adguard[$i]}" &  
+#   # curl --parallel --parallel-immediate -k -L -C - -o "ag_ubo${i}.txt" --connect-timeout 60 -s "${ag_ubo[$i]}" &
+#   curl --parallel --parallel-immediate -k -L -C - -o "adblock_uni${i}.txt" --connect-timeout 60 -s "${adblock_uni[$i]}" &
+#   curl --parallel --parallel-immediate -k -L -C - -o "adblock_ag${i}.txt" --connect-timeout 60 -s "${adblock_ag[$i]}" &
+#   curl --parallel --parallel-immediate -k -L -C - -o "adblock_full${i}.txt" --connect-timeout 60 -s "${adblock_full[$i]}" &
+#   curl --parallel --parallel-immediate -k -L -C - -o "adblock_lite${i}.txt" --connect-timeout 60 -s "${adblock_lite[$i]}" &
+#   curl --parallel --parallel-immediate -k -L -C - -o "hosts${i}.txt" --connect-timeout 60 -s "${hosts[$i]}" &
+#   curl --parallel --parallel-immediate -k -L -C - -o "dns_uni${i}.txt" --connect-timeout 60 -s "${dns_uni[$i]}" &
+#   curl --parallel --parallel-immediate -k -L -C - -o "dns_agh${i}.txt" --connect-timeout 60 -s "${dns_agh[$i]}" &
+#   curl --parallel --parallel-immediate -k -L -C - -o "allow${i}.txt" --connect-timeout 60 -s "${allow[$i]}" &
+# done
 
-# 其他规则
-curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list \
- | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts999.txt
-curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list \
- | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts998.txt
+# # 其他规则
+# curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanProgramAD.list \
+#  | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts999.txt
+# curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list \
+#  | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts998.txt
 
-echo '规则下载完成'
+# echo '规则下载完成'
 
 
 # Start Merge and Duplicate Removal
@@ -222,31 +222,26 @@ cat ../mod/static.txt element*.txt \
  | sort -u > ../mod/element.txt
 cat ../mod/element.txt perdns*.txt \
  | grep -E '^((\|\|)|(\@\@))' \
- | sed 's/\^\^/\^/g' \
  | sort -u > ../mod/dns.txt
 
 # 合并白名单规则
 cat allow*.txt \
  | grep '^(\@\@).*' \
- | sed 's/\^\^/\^/g' \
  | sort -u > tmp-allow.txt
 
 # 合并通用过滤规则
 cat ../mod/element.txt ../mod/dns.txt tmp-allow.txt adblock_uni*.txt \
  | grep -E -v '^((\!)|(\！)|(\[)|(\ )|(\"))' \
- | sed 's/\^\^/\^/g' \
  | sort -u > tmp-adblock.txt
 
 # 合并AdKiller过滤规则
 cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
  | grep -E -v '^((\!)|(\！)|(\[)|(\ )|(\"))' \
- | sed 's/\^\^/\^/g' \
  | sort -u > pre-filter.txt
 
 # 合并AdKiller-Lite过滤规则
 cat tmp-adblock.txt adblock_lite*.txt \
  | grep -E -v '^((\!)|(\！)|(\[)|(\ )|(\"))' \
- | sed 's/\^\^/\^/g' \
  | sort -u > pre-filter-lite.txt
  
 # 合并HOSTS过滤规则并转化为DNS过滤规则
@@ -259,33 +254,36 @@ cat hosts*.txt \
  | sed 's/  / /' \
  | grep -E '^(0.0.0.0 )' \
  | sort -u > pre-hosts.txt
-# 合并DNS通用过滤规则
-cat pre-hosts.txt ../mod/dns.txt tmp-allow.txt dns_uni*.txt \
- | grep -E -v '^((\!)|(\！)|(\[)|(\ )|(\"))' \
+cat pre-hosts.txt \
  | sed 's/0.0.0.0 /||/g' \
- | sed 's/$/&^/g' \
- | sed 's/\^\^/\^/g' \
+ | sed 's/$/&\^/g' \
+ | sort -u > tmp-hosts-dns.txt
+# 合并DNS通用过滤规则
+cat tmp-hosts-dns.txt ../mod/dns.txt tmp-allow.txt dns_uni*.txt \
+ | grep -E -v '^((\!)|(\！)|(\[)|(\ )|(\")|(\#))' \
  | sort -u > tmp-dns.txt
 
 # 合并AdGuard过滤规则
 cat tmp-adblock.txt adguard*.txt adblock_ag*.txt \
  | grep -E -v '^((\!)|(\！)|(\[)|(\ )|(\"))' \
- | sed 's/\^\^/\^/g' \
  | sort -u > pre-adguard.txt
 
 # 分别提取AdGuard DNS规则和元素过滤规则
-cat pre-adguard.txt tmp-dns.txt tmp-dns.txt \
- | grep -E '^((\|\|)|(\@\@))' \
- | sed 's/\^\^/\^/g' \
- | sort -u > pre-adguard-dns.txt
+cat pre-adguard.txt tmp-dns.txt \
+ | grep -E '^((\|\|)|(\@\@))' > tmp-adguard-dns.txt
 cat pre-adguard.txt \
- | grep -E -v '^((\|\|)|(\@\@))' \
+ | grep -E -v '^((\|\|)|(\@\@))' > tmp-adguard-element.txt
+cat tmp-adguard-dns.txt \
+ | grep -E '(\/)|(\$)' >> tmp-adguard-element.txt
+cat tmp-adguard-dns.txt \
+ | grep -E -v '(\/)|(\$)' \
+ | sort -u > pre-adguard-dns.txt
+cat tmp-adguard-element.txt \
  | sort -u > pre-adguard-element.txt
 
 # 合并DNS (AdGuard Home)过滤规则
 cat tmp-dns.txt dns_agh*.txt \
- | grep -E -v '^((\!)|(\！)|(\[)|(\ )|(\"))' \
- | sed 's/\^\^/\^/g' \
+ | grep -E -v '^((\!)|(\！)|(\[)|(\ )|(\")|(\#))' \
  | sort -u > pre-dns.txt
 
 
