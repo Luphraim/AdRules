@@ -211,6 +211,7 @@ curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4
 curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanAD.list \
  | grep -F 'DOMAIN-SUFFIX,' | sed 's/DOMAIN-SUFFIX,/127.0.0.1 /g' > hosts998.txt
 
+curl --connect-timeout 60 -s -o - https://raw.githubusercontent.com/ineo6/hosts/master/hosts > ../mod/github-hosts
 echo '规则下载完成'
 
 
@@ -308,7 +309,7 @@ cp ../../utils/title/hosts.txt ../tpdate/hosts
 echo "# Version: $(TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S')（北京时间）" >> ../tpdate/hosts
 n=`cat pre-hosts.txt | wc -l`
 echo "# Total count: $n" >> ../tpdate/hosts
-cat ../tpdate/hosts ../mod/hosts ./pre-hosts.txt > ../../hosts
+cat ../tpdate/hosts ../mod/hosts ../mod/github-hosts ./pre-hosts.txt > ../../hosts
 rm ./pre-hosts.txt
 
 # 再处理剩下的规则
