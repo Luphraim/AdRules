@@ -86,8 +86,6 @@ adblock_ag=(
   "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt"
   # 去 APP 下载广告规则
   "https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt"
-  # Hacamer's URL Filter
-  "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
   # ADFILT
   # "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
 )
@@ -123,7 +121,9 @@ adblock_lite=(
   # halflife规则，[推荐移动端]合并自乘风视频广告过滤规则、EasylistChina、EasylistLite、CJX'sAnnoyance，以及补充的一些规则
   "https://raw.githubusercontents.com/o0HalfLife0o/list/master/ad.txt"
   # Adblock Warning Removal List
-  "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
+  # "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
+  # halflife规则，合并自Adblock Warning Removal List、ABP filters、anti-adblock-killer-filters
+  "https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-edentw.txt"
   # Hacamer's URL Filter
   # "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
   # 百度超级净化 @坂本大佬
