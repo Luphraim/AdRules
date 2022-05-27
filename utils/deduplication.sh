@@ -233,18 +233,18 @@ cat allow*.txt \
 
 # 合并通用过滤规则
 cat ../mod/element.txt ../mod/dns.txt tmp-allow.txt adblock_uni*.txt \
- | egrep -v '^((\!)|(\！)|(\[)|(\ )|(\"))' \
+ | egrep -v '^((\!)|(\！))' \
  | sort -u > tmp-adblock.txt
 
 # 合并AdKiller过滤规则
 cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
- | egrep -v '^((\!)|(\！)|(\[)|(\ )|(\"))' \
+ | egrep -v '^((\!)|(\！))' \
  | sort -u > pre-filter.txt
 python ../../utils/deduplication.py pre-filter.txt
 
 # 合并AdKiller-Lite过滤规则
 cat tmp-adblock.txt adblock_lite*.txt \
- | egrep -v '^((\!)|(\！)|(\[)|(\ )|(\"))' \
+ | egrep -v '^((\!)|(\！))' \
  | sort -u > pre-filter-lite.txt
 python ../../utils/deduplication.py pre-filter-lite.txt
  
