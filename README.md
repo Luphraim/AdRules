@@ -40,8 +40,8 @@
 |                          | [中文过滤器](https://filters.adtidy.org/android/filters/224_optimized.txt)                                                                                                                             |
 | 通用元素过滤规则         | [乘风通用过滤规则](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt)，适用于 UBO 或 ADG（已去除，存在误杀）                                                                 |
 |                          | [乘风视频过滤规则](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt)，适用于 UBO 或 ADG                                                                                       |
-| 元素过滤规则，推荐移动端 | [adgk 规则](https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt) @坂本大佬                                                                                                              |
 |                          | [百度超级净化](https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt) @坂本大佬                                                                                                  |
+| 元素过滤规则，推荐移动端 | [adgk 规则](https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt) @坂本大佬                                                                                                              |
 |                          | [Anti-AD for Adguard](https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-adguard.txt)                                                                                   |
 |                          | [主要去除手机盗版网站广告](https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt) @酷安：大萌主                                                                                          |
 |                          | [去 APP 下载广告规则](https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt)                                                                                               |

@@ -72,6 +72,8 @@ adblock_uni=(
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt"
   # GOODBYEADS Rules
   "https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/adblock.txt"
+  # 百度超级净化 @坂本大佬
+  "https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt"
 )
 
 # 元素过滤规则 (AdGuard)
@@ -80,8 +82,6 @@ adblock_ag=(
   "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-adguard.txt"
   # adgk规则 @坂本大佬
   "https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt"
-  # 百度超级净化 @坂本大佬
-  "https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt"
   # 主要去除手机盗版网站广告 @酷安：大萌主
   "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt"
   # 去 APP 下载广告规则
