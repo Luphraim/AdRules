@@ -113,7 +113,7 @@ adblock_full=(
   # I don't care about cookies
   "https://www.i-dont-care-about-cookies.eu/abp/"
   # Online Malicious URL Blocklist URL-based
-  "https://curben.gitlab.io/malware-filter/urlhaus-filter-online.txt"
+  "https://malware-filter.gitlab.io/malware-filter/urlhaus-filter.txt"
 )
 
 # 元素过滤规则 (Mobile)
@@ -172,7 +172,7 @@ dns_agh=(
   # Anti-AD for AdGuardHome（DNS过滤）
   "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt"
   # Online Malicious URL Blocklist Domain-based (AdGuard Home)
-  "https://curben.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt"
+  "https://malware-filter.gitlab.io/malware-filter/urlhaus-filter-agh-online.txt"
   # LWJ's black list
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
   # LWJ's white list
@@ -220,7 +220,7 @@ echo '规则下载完成'
 echo 开始合并
 # 预处理自定义规则
 cat ../mod/static.txt \
- | egrep -v '^((\!)|(\！)|(\ ))' \
+ | egrep -v '^(\!|\！|\[)' \
  | sort -u > ../mod/element.txt
 cat ../mod/element.txt \
  | egrep '^((\|\|)|(\@\@)).*(\^)$' \
@@ -228,31 +228,32 @@ cat ../mod/element.txt \
 
 # 合并白名单规则
 cat allow*.txt \
- | grep '^(\@\@).*' \
+ | egrep '^@@\|\|?[^\^=\/:]+?\^([^\/=\*]+)?$' \
  | sort -u > tmp-allow.txt
 
 # 合并通用过滤规则
 cat ../mod/element.txt ../mod/dns.txt tmp-allow.txt adblock_uni*.txt \
- | egrep -v '^((\!)|(\！)|(\ ))' \
+ | egrep -v '^(\!|\！|\[)' \
  | sort -u > tmp-adblock.txt
 
 # 合并AdKiller过滤规则
 cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
- | egrep -v '^((\!)|(\！)|(\ ))' \
+ | egrep -v '^(\!|\！|\[)' \
  | sort -u > pre-filter.txt
 python ../../utils/deduplication.py pre-filter.txt
 
 # 合并AdKiller-Lite过滤规则
 cat tmp-adblock.txt adblock_lite*.txt \
- | egrep -v '^((\!)|(\！)|(\ ))' \
+ | egrep -v '^(\!|\！|\[)' \
  | sort -u > pre-filter-lite.txt
 python ../../utils/deduplication.py pre-filter-lite.txt
  
 # 合并HOSTS过滤规则并转化为DNS过滤规则
 cat hosts*.txt \
- | egrep -v '(^#)|(\*$)|(\#)' \
- | egrep -v '^[0-9f\.:]+\s+(ip6\-)|(host|loopback)$' \
+ | egrep -v '^((#.*)|(\s*))$' \
+ | egrep -v '^[0-9\.:]+\s+(ip6\-)?(localhost|loopback)$' \
  | egrep -v '0.0.0.0 0.0.0.0' \
+ | egrep -v '#' \
  | sed 's/127.0.0.1/0.0.0.0/' \
  | sed 's/::/0.0.0.0/g' \
  | sed 's/  / /' \
@@ -265,38 +266,34 @@ cat pre-hosts.txt \
 
 # 合并DNS通用过滤规则
 cat tmp-hosts-dns.txt ../mod/dns.txt tmp-allow.txt dns_uni*.txt \
- | egrep -v '^((\!)|(\！)|(\ )|(\#))' \
+ | egrep -v '^(#|\!|\！|\[)' \
  | sort -u > tmp-dns.txt
 
 # 合并AdGuard过滤规则
 cat tmp-adblock.txt adguard*.txt adblock_ag*.txt \
- | egrep -v '^((\!)|(\！)|(\ ))' \
+ | egrep -v '^(\!|\！|\[)' \
  | sort -u > pre-adguard.txt
 python ../../utils/deduplication.py pre-adguard.txt
 
 # 分别提取AdGuard DNS规则和元素过滤规则
 cat pre-adguard.txt tmp-dns.txt \
- | egrep '((\^)|(\^\|))$' > tmp-adguard.txt
-cat tmp-adguard.txt \
+ | egrep '^\|\|[^\*\^]+?\^$' \
  | egrep -v '(\/)|(\$)' > tmp-adguard-dns.txt
-cat tmp-adguard.txt \
- | egrep '(://).*((\^)|(\^\|))$' >> tmp-adguard-dns.txt
+cat pre-adguard.txt tmp-dns.txt \
+ | egrep '^@@\|\|?[^\^=\/:]+?\^([^\/=\*]+)?$' \
+ | egrep -v '(\/)|(\$)' >> tmp-adguard-dns.txt
+# cat tmp-adguard.txt \
+#  | egrep '(://).*((\^)|(\^\|))$' >> tmp-adguard-dns.txt
 cat tmp-adguard-dns.txt \
 | sort -u > pre-adguard-dns.txt
 python ../../utils/deduplication.py pre-adguard-dns.txt
-
-cat pre-adguard.txt \
- | egrep -v '((\^)|(\^\|))$' > tmp-adguard-element.txt
-cat tmp-adguard.txt \
- | egrep '(\/)|(\$)' \
- | egrep -v '(://).*((\^)|(\^\|))$' >> tmp-adguard-element.txt
-cat tmp-adguard-element.txt \
+comm -23 pre-adguard.txt pre-adguard-dns.txt \
  | sort -u > pre-adguard-element.txt
 python ../../utils/deduplication.py pre-adguard-element.txt
 
 # 合并DNS (AdGuard Home)过滤规则
-cat tmp-dns.txt dns_agh*.txt \
- | egrep -v '^((\!)|(\！)|(\ )|(\#))' \
+cat tmp-dns.txt dns_agh*.txt tmp-allow.txt \
+ | egrep -v '^(#|\!|\！|\[)' \
  | sort -u > pre-dns.txt
 python ../../utils/deduplication.py pre-dns.txt
 
