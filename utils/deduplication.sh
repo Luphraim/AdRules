@@ -113,15 +113,13 @@ adblock_full=(
   # I don't care about cookies
   "https://www.i-dont-care-about-cookies.eu/abp/"
   # Online Malicious URL Blocklist URL-based
-  "https://malware-filter.gitlab.io/malware-filter/urlhaus-filter.txt"
+  # "https://malware-filter.gitlab.io/malware-filter/urlhaus-filter.txt"
 )
 
 # 元素过滤规则 (Mobile)
 adblock_lite=(
   # halflife规则，[推荐移动端]合并自乘风视频广告过滤规则、EasylistChina、EasylistLite、CJX'sAnnoyance，以及补充的一些规则
   "https://raw.githubusercontents.com/o0HalfLife0o/list/master/ad.txt"
-  # Adblock Warning Removal List
-  # "https://easylist-downloads.adblockplus.org/antiadblockfilters.txt"
   # halflife规则，合并自Adblock Warning Removal List、ABP filters、anti-adblock-killer-filters
   "https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-edentw.txt"
   # Hacamer's URL Filter
@@ -150,10 +148,6 @@ hosts=(
   # "https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host"
   # GoodbyeAds
   # "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt"
-  # GoodbyeAds YouTube Adblock
-  # "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-YouTube-AdBlock.txt"
-  # GoodbyeAds Spotify AdBlock
-  # "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Extension/GoodbyeAds-Spotify-AdBlock.txt"
 )
 
 # DNS通用过滤规则
