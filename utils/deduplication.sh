@@ -214,16 +214,12 @@ echo 开始合并
 # 预处理自定义规则
 sort ../mod/static.txt -u -o ../mod/static.txt
 cat ../mod/static.txt \
- | egrep -v '^(\!|\！|\[)' \
- | egrep '^(@@|\|\|).*(\^)$' \
- | egrep -v '(\/)|(\$)' \
+ | egrep -v '^\!|\！|\[' \
+ | egrep '^@@|\|\|.*(\^)$' \
+ | egrep -v '\/|\$' \
  | sort | uniq -i > ../mod/dns.txt
 comm -23 ../mod/static.txt ../mod/dns.txt \
  | sort | uniq -i > ../mod/element.txt
-# cat ../mod/static.txt \
-#  | egrep -v '^(\!|\！|\[)' \
-#  | egrep -v '^(@@|\|\|).*(\^)$' \
-#  | sort | uniq -i > ../mod/element.txt
 
 # 合并白名单规则
 cat allow*.txt \
@@ -232,18 +228,18 @@ cat allow*.txt \
 
 # 合并通用过滤规则
 cat ../mod/element.txt ../mod/dns.txt tmp-allow.txt adblock_uni*.txt \
- | egrep -v '^(\!|\！|\[)' \
+ | egrep -v '^\!|\！|\[' \
  | sort | uniq -i > tmp-adblock.txt
 
 # 合并AdKiller过滤规则
 cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
- | egrep -v '^(\!|\！|\[)' \
+ | egrep -v '^\!|\！|\[' \
  | sort | uniq -i > pre-filter.txt
 python ../../utils/deduplication.py pre-filter.txt
 
 # 合并AdKiller-Lite过滤规则
 cat tmp-adblock.txt adblock_lite*.txt \
- | egrep -v '^(\!|\！|\[)' \
+ | egrep -v '^\!|\！|\[' \
  | sort | uniq -i > pre-filter-lite.txt
 python ../../utils/deduplication.py pre-filter-lite.txt
  
@@ -265,28 +261,19 @@ cat pre-hosts.txt \
 
 # 合并DNS通用过滤规则
 cat ../mod/dns.txt tmp-allow.txt dns_uni*.txt \
- | egrep -v '^(#|\!|\！|\[)' \
+ | egrep -v '^#|\!|\！|\[' \
  | sort | uniq -i > tmp-dns.txt
 
 # 合并AdGuard过滤规则
 cat tmp-adblock.txt tmp-dns.txt adguard*.txt adblock_ag*.txt \
- | egrep -v '^(\!|\！|\[)' \
+ | egrep -v '^\!|\！|\[' \
  | sort | uniq -i > pre-adguard.txt
 python ../../utils/deduplication.py pre-adguard.txt
 
 # 分别提取AdGuard DNS规则和元素过滤规则
-# cat pre-adguard.txt tmp-hosts-dns.txt \
-#  | egrep '^\|\|[^\*\^]+?\^$' \
-#  | egrep -v '(\/)|(\$)' > tmp-adguard-dns.txt
 cat pre-adguard.txt tmp-hosts-dns.txt \
  | egrep '^(\|\||@@\|\|)?[^\^=\/:]+?\^([^\/=\*]+)?$' \
  | sort | uniq -i > pre-adguard-dns.txt
-# cat pre-adguard.txt tmp-hosts-dns.txt \
-#  | egrep '^@@\|\|?[^\^=\/:]+?\^([^\/=\*]+)?$' \
-#  | egrep -v '(\/)|(\$)' >> tmp-adguard-dns.txt
-# cat tmp-adguard.txt \
-#  | egrep '(://).*((\^)|(\^\|))$' >> tmp-adguard-dns.txt
-# sort tmp-adguard-dns.txt -u -o pre-adguard-dns.txt
 python ../../utils/deduplication.py pre-adguard-dns.txt
 sort pre-adguard.txt -o pre-adguard.txt
 sort pre-adguard-dns.txt -o pre-adguard-dns.txt
@@ -296,7 +283,7 @@ python ../../utils/deduplication.py pre-adguard-element.txt
 
 # 合并DNS (AdGuard Home)过滤规则
 cat tmp-dns.txt tmp-hosts-dns.txt dns_agh*.txt tmp-allow.txt \
- | egrep -v '^(#|\!|\！|\[)' \
+ | egrep -v '^#|\!|\！|\[' \
  | sort | uniq -i > pre-dns.txt
 python ../../utils/deduplication.py pre-dns.txt
 
