@@ -234,12 +234,14 @@ cat ../mod/element.txt ../mod/dns.txt tmp-allow.txt adblock_uni*.txt \
 # 合并AdKiller过滤规则
 cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
  | egrep -v '^\!|\！|\[' \
+ | egrep -v '^(com\^)' \
  | sort | uniq -i > pre-filter.txt
 python ../../utils/deduplication.py pre-filter.txt
 
 # 合并AdKiller-Lite过滤规则
 cat tmp-adblock.txt adblock_lite*.txt \
  | egrep -v '^\!|\！|\[' \
+ | egrep -v '^(com\^)' \
  | sort | uniq -i > pre-filter-lite.txt
 python ../../utils/deduplication.py pre-filter-lite.txt
  
@@ -267,6 +269,7 @@ cat ../mod/dns.txt tmp-allow.txt dns_uni*.txt \
 # 合并AdGuard过滤规则
 cat tmp-adblock.txt tmp-dns.txt adguard*.txt adblock_ag*.txt \
  | egrep -v '^\!|\！|\[' \
+ | egrep -v '^(com\^)' \
  | sort | uniq -i > pre-adguard.txt
 python ../../utils/deduplication.py pre-adguard.txt
 
