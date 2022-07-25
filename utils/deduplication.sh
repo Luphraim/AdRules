@@ -74,6 +74,9 @@ adblock_uni=(
   "https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/adblock.txt"
   # 百度超级净化 @坂本大佬
   "https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt"
+  # Cats-Team AdBlock Rules
+  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
+  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/exincludes-adblock-rules.txt"
 )
 
 # 元素过滤规则 (AdGuard)
@@ -119,7 +122,7 @@ adblock_full=(
 # 元素过滤规则 (Mobile)
 adblock_lite=(
   # halflife规则，[推荐移动端]合并自乘风视频广告过滤规则、EasylistChina、EasylistLite、CJX'sAnnoyance，以及补充的一些规则
-  "https://raw.githubusercontents.com/o0HalfLife0o/list/master/ad.txt"
+  "https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt"
   # halflife规则，合并自Adblock Warning Removal List、ABP filters、anti-adblock-killer-filters
   "https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-edentw.txt"
   # Hacamer's URL Filter
@@ -155,10 +158,8 @@ dns_uni=(
   # AdGuard DNS filter
   "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt"
   # Cats-Team 自定义过滤规则
-  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rule-allow.txt"
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt"
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
-  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
 )
 
 # DNS (AdGuard Home)过滤规则
@@ -234,14 +235,12 @@ cat ../mod/element.txt ../mod/dns.txt tmp-allow.txt adblock_uni*.txt \
 # 合并AdKiller过滤规则
 cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
  | egrep -v '^\!|\！|\[' \
- | egrep -v '^(com\^)' \
  | sort | uniq -i > pre-filter.txt
 python ../../utils/deduplication.py pre-filter.txt
 
 # 合并AdKiller-Lite过滤规则
 cat tmp-adblock.txt adblock_lite*.txt \
  | egrep -v '^\!|\！|\[' \
- | egrep -v '^(com\^)' \
  | sort | uniq -i > pre-filter-lite.txt
 python ../../utils/deduplication.py pre-filter-lite.txt
  
@@ -269,7 +268,7 @@ cat ../mod/dns.txt tmp-allow.txt dns_uni*.txt \
 # 合并AdGuard过滤规则
 cat tmp-adblock.txt tmp-dns.txt adguard*.txt adblock_ag*.txt \
  | egrep -v '^\!|\！|\[' \
- | egrep -v '^(com\^)' \
+ | egrep -v '^(\.com\^)' \
  | sort | uniq -i > pre-adguard.txt
 python ../../utils/deduplication.py pre-adguard.txt
 
