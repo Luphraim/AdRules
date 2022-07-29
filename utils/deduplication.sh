@@ -156,7 +156,7 @@ hosts=(
 # DNS通用过滤规则
 dns_uni=(
   # AdGuard DNS filter
-  "https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt"
+  "https://filters.adtidy.org/android/filters/15_optimized.txt"
   # Cats-Team 自定义过滤规则
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt"
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
