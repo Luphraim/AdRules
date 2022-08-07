@@ -5,8 +5,8 @@
 ! Expires: 24 Hours
 ! Description: 该规则适用于移动端浏览器，如via, Vivaldi, X Browser
 ! Description: 该规则合并自EasyList Lite, Easylist China, CJX's Annoyance List, 乘风视频过滤规则, Adblock Warning Removal List, 酷安大萌主的规则, 去APP下载广告规则, 百度超级净化和一些额外规则
-! Version: 2022-08-06 09:06:37（北京时间）
-! Total count: 30253
+! Version: 2022-08-07 09:15:33（北京时间）
+! Total count: 30265
 ###AdBlockDialog
 ###Ad_windows
 ###ChapterView > .slide-baidu
@@ -498,7 +498,6 @@
 ##.ad_content
 ##.ad_content_mask
 ##.ad_couplebanner
-##.ad_fixed
 ##.ad_footerbanner
 ##.ad_headerbanner
 ##.ad_hf
@@ -550,7 +549,10 @@
 ##.ads > #video_playr_sider
 ##.ads-1
 ##.ads-2
+##.ads-after-content
+##.ads-after-header
 ##.ads-all
+##.ads-before-content
 ##.ads-block-warning
 ##.ads-content
 ##.ads-item
@@ -2736,7 +2738,7 @@ $websocket,domain=5nj.com|cechi8.com
 21ic.com###warp_con
 21ic.com##.appxb
 21ic.com##.couplet_ad2
-21ic.com,pyccoo.cn,qq.com,wdzj.com##.topbanner
+21ic.com,pyccoo.cn,qq.com##.topbanner
 21uscity.com##.R300x70
 21uscity.com##.ad300x60
 21yq.com,yaolan.com###AD1
@@ -6406,6 +6408,7 @@ $websocket,domain=5nj.com|cechi8.com
 @@||xovq5nemr.com^$script,xmlhttprequest
 @@||yafud.pl^$generichide
 @@||yamstamp.com^$script,xmlhttprequest
+@@||yandex.ru/ads/system/context.js|$script,domain=playground.ru
 @@||yantuchina.com/gg/tmp/hong.gif
 @@||yast.rutube.ru/crossdomain.xml$object-subrequest
 @@||yellowbridge.com^$elemhide
@@ -12556,6 +12559,7 @@ txahz.com###archy_ad2
 txtbook.com.cn##.ledu-advWrap
 txxx.com#$#override-property-read skpPop true; abort-on-property-read open
 txxx.com,upornia.com##.video-slider
+type.parseXML, noopFunc)
 typecho.wiki##.adn-ar
 typecho.wiki##.haliluya
 typecho.wiki##.net
@@ -12747,7 +12751,6 @@ wallstreetcn.com##.wscn-ad
 wallstreetcn.com##.wscn-page-ad
 wallstreetcn.com##.xinren-wrapper
 wan.douyu.com
-wanghualang.com##.theiaStickySidebar
 wanqu.co##.left-nav-panel:first-child
 wantgoo.com###FixModal
 wantgoo.com#@#.shareBtns
@@ -12773,11 +12776,6 @@ wbiao.cn###popupImgCorner
 wbiao.cn##.wb-panel
 wcjbb.com###frame37boCx
 wcjbb.com###frameo834m9
-wdzj.com###footbanner
-wdzj.com##.adv-img
-wdzj.com##.alert-box-pop
-wdzj.com##.logo-banner
-wdzj.com##.opentb
 weather.com.cn###adtop_r
 weather.com.cn###ytc
 weather.com.cn###zdl
@@ -12858,8 +12856,8 @@ wenku.baidu.com##.zhixin-right
 wenku8.net###adv300
 wenku8.net#@##adtop
 wenmi114.com###xiezuo
+wenxuecity.com###adt
 wenxuecity.com###marquee
-wenxuecity.com###morehealth-banner-1
 wenxuecity.com##.topbannerw
 whcykj.cn###BDBridgeInviteWrap
 whcykj.cn###InviteContainerl
@@ -12882,7 +12880,6 @@ windows7en.com###ad_btm_down
 windows7en.com###fu_box_logo
 windows7en.com###index_long_first
 windows7en.com##.fu-welcome
-windowszj.com###system_type
 winning11cn.com##.eis_topad
 winshang.com##.ggwrap
 winzoro.net##.isadNotif
@@ -12922,6 +12919,7 @@ worldofgnome.org#@##wog-300x250-ads
 worldofgnome.org#@#.google-ad
 worldve.com###fdkDiv
 worldve.com###img
+woshipm.com##.article--heroAd
 woshipm.com##.article-bottomAd
 woshipm.com##.article-topAd
 wotactions.com###ads_warning
@@ -12930,7 +12928,6 @@ wp.pl#$#abort-on-property-write gafReady
 wp.pl,pudelek.pl#$#abort-on-property-read wpjscb
 wpjam.com###wpjam_blog_300x250_1
 wpmienphi.com###d7b2
-wps.cn##.school
 wpworld.pl,windowsowo.pl#@##adBanner
 wurst-client.tk#@#.adsbygoogle
 www.1069gay.net###shortcut
@@ -13021,11 +13018,6 @@ www.zhihu.com##.css-1izy64v
 www.zol.com.cn#@##search_ad
 www.zxzj.me/slade2.js
 wx.sina.com.cn###artibody > .article-video
-wxrb.com##.AD1000
-wxrb.com##.AD305
-wxrb.com##.AD340
-wxrb.com##.AD640
-wxrb.com##.ADtxt
 x-mol.com###floatWindow
 x-mol.com###rightAllJournal
 x-mol.com##.news-white-content-right
@@ -13396,6 +13388,7 @@ yy.com###gg_right
 yy.com###rbappend
 yystv.cn##.fixed-container
 yystv.cn##.flex-box.flex.top-nav-download
+yz^
 yzmg.com##.article-bottom-ads
 yzmg.com##.article-top-ads
 yzpsb.net###fc_foot
@@ -14816,6 +14809,7 @@ zzbaike.com##.imglistbg_ad
 ||5fz.cc/t/aimg/tao
 ||5fzd.com/gg/
 ||5glyqw.com^
+||5gustis.xyz^
 ||5i103xb.wuplexv.cn^
 ||5ibanma.com^
 ||5icool.org/uploadfile/poster/
@@ -14933,6 +14927,7 @@ zzbaike.com##.imglistbg_ad
 ||666744.xyz^
 ||666745.xyz^
 ||666746.xyz^
+||666747.xyz^
 ||6667778882021.site^
 ||6669667.com^
 ||666video.asia^
@@ -14944,6 +14939,7 @@ zzbaike.com##.imglistbg_ad
 ||6699fa.cn/js/
 ||66cn.com^
 ||66e.cc/d/
+||66game.cn/skinnew/js/ad.js
 ||66huacai.com/d/js/v/hc
 ||66wwvv.com/js/
 ||66wz.com/adv2/
@@ -16961,6 +16957,7 @@ zzbaike.com##.imglistbg_ad
 ||betylife.com^
 ||bf99.com/User*/Ad_
 ||bf99.com/User/Images/bg_Blued.jpg
+||bfejteb.cn^
 ||bfgg365.com^
 ||bfjl.ink^
 ||bfniq.theta.sogou.com^
@@ -20039,6 +20036,7 @@ zzbaike.com##.imglistbg_ad
 ||gongshangwang.top^
 ||gongshe99.com/d/js/gongshe/gsw
 ||gongshu168.cn^
+||gongwuyuan.name^
 ||gongxifc.com^
 ||good8866.com/js/*.js
 ||goodcome.com.tw/block/ad/rndtopad.php
@@ -20268,6 +20266,7 @@ zzbaike.com##.imglistbg_ad
 ||gyeet.com^
 ||gyjinchuang.vip^
 ||gykj.xyz^
+||gylbh.cn^
 ||gyrenmai.icu^
 ||gyt168.com.cn^
 ||gytty.top^
@@ -20491,6 +20490,7 @@ zzbaike.com##.imglistbg_ad
 ||hc360.com/security/201409/201409021830024990.jpg
 ||hcbbsoss.oss-cn-hangzhou.aliyuncs.com^*-banner
 ||hcbjwt.com^
+||hcbmq.cn^
 ||hcdz.site^
 ||hcenc.com^
 ||hchik.com^
@@ -20715,6 +20715,7 @@ zzbaike.com##.imglistbg_ad
 ||hl.smartmuchang.com^
 ||hlgglm.com^
 ||hlhulu.com^
+||hljcq.xyz^
 ||hljhufengling.cn^
 ||hljyjm.cn^
 ||hlryy.top^
@@ -20803,7 +20804,6 @@ zzbaike.com##.imglistbg_ad
 ||hongshikai.com^
 ||hongwenge.com^
 ||hongyangbg.com^
-||hongyingbbs.com/img/top.js
 ||hongyingbbs.com/jj/
 ||honhon.top^
 ||honoka.design^
@@ -21149,6 +21149,7 @@ zzbaike.com##.imglistbg_ad
 ||ideng.com^$third-party
 ||identified.cn^
 ||idianfang.com^
+||idkdoxp.cn^
 ||idmee.cn^
 ||idoc58.com^
 ||idubwz.cn^
@@ -21566,6 +21567,7 @@ zzbaike.com##.imglistbg_ad
 ||itv.hexun.com
 ||itxinrou.com^
 ||iu.snssdk.com.edgekey.net^
+||iuliglsh.space^
 ||iupian.com/mstyle/js/topinfo.js
 ||iusnajah.cn^
 ||iv.aliyune.xyz^
@@ -22321,6 +22323,7 @@ zzbaike.com##.imglistbg_ad
 ||kan98.com/statics/js/k2017/kan98.js
 ||kanbook.net/static/js_union/
 ||kancloud.cn/ad/
+||kandaju.net/js/js2.
 ||kanfaxing.com^
 ||kangaroobro.com/bn.js
 ||kanglaijd.cn^
@@ -22422,6 +22425,7 @@ zzbaike.com##.imglistbg_ad
 ||kfejnjs.cn^
 ||kfir.club^
 ||kfluoa.com^
+||kfnvrt.xyz^
 ||kfweo2.com^
 ||kgagck6.com^
 ||kgho.info^
@@ -23495,6 +23499,7 @@ zzbaike.com##.imglistbg_ad
 ||mdkjefq.cn^
 ||mdklc.top^
 ||mdqgwa.cn^
+||mdsop.com^
 ||mdszz.com^
 ||mdt.qq.com^
 ||me360.com/swt/swt.js
@@ -25180,6 +25185,7 @@ zzbaike.com##.imglistbg_ad
 ||qidian.com/Images/990x40_
 ||qiditrade.com^
 ||qidou.com^$third-party
+||qiezijs.cc^
 ||qifake.com^
 ||qihengprint.cn/mxstatic/js/1.js
 ||qiji1.jdwx.info^
@@ -25193,6 +25199,7 @@ zzbaike.com##.imglistbg_ad
 ||qimm.org/Uploads/ad/
 ||qin.1111.fx-blog.top^
 ||qinbing.cn/data/upload/ueditor/
+||qinger.name^
 ||qingkai.com/2009/html/top.htm
 ||qingkai.com/gg_img/
 ||qingkong.net/skin/htcs/images/980.jpg
@@ -25285,6 +25292,7 @@ zzbaike.com##.imglistbg_ad
 ||qmz931.com^
 ||qncphvc.cn^
 ||qncye.com/ads/
+||qndytvy.cn^
 ||qnmvqdl.cn^
 ||qnsb.com/news/index.php?m=poster&
 ||qnvod.net/qna/
@@ -25989,6 +25997,7 @@ zzbaike.com##.imglistbg_ad
 ||sfz023.com^
 ||sg01.top^
 ||sgaga.xyz^
+||sgdgh15.com^
 ||sgg.southcn.com^
 ||sgk.xyz/static/js/pc.js
 ||sglyd.cn^
@@ -27370,6 +27379,7 @@ zzbaike.com##.imglistbg_ad
 ||ty.lizehuandian.top^
 ||ty.szhszxfw.cn^
 ||ty121.cn/IAA/
+||ty123.ltd^
 ||tycc.info^
 ||tydouke.com^
 ||tyh887.com^
@@ -27500,6 +27510,7 @@ zzbaike.com##.imglistbg_ad
 ||ulxypyg.cn^
 ||um.afcav.com^
 ||um29.com^$third-party
+||um5xcgngmart.xyz^
 ||umbbs.cn^
 ||umbrella.asia^
 ||umeng.com^
@@ -27571,6 +27582,7 @@ zzbaike.com##.imglistbg_ad
 ||urlet.cn^
 ||urs.microsoft.com.nsatc.net^
 ||urtutb.cn^
+||urwnsq.xyz^
 ||us-v10.events.data.microsoft.com^
 ||us.l.qq.com/exapp^
 ||us.l.qq.com^
@@ -27811,10 +27823,12 @@ zzbaike.com##.imglistbg_ad
 ||vsw2.21cnbm.com^
 ||vt863.cn^
 ||vtfwgfo.cn^
+||vtuctez.cn^
 ||vuahb.com^
 ||vue-js.cyou^
 ||vuetifyjs.com/notify.json
 ||vueujv.com^
+||vuliglsf.space^
 ||vupload.duowan.com^
 ||vv1.pyhfxdm.cn^
 ||vvphznw.cn^
@@ -27887,7 +27901,6 @@ zzbaike.com##.imglistbg_ad
 ||wangdq.com^
 ||wangduoduo.pw^
 ||wanghu2020.ltd^
-||wanghualang.com/wp-content/gallery/ad/
 ||wangjianxd.site^
 ||wangjing.cn*/upload/com/
 ||wangjing.cn/iframe/zhounian.php?
@@ -27960,7 +27973,6 @@ zzbaike.com##.imglistbg_ad
 ||wduwvjd.cn^
 ||wdxxx.top^
 ||wdymwzz.com^
-||wdzj.com/wdzj/images/hezuo/
 ||wdzsb.com.cn^
 ||we560.com/js/*.js
 ||weareqy.com^$third-party
@@ -27990,7 +28002,6 @@ zzbaike.com##.imglistbg_ad
 ||wegowan.com^
 ||wehefei.com/htmlphp/tmall/
 ||wei2008.com/js/*0.
-||wei2008.com/js/jump
 ||wei2008.com/js/t_
 ||wei2008.com/skin/js/top.js
 ||weibo.cn/status/banner?
@@ -28047,7 +28058,6 @@ zzbaike.com##.imglistbg_ad
 ||wenshenbang.com^$third-party
 ||wenxiang.work^
 ||wenxiu998.com/static/js/top.js
-||wenxuecity.com/script/wxc_ab_help.js
 ||wenzhougy.cn^
 ||wephone.club^
 ||werpig.com^
@@ -28234,6 +28244,7 @@ zzbaike.com##.imglistbg_ad
 ||woyaoq.com/201904100958_5cad4dbac9c5f.png
 ||woydyd343.com^
 ||wpa.b.qq.com/cgi/wpa.php?
+||wpdaxue.com/img/*/txy-
 ||wpercent.ksadrewrty.com^
 ||wpib0jr.cn^
 ||wples.com/pc/common.js
@@ -28243,6 +28254,7 @@ zzbaike.com##.imglistbg_ad
 ||wqdao.com/tu/
 ||wqdao.com/xin/
 ||wqdwork.com^
+||wqkxlke.cn^
 ||wqprtyg.cn^
 ||wqyloitd.cn^
 ||wr.yiyouliao.com^
@@ -28468,7 +28480,6 @@ zzbaike.com##.imglistbg_ad
 ||wx.sina.com.cn/iframe/pdps/
 ||wx.uc.downcdn.top^
 ||wxa.wxs.qq.com^
-||wxdown.net/images/*.gif
 ||wxebgpj.cn^
 ||wxjj94.top^
 ||wxkouem.cn^
@@ -28476,7 +28487,6 @@ zzbaike.com##.imglistbg_ad
 ||wxmp.ianyshare.xyz^
 ||wxqcshgc.icu^
 ||wxr.kebi1.top^
-||wxrb.com/g/js/baidu.cbjs.m.js
 ||wxs.qq.com^
 ||wxskqy.cn^
 ||wxsnsad.tc.qq.com^
@@ -28699,6 +28709,7 @@ zzbaike.com##.imglistbg_ad
 ||xiaomilingjing.com^
 ||xiaomilw.top^
 ||xiaonengdou.vip^
+||xiaoniaofei.com^
 ||xiaoniu166.wang^
 ||xiaopi.com/500/
 ||xiaopi.com/api.php?op=get_p&
@@ -29034,6 +29045,7 @@ zzbaike.com##.imglistbg_ad
 ||xytom.com^
 ||xywy.com/gk?a=
 ||xywy.com/zhixing/
+||xywy.name^
 ||xyxhtyy.cn^
 ||xyy9.xyz^
 ||xyzmh.xyz/mg/
