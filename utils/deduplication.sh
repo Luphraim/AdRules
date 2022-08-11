@@ -67,7 +67,7 @@ ag_ubo=(
 # 元素过滤规则
 adblock_uni=(
   # 乘风 广告过滤规则，适用于UBO或ADG
-  # "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt"
+  "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt"
   # 乘风 视频过滤规则，适用于UBO或ADG
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt"
   # GOODBYEADS Rules
@@ -112,7 +112,7 @@ adblock_full=(
   # halflife规则，合并自Adblock Warning Removal List、ABP filters、anti-adblock-killer-filters
   "https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-edentw.txt"
   # Hacamer's URL Filter
-  # "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
+  "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
   # I don't care about cookies
   "https://www.i-dont-care-about-cookies.eu/abp/"
   # Online Malicious URL Blocklist URL-based
@@ -126,7 +126,7 @@ adblock_lite=(
   # halflife规则，合并自Adblock Warning Removal List、ABP filters、anti-adblock-killer-filters
   "https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-edentw.txt"
   # Hacamer's URL Filter
-  # "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
+  "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
   # 百度超级净化 @坂本大佬
   "https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt"
   # 主要去除手机盗版网站广告 @酷安：大萌主
