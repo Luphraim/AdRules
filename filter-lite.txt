@@ -5,8 +5,8 @@
 ! Expires: 24 Hours
 ! Description: 该规则适用于移动端浏览器，如via, Vivaldi, X Browser
 ! Description: 该规则合并自EasyList Lite, Easylist China, CJX's Annoyance List, 乘风视频过滤规则, Adblock Warning Removal List, 酷安大萌主的规则, 去APP下载广告规则, 百度超级净化和一些额外规则
-! Version: 2022-09-27 09:23:14（北京时间）
-! Total count: 32333
+! Version: 2022-09-28 09:23:48（北京时间）
+! Total count: 32347
 ###AdBlockDialog
 ###Ad_windows
 ###ChapterView > .slide-baidu
@@ -35,7 +35,6 @@
 ###ad-1,#ad-2,#ad-3,#ad-4,#ad-5,#ad-6,#ad-7
 ###ad-SNSSplashAd
 ###ad-box
-###ad-ft
 ###ad-header-mobile-contener
 ###ad6cn
 ###ad900
@@ -371,12 +370,12 @@
 ###upprev_box
 ###vid_overlay
 ###videoADPIC
+###video_playr_side.video_playr_sider.videoplayerside
 ###whYuTlxF
 ###widget-quan
 ###windlocation
 ###wp > .V-video-floats
 ###wp > .V-videoFloat
-###wp > div > #top_banner
 ###wrapper > .topad
 ###wrapperBlocker
 ###xinnxi
@@ -552,7 +551,6 @@
 ##.adline
 ##.adlist
 ##.ads
-##.ads > #video_playr_sider
 ##.ads-1
 ##.ads-2
 ##.ads-after-content
@@ -620,7 +618,6 @@
 ##.bn728-100
 ##.bn728-93
 ##.bottom-adv
-##.bottom-gg
 ##.bottom-pic,.col-pd.mb10
 ##.bottomAd
 ##.bottomSponsor
@@ -841,7 +838,6 @@
 ##.popup + .shortcuts-mobile-overlay
 ##.privilege-promote
 ##.propa_bottom
-##.pull-right > #video_playr_sider
 ##.qq_nr_lad
 ##.qzdhf
 ##.qzhfaaa
@@ -911,7 +907,6 @@
 ##.ui-ad
 ##.uk-width-1-1.adbox
 ##.video-item-ads
-##.video-player-container > #player_bottom_banner
 ##.vodads
 ##.w100b > .m_adv
 ##.w_ad
@@ -1705,6 +1700,8 @@ $websocket,domain=5nj.com|cechi8.com
 .cn/r.gif?
 .cn/s.gif?
 .cn/s.php?id=$script,third-party
+.cn/sc/*?n=$script,third-party
+.cn/sc/*?x=$script,third-party
 .cn/show?id=$script,third-party
 .cn/showpage.asp?u=$script,third-party
 .cn/vs.php?id=$script,third-party
@@ -2525,6 +2522,7 @@ $websocket,domain=5nj.com|cechi8.com
 /indexpc.html?agent=$popup,third-party
 /info/ads/*
 /iscar.svc/getadvert?
+/j/142610
 /javhd-jp-970x170.jpg
 /jdzjgg/*
 /jfjs/ad.js
@@ -3343,7 +3341,6 @@ $websocket,domain=5nj.com|cechi8.com
 18avhub.com,18avtube.com,mm-cg.com###partner
 18avhub.com,18avtube.com,mm-cg.com##.CN_qmvtoy
 18avinin.com,sunnylife.tw###custom_html-5
-18comic.org,18comic.vip#?#:-abp-has(>.adsbyexoclick)
 18comic.org,18comic.vip,18comic1.art,18comic2.art###guide-modal
 18comic.org,18comic.vip,18comic1.art,18comic2.art##.modal-backdrop
 18comic.vip##.bot-per-context
@@ -3899,7 +3896,6 @@ $websocket,domain=5nj.com|cechi8.com
 880sy.com##.fot_btom
 88448.com###ad_forum_banner
 8bo.com##.mad
-8mav.cc,theporn.cc##.video_playr_sider
 8se.me##.push-bottoms
 8xia.com,9553.com##.high-down + .high-down-icon1
 8xia.com,9553.com,99danji.com##.high-down
@@ -3971,7 +3967,6 @@ $websocket,domain=5nj.com|cechi8.com
 ://*:*/yeyue.html?k=$csp=script-src
 ://*btbtt.*/imgs.js
 ://*btbtt.*/view/image/QT_
-://18comic.*/media/albums/*?
 ://a.ads.
 ://ads.
 ://ads2.
@@ -3982,7 +3977,6 @@ $websocket,domain=5nj.com|cechi8.com
 ://dmhy.gate.*/*.*?$image
 ://dmhy.org^*.*?$image
 ://dreemdmbabys.oss-cn-
-://jmcomic1.*/media/albums/*?
 ://rou*/_next/static/chunks/pages/home-
 ://seai*/ads/float.js
 ://www.*.js|$script,third-party,domain=159i.com|r3sub.com|thisav.com
@@ -7014,6 +7008,7 @@ $websocket,domain=5nj.com|cechi8.com
 @@||videacesky.cz/getbanner.cfm$script
 @@||video.520cc.cc/ad.php|
 @@||video.520cc.cc^$generichide
+@@||video.qq.com^*&refer=http$script
 @@||videoo.info/show_ads.js$script,domain=videoo.info
 @@||videoplaza.tv^$object-subrequest,domain=canalplus.fr
 @@||videoweed.es/banner.php$script
@@ -7290,7 +7285,7 @@ age.tv,agemys.cc##+js(noeval-if, devtoolsDetector)
 agmov.com,huaban.com##.promotion
 agronews.ua,aegeanews.gr,batterypoweronline.com,brezovycukr.cz,centrocommercialevulcano.com,cieonline.co.uk,commsbusiness.co.uk,dailygrindonline.net,davincidiamondsslot.net,delo.bg,dynastyseries.com,fabmx1.com,fat-bike.com,fmj.co.uk,localemagazine.com,loveourweddingmag.com,metaforespress.gr,myvalley.it,niestatystyczny.pl,primapaginamarsala.it,ringelnatz.net,schoolsweek.co.uk,sikkenscolore.it,sportbet.gr,stadtstudenten.de,stagemilk.com,tautasdziesmas.lv,thetoneking.com,toplickevesti.com,zeroradio.co.uk#$#abort-on-property-read wpsite_clickable_data
 agroportal.ua#$#abort-on-property-read abn
-agroter.com.ua,1news.com.ua,365news.biz,4mama.ua,4studio.com.ua,7days-ua.com,apnews.com.ua,argumentiru.com,asiaplustj.info,autotema.org.ua,autotheme.info,beauty.ua,begemot-media.com,begemot.media,chas.cv.ua,cheline.com.ua,cikavosti.com,ck.ua,cn.ua,comments.ua,cvnews.cv.ua,day.kyiv.ua,depo.ua,dnews.dn.ua,dv-gazeta.info,dyvys.info,economistua.com,edinstvennaya.ua,ekovolga.com,expert.in.ua,fedpress.ru,forpost.media,fraza.com,glavnoe.ua,glavnoe24.ru,glavpost.ua,golosinfo.com.ua,gorodkiev.com.ua,gov.ua,grad.ua,greenpost.ua,ifnews.org.ua,inforpost.com,inkorr.com,itechua.com,iz.com.ua,kh.ua,khersonline.net,kolizhanka.com.ua,kr.ua,krymr.com,kurskcity.ru,liga.net,lvnews.org.ua,mega-music.pro,mignews.com.ua,mi100.info,mind.ua,moirebenok.ua,mycompplus.ru,nakanune.ru,narodna-pravda.ua,nashbryansk.ru,newsoneua.tv,news24today.info,ngp-ua.info,nnews.com.ua,novavlada.info,novynarnia.com,np.pl.ua,odessa-life.od.ua,oukr.info,panoptikon.org,pg11.ru,pik.net.ua,pingvin.pro,planetanovosti.com,pl.com.ua,podpricelom.com.ua,politnavigator.net,poltava365.com,portal.lviv.ua,praktika-vlasti.com.ua,prm.ua,procherk.info,profootball.ua,radiosvoboda.org,ratel.kz,real-vin.com,reporter.ua,risu.ua,rivne.media,rivnenews.com.ua,rusjev.net,russianshowbiz.info,rv.ua,rvnews.rv.ua,semobile.com.ua,sport-kr.com.ua,strana.news,strana.today,sud.ua,superdom.ua,te.ua,tenews.org.ua,telekritika.ua,theageoffootball.com,treebuna.info,tverigrad.ru,tverisport.ru,tvoymalysh.com.ua,uainfo.org,uanews.org.ua,uatv.ua,ukranews.com,ukrrain.com,unn.com.ua,vchaspik.ua,versii.if.ua,vgolos.com.ua,viva.ua,vlast.kzvnn24.ru,volnorez.com.ua,volyninfa.com.ua,volyninfo.com,volynpost.com,volynua.com,vsviti.com.ua,westnews.info,womo.ua,wpristav.ru,wworld.com.ua,zbirna.com,zp.ua#$#abort-current-inline-script document.createElement /ru-n4p|ua-n4p|загрузка.../
+agroter.com.ua,1news.com.ua,365news.biz,4mama.ua,4studio.com.ua,7days-ua.com,apnews.com.ua,argumentiru.com,asiaplustj.info,autotema.org.ua,autotheme.info,beauty.ua,begemot-media.com,begemot.media,chas.cv.ua,cheline.com.ua,cikavosti.com,ck.ua,cn.ua,comments.ua,cvnews.cv.ua,day.kyiv.ua,depo.ua,dnews.dn.ua,dv-gazeta.info,dyvys.info,economistua.com,edinstvennaya.ua,ekovolga.com,expert.in.ua,fedpress.ru,forpost.media,fraza.com,glavnoe.ua,glavnoe24.ru,glavpost.ua,golosinfo.com.ua,gorodkiev.com.ua,gov.ua,grad.ua,greenpost.ua,ifnews.org.ua,inforpost.com,inkorr.com,itechua.com,iz.com.ua,kh.ua,khersonline.net,kolizhanka.com.ua,kr.ua,krymr.com,kurskcity.ru,liga.net,lvnews.org.ua,mega-music.pro,mignews.com.ua,mi100.info,mind.ua,moirebenok.ua,mycompplus.ru,nakanune.ru,narodna-pravda.ua,nashbryansk.ru,newsoneua.tv,news24today.info,ngp-ua.info,nnews.com.ua,novavlada.info,novynarnia.com,np.pl.ua,odessa-life.od.ua,ogo.ua,oukr.info,panoptikon.org,pg11.ru,pik.net.ua,pingvin.pro,planetanovosti.com,pl.com.ua,podpricelom.com.ua,politnavigator.net,poltava365.com,portal.lviv.ua,praktika-vlasti.com.ua,prm.ua,procherk.info,profootball.ua,radiosvoboda.org,ratel.kz,real-vin.com,reporter.ua,risu.ua,rivne.media,rivnenews.com.ua,rusjev.net,russianshowbiz.info,rv.ua,rvnews.rv.ua,semobile.com.ua,showdream.org,sport-kr.com.ua,strana.news,strana.today,sud.ua,superdom.ua,te.ua,tenews.org.ua,telekritika.ua,theageoffootball.com,treebuna.info,tverigrad.ru,tverisport.ru,tvoymalysh.com.ua,uainfo.org,uanews.org.ua,uatv.ua,ukranews.com,ukrrain.com,unn.com.ua,vchaspik.ua,versii.if.ua,vgolos.com.ua,viva.ua,vlast.kzvnn24.ru,volnorez.com.ua,volyninfa.com.ua,volyninfo.com,volynpost.com,volynua.com,vsviti.com.ua,westnews.info,womo.ua,wpristav.ru,wworld.com.ua,zbirna.com,zp.ua#$#abort-current-inline-script document.createElement /ru-n4p|ua-n4p|загрузка.../
 aguitar.cn##.banner7
 aguitar.cn##.headerbanner2
 aguitar.cn##.news_b
@@ -9975,8 +9970,7 @@ hqdoor.com##.index_ad2
 hqdoor.com##.index_newad
 hqew.com##.js-ad-tips
 hqew.com##.pop-banner
-htcomic.top,htmanga.top,wnacg.com,wnacg.org,wnacg.top#@##adsbox
-htcomic.top,htmanga.top,wnacg.com,wnacg.org,wnacg.top#@#.aasdwa
+htcomic.top,htmanga.top,wnacg.com,wnacg.org,wnacg.top#@#.ad_hf
 htcomic.top,htmanga.top,wnacg.com,wnacg.org,wnacg.top#@#.google-ads
 htcui.com##.carousel
 htcui.com##.qqanimate
@@ -10613,7 +10607,6 @@ jlpcn.net##.vodAd
 jmb.izzcwww*.*
 jmbbs.com###xjj_jmbbs2015_01
 jmbbs.com##.middle_guanggao
-jmcomic1.city#?#:-abp-has(>.adsbyexoclick)
 jmw.com.cn##.coupon
 jmw.com.cn##.head_1b
 jmw.com.cn##.head_3
@@ -13117,7 +13110,6 @@ tbtdg.com###adblockWarning
 tbtdg.com##.reveal-modal-bg
 tbtdg.com##.s11text
 tbxt.com###headad2
-te/js/fdetect.js
 teachinghand.com##.actions__wrapper
 tech.qq.com##.kjad2
 tech.sina.com.cn##.zc-app
@@ -13156,7 +13148,6 @@ thepaper.cn##.download
 theplace2.ru#@#.adsbygoogle
 theporn.cc##.gg-config
 theporn.cc##.toolbar-gg
-theporn.cc##.video-player-container > script + div
 thetrendspotter.net,theavtimes.com#$#abort-on-property-read advads_passive_ads
 theworld.cn##.download-now
 theyarehuge.com#$#abort-on-property-read Element.prototype.attachShadow
@@ -13654,6 +13645,7 @@ wegowan.com
 weibo.cn##.tips.m-container-max
 weibo.com###pl_common_ali
 weibo.com##.UG_bn_a
+weibo.com##div.wbpro-side-panel:first-child
 weibo.com#?#.card-content > ul > li:-abp-has(> p > .icon-txt-recommend)
 weibo.com#?#.card-wrap:-abp-has(> .card-film > .card-head > .title:-abp-contains(广告))
 weibo.com#?#.card-wrap:-abp-has(>.card-top>.s-fr:-abp-contains(广告))
@@ -16880,6 +16872,7 @@ zzbaike.com##.imglistbg_ad
 ||akqipai.com/m/Tpl/v3/js/indexbottom.js
 ||akqrt.cn^
 ||aksdkfj.biexsite.net^
+||aksfrxd.cn^
 ||aksjdfk.guohexinxiang.com^
 ||aksldkjfd.11jianzhan.com^
 ||akuziti.com/tu/*.js
@@ -17419,6 +17412,7 @@ zzbaike.com##.imglistbg_ad
 ||ayst.love^
 ||ayuki.ink^
 ||ayunzhizuo.ltd^
+||ayverwe.cn^
 ||ayxz.com/images/$script
 ||ayxz.com/images/enkj_small.gif
 ||az.tiandesign.top^
@@ -17677,6 +17671,7 @@ zzbaike.com##.imglistbg_ad
 ||bb-bbjsyuming.cc^
 ||bb1nn.com/js/i.js
 ||bb999.net/pic/n/agents/C-79.gif
+||bbazhaheiv.top^
 ||bbbx.xyz^
 ||bbgs888.top^
 ||bbk5831.yncjsc.cn^
@@ -20612,6 +20607,7 @@ zzbaike.com##.imglistbg_ad
 ||fchio.com^
 ||fcluqg.cn^
 ||fcm.baidu.com^
+||fcqztan.cn^
 ||fcrdb.com^
 ||fcuit.com^
 ||fcunq.com^
@@ -21512,12 +21508,14 @@ zzbaike.com##.imglistbg_ad
 ||gw069.com^
 ||gwaaz.cn^
 ||gwbnsh.net.cn/hd/unicom/ad.html
+||gwertyuadf.com^
 ||gwf0.icu^
 ||gwmaajp.cn^
 ||gwmeinq.cn^
 ||gwmrb.cn^
 ||gwylm.com^
 ||gwzqbnh.cn^
+||gx2f.top^
 ||gxbnp.cn^
 ||gxdianhua.com^
 ||gxe.husky.sogou.com^
@@ -21705,6 +21703,7 @@ zzbaike.com##.imglistbg_ad
 ||haomaiweb.com^
 ||haomaojin.com^
 ||haomm.com^$third-party
+||haop5wopa.icu^
 ||haopp02.com/haose/
 ||haopp02.com/js/
 ||haoqu99.com/d/haoqu/haoqu
@@ -22589,6 +22588,7 @@ zzbaike.com##.imglistbg_ad
 ||iiilab.com/sponsor/getByPage
 ||iiiuuu.top^
 ||iipbuas.cn^
+||iiroz.xyz^
 ||iirpvchv.cn^
 ||iis7.com/ys/css2018/ggw.js
 ||ijgocb.cn^
@@ -23365,6 +23365,7 @@ zzbaike.com##.imglistbg_ad
 ||jmr.nnxiant.cn^
 ||jmulab.cn^
 ||jmw.com.cn/m_v2/js/active.js
+||jmwant.co^
 ||jmydm.com/jspage/ftt.js
 ||jmypaxioemnf.com^
 ||jmypdkzixne.com^
@@ -25624,6 +25625,7 @@ zzbaike.com##.imglistbg_ad
 ||n0255.com^
 ||n0399.com^
 ||n0488.com^
+||n1hf.cn^
 ||n2.hk/apps/car_feed/tb/*/banner.html
 ||n2.hk/promo/
 ||n258.cc^
@@ -25858,6 +25860,7 @@ zzbaike.com##.imglistbg_ad
 ||none-test.com^
 ||nongchanlianhe.top^
 ||nongfumg.com^
+||nongjih.cn^
 ||nongjitong.com/adm/
 ||nongsonx.uno^
 ||nongzhifu.cn^
@@ -25977,6 +25980,7 @@ zzbaike.com##.imglistbg_ad
 ||oaftaijo.net^
 ||oajxkah.cn^
 ||ob3o3r7.cn^
+||obazhaheik.top^
 ||obeip.com^
 ||oberry.cn^
 ||obetxuv.cn^
@@ -26366,6 +26370,7 @@ zzbaike.com##.imglistbg_ad
 ||pdss.xyz^
 ||pdsvrtb.cn^
 ||pdtqjd.cn^
+||pdxubxc.cn^
 ||pedailyu.com^
 ||peer-stream.com/api/AdvertisementPlugin$object-subrequest,domain=schoener-fernsehen.com
 ||peigbv.cn^
@@ -26577,6 +26582,7 @@ zzbaike.com##.imglistbg_ad
 ||polaccafaison.com^$third-party
 ||polflq.cn^
 ||policy.jd.com^
+||polkmnhytgb.com^
 ||polkoa.com^
 ||poneer.hnlczgjx.com^
 ||pongsone.uno^
@@ -26821,6 +26827,7 @@ zzbaike.com##.imglistbg_ad
 ||qfs365.com^
 ||qfxdvti.cn^
 ||qg1v.adroition.net^
+||qg9z.cn^
 ||qgbtd.com^
 ||qgdvyvd.cn^
 ||qgfdqjf.cn^
@@ -26913,6 +26920,7 @@ zzbaike.com##.imglistbg_ad
 ||qingzhencai.net^
 ||qinhang.pro^
 ||qiniucdn.com^$domain=enrz.com,image
+||qinlingshui.com^
 ||qinlu.ink^
 ||qinmon.xyz^
 ||qinqiaotrade.com^
@@ -27581,6 +27589,7 @@ zzbaike.com##.imglistbg_ad
 ||salary.xiao84.com^
 ||salemarket.online^
 ||sales-frontier.com^$third-party
+||salleyte.top^
 ||sam*.baby-kingdom.com^
 ||samantharegina.com^
 ||samanthyean.com^
@@ -27663,6 +27672,7 @@ zzbaike.com##.imglistbg_ad
 ||scw98.com/js/Index
 ||sd124.com/statics/mystyle/js/1699.js
 ||sd173.com/images/
+||sd1f.top^
 ||sd6hon.cn^
 ||sdawe.top^
 ||sdbeta.com/statics/mystyle/js/1
@@ -27860,6 +27870,7 @@ zzbaike.com##.imglistbg_ad
 ||shilong.xyz^
 ||shimo.im^*/ads?
 ||shino3ur.xyz^
+||shipostrich.com^
 ||shiruru.cn^
 ||shishishiguixinfangfuzhuangshanghan.cn^
 ||shixiaofei864.cn^
@@ -28379,7 +28390,6 @@ zzbaike.com##.imglistbg_ad
 ||static.zongheng.com^*/adClickStat.js
 ||static.zongheng.com^*/ad_click.js
 ||static.zongheng.com^*/logger.min.js
-||staticporn.cc/static/tmp/
 ||statics.jialuode.com^
 ||statics.woozooo.com^
 ||statis1.mama.cn^
@@ -29349,6 +29359,7 @@ zzbaike.com##.imglistbg_ad
 ||udn.com/common/iframe/
 ||udn.com/common2/iframe/
 ||udn.com^*/ad/
+||udpztkb.cn^
 ||ue3jfw.com^
 ||ue4.store^
 ||ueadlian.com^$third-party
@@ -29793,6 +29804,7 @@ zzbaike.com##.imglistbg_ad
 ||vzmz.com/template/paody/aaaa/*0
 ||vzmz.com/template/paody/aaaa/357.js
 ||vzovmzc.cn^
+||vztkmhf.cn^
 ||w-cached.cncenter.cz/js/cnc-ads-controller.$script,domain=blesk.cz|extra.cz|reflex.cz|zive.cz|auto.cz|e15.cz|autorevue.cz|dama.cz|maminka.cz|mojezdravi.cz|zeny.cz|onetv.cz|info.cz|ahaonline.cz
 ||w.anmeihe.cn^
 ||w.cnews.qq.com^
@@ -30213,6 +30225,7 @@ zzbaike.com##.imglistbg_ad
 ||wshufa.com^$third-party
 ||wslits.cn^
 ||wsnew.cn^
+||wsnoownme.fun^
 ||wspeed.qq.com^
 ||wss.haoyundm.com^
 ||wsthcgl.cn^
@@ -31356,6 +31369,7 @@ zzbaike.com##.imglistbg_ad
 ||yiyuwl.cn^
 ||yizhanghaoquan.pw^
 ||yizhibo.com/special/h5corner.html
+||yjbys.com/css_js/
 ||yjcf360.com/ad.
 ||yjegf.com^
 ||yjiaj.com^
