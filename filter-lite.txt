@@ -5,8 +5,8 @@
 ! Expires: 24 Hours
 ! Description: 该规则适用于移动端浏览器，如via, Vivaldi, X Browser
 ! Description: 该规则合并自EasyList Lite, Easylist China, CJX's Annoyance List, 乘风视频过滤规则, Adblock Warning Removal List, 酷安大萌主的规则, 去APP下载广告规则, 百度超级净化和一些额外规则
-! Version: 2022-11-19 09:09:51（北京时间）
-! Total count: 32110
+! Version: 2022-11-20 09:12:42（北京时间）
+! Total count: 32135
 ###AdBlockDialog
 ###Ad_windows
 ###ChapterView > .slide-baidu
@@ -137,6 +137,7 @@
 ###bannerAd
 ###bd-hl-content
 ###bfad.rm-one
+###bfad1
 ###bfad2
 ###bgad
 ###bl_mobile_float
@@ -820,6 +821,7 @@
 ##.modalJS_object
 ##.modal__body-adblock
 ##.module-adslist
+##.module-adslists
 ##.msg-adblock
 ##.my-cat.my-cat-header
 ##.mylist + #topthree
@@ -965,6 +967,7 @@
 ##DIV.col-4.col-sm-2.col-xl-2.px-1.px-sm-2.pb-3.pt-3.pt-sm-0.d-block.d-sm-none
 ##DIV.fixed-bottom.d-block.d-sm-none.movies_ad
 ##SPAN#qdSZ2
+##a.ad_links
 ##adblock-detect
 ##adblock-modal-component
 ##adblocker
@@ -2617,6 +2620,7 @@ $websocket,domain=5nj.com|cechi8.com
 /lenovo/pc/all*.js
 /lenovo/pc/piaofu2.js
 /lenovo/pc/top.js
+/letv-gug/*
 /link?c=$image
 /live173_*/46860.
 /live800.
@@ -3820,7 +3824,7 @@ $websocket,domain=5nj.com|cechi8.com
 5ykj.com##.ls-b-large-margin
 6.cn##.min-ad-box
 6090ba.com##.vdgd + a
-61.hz.letv.com,61.iqiyi.com,v.61.com###J_videoBox > .view
+61.iqiyi.com,v.61.com###J_videoBox > .view
 6665.com###fgdiy01
 6665.com###fgdiy09
 66huacai.com##.soft-downUrl-list.underline
@@ -5692,8 +5696,6 @@ $websocket,domain=5nj.com|cechi8.com
 @@||lesports.com/pc/??*/click_statistics/
 @@||lettucecopper.com^$script,xmlhttprequest
 @@||lettucelimit.com^$script,xmlhttprequest
-@@||letv.com/tuiguang/$subdocument
-@@||letvcloud.com^*&showAd=
 @@||levelbehavior.com^$script,xmlhttprequest
 @@||lexpress.fr/*/ads.css$stylesheet
 @@||lggautotrasporti.esy.es/images/logofinaleLGG.png$image,domain=lggautotrasporti.esy.es
@@ -7326,7 +7328,7 @@ aliyun.com###yq-a-r-bottom
 aliyun.com##.aliyun-delivery-view-container
 aliyun.com##.yq-ads-blog
 aliyun.com##.yq-main-left > a:first-child
-all-episodes.net###odin
+all-episodes.one##.pocazat
 allboxing.ru#$#abort-current-inline-script document.querySelector open
 alluc.ee###aovl
 alternativeto.net##.cuuummmonnnn
@@ -9110,6 +9112,7 @@ fanyi.baidu.com##.banner_img_container
 fanyi.baidu.com##.extra-banners
 fanyi.baidu.com##.hot-link-middle
 fanyi.baidu.com##.trans-side-ad-wrap
+fanyi.baidu.com##H1,H3,DIV.intro-nav.clearfix,DIV.intro-copyrigh,A.app-bar,DIV.intro-copyright
 fanyi.baidu.com##div.banner-wrap
 fanyi.baidu.com,longzhu.com##.banner-wrap
 fanyi.sogou.com##.img-banner
@@ -9180,6 +9183,7 @@ finance.sina.com.cn##.m-s-tab + div
 finance.sina.com.cn##.sina-client-tl
 finance.sina.com.cn##.zc-app-btn.right-bar-btn
 finanse.wp.pl#$#abort-on-property-read prebidConfig.hbA
+findlaw.cn###wlcommonbot
 findprice.com.tw###divBestBuy
 findretros.com##.fuck-adblock
 firefox.com.cn,firefoxchina.cn###promote-top-list
@@ -9964,6 +9968,7 @@ huanqiu.com###winNext
 huanqiu.com##.ad_all
 huanqiu.com##.adindexList
 huanqiu.com##.r-hqFashion
+huanqiu.com##.right-box > article-other-template
 huaren.tv##.live-client_left
 huaren.tv##.live-client_right
 huarenjie.com###LeftAd2
@@ -10041,7 +10046,6 @@ ibaotu.com##.bg-feedback
 ibaotu.com##.comVip-tg
 ibf.tw###top_d
 ibm.com###dw-regbar
-ic.qzone.qq.com^
 icanzc.com###contbot
 icanzc.com###contsec
 icbc.com.cn#@#.adLeft
@@ -10976,6 +10980,7 @@ lfg.co,leasticoulddo.com#@#.text_ad
 lfg.co,leasticoulddo.com#@#.text_ads
 lgmi.com###openwindows0
 lgn.yy.com##.m_left
+li:nth-of-type(1)
 liaoxuefeng.com###x-sponsor-a
 liaoxuefeng.com###x-sponsor-b
 liaoxuefeng.com##.x-sponsor
@@ -11297,6 +11302,7 @@ m.zwdu.com/getuserinfo.php
 m.zzzfun.com##DIV#show-2415689770463175004-8179
 m4ff.com##.content2
 m4ff.com##.index_gg_wz
+m^
 mabiji.com##.celan
 macd.cn###hbad
 macfans.org###portal_block_180
@@ -13509,6 +13515,10 @@ vesti.ua#$#abort-current-inline-script document.createElement atob
 vestivrn.ru#$#abort-on-property-read video.preroll
 vev.io,vev.red,vidop.icu,vidup.io#$#abort-current-inline-script window.__INITIAL_STATE__
 vgtime.com##.vgart_top
+video.qq.com#@#+js(json-prune,ads adList.item)
+video.qq.com#@#+js(no-fetch-if,/trace\.|beacon\./)
+video.qq.com#@#+js(no-xhr-if,/trace\.|\/collect/)
+video.qq.com#@#+js(set,RTCPeerConnection,null)
 videobug.net,videofun.me,vidzur.com##.randid
 videofun.me,videobug.net,video44.net,play44.net,byzoo.org,playbb.me,videowing.me,videozoo.me,easyvideo.me,playpanda.net##.jhasvdjhas
 videojav.com,pornpapa.com,fapguru.com#$#abort-on-property-read document.querySelectorAll
@@ -13619,7 +13629,6 @@ weather.com.cn##.ggt
 weather.com.cn##.tong
 weather.com.cn##.tuiguang
 weather.com.cn,wed114.cn#@#.adpic
-web-player-tracker.biliapi.net
 web-shpargalka.ru#$#abort-on-property-read Date.prototype.toUTCString
 webjx.com###middleimg
 webkaka.com##.pNavigateAd
@@ -14398,6 +14407,7 @@ zztt24.com##.no-mask
 ||033.com^$third-party
 ||033dfgh.com^
 ||0351dvd.cn^
+||035caop.com^
 ||036e.cn^
 ||0371app.wang^
 ||0379home.com/public/js/ad_pic.js
@@ -14415,6 +14425,7 @@ zztt24.com##.no-mask
 ||04stream.tv/sda/
 ||04zl.cn^
 ||0512s.com^$third-party
+||053tyfg.com^
 ||0554xx.cn/gg2.js
 ||0573fang.com/ads/
 ||0575bbs.com/js/float.js
@@ -16927,7 +16938,7 @@ zztt24.com##.no-mask
 ||aliyuncs.com/public/v1/js/ad-config.
 ||aliyuncs.com/vss/haotu.js
 ||aliyuncs.com/wjy99re/
-||aliyuncs.com^$domain=5kym.com
+||aliyuncs.com^$domain=5kym.com|zzkdhb.com
 ||aliyuncss.com^
 ||aliyune.xyz^
 ||aliyunf.xyz^
@@ -17149,8 +17160,6 @@ zztt24.com##.no-mask
 ||arealx.com^
 ||arguments.wang^
 ||ark.le.com/s?vid=
-||ark.letv.com/s?res=
-||ark.letv.com/s?vid=
 ||ark.letv.com/t?
 ||arkn81.com^
 ||arlbper.cn^
@@ -18366,6 +18375,7 @@ zztt24.com##.no-mask
 ||cdn.ay.gy/js/link-converter.js$script,third-party
 ||cdn.baidu.xahycw.com^
 ||cdn.computerworld.com.au/compressor-staticfiles/adsmin/idg_gpt_pipeline_generated.js$script
+||cdn.creative-bars1.com^
 ||cdn.galacg.me/img/*.gif
 ||cdn.galacg.me/img/*.jpg
 ||cdn.hanaya-m.com^
@@ -19019,6 +19029,7 @@ zztt24.com##.no-mask
 ||counter.pcauto.com.cn^
 ||counter.tianjimedia.com^
 ||countpage.sznews.com^
+||couplestupidity.com^
 ||cp.7y7.com^
 ||cp.discuz.qq.com^
 ||cp.eoncreativity.com^
@@ -19727,6 +19738,7 @@ zztt24.com##.no-mask
 ||dmg-dd.oss-accelerate.aliyuncs.com^
 ||dmgjwy.xyz^
 ||dmjs.gucheng.com/
+||dml.lczk.cn^
 ||dmm.aizhan.com^
 ||dmmzkfd82wayn.cloudfront.net^
 ||dmp.sina.cn/
@@ -20576,6 +20588,7 @@ zztt24.com##.no-mask
 ||ff.027pbj.net^
 ||ff.guidaye.com^
 ||ff.meikanguo.com^
+||ff.psd8.com^
 ||ff.qichetansuo.com^
 ||ff.xue163.net^
 ||ffflxue.cn^
@@ -20744,6 +20757,7 @@ zztt24.com##.no-mask
 ||freshmate.com.cn^
 ||friend17.net^
 ||friendliness.work^
+||friendshipmale.com^
 ||friendwool.com^$third-party
 ||frontendjs.com/api/ad
 ||fs0523.com^
@@ -20841,6 +20855,7 @@ zztt24.com##.no-mask
 ||fzckwij.cn^
 ||fzlol.com/images/$script
 ||fzpchome.com/txt/$script
+||fztimyc.cn^
 ||fzxiaoshuo.com/source/
 ||fzygcof.cn^
 ||g-day.design^
@@ -22925,7 +22940,6 @@ zztt24.com##.no-mask
 ||jb51.net/imgby/logo_
 ||jb9vtov.xyz^
 ||jbazhaheia.top^
-||jbdmb1.ynztzh.com^
 ||jbnmuye.cn^
 ||jbplm.com^
 ||jbr.lhippac.cn^
@@ -24141,11 +24155,8 @@ zztt24.com##.no-mask
 ||letong.xyz^
 ||letsread.club^
 ||letv.com/pzt/hyhmzq/index.shtml
-||letv.com/s?ark=
-||letvcdn.com/js/*_focus_flash.js
 ||letvimg.com/$object,xhr
 ||letvimg.com/*_gugwl/$image
-||letvimg.com^*/108x70$object
 ||letzgr.cn^
 ||lexlufv.cn^
 ||lexph.com^
@@ -24330,6 +24341,7 @@ zztt24.com##.no-mask
 ||lkkskdkfjdk.qiangquanvip.com^
 ||lkm.bangyuandianzi.top^
 ||lknmnnr.xyz^
+||lkpmprksau.com^
 ||lksw1.top^
 ||lksw3.top^
 ||lktxelg.cn^
@@ -24345,7 +24357,6 @@ zztt24.com##.no-mask
 ||llnsmu.com^
 ||llsynmll.fun^
 ||llyhbqn.cn^
-||lm-zl.oss-accelerate.aliyuncs.com^
 ||lm.ijq.tv^
 ||lm1.tuliu.com^
 ||lm1.wkpcw.cn^
@@ -25711,6 +25722,7 @@ zztt24.com##.no-mask
 ||nqbcf.cn/html/top
 ||nqcacox.cn^
 ||nqfwx.cn^
+||nqnggnsc.fun^
 ||nqsc567.com^
 ||nr1234.com^
 ||nrj.fr/nrj?Page=/rg.fake&
@@ -25852,6 +25864,7 @@ zztt24.com##.no-mask
 ||oioiio.top^
 ||oisafnik.space^
 ||oiuqwppcsdf.com^
+||oivgqnt.cn^
 ||oizn.club^
 ||ojbknb.com^
 ||ojbknx.com^
@@ -26491,6 +26504,7 @@ zztt24.com##.no-mask
 ||prjwqs.xyz^
 ||pro.cn^$third-party
 ||pro.iweihai.cn^
+||prodigalpromotion.com^
 ||producecopy.com^$third-party
 ||proewildfire.cn/fd.js
 ||proginn.com/cms/10000/
@@ -26716,6 +26730,7 @@ zztt24.com##.no-mask
 ||qianchengwenhua.xyz^
 ||qianduoduo.fit^
 ||qianggou8.top^
+||qiangqi.shop^
 ||qiangren.biz^
 ||qiangzai.work^
 ||qianhua.*/data/attachment/portal/
@@ -27826,6 +27841,7 @@ zztt24.com##.no-mask
 ||similm.xyz^
 ||simiyue2.com^
 ||simpasa.cn^
+||simplewebanalysis.com^
 ||sin114.com^$third-party
 ||sina-img.club^
 ||sina.cn*/view?
@@ -28171,6 +28187,7 @@ zztt24.com##.no-mask
 ||ssports.iqiyi.com/json/shop/shopInfo
 ||sspservice.ad-survey.com^
 ||sspsky.com^$third-party
+||ssqyuvavse.com^
 ||sss777.net/Alove-A/
 ||sssgao999.com^
 ||sssvd.china.com^
@@ -28938,6 +28955,7 @@ zztt24.com##.no-mask
 ||tribalfusion.com^
 ||tristoshink.online/libs/check.js
 ||tritoshi.com/libs/check.js
+||trqhf.xyz^
 ||trslw.cn^
 ||truecrimesss.com^
 ||trueskincare.tech^
@@ -29593,6 +29611,7 @@ zztt24.com##.no-mask
 ||vppvp.com^
 ||vptjabo.cn^
 ||vq7736.com^
+||vqdjcy.com^
 ||vqlrwgj.cn^
 ||vr.gdt.qq.com^
 ||vrank.org/go/adblock_detect$subdocument
@@ -30893,6 +30912,7 @@ zztt24.com##.no-mask
 ||xxsjsp.com^
 ||xxwd.ltd^
 ||xxxnavy.com^$third-party
+||xxxvjmp.com^
 ||xxzj.pro^
 ||xy98.com.cn^
 ||xygwh.cc/js/dj
@@ -31225,11 +31245,14 @@ zztt24.com##.no-mask
 ||ynmpzs.cn^
 ||ynuf.aliapp.org^
 ||ynwsyl.com^
+||ynyikk.com^
 ||ynyn.shop^
 ||ynyyczx.cn^
 ||ynyyx168.com^
 ||ynzhby.com^
+||ynztzh.com^$third-party
 ||yoda.kwd.inkuai.com^
+||yoiqacw.cn^
 ||yoke.039nez.com^
 ||yoke.jyhlo0.com^
 ||yong.chazidian.com^
@@ -31463,6 +31486,7 @@ zztt24.com##.no-mask
 ||yxzp.net/left.js
 ||yxzy.asia^
 ||yy.xinqiannv.com^
+||yy17173.dtime.com^
 ||yy18.info/yyads/
 ||yy18.info^*thanks$popup
 ||yy32.com^$third-party
@@ -31800,6 +31824,7 @@ zztt24.com##.no-mask
 ||zhuxin.link^
 ||zhuys.com/js/ysmm.
 ||zhuys.com^*.php
+||zhvo.top^
 ||zhw949.ltd^
 ||zhwotai.com^
 ||zhyl.info^
