@@ -5,8 +5,8 @@
 ! Expires: 24 Hours
 ! Description: 该规则适用于移动端浏览器，如via, Vivaldi, X Browser
 ! Description: 该规则合并自EasyList Lite, Easylist China, CJX's Annoyance List, 乘风视频过滤规则, Adblock Warning Removal List, 酷安大萌主的规则, 去APP下载广告规则, 百度超级净化和一些额外规则
-! Version: 2022-12-18 08:55:51（北京时间）
-! Total count: 31954
+! Version: 2022-12-19 08:54:15（北京时间）
+! Total count: 31982
 ###AdBlockDialog
 ###Ad_windows
 ###ChapterView > .slide-baidu
@@ -128,6 +128,7 @@
 ###app.app > .topic-big
 ###appBottomIn
 ###appIn
+###appad.cate
 ###appqrcode
 ###arBRyGHxuDYU
 ###asdw
@@ -225,6 +226,8 @@
 ###header_global_ad
 ###hellobox > .mylist
 ###hengfu > #jiukan
+###hengfu1.banner
+###hengfu2.banner
 ###hfad
 ###homead
 ###hongbao20201217
@@ -803,6 +806,7 @@
 ##.main-ad-l
 ##.main-ad-r
 ##.main-ad-r + .topad
+##.main-content > .a2b3
 ##.main_adbalert
 ##.mainbg > #s11navtop
 ##.maomi-content > #main-container > .row.mob40 + .row
@@ -923,6 +927,7 @@
 ##.top_func_ad
 ##.topad1
 ##.topads
+##.topbanner + .nav + .banner
 ##.toy52_outer
 ##.toy52apparel_ALL
 ##.trad3
@@ -3591,6 +3596,8 @@ $websocket,domain=5nj.com|cechi8.com
 360doc.com###divyoulikead
 360doc.com##.floatqrcode
 360doc.com##.ggwz
+360doc.com##.ul-similar
+360doc.com##div.str_border:nth-of-type(5)
 360game.360.cn##.advertising
 360kan.com###js-eb-bottomad
 360kan.com##.b-ifradjx
@@ -3604,8 +3611,10 @@ $websocket,domain=5nj.com|cechi8.com
 360kuai.com###xunjia-modal-btn
 360kuai.com##.bottom_rectangle_gg_outer_box
 360kuai.com##.detail-top-banner
+360kuai.com##.float--left.right_aside_wrapper
 360kuai.com##.k-float-btn__qrcode__body
 360kuai.com##.novel_galery_icon
+360kuai.com##.side-wrapper
 360kuai.com##.taskbar
 360kuai.com,hao.360.com###cangbao_redbags
 360thethao.net#$#abort-current-inline-script onload /puURL/
@@ -3673,6 +3682,7 @@ $websocket,domain=5nj.com|cechi8.com
 3g.163.com##.js-new-relative-doc.new_relative_doc
 3g.163.com##.js-open-app.backflow-floating
 3g.163.com##.js-open-app.main-openApp
+3g.163.com##.js-open-app.open-btn
 3g.163.com##.js-open-app.s-tip
 3g.163.com##.js-open-app.sec-more-link
 3g.163.com##.js-recommend-wrap
@@ -3680,7 +3690,10 @@ $websocket,domain=5nj.com|cechi8.com
 3g.163.com##.js-wakeupclient.wakeup_client
 3g.163.com##.ne_rps
 3g.163.com##.open-modal-mask
+3g.163.com##.s-openApp
+3g.163.com##.widget-floatMenu
 3g.163.com##article.card-type-news.news-card:-abp-contains(打开APP)
+3g.163.com##footer > span
 3g.baidu.com,m.baidu.com,m5.baidu.com,www.baidu.com#?#div:-abp-has(>.openBox-container)
 3g.qq.com###header-mlcz
 3g.qq.com###omgad-wechat-bigpic
@@ -8304,6 +8317,8 @@ cmhello.com##.gpost-above
 cmmonitor.com#@#.adsbygoogle
 cn-healthcare.com##.fh_ad_wrap
 cn-healthcare.com##.fh_advent_wrap
+cn.bing.com##.bnp_rich_div_visible.bottom
+cn.bing.com##.bnp_rich_div_visible.top
 cn.bing.com#$#hide-if-contains 360 #b_results>li .b_adProvider
 cn.bing.com#?##b_results > li:-abp-has(.b_adProvider)
 cna.com.tw##.ad_970
@@ -8515,6 +8530,7 @@ csdn.net##.el-dialog__wrapper + .activity
 csdn.net##.feed-Sign-span
 csdn.net##.fourth_column
 csdn.net##.m_toolbar_left_app_btn
+csdn.net##.openApp
 csdn.net##.p4course_target
 csdn.net##.padb0
 csdn.net##.passport-login-mark
@@ -9387,6 +9403,8 @@ fuyang.net###portal_block_474
 fuyang.net###portal_block_502
 fuyang.net##.eis_fbox_260:nth-child(n+3)
 fuyang.net##.eis_fbox_980
+fwwang.cn###n_s_300250
+fwwang.cn###n_s_300250ad
 fwxgx.com###jPpo_sc
 fwxgx.com##.baibaoxiang
 fwxgx.com##.float_ad
@@ -10035,8 +10053,10 @@ huya.com###huya-ab
 huya.com###huya-ab-fixed
 huya.com###hy-ad,#hy-ab,#huya-ab
 huya.com###matchComponent4
+huya.com###player-download-guide-tip
 huya.com###sidebarBanner
 huya.com##.room-business-game
+huya.com##.tip-bg-common-new.diy-activity-icon-bubble-tips
 huya.com##.wrap-income.chat-wrap-panel
 hxnews.com##.banner-90
 hxsame.hexun.com$domain=~quote.hexun.com
@@ -10421,6 +10441,7 @@ ithome.com##.bx-recom2
 ithome.com##.categoryimg,#hd_float,#side_func,#con>#tt5>div,div.related_buy,li.sb_list:nth-child(5)
 ithome.com##.con-recom
 ithome.com##.con_2 > .img_listbox
+ithome.com##.down_app
 ithome.com##.indexV2 > div > a
 ithome.com##.lapin
 ithome.com##.open-app-banner
@@ -11171,6 +11192,8 @@ m.huya.com##.u-btn-down.header-app-btn
 m.huya.com##.u-btn-down.start-btn
 m.iqiyi.com##+js(set, Object.prototype.adPlayerId, '')
 m.iqiyi.com##DIV.iqyGuide-content,.cover
+m.ithome.com##.hot-app
+m.ithome.com##.open-app-a
 m.jd.com###appdlCon > div.modal
 m.jd.com###imk2FixedBottom
 m.jd.com###imk2FixedSideText
@@ -13069,6 +13092,7 @@ taoziba.cc##.vddb2 + a
 tapmoi.net#$#abort-on-property-read SmartPopunder
 tapochek.net#$#abort-on-property-read ads_script
 taptap.com###bottomBanner
+taptap.com##.open-app-button
 tassbiz.ru##.adblock_notif
 tbtdg.com###adblockWarning
 tbtdg.com##.reveal-modal-bg
@@ -13753,14 +13777,11 @@ wpmienphi.com###d7b2
 wpworld.pl,windowsowo.pl#@##adBanner
 wrating.com
 wurst-client.tk#@#.adsbygoogle
+wuzhuiso.com##.download-app
 www.1069gay.net###shortcut
 www.15yan.com##.tooltip
 www.163.com##.float-bar
 www.17173.com##.pn-tg
-www.360doc.com##.ul-similar
-www.360doc.com##div.str_border:nth-of-type(5)
-www.360kuai.com##.float--left.right_aside_wrapper
-www.360kuai.com##.side-wrapper
 www.52tian.net##.adwidewrap
 www.58wk.com##div#bottomJuSha
 www.58wk.com##div#gdggw2
@@ -13782,10 +13803,7 @@ www.facebook.com##.egoOrganicColumn+*
 www.goha.ru,3dnews.ru#$#abort-on-property-read Ya
 www.google.com##.ads-ad
 www.hardsextube.com##.right-col.right
-www.huya.com###player-download-guide-tip
-www.huya.com##.tip-bg-common-new.diy-activity-icon-bubble-tips
 www.ithome.com###lapin
-www.ithome.com##.down_app
 www.ixbt.com#$#abort-on-property-read adv_obj; abort-current-inline-script document.getElementById branding
 www.le.com###full_Column_big
 www.le.com###full_Column_small
@@ -13804,17 +13822,9 @@ www.sina.com.cn##.mod-01
 www.sina.com.cn##.part-l
 www.sina.com.cn##.secondtj-wrapper
 www.sogou.com##.tgad-box + div
-www.taptap.com##.open-app-button
 www.ted.com##.gm-fp-body .justify-center.tracking-tightest
 www.thepaper.cn##.pdtt01
 www.wp.pl#$#abort-on-property-read SlotRegistrar; abort-current-inline-script PRELOAD randvar
-www.wuzhuiso.com##.download-app
-www.xiaohongshu.com##.android.all-comment
-www.xiaohongshu.com##.bottom-bar.button-bottom-bar.cube-z-bottom-bar
-www.xiaohongshu.com##.fixed
-www.xiaohongshu.com##.more-image-desc
-www.xiaohongshu.com##.section.related-notes
-www.xiaohongshu.com##.wx-open-launch-app-container
 www.xilinjie.com###xlj-da-block-overlay
 www.xvideos.com###ad-footer
 www.xvideos.com##.thumb-ad
@@ -13865,6 +13875,12 @@ xiadele.com##.details-small-carousel
 xiadele.com##.yun-advertisement
 xiakedy.org##.hy-details-qrcode
 xianzhenyuan.cn##.sd_ad:not(#xztba)
+xiaohongshu.com##.android.all-comment
+xiaohongshu.com##.bottom-bar.button-bottom-bar.cube-z-bottom-bar
+xiaohongshu.com##.fixed
+xiaohongshu.com##.more-image-desc
+xiaohongshu.com##.section.related-notes
+xiaohongshu.com##.wx-open-launch-app-container
 xiaohutuwb.com##.ceo_ads
 xiaolz.cn###masonry2
 xiaolz.cn###zzbuluoled_sx
@@ -14034,8 +14050,11 @@ youdbox.com#$#abort-on-property-read encodeURIComponent
 youdbox.com,vudeo.net#$#abort-current-inline-script String.fromCharCode XMLHttpRequest
 youivr.com##.header-widget-region
 youku.com###bt-banner
+youku.com###download_btn
 youku.com###ykBottomBanner
 youku.com##.ad-banner-wrapper
+youku.com##.callEnd_content
+youku.com##.downloadApp.icon
 youku.com##.pop-prompt-box
 youle55.com
 youmelive.com###b2-widget-html-2
@@ -14573,6 +14592,7 @@ zztt24.com##.no-mask
 ||113.105.248.169^
 ||113.17.188.*.js
 ||1133.cc^$third-party
+||1138555.com^
 ||113o.com^
 ||114com.cc^
 ||114la.com/static/js/egg.js
@@ -20718,6 +20738,7 @@ zztt24.com##.no-mask
 ||fwmbjrl.cn^
 ||fwrpq.cyou^
 ||fwsir.com/static/cpt/
+||fwwang.cn/templets/fw/js/art
 ||fwwjbvz.cn^
 ||fx110.*/Pub/Ghz/GetModel
 ||fx110.*/Scripts/1.0.0/gulpmin/Ghz/
@@ -23848,6 +23869,7 @@ zztt24.com##.no-mask
 ||kzeii.com^
 ||kzerr.com^
 ||kzett.com^
+||kzezz.com^
 ||kzhtgnv.cn^
 ||kzngisyd.xyz^
 ||kzzs.shop^
@@ -25266,6 +25288,7 @@ zztt24.com##.no-mask
 ||mzcd.xyz^
 ||mzhhdn.com/hongbao.jpg
 ||mzhw.xyz^
+||mziwkyr.cn^
 ||mzlas.xyz^
 ||mzokqm.cn^
 ||mztzba.cn^
@@ -27169,6 +27192,7 @@ zztt24.com##.no-mask
 ||rs1.qq.com^
 ||rs2.qq.com^
 ||rscxwmj.cn^
+||rsdkk26.xyz^
 ||rsdown.cn/statics/images/rs-banner.jpg
 ||rsnignsz.xyz^
 ||rsnoownmz.fun^
@@ -27671,6 +27695,7 @@ zztt24.com##.no-mask
 ||shxsh1.top^
 ||shygkl.com^
 ||shypqc.com^
+||shyww.mobi^
 ||shzq8888.com^
 ||shzuggo.cn^
 ||shzzzz.dftoutiao.com^
@@ -29994,6 +30019,7 @@ zztt24.com##.no-mask
 ||wuyicom.top^
 ||wuyulou.com^*.php
 ||wuzitao.xyz^
+||wv86s.fun^
 ||wvggzak.cn^
 ||wvubjgl.cn^
 ||wvvw.harahero.top^
@@ -31459,6 +31485,7 @@ zztt24.com##.no-mask
 ||zencdn.net^$domain=freegaypornsex.net|www.gayvl.info
 ||zencu.com.cn^
 ||zengbalg.fun^
+||zenknho.cn^
 ||zenwq.com^
 ||zeoknxp.cn^
 ||zero.wewakir.top^
@@ -31801,6 +31828,7 @@ zztt24.com##.no-mask
 ||zrblog.net/zzimg/
 ||zrbn.ltd^
 ||zrmxswrl.com^
+||zrpyfgt.cn^
 ||zrwba.cn^
 ||zrys.xyz^
 ||zrysogsiq.uno^
