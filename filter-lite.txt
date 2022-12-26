@@ -5,8 +5,8 @@
 ! Expires: 24 Hours
 ! Description: 该规则适用于移动端浏览器，如via, Vivaldi, X Browser
 ! Description: 该规则合并自EasyList Lite, Easylist China, CJX's Annoyance List, 乘风视频过滤规则, Adblock Warning Removal List, 酷安大萌主的规则, 去APP下载广告规则, 百度超级净化和一些额外规则
-! Version: 2022-12-25 08:58:51（北京时间）
-! Total count: 32050
+! Version: 2022-12-26 08:56:35（北京时间）
+! Total count: 32062
 ###AdBlockDialog
 ###Ad_windows
 ###ChapterView > .slide-baidu
@@ -896,6 +896,7 @@
 ##.sidebar-ad
 ##.siteAnn1
 ##.sponsor_image
+##.spot_nav_under_ad
 ##.ssr1
 ##.static-a2d
 ##.svg-adblock-full
@@ -1040,7 +1041,7 @@ $script,subdocument,third-party,websocket,xmlhttprequest,domain=bhshu.net|louzho
 $script,subdocument,~third-party,websocket,xmlhttprequest,domain=m.6666xsw.com|m.biqugee6.com|m.biqukun.la|m.biqusa.org|m.bqg99.cc|m.chenkuan.com|m.jmshuwu.net|m.wujixsw.com|wodexiaoshuoh.com
 $script,third-party,domain=52movieba.com|66s.cc|ab126.com|audio699.com|btsow.cfd|kan-tv.com|m.supfree.net
 $script,third-party,domain=cilimao.co|cilimao.one
-$script,third-party,domain=cocomanga.com|cocomanhua.com
+$script,third-party,domain=colamanhua.com
 $script,third-party,domain=dybee.tv
 $script,third-party,domain=torkitty.com|torrentkitty.app|torrentkitty.io|torrentkitty.lol|torrentkitty.net|torrentkitty.se|torrentkitty.tv
 $script,third-party,websocket,domain=52codes.net|m.ting56.com
@@ -3805,6 +3806,7 @@ $websocket,domain=5nj.com|cechi8.com
 5253.com###android-qr
 526bt.com,daniao.org,eroacg.com,laod.cn,myqqjd.com,ninpang.com,zhujiceping.com##.tg-site
 526bt.com,guojitv.com###slider
+52av.one##.message + center
 52bdys.com###ayx
 52bug.cn###index-code
 52ch.net##.ad650
@@ -4112,9 +4114,8 @@ $websocket,domain=5nj.com|cechi8.com
 @@.adserver.$domain=litv.tv
 @@.com/ad.aspx|$domain=xdingdian.cc
 @@.com/adv/$domain=my.ctrip.com
-@@.com/js/a_d/$domain=cocomanga.com|cocomanhua.com
-@@.com/js/ad_/ad*.js$domain=cocomanga.com|cocomanhua.com
-@@.com/js/ad_/pic*.png$domain=cocomanga.com|cocomanhua.com
+@@.com/js/a_d/$domain=colamanhua.com
+@@.com/logo/ad.$domain=colamanhua.com
 @@.gif#$domain=b168.net|cnprint.org|huhupan.com|tgfcer.com|wgun.net
 @@.google-analytics.com%2Fanalytics.js$domain=free.com.tw
 @@.jpg#$domain=huhupan.com
@@ -4907,7 +4908,7 @@ $websocket,domain=5nj.com|cechi8.com
 @@||cloisteredhydrant.com^$script,xmlhttprequest
 @@||closedcows.com^$script,xmlhttprequest
 @@||cloudflare.com/ajax/libs/fuckadblock/$domain=seselah.com
-@@||cloudflare.net^$script,domain=cocomanga.com|cocomanhua.com
+@@||cloudflare.net^$script,domain=colamanhua.com
 @@||cloudsdestruction.com^$script,xmlhttprequest
 @@||cloudtime.to/banner.php$script
 @@||club.tgfcer.com^$generichide
@@ -8428,10 +8429,6 @@ cnyes.com###full_ad-popup
 cnyes.com###full_ad-screen
 co188.com##.suspen
 cocomanga.com#$#abort-on-property-read __cad.cpm_popunder; abort-on-property-read __ad
-cocomanga.com#@#.gg_728
-cocomanga.com#@#.gg_950
-cocomanga.com,cocomanhua.com#@#.gg430
-cocomanga.com,cocomanhua.com#@#.gg_300
 cocostream.org,idope.cyou,youtube4kdownloader.com,yts2.cc#$#abort-on-property-read JSON.stringify
 codeceo.com,fuli8.net##.widget_text:first-child
 codeforge.cn##.webnotice-right
@@ -8448,6 +8445,7 @@ codexiu.cn##.blog-twitter:first-child
 coding.net##.smart-app-banner
 cofp.ru##.admitad-checker-popup
 cokemine.com,eveaz.com,jubuzz.com,skyarea.cn,tianfateng.cn#@#.category-share
+colamanhua.com#@#.gg_950
 com/js/lp365.js
 comefromchina.com##.ad_navtext_11 > li:nth-child(n+2)
 comic.qq.com###fixed_right > div
@@ -11873,7 +11871,6 @@ onlyfaps.club#$#abort-current-inline-script univresalP
 onlystream.tv#$#abort-on-property-read BetterJsPop
 onperiscope.com#@#.adsbygoogle
 onscreens.me#$#abort-on-property-read localStorage; abort-on-property-read asgPopScript
-ook/ad&
 ooopic.com##.fix-newUser
 ooopn.com###ab-left
 opdown.com##.gxxz-btn
@@ -14029,6 +14026,7 @@ yocast.tv###notice
 yocast.tv###ra9e
 yocast.tv##.player_div + #video_ads_overdiv + div
 yocast.tv#@##adblock
+yocoolnet.in###mobile_inplayer
 yomahub.com##.sidebar-slot
 you.163.com###j-yx-cp-m-siteNav > DIV.yx-cp-row > DIV.yx-cp-siteNav-r:last-child > DIV.yx-cp-siteNavItem:last-child > DIV.yx-cp-siteNavItemHd.pipe:first-child
 you.163.com###j-yx-fixedtoolDownloadlink
@@ -14440,6 +14438,7 @@ zztt24.com##.no-mask
 ||0837079.com^
 ||085cczz.com^
 ||0885.net^$third-party
+||093yuht.com^
 ||096iokj.com^
 ||09jsufg.com^
 ||0b2qv7.cn^
@@ -15414,6 +15413,7 @@ zztt24.com##.no-mask
 ||52996.me/scripts/my_
 ||52996.me/upload/ad/
 ||52aoteman.com^
+||52av.be^$popup,third-party
 ||52card.net/img/
 ||52che.com/Inc/FooterComm_
 ||52che.com/NewLocal/TemplateHtml/headflash1_
@@ -15902,6 +15902,7 @@ zztt24.com##.no-mask
 ||833761.com^
 ||8341.store^
 ||8456.xyz^
+||8499683.com^
 ||8500.pro^
 ||8585go.com/recommend
 ||85wa.cn^
@@ -17048,6 +17049,7 @@ zztt24.com##.no-mask
 ||api-shoulei-ssl.xunlei.com^
 ||api-unisearch.hismarttv.com^
 ||api-vidaaasst.hismarttv.com^
+||api.*.com/sh/to/$third-party
 ||api.06fgej.com^
 ||api.1101yh.com^
 ||api.36dfsa.com^
@@ -17945,6 +17947,7 @@ zztt24.com##.no-mask
 ||bnman.net^*/com1
 ||bnman.net^*/com2
 ||bnqlgdj.cn^
+||bnsdk.top^
 ||bntxt.com^
 ||bnux.store^
 ||boardx.huanqiu.com^
@@ -18846,7 +18849,6 @@ zztt24.com##.no-mask
 ||cnzz.mmstat.com^
 ||cnzzla.com/public/scripts/money.js
 ||cocomanga.com/js/atmp.html
-||cocomanhua.com/sw.js
 ||cod.southmoney.com^
 ||code.ditiezu.net^
 ||code.piano.io/api/tinypass.min.js$domain=delfi.lv
@@ -18869,6 +18871,7 @@ zztt24.com##.no-mask
 ||coinadv.com^$third-party
 ||coinhive.com/
 ||cojia.net^
+||colamanhua.com/sw.js
 ||collector.dcdn.baidu.com^
 ||collegepre.net^
 ||colossalcoat.com^$third-party
@@ -20606,6 +20609,7 @@ zztt24.com##.no-mask
 ||fknrtpp.cn^
 ||fktkwb.cn^
 ||fl6n.com/adtop/
+||flan.fun^
 ||flash.banners-service.info^
 ||flash.cn/success/$popup
 ||flash.mycar168.com/data/js/
@@ -23712,6 +23716,7 @@ zztt24.com##.no-mask
 ||klandmart.com/K-Landmart_0011.jpg
 ||kld666.com^
 ||kldtmki.cn^
+||klgzjaw.cn^
 ||klj4rw.site^
 ||klsdmr.com^
 ||klsynmld.fun^
@@ -25549,6 +25554,7 @@ zztt24.com##.no-mask
 ||njupt-sacc.com^
 ||njvfidke.xyz^
 ||njxczy.com^
+||njxjrar.cn^
 ||njxyh66.cn^
 ||njxzwh.com/pcsoft/statics/ycgg/
 ||njygp.cn^
@@ -26682,6 +26688,7 @@ zztt24.com##.no-mask
 ||qisafniy.space^
 ||qishenga.com^*.gif$domain=meiju11.com
 ||qishuk.com/css/wap.
+||qishula.com/css/ding.js
 ||qiutian.buzz^
 ||qiuw.com/static/xin-ad.js
 ||qiuyi.cn/Baojian/
@@ -28725,6 +28732,7 @@ zztt24.com##.no-mask
 ||titan007.com/news.aspx
 ||tiwom.com^
 ||tixnd.xyz^
+||tizf7.top^
 ||tizru.com^$domain=pronpic.org
 ||tj-cmys.com^
 ||tj-cyhg.com^
@@ -28864,6 +28872,7 @@ zztt24.com##.no-mask
 ||tpe163.com^
 ||tpool.cn^
 ||tpqokqi.cn^
+||tprwnvk.cn^
 ||tptoon.com/skin/js/tjtjkk.
 ||tptp001.buzz^
 ||tpush.html5.qq.com^
@@ -29326,6 +29335,7 @@ zztt24.com##.no-mask
 ||uwdspsh.cn^
 ||uwnvcxb.cn^
 ||uwogldt.top^
+||uwuzpxt.cn^
 ||uxbd4id.xyz^
 ||uxlidt.ink^
 ||uxngqd.cn^
@@ -29562,6 +29572,7 @@ zztt24.com##.no-mask
 ||voocl.com^
 ||vorlsblf.cyou^
 ||vortex-win-sandbox.data.microsoft.com^
+||vouninked.com^
 ||vp.html5.qq.com^
 ||vpbbc.cn^
 ||vpic.video.qq.com^
@@ -29915,6 +29926,7 @@ zztt24.com##.no-mask
 ||wjylfla.cn^
 ||wk4y.cn^
 ||wka8.com^
+||wkbslub.cn^
 ||wkfwdki.cn^
 ||wkhhwkp.cn^
 ||wkktfuy.cn^
