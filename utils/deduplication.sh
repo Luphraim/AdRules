@@ -77,6 +77,11 @@ adblock_uni=(
   # Cats-Team AdBlock Rules
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/exincludes-adblock-rules.txt"
+  # d3Host List by d3ward
+  "https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.adblock"
+  #Clean Url
+  "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt" 
+  "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt" 
 )
 
 # 元素过滤规则 (AdGuard)
@@ -111,8 +116,6 @@ adblock_full=(
   # "https://raw.githubusercontent.com/reek/anti-adblock-killer/master/anti-adblock-killer-filters.txt"
   # halflife规则，合并自Adblock Warning Removal List、ABP filters、anti-adblock-killer-filters
   "https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-edentw.txt"
-  # Hacamer's URL Filter
-  "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
   # I don't care about cookies
   "https://www.i-dont-care-about-cookies.eu/abp/"
   # Online Malicious URL Blocklist URL-based
@@ -125,8 +128,6 @@ adblock_lite=(
   "https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt"
   # halflife规则，合并自Adblock Warning Removal List、ABP filters、anti-adblock-killer-filters
   "https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-edentw.txt"
-  # Hacamer's URL Filter
-  "https://raw.githubusercontent.com/hacamer/AdRule/main/url-filter.txt"
   # 百度超级净化 @坂本大佬
   "https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt"
   # 主要去除手机盗版网站广告 @酷安：大萌主
@@ -140,7 +141,7 @@ hosts=(
   # 大圣净化规则
   "https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts"
   # neoHosts - Basic Hosts 基础、克制的数据，推荐所有用户使用。
-  "https://cdn.jsdelivr.net/gh/neoFelhz/neohosts@gh-pages/basic/hosts.txt"
+  # "https://cdn.jsdelivr.net/gh/neoFelhz/neohosts@gh-pages/basic/hosts.txt"
   # NoCoin adblock list
   "https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/hosts.txt"
   # yhosts 智能设备专用(更全,用电脑看视频网站可能出错)
@@ -151,6 +152,8 @@ hosts=(
   # "https://raw.githubusercontent.com/neodevpro/neodevhost/master/lite_host"
   # GoodbyeAds
   # "https://raw.githubusercontent.com/jerryn70/GoodbyeAds/master/Hosts/GoodbyeAds.txt"
+  #hostsVN
+  "https://raw.githubusercontent.com/bigdargon/hostsVN/master/hosts"
 )
 
 # DNS通用过滤规则
@@ -160,6 +163,8 @@ dns_uni=(
   # Cats-Team 自定义过滤规则
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt"
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
+  #HostsVN
+  "https://raw.githubusercontent.com/bigdargon/hostsVN/master/filters/adservers-all.txt"
 )
 
 # DNS (AdGuard Home)过滤规则
@@ -172,12 +177,14 @@ dns_agh=(
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/black.txt"
   # LWJ's white list
   "https://raw.githubusercontent.com/liwenjie119/adg-rules/master/white.txt"
+  #Smart-TV
+  "https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV-AGH.txt"
 )
 
 # 白名单规则
 allow=(
   # AdGuard Chinese Filters whitelist
-  "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/whitelist.txt"
+  "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt"
   # Energized Protection - unblock
   # "https://raw.githubusercontent.com/EnergizedProtection/unblock/master/basic/formats/filter"
   # Cats-Team 自定义白名单规则
