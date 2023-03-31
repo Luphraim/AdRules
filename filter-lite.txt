@@ -5,8 +5,8 @@
 ! Expires: 24 Hours
 ! Description: 该规则适用于移动端浏览器，如via, Vivaldi, X Browser
 ! Description: 该规则合并自EasyList Lite, Easylist China, CJX's Annoyance List, 乘风视频过滤规则, Adblock Warning Removal List, 酷安大萌主的规则, 去APP下载广告规则, 百度超级净化和一些额外规则
-! Version: 2023-03-30 08:58:27（北京时间）
-! Total count: 33735
+! Version: 2023-03-31 08:58:10（北京时间）
+! Total count: 33761
 ###Ad_windows
 ###ChapterView > .slide-baidu
 ###J_sideFooter.side_footer
@@ -258,6 +258,7 @@
 ###player-bottom-ads
 ###playerAd
 ###playerAdvLayer
+###playerJsvLayer.jsv-layer
 ###player_ad
 ###pop_hongbao
 ###popup.t
@@ -605,6 +606,7 @@
 ##.fed-part-advs.fed-text-center.fed-font-xvi
 ##.fed-part-case > .ads-img
 ##.ff-ads
+##.fixed-bottom.jsv.jsv-g1
 ##.flash_ad
 ##.flex-row > #propagandaLeft
 ##.flex-row > #propagandaRight
@@ -926,6 +928,11 @@
 ##div.stui-pannel__bd > #t-img-box
 ##div.video-box > div.hf > a
 ##dl#listwoBox
+##header + #main:nth-child(n+4) > .container-fluid.mb-0.p-0
+##header + #main:nth-child(n+4) > .container-fluid.mb-0.p-0 + .jsv-g1
+##header + #main:nth-child(n+4) > .container-fluid.mb-3.p-0
+##header + #main:nth-child(n+4) > .container-fluid.mb-3.p-0 + .jsv-g1
+##header + #main:nth-child(n+4) > .jsv.jsv-g1.mb-0 > .container-fluid.mb-3.p-0
 ##iframe.ad-frame
 ##img#adv1
 ##oxk
@@ -1408,7 +1415,7 @@ $removeparam=clickCSR,domain=argos.co.uk
 $removeparam=clickOrigin
 $removeparam=clickPR,domain=argos.co.uk
 $removeparam=clickSR
-$removeparam=click_id
+$removeparam=click_id,domain=~bookings.beatthatflight.*
 $removeparam=click_key,domain=etsy.com
 $removeparam=click_sum,domain=etsy.com
 $removeparam=clicktime
@@ -7958,6 +7965,7 @@ $~xmlhttprequest,removeparam=ref_,domain=facebook.*|facebookwkhpilnemxj7asaniu7v
 @@||standingsack.com^$script,xmlhttprequest
 @@||standtrouble.com^$script,xmlhttprequest
 @@||stapewithadblock.monster^$generichide
+@@||startpage.com/sp/qi$removeparam=sc
 @@||startpage.com/suggestions$removeparam=segment
 @@||stat.pet^$script,xmlhttprequest
 @@||statementsweater.com^$script,xmlhttprequest
@@ -17240,6 +17248,7 @@ zzzyk.com###Tinfo
 ||a2put.chinaz.com^
 ||a3.jandan.net^
 ||a3vy69.cn^
+||a44u.icu^
 ||a48505.cn^
 ||a4sz.xyz^
 ||a5jf.xyz^
@@ -18125,6 +18134,7 @@ zzzyk.com###Tinfo
 ||anhuinews.com/zhuyeguanli/*ad/
 ||anime4fun.com/js/newanime.js$script
 ||anioz3b.cc^
+||aniqfwz.cc^
 ||anixwallpaper.com^$csp=script-src 'self' * 'unsafe-inline'
 ||anjuke.com^*/ajax/business_area_search/
 ||ankangwang.com/js/info.js
@@ -18348,6 +18358,7 @@ zzzyk.com###Tinfo
 ||as1.wenku.baidu.com^
 ||as2.wenku.baidu.com/$subdocument
 ||as89de.top^
+||asa2.cn^
 ||asacdn.com/prod/redirect.html
 ||asahi.com^$removeparam=iref
 ||ascloud.tech^
@@ -18486,6 +18497,7 @@ zzzyk.com###Tinfo
 ||axqpn.cn^
 ||axt.cool^
 ||axuns.com^
+||axutongxue.com/js/uuiiio.js
 ||axvnsla.top^
 ||axybcz.cn^
 ||aybe.me^
@@ -18725,6 +18737,7 @@ zzzyk.com###Tinfo
 ||baidujavascript.com^
 ||baidujs.cnys.com^
 ||baidujsvbj.com^
+||baidunnd.top^
 ||baidutm999.xyz^
 ||baiduwudi929.xyz^
 ||baiduyoukualiyun.com^
@@ -18905,6 +18918,7 @@ zzzyk.com###Tinfo
 ||bdasd.chdbook.cn^
 ||bdasd.chinabig.com.cn^
 ||bdasd.wmxa.cn^
+||bdcd2.com^
 ||bdcm.kandianla.com^
 ||bdcode.2345.com^
 ||bdcode.35d1.com^
@@ -18940,6 +18954,7 @@ zzzyk.com###Tinfo
 ||bdm.911cha.com^
 ||bdm.ye-su.cn^
 ||bdmjs.xywy.com^
+||bdnvklavbklabl.com^
 ||bdp.cn^$third-party
 ||bds.snssdk.com^
 ||bdsp.x.jd.com^
@@ -19846,6 +19861,7 @@ zzzyk.com###Tinfo
 ||changsha.cn/front_js/site_ad/4/site_ad_284.js
 ||changshuohr.net^
 ||changyan.itc.cn/mdevp/extensions/mobile-cmt-advert/
+||changyangadvertising.com^
 ||changyangcd.com^
 ||chaochaogege.net^
 ||chaoku.oss-cn-chengdu.aliyuncs.com^
@@ -22153,6 +22169,7 @@ zzzyk.com###Tinfo
 ||ftdmfxq.cn^
 ||ftfnewu.cn^
 ||ftimg.net/s?z=
+||ftnthzv.cn^
 ||ftrtnr.xyz^
 ||fttxt.com/static/mh
 ||fubo.tv^$removeparam=irad
@@ -22344,6 +22361,7 @@ zzzyk.com###Tinfo
 ||gbzumh.cn^
 ||gca.sh/static/linkreplacer.js$script,third-party
 ||gccode.gongchang.com^
+||gcejdac.cn^
 ||gcihkyd.cn^
 ||gcpvkfe.cn^
 ||gctd.xyz^
@@ -25869,6 +25887,7 @@ zzzyk.com###Tinfo
 ||loopd.cyou^
 ||looyu.com^$third-party
 ||lop.lamimi.cn^
+||lopqrx.xyz^
 ||lorlsblh.cyou^
 ||lotour.net/analytics/statsv2.js
 ||lotour.net/bcef/388.js
@@ -28244,6 +28263,7 @@ zzzyk.com###Tinfo
 ||qiangquanvip.com^
 ||qianhua.*/data/attachment/portal/
 ||qianmeiby.com^
+||qianqian.red^
 ||qianrenge.cc/qian/
 ||qiantubao.asia^
 ||qianyan.love^
@@ -29069,6 +29089,7 @@ zzzyk.com###Tinfo
 ||sass.hk/js/ggcn.js
 ||sass.hk/plus/mytag_js.php?aid=
 ||satroki.tech/api/JdUnion
+||saulmy.xyz^
 ||saviourketonic.com^
 ||sawadeca.com^
 ||sax*.sina.
@@ -30295,6 +30316,7 @@ zzzyk.com###Tinfo
 ||tfaftemail.com^
 ||tfallview.live^
 ||tfbulkidn.com^
+||tfcoverss.live^
 ||tffindmarket.live^
 ||tffytdo.cn^
 ||tfg2.com/images/upfile/AD/
@@ -32345,6 +32367,7 @@ zzzyk.com###Tinfo
 ||xiaoyange.cn^
 ||xiaoyida.com^$third-party
 ||xiaoz.top/assets/imgurl.js
+||xiaozengyyds.com^
 ||xiarikui08.com^
 ||xiatian.buzz^
 ||xiazaicdnapk.com^*.mp4
@@ -32430,6 +32453,7 @@ zzzyk.com###Tinfo
 ||xiu8.com/live/$domain=tieba.baidu.com
 ||xiucm.com^$third-party
 ||xiulishanzhuang.com^
+||xiuwaiyyds.com^
 ||xixhx.com^
 ||xixianad.com^$third-party
 ||xiyouence.com^$popup,third-party
@@ -32469,6 +32493,7 @@ zzzyk.com###Tinfo
 ||xmcimg.com/js/m.js
 ||xmgdgo.cn^
 ||xmhaorizi.cn^
+||xmi1.top^
 ||xmindchina.
 ||xmjikcz.xyz^
 ||xmkbrfyu.cn^
@@ -32692,6 +32717,7 @@ zzzyk.com###Tinfo
 ||yangll.xin^
 ||yangpinwang.com/wp-content/uploads/*E5%B9%BF%E5%91%8A.
 ||yangshengzu.cn^
+||yangsir.xyz^
 ||yangtianc.xyz^
 ||yangxu.store^
 ||yangyiluo.xin^
