@@ -31,15 +31,15 @@ adguard=(
   # 基础过滤器
   "https://filters.adtidy.org/android/filters/2_optimized.txt"
   # 移动设备过滤器
-  "https://filters.adtidy.org/android/filters/11_optimized.txt"
+  # "https://filters.adtidy.org/android/filters/11_optimized.txt"
   # 防跟踪保护过滤器
-  "https://filters.adtidy.org/android/filters/3_optimized.txt"
+  # "https://filters.adtidy.org/android/filters/3_optimized.txt"
   # URL跟踪过滤器
-  "https://filters.adtidy.org/android/filters/17_optimized.txt"
+  # "https://filters.adtidy.org/android/filters/17_optimized.txt"
   # 社交媒体过滤器
-  "https://filters.adtidy.org/android/filters/4_optimized.txt"
+  # "https://filters.adtidy.org/android/filters/4_optimized.txt"
   # 恼人广告过滤器
-  "https://filters.adtidy.org/android/filters/14_optimized.txt"
+  # "https://filters.adtidy.org/android/filters/14_optimized.txt"
   # 中文过滤器
   "https://filters.adtidy.org/android/filters/224_optimized.txt"
   # DNS过滤器
@@ -76,7 +76,6 @@ adblock_uni=(
   "https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt"
   # Cats-Team AdBlock Rules
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
-  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/exincludes-adblock-rules.txt"
   # d3Host List by d3ward
   "https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.adblock"
   #Clean Url
@@ -94,8 +93,8 @@ adblock_ag=(
   "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt"
   # 去 APP 下载广告规则
   "https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt"
-  # ADFILT
-  # "https://raw.githubusercontent.com/DandelionSprout/adfilt/master/LegitimateURLShortener.txt"
+  # 秋风广告规则
+  "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Adblock-Rule/main/AWAvenue-Adblock-Rule.txt"
 )
 
 # 元素过滤规则 (PC)

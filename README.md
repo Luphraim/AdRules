@@ -8,6 +8,8 @@
 
 移动端 AdGuard 推荐 AdGuard-DNS 和 AdGuard-Element 结合使用，不想开 DNS 过滤的只订阅 AdGuard 即可。
 
+- 2023.6.14 更新：AdGuard for Android 更新 4.0 稳定版，建议把“烦人元素拦截”全部打开，跟踪保护选择“隐私保护级别——高”。故规则里相应上游规则也一并删除了，以作精简。
+
 ### 规则说明
 
 | 名称            | 描述                                                         | 订阅                                                                                  |
@@ -32,15 +34,11 @@
 |                          | [uBlock filters – Unbreak](https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/unbreak.txt)                                                                                          |
 |                          | [uBlock filters – Annoyances](https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances.txt)                                                                                    |
 | Adguard For Android 规则 | [基础过滤器](https://filters.adtidy.org/android/filters/2_optimized.txt)                                                                                                                               |
-|                          | [移动设备过滤器](https://filters.adtidy.org/android/filters/11_optimized.txt)                                                                                                                          |
-|                          | [防跟踪保护过滤器](https://filters.adtidy.org/android/filters/3_optimized.txt)                                                                                                                         |
-|                          | [URL 跟踪过滤器](https://filters.adtidy.org/android/filters/17_optimized.txt)                                                                                                                          |
-|                          | [社交媒体过滤器](https://filters.adtidy.org/android/filters/4_optimized.txt)                                                                                                                           |
-|                          | [恼人广告过滤器](https://filters.adtidy.org/android/filters/14_optimized.txt)                                                                                                                          |
 |                          | [中文过滤器](https://filters.adtidy.org/android/filters/224_optimized.txt)                                                                                                                             |
 | 通用元素过滤规则         | [乘风通用过滤规则](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt)，适用于 UBO 或 ADG                                                                                     |
 |                          | [乘风视频过滤规则](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt)，适用于 UBO 或 ADG                                                                                       |
 |                          | [百度超级净化](https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt) @坂本大佬                                                                                                  |
+|                          | [秋风广告规则](https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Adblock-Rule/main/AWAvenue-Adblock-Rule.txt)                                                                                     |
 | 元素过滤规则，推荐移动端 | [adgk 规则](https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt) @坂本大佬                                                                                                              |
 |                          | [Anti-AD for Adguard](https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-adguard.txt)                                                                                   |
 |                          | [主要去除手机盗版网站广告](https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt) @酷安：大萌主                                                                                          |
