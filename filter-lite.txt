@@ -5,8 +5,8 @@
 ! Expires: 24 Hours
 ! Description: 该规则适用于移动端浏览器，如via, Vivaldi, X Browser
 ! Description: 该规则合并自EasyList Lite, Easylist China, CJX's Annoyance List, 乘风视频过滤规则, Adblock Warning Removal List, 酷安大萌主的规则, 去APP下载广告规则, 百度超级净化和一些额外规则
-! Version: 2023-07-07 09:11:47（北京时间）
-! Total count: 32358
+! Version: 2023-07-08 09:10:27（北京时间）
+! Total count: 32484
 ###Ad_windows
 ###ChapterView > .slide-baidu
 ###J_sideFooter.side_footer
@@ -999,6 +999,7 @@ $doc,removeparam=trackID
 $doc,removeparam=trackid,domain=~nzpost.co.nz
 $doc,removeparam=waporef
 $doc,removeparam=wp_source,domain=ac24.cz|ambcrypto.com|glispa.com|whitepages.com
+$document,removeparam=af,domain=pnas.org|science.org|scitation.org|wiley.com|worldscientific.com
 $domain=ads.adxadserv.com|adserver.juicyads.com|cs.adxpansion.com|olmsoneenh.info|static.javhd.com|syndication.exosrv.com
 $domain=googleads.g.doubleclick.net
 $image,third-party,domain=258zw.com
@@ -1137,7 +1138,7 @@ $removeparam=/^target=admitad$/
 $removeparam=/^tc_/,domain=bodenusa.com
 $removeparam=/^tracker=affiliatefuture$/i
 $removeparam=/^utm-/
-$removeparam=/^utm_/i,domain=~tradedoubler.com|~sendgb.com|~allegro.pl|~tix.axs.com|~transfernow.com|~carrefourpl.snrpage.com|~justdial.com|~pepper.pl
+$removeparam=/^utm_/i,domain=~tradedoubler.com|~sendgb.com|~allegro.pl|~tix.axs.com|~transfernow.*|~carrefourpl.snrpage.com|~justdial.com|~pepper.pl
 $removeparam=/^via=rss$/
 $removeparam=/^web_id\d+/,domain=tiktok.com
 $removeparam=/^wickedid=/i
@@ -1402,6 +1403,9 @@ $removeparam=avad
 $removeparam=awc
 $removeparam=awid
 $removeparam=awinaffid
+$removeparam=b_campaign
+$removeparam=b_medium
+$removeparam=b_source
 $removeparam=bbaid
 $removeparam=bclid
 $removeparam=bcpid
@@ -2035,7 +2039,7 @@ $removeparam=rp,domain=hclips.com
 $removeparam=rpcid
 $removeparam=rpp_cid
 $removeparam=rs,domain=gamereactor.*
-$removeparam=rss,domain=sn.dk|ted.com
+$removeparam=rss,domain=marketwatch.com|sn.dk|ted.com
 $removeparam=rt,domain=lendgo.com|bilibili.com
 $removeparam=rx_c,domain=cvshealth.*
 $removeparam=rx_group,domain=cvshealth.*
@@ -2291,6 +2295,7 @@ $script,third-party,domain=cilimao.co|cilimao.one
 $script,third-party,domain=colamanhua.com
 $script,third-party,domain=torkitty.com|torrentkitty.app|torrentkitty.io|torrentkitty.live|torrentkitty.lol|torrentkitty.net|torrentkitty.se|torrentkitty.tv|torrkitty.com
 $script,third-party,websocket,domain=52codes.net
+$third-party,xmlhttprequest,domain=subhd.tv|subhdtw.com
 $websocket,domain=5nj.com|cechi8.com
 $~css,~script,removeparam=campaignid
 $~image,removeparam=itok
@@ -2805,6 +2810,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 */jump.js|
 */kdjl_306x200
 */kwgg/$image,object,object-subrequest
+*/larkf?id=*$domain=animeunity.cc
 */letv-gug/$media,object-subrequest,xhr
 */lm/iframe/js/blognew2011
 */lmt_v
@@ -2994,7 +3000,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 .bid/ads/
 .blog/ads/
 .bt*.com/imgs.js?t=
-.buzz$domain=btsj6.com
+.buzz$domain=btsj6.com|yinghuavideo.com|dm99.me
 .buzz/*0*0*0*==$third-party
 .buzz/*=$object,third-party
 .cam/ads/
@@ -3006,7 +3012,6 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 .chat.bilibili.com
 .cilipa*/js/os.js
 .cloud/ads/
-.club$domain=yinghuacd.com
 .club/ads/
 .club/adv/
 .cn/*-*-*.xc$script,third-party
@@ -3254,8 +3259,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 .wap.x4399.com^
 .work/ads/
 .xn--fiqs8s:7385/
-.xyz$domain=btsj6.com
-.xyz$domain=yinghuacd.com
+.xyz$domain=btsj6.com|yinghuavideo.com|dm99.me
 .xyz/*.sdk?$script,third-party
 .xyz/*0*0*==$third-party
 .xyz/*?16$third-party
@@ -5700,6 +5704,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||absurdapple.com^$script,xmlhttprequest
 @@||absurdwater.com^$script,xmlhttprequest
 @@||abysstream.com/ads.js$script
+@@||acceptableauthority.com^$script,xmlhttprequest
 @@||acdn.adnxs.com/ast/ast.js$script,domain=vgtv.no|vg.no
 @@||acgbenzi.com//dist/images/top.png
 @@||acgdraw.com/ad$xmlhttprequest
@@ -5867,6 +5872,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||allmedia-d.openx.net/w/1.0/jstag$script,domain=allmusic.com
 @@||allowmailbox.com^$script,xmlhttprequest
 @@||alluc.ee/js/ads.js$script
+@@||alluringbucket.com^$script,xmlhttprequest
 @@||aloofmetal.com^$script,xmlhttprequest
 @@||aloofvest.com^$script,xmlhttprequest
 @@||alpineactor.com^$script,xmlhttprequest
@@ -5880,6 +5886,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||ambiguousincome.com^$script,xmlhttprequest
 @@||ambiguousquilt.com^$script,xmlhttprequest
 @@||ambitiousagreement.com^$script,xmlhttprequest
+@@||ambitiousanimal.com^$script,xmlhttprequest
 @@||aminhaconta.xl.pt/Campaigns/Blockers/ads.html$subdocument,document=record.xl.pt
 @@||amusementmorning.com^$script,xmlhttprequest
 @@||amusinggirls.com^$script,xmlhttprequest
@@ -5972,6 +5979,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||axiomaticalley.com^$script,xmlhttprequest
 @@||ay.gy^$generichide
 @@||b.scorecardresearch.com^$xmlhttprequest,object-subrequest,domain=tv.majorleaguegaming.com
+@@||badgeboat.com^$script,xmlhttprequest
 @@||bagbeam.com^$script,xmlhttprequest
 @@||bagehd.com/iplookup.
 @@||baidu-taobao-av.com/js/home.js
@@ -6054,6 +6062,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||bitzfree.com/js/*.js$script
 @@||bizarrebaseball.com^$script,xmlhttprequest
 @@||blackmod.net^$generichide
+@@||blesspizzas.com^$script,xmlhttprequest
 @@||blizzard.com/oauth2$removeparam
 @@||blog.ztjal.info^$generichide
 @@||blotburn.com^$script,xmlhttprequest
@@ -6090,6 +6099,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||broadcastbed.com^$script,xmlhttprequest
 @@||broaddoor.com^$script,xmlhttprequest
 @@||brothersbucket.com^$script,xmlhttprequest
+@@||brotherslocket.com^$script,xmlhttprequest
 @@||bruisebaseball.com^$script,xmlhttprequest
 @@||brushdaughter.com^$script,xmlhttprequest
 @@||bs.serving-sys.com/BurstingPipe/adServer.bs$object-subrequest,domain=play.tv|playtv.fr
@@ -6108,6 +6118,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||burgerbrush.com^$script,xmlhttprequest
 @@||burnbubble.com^$script,xmlhttprequest
 @@||burstblade.com^$script,xmlhttprequest
+@@||bushesbag.com^$script,xmlhttprequest
 @@||businessbells.com^$script,xmlhttprequest
 @@||bustlinganimal.com^$script,xmlhttprequest
 @@||bustlingbath.com^$script,xmlhttprequest
@@ -6143,6 +6154,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||captcha.qq.com^*?*=*=*=$subdocument
 @@||captcha.su.baidu.com^
 @@||carefuldolls.com^$script,xmlhttprequest
+@@||carelesshat.com^$script,xmlhttprequest
 @@||carexpert.com.tw/wp-content/plugins/like-box-pro/includes/javascript/front_end_js.js
 @@||caringcast.com^$script,xmlhttprequest
 @@||caringzinc.com^$script,xmlhttprequest
@@ -6151,11 +6163,13 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||carscannon.com^$script,xmlhttprequest
 @@||cash4files.com/intermission/loadTargetUrl$xmlhttprequest
 @@||cash4links.co/intermission/loadTargetUrl$xmlhttprequest
+@@||castcream.com^$script,xmlhttprequest
 @@||catalogdiscovery.com^$script,xmlhttprequest
 @@||catschickens.com^$script,xmlhttprequest
 @@||causecherry.com^$script,xmlhttprequest
 @@||cautiouscrate.com^$script,xmlhttprequest
 @@||cautiouscredit.com^$script,xmlhttprequest
+@@||cavecurtain.com^$script,xmlhttprequest
 @@||cbjs.baidu.com/js/m.js$domain=fxpan.com|iyingdi.com|pic.tiexue.net
 @@||ccb.com^*^ad
 @@||ccllaa.com^$generichide
@@ -6190,6 +6204,8 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||changyan.sohu.com/debug/cookie?
 @@||changyou.com^$generichide
 @@||channelcamp.com^$script,xmlhttprequest
+@@||charmingcough.com^$script,xmlhttprequest
+@@||charmingplate.com^$script,xmlhttprequest
 @@||checkm8.com^$object-subrequest,domain=mako.co.il
 @@||cheerfulrange.com^$script,xmlhttprequest
 @@||chemicalcoach.com^$script,xmlhttprequest
@@ -6215,6 +6231,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||citysbs.com^*/swfupload/
 @@||citytalk.tw/js/ct/common/v3/ui/fblike/FBLike.html
 @@||clamcelery.com^$script,xmlhttprequest
+@@||clammychicken.com^$script,xmlhttprequest
 @@||clammytree.com^$script,xmlhttprequest
 @@||clearcabbage.com^$script,xmlhttprequest
 @@||cloisteredcord.com^$script,xmlhttprequest
@@ -6225,6 +6242,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||cloudsdestruction.com^$script,xmlhttprequest
 @@||cloudtime.to/banner.php$script
 @@||club.tgfcer.com^$generichide
+@@||clumsycar.com^$script,xmlhttprequest
 @@||clumsyrock.com^$script,xmlhttprequest
 @@||cmbc.com.cn^*ads/
 @@||cmbchina.com/ads/
@@ -6262,6 +6280,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||completecabbage.com^$script,xmlhttprequest
 @@||complextoad.com^$script,xmlhttprequest
 @@||conceptualizereading.com^$script,xmlhttprequest
+@@||concernedchickens.com^$script,xmlhttprequest
 @@||concernedcondition.com^$script,xmlhttprequest
 @@||concerneddrink.com^$script,xmlhttprequest
 @@||conditionchange.com^$script,xmlhttprequest
@@ -6293,6 +6312,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||count.video.sina.com.cn^*?video_ids=
 @@||countrygarden.com.cn/ad/
 @@||coverapparatus.com^$script,xmlhttprequest
+@@||cowscrayon.com^$script,xmlhttprequest
 @@||cpagrip.com/script_include.php?id=$domain=nation2.com
 @@||cpagrip.com/script_include.php?id=$script
 @@||cpalead.com/*.php?$script,third-party,domain=receive-sms.com|takwing.idv.hk|runningmanengsub.com
@@ -6309,6 +6329,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||crawlclocks.com^$script,xmlhttprequest
 @@||crayoncompetition.com^$script,xmlhttprequest
 @@||create.jd.com/ad/
+@@||creditcreature.com^$script,xmlhttprequest
 @@||criteo.com/delivery/ajs.php?zoneid=$script,domain=gaus.ee
 @@||critictruck.com^$script,xmlhttprequest
 @@||crococoin.com/static/js/Controller/Advertise.js$script
@@ -6348,6 +6369,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||dailybitcoins.org/banners/$image
 @@||dama.bg^*/js/ad$script
 @@||damageddistance.com^$script,xmlhttprequest
+@@||damagedroll.com^$script,xmlhttprequest
 @@||damdoor.com^$script,xmlhttprequest
 @@||dammu.tk^$domain=aloneteam.net
 @@||dampdock.com^$script,xmlhttprequest
@@ -6368,10 +6390,12 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||dbzog.de^$elemhide
 @@||ddtorun.pl/pl/js/show_ads.js$script
 @@||ddwloclawek.pl/pl/js/show_ads.js$script
+@@||deadpanmarble.com^$script,xmlhttprequest
 @@||deadpantruck.com^$script,xmlhttprequest
 @@||deafeningdock.com^$script,xmlhttprequest
 @@||deb.gs/intermission/loadTargetUrl$xmlhttprequest
 @@||debonairdust.com^$script,xmlhttprequest
+@@||debonairtree.com^$script,xmlhttprequest
 @@||debonairway.com^$script,xmlhttprequest
 @@||decidedrum.com^$script,xmlhttprequest
 @@||decisivebase.com^$script,xmlhttprequest
@@ -6383,6 +6407,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||defectivesun.com^$script,xmlhttprequest
 @@||defiantrice.com^$script,xmlhttprequest
 @@||delegatediscussion.com^$script,xmlhttprequest
+@@||delicateducks.com^$script,xmlhttprequest
 @@||delightfulhour.com^$script,xmlhttprequest
 @@||demo.hongkiat.com/jquery-detect-ads-block/images/ads.jpg$image
 @@||demonoid.pw/show_ads_.js$script
@@ -6403,6 +6428,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||developer.apple.com$generichide
 @@||di.se^$elemhide
 @@||dictionary.search.yahoo.com/beacon/sc?&ajaxdd=tabsCard&
+@@||differentcoat.com^$script,xmlhttprequest
 @@||difficultfog.com^$script,xmlhttprequest
 @@||digiland.tw/advert.js
 @@||digit77.com^$generichide
@@ -6465,6 +6491,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||draconiancurve.com^$script,xmlhttprequest
 @@||dragoart.com/ads.js$script,~third-party
 @@||dragzebra.com^$script,xmlhttprequest
+@@||drainpaste.com^$script,xmlhttprequest
 @@||dramaticcondition.com^$script,xmlhttprequest
 @@||dramaticdirection.com^$script,xmlhttprequest
 @@||drawermice.com^$script,xmlhttprequest
@@ -6478,6 +6505,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||duckduckgo.com/tty^$removeparam=t
 @@||duelmeta.com^$generichide
 @@||dushu.ru^$script,domain=bhshu.net
+@@||dustydime.com^$script,xmlhttprequest
 @@||dustyrabbits.com^$script,xmlhttprequest
 @@||dustywave.com^$script,xmlhttprequest
 @@||dvbtmap.eu/script/ads*.js$script
@@ -6531,6 +6559,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||engineertrick.com^$script,xmlhttprequest
 @@||english-subtitles.club/assets/$image,~third-party
 @@||enormousearth.com^$script,xmlhttprequest
+@@||enormousfoot.com^$script,xmlhttprequest
 @@||enrondev.net/ads/server/www/delivery/$domain=filecore.co.nz,subdocument
 @@||entertainingeyes.com^$script,xmlhttprequest
 @@||enthusiasticdad.com^$script,xmlhttprequest
@@ -6595,6 +6624,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||faultyfowl.com^$script,xmlhttprequest
 @@||fearfowl.com^$script,xmlhttprequest
 @@||fearfulfish.com^$script,xmlhttprequest
+@@||fearfulmint.com^$script,xmlhttprequest
 @@||fearlessfaucet.com^$script,xmlhttprequest
 @@||feebleshock.com^$script,xmlhttprequest
 @@||feilusw.com/search.html$genericblock,generichide
@@ -6619,6 +6649,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||flockflame.com^$script,xmlhttprequest
 @@||floodprincipal.com^$script,xmlhttprequest
 @@||flowerstreatment.com^$script,xmlhttprequest
+@@||flowerycreature.com^$script,xmlhttprequest
 @@||floweryoperation.com^$script,xmlhttprequest
 @@||fltaradio.com/js/ads.js
 @@||flyert.com/plug/socialShare/js/social-share.
@@ -6631,6 +6662,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||foregoingfowl.com^$script,xmlhttprequest
 @@||forexprostools.com^$domain=shougedui.com
 @@||forgetfulflowers.com^$script,xmlhttprequest
+@@||fortunatemark.com^$script,xmlhttprequest
 @@||forum.51nb.com/images/*/
 @@||forums.audipassion.com/public/js/jsLoader.js$script
 @@||fosshub.com/media/v2/js/ads.js$script
@@ -6669,6 +6701,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||futuristicfifth.com^$script,xmlhttprequest
 @@||futuristicfold.com^$script,xmlhttprequest
 @@||fuzzybasketball.com^$script,xmlhttprequest
+@@||fuzzyerror.com^$script,xmlhttprequest
 @@||fuzzyflavor.com^$script,xmlhttprequest
 @@||fuzzyweather.com^$script,xmlhttprequest
 @@||g.alicdn.com/??*/criteo
@@ -6689,6 +6722,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||gazetaprawna.pl/gp/js/ads_blocker_test.js$script,domain=dziennik.pl|forsal.pl|gazetaprawna.pl|jegostrona.pl|prawnik.pl
 @@||ge-map-overlays.appspot.com/files/js/ads.js$script
 @@||geekbang.org/resource/image/ad/14/addb521e20de1a302206f4286eac3914.png
+@@||generalprose.com^$script,xmlhttprequest
 @@||generatorlinkpremium.com/js/ads.js$script
 @@||genesyslogic.com^*/ads$~third-party
 @@||genshuixue.com/??/*/counter/action_
@@ -6706,6 +6740,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||github.com^$removeparam
 @@||github.io/videojs-ima/node_modules/video.$domain=setn.com
 @@||githubusercontent.com/reek/anti-adblock-killer/
+@@||givevacation.com^$script,xmlhttprequest
 @@||gleamingtrade.com^$script,xmlhttprequest
 @@||glisteningguide.com^$script,xmlhttprequest
 @@||glisteningsign.com^$script,xmlhttprequest
@@ -6788,6 +6823,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||guaranteelamp.com^$script,xmlhttprequest
 @@||guardeddirection.com^$script,xmlhttprequest
 @@||guardedschool.com^$script,xmlhttprequest
+@@||guidecent.com^$script,xmlhttprequest
 @@||guiltlessbasketball.com^$script,xmlhttprequest
 @@||guitargrandmother.com^$script,xmlhttprequest
 @@||gulliblecamp.com^$script,xmlhttprequest
@@ -6807,6 +6843,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||hammerhearing.com^$script,xmlhttprequest
 @@||handleteeth.com^$script,xmlhttprequest
 @@||handsomeindustry.com^$script,xmlhttprequest
+@@||handsomelyhealth.com^$script,xmlhttprequest
 @@||handyfield.com^$script,xmlhttprequest
 @@||handyfireman.com^$script,xmlhttprequest
 @@||hanjubaike.com^$script,~third-party
@@ -6818,6 +6855,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||haokoubei.top/sz/to_v_f.js
 @@||haoweichi.com/Public/js/ads.js
 @@||happenhistory.com^$script,xmlhttprequest
+@@||harborcaption.com^$script,xmlhttprequest
 @@||harborcub.com^$script,xmlhttprequest
 @@||hardtofindmilk.com^$script,xmlhttprequest
 @@||hatefulrequest.com^$script,xmlhttprequest
@@ -6835,6 +6873,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||headyhook.com^$script,xmlhttprequest
 @@||healflowers.com^$script,xmlhttprequest
 @@||hearinglizards.com^$script,xmlhttprequest
+@@||heartbreakingmind.com^$script,xmlhttprequest
 @@||hearthorn.com^$script,xmlhttprequest
 @@||heavenly-blue.net^$elemhide
 @@||heavyplayground.com^$script,xmlhttprequest
@@ -6875,6 +6914,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||hornywood.tv/intermission/loadTargetUrl$xmlhttprequest
 @@||horsenectar.com^$script,xmlhttprequest
 @@||hosenews.com^$script,xmlhttprequest
+@@||hospitablehall.com^$script,xmlhttprequest
 @@||hostuje.net/show_ads.js$script,domain=hostuje.net
 @@||how2play.pl/wp-content/themes/htp/js/vendor/adblock.js$script
 @@||howtogeek.com/adframe.js$subdocument
@@ -6927,6 +6967,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||img4399.com/static/huodong/daily/fpv2.js
 @@||imgbb.net/js/ads.js$script
 @@||immensehoney.com^$script,xmlhttprequest
+@@||imminentshake.com^$script,xmlhttprequest
 @@||imperfectinstrument.com^$script,xmlhttprequest
 @@||importedincrease.com^$script,xmlhttprequest
 @@||importedinsect.com^$script,xmlhttprequest
@@ -6940,6 +6981,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||impulsejewel.com^$script,xmlhttprequest
 @@||inc.com//js/ads.js$xmlhttprequest
 @@||incompetentjoke.com^$script,xmlhttprequest
+@@||inconclusiveaction.com^$script,xmlhttprequest
 @@||indeed.com/rc/clk$removeparam
 @@||indiatimes.com/ads.cms$script
 @@||indiatimes.com/toi_js_ads/ads/*$script
@@ -6951,12 +6993,14 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||innocentwax.com^$script,xmlhttprequest
 @@||inoreader.com^$genericblock,generichide
 @@||inpad.com.tw/data/adv/
+@@||inputicicle.com^$script,xmlhttprequest
 @@||inquisitiveice.com^$script,xmlhttprequest
 @@||inquisitiveinvention.com^$script,xmlhttprequest
 @@||inskinmedia.com^*/js/base/api/$domain=appledaily.com|nextmedia.com
 @@||instrumentinsect.com^$script,xmlhttprequest
 @@||instrumentsponge.com^$script,xmlhttprequest
 @@||intelligentscissors.com^$script,xmlhttprequest
+@@||interestingpot.com^$script,xmlhttprequest
 @@||interestsmoke.com^$script,xmlhttprequest
 @@||internalsink.com^$script,xmlhttprequest
 @@||inventionpassenger.com^$script,xmlhttprequest
@@ -7125,6 +7169,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||loksatta.com/*/ads$script
 @@||loltmcheck.com/js/ads.js
 @@||longinglettuce.com^$script,xmlhttprequest
+@@||looseloaf.com^$script,xmlhttprequest
 @@||lorenzourban.com^$script,xmlhttprequest
 @@||losslace.com^$script,xmlhttprequest
 @@||loudlunch.com^$script,xmlhttprequest
@@ -7138,6 +7183,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||lumberamount.com^$script,xmlhttprequest
 @@||lumload.com/pop.js$script
 @@||lumpylumber.com^$script,xmlhttprequest
+@@||lunchroomlock.com^$script,xmlhttprequest
 @@||m.v.fwmrm.net/p/release/latest-JS/adm/prd/AdManager.js$domain=revision3.com
 @@||macauo2o.com/advertise/
 @@||maddeningpowder.com^$script,xmlhttprequest
@@ -7168,6 +7214,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||materialisticfan.com^$script,xmlhttprequest
 @@||materialisticmark.com^$script,xmlhttprequest
 @@||materialmoon.com^$script,xmlhttprequest
+@@||materialparcel.com^$script,xmlhttprequest
 @@||matrix.org/_matrix/$removeparam
 @@||maxcheaters.com/public/js/jsLoader.js$script
 @@||mcbar.cn^$generichide
@@ -7188,6 +7235,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||megaline.co/intermission/loadTargetUrl$xmlhttprequest
 @@||meituan.net/bs/js/*/js/tracker.js
 @@||meizu.com/fileserver/ad/img/
+@@||mellowbike.com^$script,xmlhttprequest
 @@||melodicminute.com^$script,xmlhttprequest
 @@||memopilot.com^$script,xmlhttprequest
 @@||memorizeneck.com^$script,xmlhttprequest
@@ -7254,6 +7302,8 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||multiup.org/pop.js$script,domain=filesupload.org
 @@||mundanepollution.com^$script,xmlhttprequest
 @@||murkymeeting.com^$script,xmlhttprequest
+@@||muteknife.com^$script,xmlhttprequest
+@@||muterange.com^$script,xmlhttprequest
 @@||muzlan.top/ads/banner.png
 @@||muzlan.top^$generichide
 @@||myaccount.google.*^$removeparam
@@ -7274,6 +7324,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||nbcudigitaladops.com/hosted/pubads.js$script,domain=nbc.com
 @@||nceea.cn/Content/images/ad/
 @@||necessarywax.com^$script,xmlhttprequest
+@@||needyneedle.com^$script,xmlhttprequest
 @@||negotiatetime.com^$script,xmlhttprequest
 @@||neighborlywatch.com^$script,xmlhttprequest
 @@||nervoussummer.com^$script,xmlhttprequest
@@ -7288,6 +7339,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||nicematin.com/assets/*/ads.js$script
 @@||niftyhospital.com^$script,xmlhttprequest
 @@||niftyjelly.com^$script,xmlhttprequest
+@@||nightwound.com^$script,xmlhttprequest
 @@||niotv.com^$generichide
 @@||noahedu.com/ad/$~third-party
 @@||noahedu.com/advertising/
@@ -7321,6 +7373,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||nu.nl/static/js/advertising.js$script
 @@||nulldiscussion.com^$script,xmlhttprequest
 @@||nullnorth.com^$script,xmlhttprequest
+@@||numerousnest.com^$script,xmlhttprequest
 @@||nuttyorganization.com^$script,xmlhttprequest
 @@||nvidia.cn^*-300x250-
 @@||oafishobservation.com^$script,xmlhttprequest
@@ -7344,6 +7397,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||operationkettle.com^$script,xmlhttprequest
 @@||opinionsurprise.com^$script,xmlhttprequest
 @@||oppositeoperation.com^$script,xmlhttprequest
+@@||oppositeparcel.com^$script,xmlhttprequest
 @@||ops.prismamediadigital.com/js/advertisement.js$xmlhttprequest,domain=voici.fr
 @@||optimallimit.com^$script,xmlhttprequest
 @@||optimized-by.rubiconproject.com/a/10926/26000/$subdocument,domain=onemanga.me
@@ -7506,6 +7560,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||pagead2.googlesyndication.com^$script,domain=hackintosh.computer
 @@||pailcrime.com^$script,xmlhttprequest
 @@||painstakingpickle.com^$script,xmlhttprequest
+@@||paintpear.com^$script,xmlhttprequest
 @@||paintplantation.com^$script,xmlhttprequest
 @@||paleleaf.com^$script,xmlhttprequest
 @@||pamelarandom.com^$script,xmlhttprequest
@@ -7535,6 +7590,8 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||passengerpage.com^$script,xmlhttprequest
 @@||passiontimes.hk^$generichide
 @@||passiontimes.hk^*-ad.php?
+@@||passivepolo.com^$script,xmlhttprequest
+@@||pastcabbage.com^$script,xmlhttprequest
 @@||pastepot.com^$script,xmlhttprequest
 @@||pastes.binbox.io/ad/banner$subdocument
 @@||pastoralcorn.com^$script,xmlhttprequest
@@ -7581,6 +7638,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||plantdigestion.com^$script,xmlhttprequest
 @@||plantpotato.com^$script,xmlhttprequest
 @@||plantrelation.com^$script,xmlhttprequest
+@@||plausiblecable.com^$script,xmlhttprequest
 @@||play.wtk.insys.pl/Scripts/InsysPlayer.v0.1.0/adTest.png$image
 @@||playbitco.in/show_ads.js$script
 @@||player.snacktv.de/js/ads.js$script
@@ -7594,6 +7652,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||podiumpresto.com^$script,xmlhttprequest
 @@||poedb.tw/js/
 @@||poedb.tw^$generichide
+@@||poeticpackage.com^$script,xmlhttprequest
 @@||pointlesspocket.com^$script,xmlhttprequest
 @@||pointlessrifle.com^$script,xmlhttprequest
 @@||poisedpig.com^$script,xmlhttprequest
@@ -7604,6 +7663,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||polscygracze.pl/wp-content/plugins/noadblock-nice-message/assets/js/ads.js$script,domain=polscygracze.pl
 @@||poontown.net/intermission/loadTargetUrl$xmlhttprequest
 @@||popart.hk/newweb/$generichide
+@@||popcornfood.com^$script,xmlhttprequest
 @@||popo8.com^$domain=www.6park.com
 @@||popunder.fpctraffic.com/pop.js$popup,domain=hentaistream.com
 @@||porn-blog.me/?pr_api=true&/ad_holder/$subdocument
@@ -7624,6 +7684,8 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||previousplayground.com^$script,xmlhttprequest
 @@||previouspotato.com^$script,xmlhttprequest
 @@||pricklydebt.com^$script,xmlhttprequest
+@@||pricklyjourney.com^$script,xmlhttprequest
+@@||pricklypies.com^$script,xmlhttprequest
 @@||pricklyplastic.com^$script,xmlhttprequest
 @@||printerplasma.com^$script,xmlhttprequest
 @@||privacy.vakmedianet.nl/*ref=$removeparam
@@ -7638,6 +7700,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||propertypotato.com^$script,xmlhttprequest
 @@||proudprose.com^$script,xmlhttprequest
 @@||ps3-infos.fr/adsense/openads/ads/ads.js$script
+@@||psychedelicarithmetic.com^$script,xmlhttprequest
 @@||psychedelicchess.com^$script,xmlhttprequest
 @@||pttplay.com/js/momo/adsbygoogle.js
 @@||ptwxz.com/scripts/readindex/tongji.js
@@ -7691,6 +7754,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||quaintcan.com^$script,xmlhttprequest
 @@||quanzhi.cn/v3/images/index_ad/
 @@||quarterbean.com^$script,xmlhttprequest
+@@||questionableobservation.com^$script,xmlhttprequest
 @@||quickbitco.in/js/ads.js$script
 @@||quicksandear.com^$script,xmlhttprequest
 @@||quietknowledge.com^$script,xmlhttprequest
@@ -7709,8 +7773,11 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||rainyhand.com^$script,xmlhttprequest
 @@||rainyrule.com^$script,xmlhttprequest
 @@||rainystretch.com^$script,xmlhttprequest
+@@||rainyzinc.com^$script,xmlhttprequest
 @@||rambunctiousvoyage.com^$script,xmlhttprequest
+@@||rampantwork.com^$script,xmlhttprequest
 @@||rangecake.com^$script,xmlhttprequest
+@@||rangeplayground.com^$script,xmlhttprequest
 @@||rapidkittens.com^$script,xmlhttprequest
 @@||rappers.in/js/antiadblock.js$script
 @@||raresummer.com^$script,xmlhttprequest
@@ -7740,11 +7807,14 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||reflectivereward.com^$script,xmlhttprequest
 @@||regapi.37.com/api/p_register.php?login_account=
 @@||regularplants.com^$script,xmlhttprequest
+@@||regulatesleet.com^$script,xmlhttprequest
+@@||rehabilitatereason.com^$script,xmlhttprequest
 @@||rejectfairies.com^$script,xmlhttprequest
 @@||removeadblock.com/js/show_ads.js$script
 @@||renfei.net^$generichide
 @@||repeatsweater.com^$script,xmlhttprequest
 @@||replaceroute.com^$script,xmlhttprequest
+@@||representativebat.com^$script,xmlhttprequest
 @@||representativeray.com^$script,xmlhttprequest
 @@||res.wx.qq.com/mmbizwap/$script
 @@||resolutekey.com^$script,xmlhttprequest
@@ -7753,6 +7823,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||respectrain.com^$script,xmlhttprequest
 @@||restrainstorm.com^$script,xmlhttprequest
 @@||rhetoricalloss.com^$script,xmlhttprequest
+@@||rhetoricaltoes.com^$script,xmlhttprequest
 @@||rhetoricalveil.com^$script,xmlhttprequest
 @@||rhtag.com^$image,subdocument,domain=bitzfree.com
 @@||rhymezebra.com^$script,xmlhttprequest
@@ -7777,10 +7848,12 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||roofrelation.com^$script,xmlhttprequest
 @@||rookie.com.pl/jscripts/ads.js$script
 @@||roomyreading.com^$script,xmlhttprequest
+@@||rottenray.com^$script,xmlhttprequest
 @@||roughroll.com^$script,xmlhttprequest
 @@||rqq.co/intermission/loadTargetUrl$xmlhttprequest
 @@||ruddycast.com^$script,xmlhttprequest
 @@||ruddywash.com^$script,xmlhttprequest
+@@||ruralrobin.com^$script,xmlhttprequest
 @@||rusticprice.com^$script,xmlhttprequest
 @@||ruten.com.tw/ahd/fetch_ad.php
 @@||ruten.com.tw/js/jquery.ruten.supertop_ad.js
@@ -7846,10 +7919,12 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||scyts.com^$generichide
 @@||sdc.pingan.com^$~image
 @@||seashoresociety.com^$script,xmlhttprequest
+@@||seashoreturn.com^$script,xmlhttprequest
 @@||seatsmoke.com^$script,xmlhttprequest
 @@||secret-zone.net/abp/adblock_detector.js$script
 @@||secretivecub.com^$script,xmlhttprequest
 @@||secretivesheep.com^$script,xmlhttprequest
+@@||secretivestick.com^$script,xmlhttprequest
 @@||secretspiders.com^$script,xmlhttprequest
 @@||secretturtle.com^$script,xmlhttprequest
 @@||securenetsystems.net/*/scripts/adv.js$script,~third-party
@@ -7862,6 +7937,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||selfimg.com.cn/??
 @@||selfishsea.com^$script,xmlhttprequest
 @@||selfishsnake.com^$script,xmlhttprequest
+@@||sensorsmile.com^$script,xmlhttprequest
 @@||separateshow.com^$script,xmlhttprequest
 @@||separatesilver.com^$script,xmlhttprequest
 @@||seriousdeals.net/intermission/loadTargetUrl$xmlhttprequest
@@ -7879,6 +7955,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||shaggytank.com^$script,xmlhttprequest
 @@||shakegoldfish.com^$script,xmlhttprequest
 @@||shakesuggestion.com^$script,xmlhttprequest
+@@||shakyseat.com^$script,xmlhttprequest
 @@||shakysurprise.com^$script,xmlhttprequest
 @@||shakytaste.com^$script,xmlhttprequest
 @@||shallowblade.com^$script,xmlhttprequest
@@ -7888,6 +7965,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||share1223.com^$generichide
 @@||sharewareonsale.com/wp-content/plugins/checkout-ad-checker/assets/$script,stylesheet,image
 @@||sharppatch.com^$script,xmlhttprequest
+@@||sheltercellar.com^$script,xmlhttprequest
 @@||shesubscriptions.com^$script,xmlhttprequest
 @@||shijue.me/advertise/getList?
 @@||shine.cn/showadcode2.asp?posid=68&
@@ -7915,6 +7993,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||shyseed.com^$script,xmlhttprequest
 @@||siamfishing.com/_js/adsbygoogle.js$script
 @@||siamfishing.com/_js/advert.js$script
+@@||sickflock.com^$script,xmlhttprequest
 @@||sicksmash.com^$script,xmlhttprequest
 @@||silentcredit.com^$script,xmlhttprequest
 @@||silentwrench.com^$script,xmlhttprequest
@@ -7937,8 +8016,10 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||sinajs.cn/open/analytics/js/suda.js$domain=weibo.com|~widget.weibo.com
 @@||sinajs.cn/open/api/js/wb.js$domain=sc.sina.com.cn
 @@||sincerebuffalo.com^$script,xmlhttprequest
+@@||sincereseashore.com^$script,xmlhttprequest
 @@||sinceresubstance.com^$script,xmlhttprequest
 @@||singroot.com^$script,xmlhttprequest
+@@||sinkbooks.com^$script,xmlhttprequest
 @@||sinopac.com/applyweb/OpenAccount/js/oas.
 @@||sitenable.com/admega.php$script
 @@||sitenable.org/admega.php$script
@@ -7955,7 +8036,9 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||sleepcartoon.com^$script,xmlhttprequest
 @@||slimopinion.com^$script,xmlhttprequest
 @@||slimyscarf.com^$script,xmlhttprequest
+@@||slimyseashore.com^$script,xmlhttprequest
 @@||slipperysack.com^$script,xmlhttprequest
+@@||slopesoap.com^$script,xmlhttprequest
 @@||sloppycalculator.com^$script,xmlhttprequest
 @@||sloppyearthquake.com^$script,xmlhttprequest
 @@||smallbeginner.com^$script,xmlhttprequest
@@ -7967,6 +8050,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||smashsurprise.com^$script,xmlhttprequest
 @@||smilingcattle.com^$script,xmlhttprequest
 @@||smilingshake.com^$script,xmlhttprequest
+@@||smilingswim.com^$script,xmlhttprequest
 @@||smilingwaves.com^$script,xmlhttprequest
 @@||smoggysnakes.com^$script,xmlhttprequest
 @@||smoggystation.com^$script,xmlhttprequest
@@ -7982,6 +8066,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||snesfun.com/js/ads.js$script
 @@||snoresmile.com^$script,xmlhttprequest
 @@||soaprange.com^$script,xmlhttprequest
+@@||soapsmoke.com^$script,xmlhttprequest
 @@||softwarebrother.com^$generichide
 @@||soggysponge.com^$script,xmlhttprequest
 @@||sogou.com/adpub/cfg/sendmsg.
@@ -7994,6 +8079,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||somberscarecrow.com^$script,xmlhttprequest
 @@||sombersea.com^$script,xmlhttprequest
 @@||sombersquirrel.com^$script,xmlhttprequest
+@@||sombersticks.com^$script,xmlhttprequest
 @@||somberstructure.com^$script,xmlhttprequest
 @@||sombersurprise.com^$script,xmlhttprequest
 @@||songssmoke.com^$script,xmlhttprequest
@@ -8101,6 +8187,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||steadfastsystem.com^$script,xmlhttprequest
 @@||steadycopper.com^$script,xmlhttprequest
 @@||steamcn.com/source/plugin/steamcn_gift/template/images/*steam.png
+@@||steepsister.com^$script,xmlhttprequest
 @@||steepsquirrel.com^$script,xmlhttprequest
 @@||stepplane.com^$script,xmlhttprequest
 @@||stereoproxy.com^$script,xmlhttprequest
@@ -8110,6 +8197,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||stickysheet.com^$script,xmlhttprequest
 @@||stiffgame.com^$script,xmlhttprequest
 @@||stiffstem.com^$script,xmlhttprequest
+@@||stingsquirrel.com^$script,xmlhttprequest
 @@||stjscn.s-msn.com/portal/hp/2011/udctrack.
 @@||sto520.com^$generichide
 @@||stockingsneeze.com^$script,xmlhttprequest
@@ -8120,15 +8208,18 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||stoveseashore.com^$script,xmlhttprequest
 @@||straight-world.de/js/ads.js$script
 @@||straightnest.com^$script,xmlhttprequest
+@@||strangeclocks.com^$script,xmlhttprequest
 @@||strangesink.com^$script,xmlhttprequest
 @@||stream4free.eu/modules/mod_jpayday/js/doubleclick.js$script,domain=stream4free.eu
 @@||streaming-foot.me/js/adblock.js$script
 @@||stretchsister.com^$script,xmlhttprequest
+@@||stretchsneeze.com^$script,xmlhttprequest
 @@||stretchsquirrel.com^$script,xmlhttprequest
 @@||stringsmile.com^$script,xmlhttprequest
 @@||stripe.com/*?*referrer=$removeparam
 @@||stripedburst.com^$script,xmlhttprequest
 @@||strivesidewalk.com^$script,xmlhttprequest
+@@||strivesquirrel.com^$script,xmlhttprequest
 @@||structurerod.com^$script,xmlhttprequest
 @@||studioclassroom.com/ad/
 @@||stupendousselection.com^$script,xmlhttprequest
@@ -8147,6 +8238,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||suddenstructure.com^$script,xmlhttprequest
 @@||sudupan.com^*/*.gif
 @@||sugarcurtain.com^$script,xmlhttprequest
+@@||sugarfriction.com^$script,xmlhttprequest
 @@||sulkybutter.com^$script,xmlhttprequest
 @@||sulkycook.com^$script,xmlhttprequest
 @@||sumeronline.com^$generichide
@@ -8163,6 +8255,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||sweepsheep.com^$script,xmlhttprequest
 @@||sweetslope.com^$script,xmlhttprequest
 @@||swellstocking.com^$script,xmlhttprequest
+@@||swelteringsmile.com^$script,xmlhttprequest
 @@||swimslope.com^$script,xmlhttprequest
 @@||swordgoose.com^$script,xmlhttprequest
 @@||swsc.com.cn/download/ad_images/
@@ -8184,6 +8277,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||talktv.vn/resource/third-party/jwplayer/ads.js$object-subrequest
 @@||tangdou.com/sample/share/advert?$domain=tangdoucdn.com
 @@||tangibleteam.com^$script,xmlhttprequest
+@@||tangyamount.com^$script,xmlhttprequest
 @@||tansuo.cntv.cn^*/tansuo_Advertise.js
 @@||tanx.com/ex?i=$script,domain=dlkoo.cc
 @@||tanx.com/ex?i=$script,domain=dlkoo.com
@@ -8191,6 +8285,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||taobao.com^*&adgroupid=
 @@||tarttendency.com^$script,xmlhttprequest
 @@||tastefulsongs.com^$script,xmlhttprequest
+@@||tastelesstoes.com^$script,xmlhttprequest
 @@||tastelesstrees.com^$script,xmlhttprequest
 @@||tawdryson.com^$script,xmlhttprequest
 @@||tb.mgtv.com/sdk/*/ad-sdk.
@@ -8210,7 +8305,9 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||teknogods.com/advert.js$script
 @@||teleboy.ch/assets/js/werbung.ad.dc2.adtech.de.addyn.js$xmlhttprequest,domain=teleboy.ch
 @@||telegraaf.tcdn.nl/javascript/showads.*.js$script
+@@||telephoneapparatus.com^$script,xmlhttprequest
 @@||tempttalk.com^$script,xmlhttprequest
+@@||temptteam.com^$script,xmlhttprequest
 @@||tendersugar.com^$script,xmlhttprequest
 @@||tendertest.com^$script,xmlhttprequest
 @@||tenpay.com/v2/res/pub/cps/main/bottom_ad.js
@@ -8231,6 +8328,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||thickticket.com^$script,xmlhttprequest
 @@||thicktrucks.com^$script,xmlhttprequest
 @@||thingsafterthought.com^$script,xmlhttprequest
+@@||thingstaste.com^$script,xmlhttprequest
 @@||thinkablefloor.com^$script,xmlhttprequest
 @@||thinkablerice.com^$script,xmlhttprequest
 @@||thinkabletrick.com^$script,xmlhttprequest
@@ -8255,6 +8353,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||timetwig.com^$script,xmlhttprequest
 @@||tinylinks.co/intermission/loadTargetUrl$xmlhttprequest
 @@||tinytendency.com^$script,xmlhttprequest
+@@||tiredthroat.com^$script,xmlhttprequest
 @@||tiresomethunder.com^$script,xmlhttprequest
 @@||tix.axs.com^$removeparam=utm_campaign
 @@||tix.axs.com^$removeparam=utm_content
@@ -8265,6 +8364,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||tmall.com/add?
 @@||tmall.com/go/*/banner.php
 @@||tnabucks.com/intermission/loadTargetUrl$xmlhttprequest
+@@||toadtexture.com^$script,xmlhttprequest
 @@||toecircle.com^$script,xmlhttprequest
 @@||toedrawer.com^$script,xmlhttprequest
 @@||toolfk.com/tools/js/share/js/jquery.share.min.js
@@ -8296,7 +8396,9 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||trickycelery.com^$script,xmlhttprequest
 @@||trip-jam.com/resources/js/adsense.js
 @@||trip.cmbchina.com^$generichide
+@@||tritebadge.com^$script,xmlhttprequest
 @@||troubledtail.com^$script,xmlhttprequest
+@@||troubleshade.com^$script,xmlhttprequest
 @@||truckstomatoes.com^$script,xmlhttprequest
 @@||tsa-algerie.com/wp-content/themes/tsa/js/ads.js$script
 @@||tsyndicate.com/sdk/v1/n.js$domain=hpjav.tv
@@ -8333,6 +8435,8 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||ulifestyle.com.hk/store/prod/iskypost/res/js/dfp-
 @@||ultrafiles.net/intermission/loadTargetUrl$xmlhttprequest
 @@||ultraoranges.com^$script,xmlhttprequest
+@@||unablehope.com^$script,xmlhttprequest
+@@||unadvisedengine.com^$script,xmlhttprequest
 @@||unarmedindustry.com^$script,xmlhttprequest
 @@||unbecomingbikes.com^$script,xmlhttprequest
 @@||unbecominghall.com^$script,xmlhttprequest
@@ -8356,6 +8460,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||unusedstone.com^$script,xmlhttprequest
 @@||unusualtitle.com^$script,xmlhttprequest
 @@||unwieldyhealth.com^$script,xmlhttprequest
+@@||unwieldyplastic.com^$script,xmlhttprequest
 @@||unwrittenspot.com^$script,xmlhttprequest
 @@||upaiyun.com^*.js$domain=cilimao.co|cilimao.one
 @@||upf.co.il/advertisment.js$script
@@ -8403,6 +8508,8 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||vlist.se/advertisement.js
 @@||vodjk.com/offlights.js
 @@||voicevegetable.com^$script,xmlhttprequest
+@@||volatileprofit.com^$script,xmlhttprequest
+@@||volatilerainstorm.com^$script,xmlhttprequest
 @@||voraciousgrip.com^$script,xmlhttprequest
 @@||voxmusic.tv/html/js/adv.bbelements.js$script,domain=voxmusic.tv
 @@||voyagepotato.com^$script,xmlhttprequest
@@ -8439,6 +8546,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||weiyun001.com/banner_ads.js
 @@||wellgroomedapparel.com^$script,xmlhttprequest
 @@||wellgroomedbat.com^$script,xmlhttprequest
+@@||wellgroomedhydrant.com^$script,xmlhttprequest
 @@||wellmadefrog.com^$script,xmlhttprequest
 @@||wenxuecity.com/include/editor/*/media/ad/
 @@||wenxuecity.com^$generichide
@@ -8450,10 +8558,12 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||whisperingbadge.com^$script,xmlhttprequest
 @@||whisperingcrib.com^$script,xmlhttprequest
 @@||whisperingflesh.com^$script,xmlhttprequest
+@@||whispermeeting.com^$script,xmlhttprequest
 @@||wholecloud.net/banner.php$script
 @@||widget.sharecash.org/jsclick.php$script
 @@||wigglygeese.com^$script,xmlhttprequest
 @@||wigglyindustry.com^$script,xmlhttprequest
+@@||wildcommittee.com^$script,xmlhttprequest
 @@||wildernesscamera.com^$script,xmlhttprequest
 @@||winwk.com^$generichide
 @@||wirecomic.com^$script,xmlhttprequest
@@ -8655,6 +8765,7 @@ ada.baidu.com
 adageindia.in#?#div:-abp-has(> h2:-abp-contains(From the WEB))
 adageindia.in,bombaytimes.com#?#a:-abp-has(> div > p:-abp-contains(Ad: ))
 adblock-tester.com##.includeWrapper, .svelte-700pcr
+adblockeronstreamtape.xyz,adblockplustape.com,adblockstreamtape.art,adblockstreamtape.site,shavetape.cash,stapadblockuser.xyz,stapewithadblock.monster,strcloud.link,streamadblocker.xyz,streamadblockplus.com,streamadblockplus.xyz,streamtape.cc,streamtape.com,streamtape.net,streamtape.to,streamtape.xyz,streamtapeadblock.art,strtape.cloud,strtape.site,strtape.tech,tapewithadblock.org#$#abort-current-inline-script JSON.parse Promise; abort-current-inline-script document.createElement adblock;
 adblockplustape.com,adblockstreamtape.art,adblockstreamtape.site,adblockeronstreamtape.xyz,shavetape.cash,stapadblockuser.xyz,stapewithadblock.monster,strcloud.club,strcloud.link,streamadblockplus.com,streamadblocker.xyz,streamadblockplus.xyz,streamtape.to,streamtape.cc,streamtape.net,streamtape.xyz,streamtape.com,streamta.pe,strtapeadblock.me,strtape.cloud,strtape.site,strtape.tech,tapewithadblock.org,mixdrop.co#$#abort-on-property-write _pao
 adbuck.cc###col_publi
 adbug.cn#@#.google_ads
@@ -8797,6 +8908,7 @@ animepahe.com#$#abort-on-property-read _0x43d1; abort-on-property-read _0x53b5
 animepahe.com,fuxporn.com,gogoplay1.com,komikcast.com,lookmovie.la,manhuascan.io,prmovies.bz,speedostream.com,yomovies.cam,watchseri.net,wiflix.pw,yomovies.ws#$#abort-current-inline-script JSON.parse
 animepahe.ru,animepahe.org,animepahe.com#$#abort-on-property-read document.querySelector
 animesonline22.com#$#abort-current-inline-script JSON.parse /atob|btoa|break/
+animeunity.cc#$#abort-on-property-read zfgstorage; abort-current-inline-script document.documentElement break;case; abort-on-property-read decodeURI; abort-on-property-read decodeURIComponent;
 animeunity.tv#$#abort-on-property-read localStorage
 animewld.club##.header-img
 animezone.pl#@#.myTestAd
@@ -8806,6 +8918,7 @@ anisearch.com#@##advertise
 anisearch.com#@#.adsbygoogle
 anisubsia.com###de13
 anitube.be,anitube.cx,anitube.cz#$#abort-on-property-write _pop
+aniwatch.to#$#abort-current-inline-script XMLHttpRequest
 aniworld.to#$#abort-current-inline-script JSON.parse /atob|break/
 anjia365.com#@#.adv_bg
 anjian.com,qq.com###advertisement
@@ -19018,6 +19131,7 @@ zzzyk.com###Tinfo
 ||bephb.in^
 ||beqokg.xyz^
 ||beryl3.cc^
+||berylnbb.com^
 ||besc.baidustatic.com^
 ||bestbuy.com^$removeparam=acampID
 ||bestbuy.com^$removeparam=intl
@@ -19221,6 +19335,7 @@ zzzyk.com###Tinfo
 ||bjzb.xyz^
 ||bkae.top^
 ||bkcommdata.v.qq.com^
+||bkhblj.xyz^
 ||bkill.com/css/js/*top
 ||bkill.com/css/js/abcbl.js
 ||bkill.com/css/js/xinbkill.js
@@ -19529,6 +19644,7 @@ zzzyk.com###Tinfo
 ||cai110.com/js/2
 ||caibaojian.com/d/uploads/*/atop-
 ||caibaojian.com/d/uploads/*0-
+||caider.fun^
 ||caigoubao.cc^*/960
 ||caikuu.com/ckimages/*_gg
 ||caikuu.com/ckimages/*_zg
@@ -21515,6 +21631,7 @@ zzzyk.com###Tinfo
 ||ettoday.net/style/video-ad/
 ||ettoday.net^*/ad/
 ||eu.vortex-win.data.microsoft.com^
+||euitx.cn^
 ||eujxqgh.cn^
 ||eulaliadoradl.com^
 ||euliglsp.space^
@@ -22782,6 +22899,7 @@ zzzyk.com###Tinfo
 ||hdherpc.cn^
 ||hdminfeng.com^
 ||hdmoli.com/static/js/pop_promotion.js
+||hdpdrandpd.xyz^
 ||hdsky.me/adv/
 ||hdslb.com/bfs/ad/
 ||hdslb.com/bfs/sycp/creative_img/$image
@@ -23168,6 +23286,7 @@ zzzyk.com###Tinfo
 ||huoche.net/Images/pc/ad_
 ||huoche.net/public/huoche/ad/
 ||huodiyun.cn^
+||huoju.asia^
 ||huojua.com^
 ||huojua1.com^
 ||huojub.com^
@@ -23995,6 +24114,7 @@ zzzyk.com###Tinfo
 ||jgnlaiga.fun^
 ||jgqub.cn^
 ||jh001.cc^
+||jh16csf.com^
 ||jhgtf.com^
 ||jhlxfw.cn^
 ||jhxcld.xyz^
@@ -24855,6 +24975,7 @@ zzzyk.com###Tinfo
 ||lanrenzhijia.com/Public/images/head_right_top.gif
 ||lanrenzhijia.com/Public/images/sucaihuo_
 ||lanrenzhijia.com/Public/images/xiaozhua.jpg
+||lanver.fun^
 ||lanyes.org/content/templates/lanye2015/images/hb_banner.png
 ||laod.cn/wp-content/uploads/*/ad-
 ||laogu.com/cms/images/ad
@@ -28596,6 +28717,7 @@ zzzyk.com###Tinfo
 ||skfjdf.xyz^
 ||skfqxkk.cn^
 ||skidfqh.xyz^
+||skinnytaste.com^$removeparam=adt_ei
 ||skluff.com^
 ||skogsborg.net^
 ||skxuueby.cn^
@@ -29907,6 +30029,7 @@ zzzyk.com###Tinfo
 ||uebabuf.cn^
 ||uedas.$domain=qdmm.com|qdwenxue.com|qidian.com
 ||uehtjp.cn^
+||uejdsw.com^
 ||uejnmjdpd.xyz^
 ||uekqdec.cn^
 ||uengbalc.fun^
@@ -29937,6 +30060,7 @@ zzzyk.com###Tinfo
 ||ulkoxbra.com^
 ||ulogs.umeng.com^
 ||ulogs.umengcloud.com^
+||ulojlvmejkaem.xyz^
 ||ulsynmlt.fun^
 ||ultrafiles.net/Webservices/jsParseLinks.aspx$script,third-party
 ||ultrafiles.net/visitScript/$script,third-party
@@ -31044,6 +31168,7 @@ zzzyk.com###Tinfo
 ||xcaukve.cn^
 ||xcf-bd-js.chuimg.com^
 ||xchina.co/upload/ad/
+||xchina.life/ad/
 ||xchina.pro/upload/ad/
 ||xcisleoa.cn^
 ||xcjwq.world^
@@ -32034,6 +32159,7 @@ zzzyk.com###Tinfo
 ||zfnclk.buzz^
 ||zfood029.com^
 ||zfotrq.xyz^
+||zfteiv.xyz^
 ||zg.mmyuer.com^
 ||zgctig.cn^
 ||zgdshoes.com^
