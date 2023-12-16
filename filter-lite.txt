@@ -5,8 +5,8 @@
 ! Expires: 24 Hours
 ! Description: 该规则适用于移动端浏览器，如via, Vivaldi, X Browser
 ! Description: 该规则合并自EasyList Lite, Easylist China, CJX's Annoyance List, 乘风视频过滤规则, Adblock Warning Removal List, 酷安大萌主的规则, 去APP下载广告规则, 百度超级净化和一些额外规则
-! Version: 2023-12-15 08:52:16（北京时间）
-! Total count: 32510
+! Version: 2023-12-16 08:50:42（北京时间）
+! Total count: 32529
 ###Ad_windows
 ###ChapterView > .slide-baidu
 ###J_sideFooter.side_footer
@@ -5354,6 +5354,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 40407.com,lzep.cn,qudong.com,xitong8.com##.top_banner
 423down.com##.content > a
 423down.com##.entry > p > strong
+423down.com##.entry > strong > p
 423down.com##.menu > .menu-item:nth-child(n+6)
 423down.com##.widget_d_banner
 423down.com##span > a > b
@@ -5982,6 +5983,7 @@ $~xmlhttprequest,removeparam=ref_,domain=amazon.*|awesomeopensource.com|boxoffic
 @@||3dpchip.com^$generichide
 @@||3gmfw.cn/js/wap/8.js
 @@||40017.cn/cn/min/???/
+@@||423down.com^$generichide
 @@||4399sj.com^*/adview_pic_
 @@||4gtv.tv/4gtv/Data/GetAD.ashx
 @@||4horlover.com^$generichide
@@ -12266,6 +12268,9 @@ iqiyi.com###scrollWrap-vipbuy
 iqiyi.com###videoBuyContainer
 iqiyi.com###widget-jingdongAd
 iqiyi.com###zbsp
+iqiyi.com##+js(set, Object.prototype.blackscreenDuration, 1)
+iqiyi.com##+js(set, Object.prototype.parseXML, noopFunc)
+iqiyi.com##+js(set, QiyiPlayerProphetData.a.data, {})
 iqiyi.com##.ad-seed
 iqiyi.com##.adBanner980
 iqiyi.com##.banner3
@@ -14224,6 +14229,7 @@ qq.com###qqmail_AD_container
 qq.com###r_ad
 qq.com##+js(json-prune, ad)
 qq.com##+js(json-prune,ads ad.pause adList.item)
+qq.com##+js(json-prune,material.video.url)
 qq.com##+js(no-fetch-if,/trace\.|beacon\./)
 qq.com##+js(no-xhr-if,/trace\.|\/collect/)
 qq.com##+js(set,RTCPeerConnection,null)
@@ -15234,7 +15240,7 @@ truyen-hentai.com#$#abort-on-property-read Math.random; prevent-listener getexol
 truyen2u.net#$#abort-current-inline-script eval
 truyen35.vn#$#abort-current-inline-script jQuery click_ads
 truyenqqvn.com#$#abort-current-inline-script document.addEventListener window.open
-truyensieuhay.com,quangcaoyenbai.com,khoaiphim.com,phimmoi.io,phimbom.online,sieudamtv.com,ephimchill.com,motphimhan.cc#$#abort-on-property-read document.cookie
+truyensieuhay.com,quangcaoyenbai.com,khoaiphim.com,phimmoi.io,phimbom.online,sieudamtv.com,ephimchill.com,motphimhan.cc,maclife.io#$#abort-on-property-read document.cookie
 truyentuan.com#$#abort-current-inline-script $ btpop
 tsdm.live###ts_sidebar_base
 tsviewer.com#@#.adsbygoogle
@@ -15697,7 +15703,6 @@ woshipm.com##.article-bottomAd
 woshipm.com##.article-topAd
 wp.pl#$#abort-on-property-write gafReady
 wp.pl,pudelek.pl#$#abort-on-property-read wpjscb
-wpadmngr.com
 wpjam.com###wpjam_blog_300x250_1
 wpmienphi.com###d7b2
 wpworld.pl,windowsowo.pl#@##adBanner
@@ -16270,7 +16275,6 @@ zzzyk.com###Tinfo
 |https://$script,subdocument,popup,3p,domain=btsow.mom|rarbgprx.org
 |https://dd-static.jd.com/ddimg/jfs/t1/173245/15/28822/346324/62fcb4b0Eb437d047/136a1e04890320b8.jpg$image,domain=subaibaiys.com
 |https://imgcache.qq.com/qzone/biz/comm/js/qbs.js
-|https://static.cloudflareinsights.com/beacon.min.js^$xhr,script
 |https://tellme.pw/go/jav$popup
 |https://www.36dm.com/js/
 ||*.$image,rewrite=abp-resource:1x1-transparent-gif,third-party,domain=rmdown.com
@@ -17373,6 +17377,7 @@ zzzyk.com###Tinfo
 ||70822.com/agfile/
 ||7160.com/js/tiaozhuanquanju.js
 ||7162a.com^
+||71edge.com/videos/other/202$xmlhttprequest
 ||7239618ccc.com^
 ||733.so/template/wap1/js/all_css.js
 ||738atf.xyz^
@@ -17907,6 +17912,7 @@ zzzyk.com###Tinfo
 ||accid.xyz^
 ||accounts.google.com^$removeparam=dsh,doc
 ||aceik.xyz^
+||acemof.top^
 ||acfun.cn/appSpreadContents/danmuad/
 ||acgbase.com^$third-party
 ||acgbenzi.com^$image
@@ -18298,6 +18304,7 @@ zzzyk.com###Tinfo
 ||akyei.xyz^
 ||al.newxue.com^
 ||albsgdq.cn^
+||alchemeeten.com^
 ||aldkfsd.cn^
 ||aldtop.com/scrtips/
 ||alejd.xyz^
@@ -18973,6 +18980,7 @@ zzzyk.com###Tinfo
 ||awifi.cn^$third-party
 ||awiudbyqbpo.com^
 ||awyyzx.com^
+||awzddev.cn^
 ||ax.*.ifeng.com^
 ||ax.ifeng.com/$script
 ||ax.ifeng.com^
@@ -19689,6 +19697,7 @@ zzzyk.com###Tinfo
 ||biquge99.cc/js/dj
 ||birdmedia.com^$third-party
 ||birgga.top^
+||birglucy.xyz^
 ||birjkhm.cn^
 ||bis8j.com^
 ||bitauto.com/bglog.gif?
@@ -20224,6 +20233,7 @@ zzzyk.com###Tinfo
 ||cdn.yunliunet.com^
 ||cdn0.sxhjty.cn^
 ||cdn3.mancdn88.com^
+||cdn77.org^*.mp4
 ||cdn93d99x0e.23bei.com^
 ||cdncg.com^*/Aepku
 ||cdncg.com^*/peiyinquan
@@ -20270,6 +20280,7 @@ zzzyk.com###Tinfo
 ||ceuswatcab01.blob.core.windows.net^
 ||ceuswatcab02.blob.core.windows.net^
 ||cex8jw.cn^
+||cfateu.xyz^
 ||cfdns.vip^
 ||cfepws.com^
 ||cfff.net^$third-party
@@ -22087,6 +22098,7 @@ zzzyk.com###Tinfo
 ||f53a.com^
 ||f77j6t2b.com^
 ||f77xv3.top^
+||f780f.space^
 ||f8dy.tv/template/m1938/js/b
 ||f8dy.tv/template/m1938/js/foot.js
 ||f8ejqxp.cn^
@@ -23661,6 +23673,7 @@ zzzyk.com###Tinfo
 ||hvdath.xyz^
 ||hvfubp.xyz^
 ||hvhudp.xyz^
+||hvlitr.xyz^
 ||hvpard.xyz^
 ||hw0.com.cn^
 ||hwfoct.icu^
@@ -24155,6 +24168,7 @@ zzzyk.com###Tinfo
 ||iqiyi.com/show2?cb=
 ||iqiyi.com/track
 ||iqiyi.com/track$popup
+||iqiyi.com/videos/other/202$xmlhttprequest
 ||iqiyi.com^$removeparam=bkt
 ||iqiyi.com^$removeparam=e
 ||iqiyi.com^$removeparam=flashvars
@@ -25190,6 +25204,7 @@ zzzyk.com###Tinfo
 ||kydb.xyz^
 ||kygso.com/js/lrtk.js
 ||kyikdee.cn^
+||kyjwtxei.xyz^
 ||kyliane.fr/pub.php
 ||kyliane.fr/pub2.php
 ||kyplpw.com^
@@ -25957,6 +25972,7 @@ zzzyk.com###Tinfo
 ||mbalib.com/common/a_mbalib/
 ||mbekgac.xyz^
 ||mbepa.xyz^
+||mbfhwag.xyz^
 ||mbiypew.cn^
 ||mbly0.xyz^
 ||mbveryu.top^
@@ -26807,6 +26823,7 @@ zzzyk.com###Tinfo
 ||nqezlls.cn^
 ||nqfrhd.xyz^
 ||nqoxurf.icu^
+||nrfhbd.xyz^
 ||nrjzkj.cn^
 ||nrsfh.com/neirong/
 ||nryqr.cn^
@@ -26828,8 +26845,6 @@ zzzyk.com###Tinfo
 ||nudpqt.com^
 ||nuheoub.cn^
 ||nulltm.com/adv.js
-||nunuyingyuan.tk/serviceworker.js^$script
-||nunuyy.cf/serviceworker.js^$script
 ||nunxhv.com^
 ||nurahf.xyz^
 ||nutaku.net^
@@ -27974,6 +27989,7 @@ zzzyk.com###Tinfo
 ||qsptv.net/tpl/newstyle/js/pv.js
 ||qss-client.qq.com^
 ||qstzar.cn^
+||qtciam.xyz^
 ||qtd95fj.online^
 ||qtienly.top^
 ||qtmdzsj.cn^
@@ -28049,6 +28065,7 @@ zzzyk.com###Tinfo
 ||qyzyd.top^
 ||qz828.com/css/2010/script/*ad
 ||qzda.cc^
+||qznjujv.xyz^
 ||qzone.la/Scripts/m.js
 ||qzonestyle.gtimg.cn/qzone/biz/ac/comm/$script
 ||qzos9ou.xyz^
@@ -28536,7 +28553,6 @@ zzzyk.com###Tinfo
 ||sd124.com/statics/mystyle/js/1699.js
 ||sd173.com/images/
 ||sd6hon.cn^
-||sda1.dev^
 ||sdbeta.com/statics/mystyle/js/1
 ||sdchb2.com^
 ||sdcuo.com^
@@ -29880,6 +29896,7 @@ zzzyk.com###Tinfo
 ||trip.com/partners/ad/
 ||trk.pinterest.com^
 ||trognoi.com^
+||trojangfw.xyz^
 ||trp69.top^
 ||trqhf.xyz^
 ||trrmkzesvyqrary.com^
@@ -30508,6 +30525,7 @@ zzzyk.com###Tinfo
 ||vj1p.xyz^
 ||vjhjxh.xyz^
 ||vjie.com^$third-party
+||vjnxpj.xyz^
 ||vjrpnv.xyz^
 ||vjzjpt.xyz^
 ||vk920.com/img1/
@@ -30899,6 +30917,7 @@ zzzyk.com###Tinfo
 ||woot.com^$removeparam=/^ref_?=/
 ||woozooo.com/img/*.js
 ||worjeklmq.com^
+||worlderva.com^
 ||worldwide.sogou.com^
 ||wosidnlkxq.com^
 ||wowad.wow-classic.com^
