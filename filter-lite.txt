@@ -5,8 +5,8 @@
 ! Expires: 24 Hours
 ! Description: 该规则适用于移动端浏览器，如via, Vivaldi, X Browser
 ! Description: 该规则合并自EasyList Lite, Easylist China, CJX's Annoyance List, 乘风视频过滤规则, Adblock Warning Removal List, 酷安大萌主的规则, 去APP下载广告规则, 百度超级净化和一些额外规则
-! Version: 2024-03-16 08:47:06（北京时间）
-! Total count: 31908
+! Version: 2024-03-17 08:51:49（北京时间）
+! Total count: 31914
 ###ADtip
 ###Ad_windows
 ###ChapterView > .slide-baidu
@@ -1097,7 +1097,6 @@ $doc,removeparam=/^dpg_/
 $doc,removeparam=/^ds_/,domain=~clickserve.dartsearch.net
 $doc,removeparam=/^dv_adwords_/
 $doc,removeparam=/^ecid=/i,domain=~account.microsoft.com
-$doc,removeparam=/^from=ceneo$/
 $doc,removeparam=/^from=kelkoo/
 $doc,removeparam=/^from=rss$/
 $doc,removeparam=/^ga_/
@@ -1117,16 +1116,6 @@ $doc,removeparam=/^p\.litb_/
 $doc,removeparam=/^p\.utm_/
 $doc,removeparam=/^pid=.*_int$/
 $doc,removeparam=/^piwik_/
-$doc,removeparam=/^ref=admitad$/
-$doc,removeparam=/^ref=awin$/
-$doc,removeparam=/^ref=ceneo$/
-$doc,removeparam=/^ref=cj$/i
-$doc,removeparam=/^ref=itsfoss.com$/
-$doc,removeparam=/^ref=kelkoo/
-$doc,removeparam=/^ref=news.itsfoss.com$/
-$doc,removeparam=/^ref=pricespy/i
-$doc,removeparam=/^ref=prisjakt/i
-$doc,removeparam=/^ref=rss$/
 $doc,removeparam=/^referer=prisjakt/i
 $doc,removeparam=/^refsource=webgains$/
 $doc,removeparam=/^sfmc_/
@@ -1156,7 +1145,6 @@ $doc,removeparam=/^sv_tax/
 $doc,removeparam=/^target=admitad$/
 $doc,removeparam=/^tracker=affiliatefuture$/i
 $doc,removeparam=/^utm-/
-$doc,removeparam=/^via=rss$/
 $doc,removeparam=/^wickedid=/i
 $doc,removeparam=/^wickedkeyword=/i
 $doc,removeparam=/^wickedplacement=/i
@@ -1186,6 +1174,7 @@ $doc,removeparam=_x_vst_scene,domain=temu.com
 $doc,removeparam=af,domain=pnas.org|science.org|scitation.org|wiley.com|worldscientific.com
 $doc,removeparam=af_reengagement_window
 $doc,removeparam=af_xp
+$doc,removeparam=affiliate,domain=~justice.gov|~lippu.fi
 $doc,removeparam=aoOfferParams,domain=citi.com
 $doc,removeparam=bb,domain=indeed.com
 $doc,removeparam=bpli,domain=blogger.com
@@ -1300,8 +1289,6 @@ $removeparam=/^publisherId=/i,domain=blissworld.com|burkesoutlet.com|dell.com|ki
 $removeparam=/^pubname=/i,domain=anntaylor.com|ashford.com|backcountry.com|bloomingdales.com|dermstore.com|express.com|famousfootwear.com|farmandfleet.com|gucci.com|hottopic.com|loft.com|naturalizer.com|samsclub.com
 $removeparam=/^quot;/,domain=outnorth.fi
 $removeparam=/^qxjkl=tsid:/
-$removeparam=/^ref=spreadprivacy.com$/
-$removeparam=/^ref=troyhunt\.com/
 $removeparam=/^refID=/i,domain=allmodern.com|calphalon.com|priceline.com|questrade.com|wayfair.*|yankeecandle.com
 $removeparam=/^shared/,domain=alibi.fi|anna.fi|eralehti.fi|hymy.fi|kaksplus.fi|kotiliesi.fi|rakennusmaailma.fi|seura.fi|tekniikanmaailma.fi
 $removeparam=/^srcCode=/i,domain=jcrew.com|magellans.com|teleflora.com|tigerdirect.com
@@ -1569,7 +1556,6 @@ $removeparam=affc
 $removeparam=affcode
 $removeparam=affi_id
 $removeparam=affil
-$removeparam=affiliate,domain=~justice.gov
 $removeparam=affiliateCode
 $removeparam=affiliateCustomId
 $removeparam=affiliate_id
@@ -2683,7 +2669,7 @@ $script,third-party,domain=cilimao.co|cilimao.one
 $script,third-party,domain=colamanga.com
 $script,third-party,domain=torkitty.com|torrentkitty.app|torrentkitty.asia|torrentkitty.cam|torrentkitty.ink|torrentkitty.io|torrentkitty.live|torrentkitty.lol|torrentkitty.net|torrentkitty.se|torrentkitty.tv|torrkitty.com
 $script,third-party,websocket,domain=52codes.net
-$third-party,xmlhttprequest,domain=subhd.tv|subhdtw.com|xyg688.com|zzzzz688.com
+$third-party,xmlhttprequest,domain=cocolamanhua.com|subhd.tv|subhdtw.com|xyg688.com|zzzzz688.com
 $~image,removeparam=itok
 $~ping,removeparam=lcid,domain=~rekono.si
 $~subdocument,removeparam=aff,domain=~discoverbank.com|~discover.com
@@ -7796,6 +7782,7 @@ $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odyse
 @@||zxmee.com^$generichide
 @||crunchyroll.com/*/ads_enabled_flag*.js$script
 Mplay/kk1.js
+Ref=CJ$doc,removeparam=ref
 ^deal=futurepedia^$removeparam=deal
 ^fs=e&s=cl$doc,removeparam=fs
 ^fs=e&s=cl$doc,removeparam=s
@@ -9996,6 +9983,7 @@ freeskier.com###adb-enabled
 freeskier.com#@##adb-not-enabled
 freeuseporn.com#$#override-property-read p18 undefined
 french-streams.com#$#abort-on-property-read open
+from=ceneo$doc,removeparam=from
 fsclzs.com###qvod
 fsdpp.cn##.sidebox > a > img
 fsjoy.com#@#.main_adv
@@ -13074,17 +13062,28 @@ redocn.com##.big_vip_gg
 redocn.com##.small_vip_gg
 redtube.com##.add-blocker-msg
 redtube.com#$#abort-on-property-read smpop
-ref=404media.co$doc,removeparam=/^ref=404media.co$/
-ref=awesometechstack.com$doc,removeparam=/^ref=awesometechstack.com$/
-ref=beep.blog$doc,removeparam=/^ref=beep.blog$/
-ref=blog.roboflow.com$doc,removeparam=/^ref=blog.roboflow.com$/
-ref=buffer.com$doc,removeparam=/^ref=buffer.com$/
-ref=easywithai$doc,removeparam=/^ref=easywithai$/
-ref=exploit.media$doc,removeparam=/^ref=exploit.media$/
-ref=gtg.benabraham.net$doc,removeparam=/^ref=gtg.benabraham.net$/
-ref=labs.watchtowr.com$doc,removeparam=/^ref=labs.watchtowr.com$/
-ref=upstract.com$doc,removeparam=/^ref=upstract.com$/
-ref=zetter-zeroday.com$doc,removeparam=/^ref=zetter-zeroday.com$/
+ref=404media.co$doc,removeparam=ref
+ref=admitad$doc,removeparam=ref
+ref=awesometechstack.com$doc,removeparam=ref
+ref=awin$doc,removeparam=ref
+ref=beep.blog$doc,removeparam=ref
+ref=blog.roboflow.com$doc,removeparam=ref
+ref=buffer.com$doc,removeparam=ref
+ref=ceneo$doc,removeparam=ref
+ref=easywithai$doc,removeparam=ref
+ref=exploit.media$doc,removeparam=ref
+ref=gtg.benabraham.net$doc,removeparam=ref
+ref=itsfoss.com$doc,removeparam=ref
+ref=kelkoo$doc,removeparam=ref
+ref=labs.watchtowr.com$doc,removeparam=ref
+ref=news.itsfoss.com$doc,removeparam=ref
+ref=pricespy$doc,removeparam=ref
+ref=prisjakt$doc,removeparam=ref
+ref=rss$doc,removeparam=ref
+ref=spreadprivacy.com$removeparam=ref
+ref=troyhunt.com$doc,removeparam=ref
+ref=upstract.com$doc,removeparam=ref
+ref=zetter-zeroday.com$doc,removeparam=ref
 referencemega.com###hebdotop_t
 reflex.cz###gl-nat
 relax-fm.ru,rg.ru#$#abort-on-property-read AdFox_getCodeScript
@@ -14153,6 +14152,7 @@ vesti.ua#$#abort-current-inline-script document.createElement atob
 vestivrn.ru#$#abort-on-property-read video.preroll
 vev.red,vidup.io#$#abort-current-inline-script window.__INITIAL_STATE__
 vgtime.com##.vgart_top
+via=rss$doc,removeparam=via
 videofun.me,videobug.net,video44.net,play44.net,byzoo.org,playbb.me,videowing.me,videozoo.me,easyvideo.me,playpanda.net##.jhasvdjhas
 videojav.com,pornpapa.com,fapguru.com#$#abort-on-property-read document.querySelectorAll
 videopremium.tv#@#.pub_300x250
@@ -17456,6 +17456,7 @@ zzzyk.com###Tinfo
 ||argos.co.uk^$removeparam=istFeedId
 ||argos.co.uk^$removeparam=istItemId
 ||arhnuin.xyz^
+||ariqye.xyz^
 ||ark.le.com/s?vid=
 ||ark.letv.com/s?
 ||ark.letv.com/t?
@@ -20314,6 +20315,7 @@ zzzyk.com###Tinfo
 ||drstickyfingers.com/visitScript/$script,third-party
 ||drtyuigj.xyz^
 ||drvsky.com/js/jolimark.gif
+||dryden.cn^
 ||drzgtli.com^
 ||ds1.kaijia.com^
 ||dsbfpt.xyz^
@@ -20458,6 +20460,7 @@ zzzyk.com###Tinfo
 ||dz19.net/addimg/
 ||dzdxnbc.xyz^
 ||dzen.ru^$removeparam=yredirect
+||dzfzak.cn^
 ||dzfzfv.xyz^
 ||dzjzg.com^
 ||dzkwj0y.xyz^
@@ -20967,6 +20970,7 @@ zzzyk.com###Tinfo
 ||faxingw.cn/js/*0
 ||faxingw.cn/js/*ad
 ||faxingw.cn/js/detailgcbox.js
+||fbfrbt.xyz^
 ||fbvskv3.com^
 ||fbzmrgf.xyz^
 ||fc.gaizong.cn^
@@ -22178,6 +22182,7 @@ zzzyk.com###Tinfo
 ||henan.sina.com.cn/iframe/7/
 ||henan100.com/d/file/indexad/
 ||henanqiuzhige.com^
+||hendehy.com^
 ||henghost.com^$third-party
 ||hentaistream.com^$popup
 ||heqinyyds.com^
@@ -29389,6 +29394,7 @@ zzzyk.com###Tinfo
 ||unfhxszj.xyz^
 ||unidict.cn^
 ||unieuro.it^$removeparam=dedup
+||unifdlat.top^
 ||unified-exc.hismarttv.com^
 ||unified-new-exc.hismarttv.com^
 ||unified-ter.hismarttv.com^
