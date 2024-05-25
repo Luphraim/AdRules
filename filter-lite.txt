@@ -5,8 +5,8 @@
 ! Expires: 24 Hours
 ! Description: 该规则适用于移动端浏览器，如via, Vivaldi, X Browser
 ! Description: 该规则合并自EasyList Lite, Easylist China, CJX's Annoyance List, 乘风视频过滤规则, Adblock Warning Removal List, 酷安大萌主的规则, 去APP下载广告规则, 百度超级净化和一些额外规则
-! Version: 2024-05-24 08:52:46（北京时间）
-! Total count: 32357
+! Version: 2024-05-25 08:51:30（北京时间）
+! Total count: 32370
 ###ADtip
 ###Ad_windows
 ###ChapterView > .slide-baidu
@@ -541,6 +541,7 @@
 ##.advertising_lightbox
 ##.adwap
 ##.afc_popup
+##.aiboav-ads
 ##.alert_windows > .q-card__actions > a
 ##.anniversary-wrap-2018
 ##.apd-footer
@@ -1216,11 +1217,11 @@ $doc,removeparam=draftsforfriends
 $doc,removeparam=dtpid
 $doc,removeparam=eblink
 $doc,removeparam=ectrans
-$doc,removeparam=elq,domain=~comcast.com
-$doc,removeparam=elqCampaignId,domain=~comcast.com
-$doc,removeparam=elqTrackId,domain=~comcast.com
+$doc,removeparam=elq,domain=~comcast.com|~comcastforbusiness.com
+$doc,removeparam=elqCampaignId,domain=~comcast.com|~comcastforbusiness.com
+$doc,removeparam=elqTrackId,domain=~comcast.com|~comcastforbusiness.com
 $doc,removeparam=elqah
-$doc,removeparam=elqaid,domain=~comcast.com
+$doc,removeparam=elqaid,domain=~comcast.com|~comcastforbusiness.com
 $doc,removeparam=elqat
 $doc,removeparam=elqcsid
 $doc,removeparam=elqcst
@@ -5718,9 +5719,9 @@ $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odyse
 92sucai.com##.adtg2
 92wy.com##.adhengfu
 9312.net##.pop-up
-939394.xyz##.j_r_w
-939394.xyz##.j_r_w + a
-939394.xyz#?#:-abp-properties(/fixed|data/)
+939394.xyz##.j_m_ad
+939394.xyz##body > table:first-child img
+939394.xyz#$#abort-on-property-read atob
 95ziyuan.cn##.jiuwu
 962.net##.g-962-ad
 96weixin.com###lifelong
@@ -6133,7 +6134,6 @@ $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odyse
 @@||8891.com.tw/js/v3/blueKai.js
 @@||88box.com/images/ad_images/
 @@||930mh.com/js/config.js
-@@||939394.xyz^$generichide
 @@||95306.cn/public/images/ad/
 @@||95504.net/Advertisement_
 @@||95599.cn^*ad
@@ -9556,7 +9556,7 @@ drvsky.com##.zhongdian
 dshangyan.com##.advHeader
 dstar.pzk.pl#@#.adsbox
 dstar.pzk.pl#@#.adsbygoogle
-dualeotruyentop.com,m.blogtruyenmoi.com#$#abort-current-inline-script document.addEventListener popunder
+dualeotruyenj.com,m.blogtruyenmoi.com#$#abort-current-inline-script document.addEventListener popunder
 duangks.com###a_d_sidebar
 duanwenxue.com##.qgzdwx
 duanwenxue.com##.shuang11_gg
@@ -14118,7 +14118,7 @@ truyen2u.net#$#abort-current-inline-script eval
 truyen35.shop#$#abort-current-inline-script jQuery click_ads
 truyenqqvn.com,animehay.run#$#abort-current-inline-script document.addEventListener window.open
 truyensextv.com#$#abort-current-inline-script document.addEventListener popup
-truyensieuhay.com,quangcaoyenbai.com,khoaiphim.com,phimmoi.cx,sieudamtv.men,ephimchill.com,ophimhdvn3.net,thuvienhd.xyz,xemtv.tvhayhd.tv,www.khophim88s.com,nhentaivn.online,motphimtrung.net,mv.dailyphimz.com,mv.phimbathu.one#$#abort-on-property-read document.cookie
+truyensieuhay.com,quangcaoyenbai.com,khoaiphim.com,phimmoi.cx,sieudamtv.men,ephimchill.com,ophimhdvn3.net,thuvienhd.xyz,xemtv.tvhayhd.tv,www.khophim88s.com,nhentaivn.online,khophimchilli.net,mv.dailyphimz.com,mv.phimbathu.one#$#abort-on-property-read document.cookie
 truyentuan.xyz#$#abort-current-inline-script $ btpop
 tsdm.live###ts_sidebar_base
 tsviewer.com#@#.adsbygoogle
@@ -14344,7 +14344,7 @@ vidmoly.to###dos_vlock
 vidmoly.to#$#abort-current-inline-script addEventListener DOMContentLoaded
 vidshare.tv,govid.me,hdvid.tv,ovid.pro,gomovies.film,gomovies.sc,gomovies.es,gostream.nu,openloadmovies.net,openloadmovies.review,flashx.tv,cloudvideo.tv#$#abort-on-property-write Fingerprint2
 vidshare.tv,vidshar.tv,series.movie,gowatchseries.movie,gowatchseries.tv#$#abort-current-inline-script Object.defineProperty XMLHttpRequest
-viet69.ceo,ungtycomicsvip.com,truyengihotqua.net,truyengihotqua.com,truyengihotdo.net,truyengihotnha.com,truyengihotnha.net,truyengihotnay.com,dualeotruyentop.com,yurineko.net,vlxyz.tube,javhay.click,phimsexhay669.pro,cliphot69.blog,doctruyen3qvi.pro,hentaizz.cc,animehay.run,vlxx.xxx,heo69.moe,top1sex.club,lenlut.tv,sexmup18.com,hentaivn.today,sexvn1.cc,cdn.streamvl.sbs,www.buomtv.app,truyenvn.lol,cdnstream.sbs,javtiful.com,tuoi69.mom,quatvn.zip,tenmientruyengi.net,topviet69.com,phim18hd.top,live.sexviet88.tube,gai3x.vip,demo.14412882.com,sexphimhd.vip#$#abort-current-inline-script WebAssembly instantiate
+viet69.ceo,ungtycomicsvip.com,truyengihotqua.net,truyengihotqua.com,truyengihotdo.net,truyengihotnha.com,truyengihotnha.net,truyengihotnay.com,dualeotruyenj.com,yurineko.net,vlxyz.tube,javhay.click,phimsexhay669.pro,cliphot69.blog,doctruyen3qvi.pro,hentaizz.xyz,animehay.run,vlxx.xxx,heo69.moe,top1sex.club,lenlut.tv,sexmup18.com,hentaivn.today,sexvn1.cc,cdn.streamvl.sbs,www.buomtv.app,truyenvn.xyz,cdnstream.sbs,javtiful.com,tuoi69.mom,quatvn.pub,tenmientruyengi.net,topviet69.com,phim18hd.top,live.sexviet88.tube,gai3x.vip,demo.14412882.com,sexphimhd.vip#$#abort-current-inline-script WebAssembly instantiate
 vikacg.com###custom_html-9
 vikacg.com###home-row-lunbo
 ville-ideale.com###antyp
@@ -14382,6 +14382,7 @@ vpsdx.com##.gthfdsa
 vpser.net##.ab_cpb
 vpser.net##.ab_cpr
 vsetut.su,animedia.tv#$#abort-on-property-read zfgformats
+vsping.com##.ad_01
 vsviti.com.ua#$#abort-on-property-read tdAnimationStack.init
 vuejs.org##.text-ad
 vuetifyjs.com##.v-sponsors
@@ -15774,6 +15775,7 @@ zzzyk.com###Tinfo
 ||365kl.net/data/attachment/portal/
 ||365rich.cn/ba.aspx
 ||365xuet.com/assets/web/js/main.jsr_
+||369bgrec.top^
 ||36htg.fun^
 ||36img.com/ad/
 ||36kr.com/pp/api/ap/plan?
@@ -16421,7 +16423,6 @@ zzzyk.com###Tinfo
 ||92ph.cn^
 ||92uq.com/Ads/
 ||933m.com/1.js
-||939394.xyz^$image
 ||941novel.com/wp-content/uploads/*.gif
 ||94994.com*/js/plugin/shoppingMall/
 ||949949.com/2013/end/hot_news.js
@@ -17042,6 +17043,9 @@ zzzyk.com###Tinfo
 ||ai36588.com^
 ||aiai123.cc/js/*.js
 ||aibing.cc/vip/img/gou.gif
+||aiboav.vip/wp-content/uploads/*/3aaa-
+||aiboav.vip/wp-content/uploads/ad/
+||aiboav.vip/wp-content/uploads/uu-chat/*.gif
 ||aichuangfu.cn/jquery/
 ||aiclk.com^
 ||aid.video.qq.com^
@@ -21344,6 +21348,7 @@ zzzyk.com###Tinfo
 ||fkf5.com/public/js/static.js
 ||fkhxlz.xyz^
 ||fkjsjwbs.xyz^
+||fklgndklbngg.com^
 ||fl6n.com/adtop/
 ||flagshipism.com^
 ||flash.banners-service.info^
@@ -22911,6 +22916,7 @@ zzzyk.com###Tinfo
 ||idubwz.cn^
 ||idv.st/dns/bar.htm
 ||idynbff.cn^
+||ieapak.xyz^
 ||ieeod0.com^
 ||ieequd.icu^
 ||ieforex.com/r/cms/www/red/red2/images/*0.
@@ -23940,6 +23946,7 @@ zzzyk.com###Tinfo
 ||jxnews.com.cn/first/js/home/index_ad
 ||jxnews.com.cn^*_ad_
 ||jxpjlb.xyz^
+||jxqdl.cn^
 ||jxtejf.xyz^
 ||jxtest.bolecdn.com/player/*.gif
 ||jxuhurp.icu^
@@ -24410,6 +24417,7 @@ zzzyk.com###Tinfo
 ||l5kt1.icu^
 ||l74co.xyz^
 ||l7ghj.xyz^
+||l7u3kf.cn^
 ||l80ays.com^
 ||laawmmy.cn^
 ||labuladong.github.io/algo/pictures/ad/
@@ -25292,7 +25300,6 @@ zzzyk.com###Tinfo
 ||meitu.com/js/floatxiuxiu.js
 ||meituan.com/ptapi/recommends?
 ||meituan.com/xiuxianyule/api/getRecommendList?
-||meituan.net^$domain=939394.xyz
 ||meitui.org^*.js
 ||meitulu.com/css/*showgg.js
 ||meiweifood.xyz^
@@ -26756,6 +26763,7 @@ zzzyk.com###Tinfo
 ||pidzlp.xyz^
 ||pierrebotton.com/global/
 ||pikabu.ru/ajax/?key=$xmlhttprequest,header=ssr
+||piksrie.icu^
 ||pimg2023.com^
 ||pimlog.baidu.com^
 ||pincai.com/js/pubuliu.
@@ -27519,6 +27527,7 @@ zzzyk.com###Tinfo
 ||rbioclv.cn^
 ||rbodwtj.icu^
 ||rbrbr88p.cn^
+||rbrmhz.xyz^
 ||rbsodzgoy.xyz^
 ||rc.ie13.com^
 ||rc7e.top^
@@ -29889,6 +29898,7 @@ zzzyk.com###Tinfo
 ||uslsjwnk.xyz^
 ||uslsxe.com^
 ||usltmus.cn^
+||usmgoxe.cn^
 ||uspauline.com^
 ||usphfiona.com^
 ||usvkfwth.xyz^
@@ -30248,6 +30258,8 @@ zzzyk.com###Tinfo
 ||vrxhnr.xyz^
 ||vsgallery.com^
 ||vshi.tc.qq.com^
+||vsping-*.myqcloud.com/ggw/
+||vsping.com/website/adLinks?
 ||vsping.com/website/ads?
 ||vstat.v.blog.sohu.com^
 ||vswswlz.icu^
@@ -30628,6 +30640,7 @@ zzzyk.com###Tinfo
 ||wqshui.com^
 ||wqvbuj.icu^
 ||wqweiog.xyz^
+||wqzmed.cn^
 ||wr.yiyouliao.com^
 ||wrpsouf.cn^
 ||wrtjojn.xyz^
