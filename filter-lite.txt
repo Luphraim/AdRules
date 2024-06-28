@@ -5,8 +5,8 @@
 ! Expires: 24 Hours
 ! Description: 该规则适用于移动端浏览器，如via, Vivaldi, X Browser
 ! Description: 该规则合并自EasyList Lite, Easylist China, CJX's Annoyance List, 乘风视频过滤规则, Adblock Warning Removal List, 酷安大萌主的规则, 去APP下载广告规则, 百度超级净化和一些额外规则
-! Version: 2024-06-27 08:54:57（北京时间）
-! Total count: 32790
+! Version: 2024-06-28 08:54:59（北京时间）
+! Total count: 32807
 ###ADtip
 ###Ad_windows
 ###ChapterView > .slide-baidu
@@ -7529,6 +7529,7 @@ $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odyse
 @@||smsonline.cloud^$generichide
 @@||smtcaw.com^$generichide
 @@||snesfun.com/js/ads.js$script
+@@||sobot.com^
 @@||soft8ware.com^$generichide
 @@||softwarebrother.com^$generichide
 @@||sogou.com/adpub/cfg/sendmsg.
@@ -7586,8 +7587,8 @@ $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odyse
 @@||straight-world.de/js/ads.js$script
 @@||stream4free.eu/modules/mod_jpayday/js/doubleclick.js$script,domain=stream4free.eu
 @@||streaming-foot.me/js/adblock.js$script
-@@||stripe.com$domain=pay.openai.com
 @@||stripe.com/*?*referrer=$removeparam
+@@||stripe.com^$domain=pay.openai.com
 @@||studioclassroom.com/ad/
 @@||sudupan.com^*/*.gif
 @@||sumeronline.com^$generichide
@@ -7741,6 +7742,7 @@ $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odyse
 @@||waimai-guide.ele.me^
 @@||wallpapermania.eu/assets/js/ads.js$xmlhttprequest
 @@||wallpapershacker.com/js/adsbygoogle.js$script
+@@||wan.douyu.com^
 @@||wancaibb.com/share/js/share.min.js
 @@||wandhi.com^$generichide
 @@||ware.shop.jd.com^$genericblock,generichide
@@ -9318,6 +9320,7 @@ daily.zhihu.com##.Daily
 daily.zhihu.com##.active
 dailybitcoins.org#@#.ad-img
 dailydoge.org#@#.adsbygoogle
+dailygh.com###video_fade
 dailymail.co.uk###billBoard
 dailymail.co.uk###js-sky-left
 dailymail.co.uk###js-sky-right
@@ -11797,7 +11800,7 @@ liues.cn##.widget-graphic-cover
 live.bilibili.com##.fans-medal-item-ctnr
 live.bilibili.com##div.pointer:contains(下载客户端)
 live.gtcaster.com###bbb
-live2.thapcam9.net#$#simulate-mouse-event '#modalasd$continue,delay=300'
+live.thapcam11.net#$#simulate-mouse-event '#modalasd$continue,delay=300'
 liveball.cc,liveball.uno#$#abort-on-property-read ABNS
 liveforums.ru#$#abort-on-property-read tnAdditionalParams
 liveru.sx#$#abort-on-property-read window.b5bb198737
@@ -12073,8 +12076,10 @@ m.youku.com##.download
 m.youku.com##.hdwrap
 m.youku.com##.recommend
 m.youtube.com###koya_child_6
+m.youtube.com##.video-ads.ytp-ad-module
 m.youtube.com#$#simulate-mouse-event 'span.ytp-ad-preview-container$delay=0'
 m.youtube.com,music.youtube.com#$#json-prune 'adPlacements adSlots playerAds ssdaiAdsConfig adPlacementRenderer playerResponse.playerConfig.ssapConfig';
+m.youtube.com,music.youtube.com#$#json-prune 'adSlots.0.adSlotRenderer adSlots.1.adSlotRenderer playerAds.0.playerLegacyDesktopWatchAdsRenderer' 'adPlacements.0.adPlacementRenderer';
 m.youtube.com,music.youtube.com#$#override-property-read Object.prototype.adPlacements undefined
 m.youtube.com,music.youtube.com#$#override-property-read Object.prototype.adSlots undefined
 m.youtube.com,music.youtube.com#$#override-property-read ytInitialPlayerResponse.playerConfig.ssapConfig undefined
@@ -12806,7 +12811,6 @@ pharmnet.com.cn##.ad9502
 phimdinhcao.net,phimlongtieng.net,phimdinhcao.com#$#abort-on-property-read localStorage
 phimgichill.net#$#abort-current-inline-script jQuery popurl
 phimgichill.net,hhhay.tv,hh3dhay.pro,truyengihotnha.com,truyengihotnha.net,3dchill.shop,animevietsub.dev#$#abort-current-inline-script eval $._Eu
-phimhdcc.net,motchill.plus#$#abort-current-inline-script document.addEventListener linksToOpen
 phimmoi4s.com#$#json-prune ads;abort-current-inline-script setTimeout click_time
 phimtho.net#$#abort-current-inline-script $ p0pUpRandom
 phimtuoitho.tv#$#abort-current-inline-script document.documentElement break;case
@@ -13968,7 +13972,6 @@ thinbug.com###inktokad
 thinkphp.cn##.a6
 thmz.com###floatdivids
 thwiki.cc###a-carousel
-thwiki.cc##.on-right > .swiper-container
 tianqi.com##.xcx_erweima
 tianshif.com###comment-ad
 tiantianzhibo.com###sliderb_container
@@ -14411,6 +14414,7 @@ volley.ru#$#override-property-read Object.prototype.preroll null
 volynpost.com#$#abort-on-property-read trek_shownow
 vostfr-vf.com##.fixe
 vostfree.com,vostfree.cx#$#abort-on-property-write _pop
+vphimhdc.com,motchill.plus#$#abort-current-inline-script document.addEventListener linksToOpen
 vprognoze.ru#$#abort-on-property-read bannersBillboard
 vpsdx.cn,vpsdx.com##.span4 > a > img
 vpsdx.com##.container-fluid > .gsfha3 > .gsfha3
@@ -14626,6 +14630,7 @@ wpmienphi.com###d7b2
 wpworld.pl,windowsowo.pl#@##adBanner
 wrating.com
 ws://*/api/wss/GetNotReadCount$third-party
+wss://*.xyz:*?x=$third-party
 wss://*/api/wss/GetNotReadCount$third-party
 wurst-client.tk#@#.adsbygoogle
 wuzhuiso.com##.download-app
@@ -15386,7 +15391,7 @@ zzzyk.com###Tinfo
 ||1024wanzhai.$popup,third-party
 ||1028images.com^
 ||102tv.cn/js/main.js
-||107.167.16.14^
+||107.167.16.*.gif
 ||109218er.xyz^
 ||10fang.com/static/skin/tfy/layer/layer.js
 ||11.96131.com.cn^
@@ -16197,7 +16202,7 @@ zzzyk.com###Tinfo
 ||66wz.com/data/attachment/portal/
 ||66wz.com/eap/
 ||66zhuang.com/public_2017/js/count-gou.js
-||67.21.92.163^
+||67.21.92.*.gif
 ||670t5x.cn^
 ||6789.net^$third-party
 ||68710266.com^
@@ -16674,6 +16679,7 @@ zzzyk.com###Tinfo
 ||a1.zhanzhang.net^
 ||a168888.top^
 ||a1714.com^$popup
+||a1bw2cup.top^
 ||a2.b310.com^
 ||a2.xinhuanet.com^
 ||a2put.chinaz.com^
@@ -21523,6 +21529,7 @@ zzzyk.com###Tinfo
 ||fkhxlz.xyz^
 ||fkjsjwbs.xyz^
 ||fklgndklbngg.com^
+||fkxs.net/tops/
 ||fl6n.com/adtop/
 ||flagshipism.com^
 ||flash.banners-service.info^
@@ -21705,6 +21712,7 @@ zzzyk.com###Tinfo
 ||fwepd.xyz^
 ||fwffa.cn^
 ||fwhhcpj.xyz^
+||fwlrv.cn^
 ||fwmbjrl.cn^
 ||fwsir.com/static/cpt/
 ||fwtracks.freshmarketer.com^
@@ -22005,6 +22013,7 @@ zzzyk.com###Tinfo
 ||gk99.com/static/js/a-d-sys.js
 ||gkjmev3.com^
 ||gkktjf.top^
+||gklox.cn^
 ||gknybkl.cn^
 ||gkswas.xyz^
 ||gkutca.xyz^
@@ -25493,6 +25502,7 @@ zzzyk.com###Tinfo
 ||mdiygc.xyz^
 ||mdjdpyrt.xyz^
 ||mdkjefq.cn^
+||mdoshbx.top^
 ||mdqhyxe.cn^
 ||mdqpkdne.xyz^
 ||mdsahkln.xyz^
@@ -27087,6 +27097,7 @@ zzzyk.com###Tinfo
 ||pixfuture.net^$third-party
 ||pj3f7.xyz^
 ||pjcn.org^$third-party
+||pjdthz.xyz^
 ||pjogndc8ixoidna.360doc.cn^
 ||pjoo8.com^
 ||pjsbuhl.icu^
@@ -28021,6 +28032,7 @@ zzzyk.com###Tinfo
 ||rmbvzh.xyz^
 ||rmduuv.icu^
 ||rmhfrtnd.com^$third-party
+||rmioswx.icu^
 ||rmipoz.com/dp.js
 ||rmnsdh.xyz^
 ||rmpad.imtt.qq.com^
@@ -29153,6 +29165,7 @@ zzzyk.com###Tinfo
 ||szdaqi88.com^
 ||szdgl.cn^
 ||szdpk.cn^
+||szdtf.cn^
 ||szdxw.cn^
 ||szdzn.cn^
 ||szfcol.com/images/wxright240.jpg
@@ -29788,6 +29801,7 @@ zzzyk.com###Tinfo
 ||trustedcpmrevenue.com^
 ||truthfulsensor.com^
 ||truxalsl.com^
+||trvxbd.xyz^
 ||trw12.com^$third-party
 ||trymask.com/api/$third-party
 ||ts166.net^
@@ -29941,6 +29955,7 @@ zzzyk.com###Tinfo
 ||tydouke.com^
 ||tydzfldt.xyz^
 ||tyed6.top^
+||tyisloi.top^
 ||tymahuxv.xyz^
 ||tymh2022.xyz^
 ||tyodot.icu^
@@ -30605,6 +30620,7 @@ zzzyk.com###Tinfo
 ||vpwizuj.icu^
 ||vpzohx.xyz^
 ||vqbzpv.xyz^
+||vqlwoy.xyz^
 ||vr.gdt.qq.com^
 ||vrank.org/go/adblock_detect$subdocument
 ||vrdxznr.xyz^
@@ -32169,6 +32185,7 @@ zzzyk.com###Tinfo
 ||ytelc.com^$third-party
 ||ytezym.xyz^
 ||ytjzqde.xyz^
+||ytoeyxz.icu^
 ||ytqeavc.icu^
 ||ytqlyw.xyz^
 ||ytse*.top/Static/Home/GongGao/img/
