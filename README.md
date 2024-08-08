@@ -10,6 +10,8 @@
 
 - 2023.6.14 更新：AdGuard for Android 更新 4.0 稳定版，建议把“烦人元素拦截”全部打开，跟踪保护选择“隐私保护级别——高”。故规则里相应上游规则也一并删除了，以作精简。更新了一部分上游规则列表。
 
+- 2024.8.8 更新：AdGuard For Android由于耗电、网络延迟等因素，已不再使用，随缘检测上游规则有效性。
+
 ### 规则说明
 
 | 名称            | 描述                                                         | 订阅                                                                                  |
@@ -36,6 +38,7 @@
 |                          | [中文过滤器](https://filters.adtidy.org/android/filters/224_optimized.txt)                                                                                                                             |
 | 通用元素过滤规则         | [乘风通用过滤规则](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt)，适用于 UBO 或 ADG                                                                                     |
 |                          | [乘风视频过滤规则](https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt)，适用于 UBO 或 ADG                                                                                       |
+|                          | [秋风广告规则](https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Adblock-Rule/main/AWAvenue-Adblock-Rule.txt)                                                                                     |
 |                          | [GOODBYEADS Rules](https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/adblock.txt)                                                                                                    |
 |                          | [百度超级净化](https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt) @坂本大佬                                                                                                  |
 |                          | [d3Host List by d3ward](https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.adblock)                                                                                                      |
@@ -43,7 +46,6 @@
 |                          | [Anti-AD for Adguard](https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-adguard.txt)                                                                                   |
 |                          | [主要去除手机盗版网站广告](https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt) @酷安：大萌主                                                                                          |
 |                          | [去 APP 下载广告规则](https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt)                                                                                               |
-|                          | [秋风广告规则](https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Adblock-Rule/main/AWAvenue-Adblock-Rule.txt)                                                                                     |
 | 元素过滤规则，推荐 PC 端 | [halflife](https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-pc.txt)规则，[推荐桌面端]合并自乘风视频广告过滤规则、Easylist、EasylistChina、EasyPrivacy、CJX'sAnnoyance，以及补充的一些规则 |
 |                          | [halflife](https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-edentw.txt)规则，合并自 Adblock Warning Removal List、ABP filters、anti-adblock-killer-filters                                |
 |                          | [I don't care about cookies](https://www.i-dont-care-about-cookies.eu/abp/)                                                                                                                            |

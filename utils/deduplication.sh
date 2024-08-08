@@ -59,6 +59,8 @@ adblock_uni=(
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt"
   # 乘风 视频过滤规则，适用于UBO或ADG
   "https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/mv.txt"
+  # 秋风广告规则
+  "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/raw/main/AWAvenue-Ads-Rule.txt"
   # GOODBYEADS Rules
   "https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/adblock.txt"
   # 百度超级净化 @坂本大佬
@@ -82,8 +84,6 @@ adblock_ag=(
   "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt"
   # 去 APP 下载广告规则
   "https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt"
-  # 秋风广告规则
-  "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Adblock-Rule/main/AWAvenue-Adblock-Rule.txt"
 )
 
 # 元素过滤规则 (PC)
@@ -108,6 +108,8 @@ adblock_lite=(
   "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt"
   # 去 APP 下载广告规则
   "https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt"
+  # uBlock filters – Ads For Mobile
+  "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-mobile.txt"
 )
 
 # HOSTS过滤
@@ -128,7 +130,6 @@ dns_uni=(
   "https://filters.adtidy.org/android/filters/15_optimized.txt"
   # Cats-Team 自定义过滤规则
   "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/dns-rules.txt"
-  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/thrid-part-rules.txt"
   #HostsVN
   "https://raw.githubusercontent.com/bigdargon/hostsVN/master/filters/adservers-all.txt"
 )
@@ -151,8 +152,6 @@ dns_agh=(
 allow=(
   # AdGuard Chinese Filters whitelist
   "https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt"
-  # Cats-Team 自定义白名单规则
-  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/allowlist.txt"
   # GOODBYEADS Rules
   "https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/whitelist.txt"
 )
