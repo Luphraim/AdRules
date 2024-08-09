@@ -17,6 +17,7 @@ ublock=(
   "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2021.txt"
   "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2022.txt"
   "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2023.txt"
+  "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-2024.txt"
   # uBlock filters – Badware risks
   "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt"
   # uBlock filters – Privacy
@@ -30,6 +31,9 @@ ublock=(
   "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances.txt"
   "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances-others.txt"
   "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances-cookies.txt"
+  # uBlock filters - Link Shorteners
+  "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/ubo-link-shorteners.txt"
+
   # Adguard For uBlock Origin 规则
   # 基础过滤器
   "https://filters.adtidy.org/extension/ublock/filters/2.txt"
@@ -63,10 +67,6 @@ adblock_uni=(
   "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/raw/main/AWAvenue-Ads-Rule.txt"
   # GOODBYEADS Rules
   "https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/adblock.txt"
-  # 百度超级净化 @坂本大佬
-  "https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt"
-  # Cats-Team AdBlock Rules
-  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
   # d3Host List by d3ward
   "https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.adblock"
   #Clean Url
@@ -84,6 +84,10 @@ adblock_ag=(
   "https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt"
   # 去 APP 下载广告规则
   "https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt"
+  # 百度超级净化 @坂本大佬
+  "https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt"
+  # Cats-Team AdBlock Rules
+  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
 )
 
 # 元素过滤规则 (PC)
@@ -110,6 +114,8 @@ adblock_lite=(
   "https://raw.githubusercontent.com/Noyllopa/NoAppDownload/master/NoAppDownload.txt"
   # uBlock filters – Ads For Mobile
   "https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters-mobile.txt"
+  # Cats-Team AdBlock Rules
+  "https://raw.githubusercontent.com/Cats-Team/AdRules/main/mod/rules/adblock-rules.txt"
 )
 
 # HOSTS过滤
@@ -206,6 +212,15 @@ cat ../mod/element.txt ../mod/dns.txt tmp-allow.txt adblock_uni*.txt \
 cat tmp-adblock.txt ublock*.txt adblock_full*.txt \
  | egrep -v '^\!|\！|\[' \
  | egrep -v '^(com\^)' \
+ | sed '/abort-/d' \
+ | sed '/override/d' \
+ | sed '/trusted-/d' \
+ | sed '/rpnt/d' \
+ | sed '/strip-fetch/d' \
+ | sed '/json-prune /d' \
+ | sed '/replace=/d' \
+ | sed '/removeheader/d' \
+ | sed '/app=/d' \
  | sort | uniq -i > pre-filter.txt
 python ../../utils/deduplication.py pre-filter.txt
 
