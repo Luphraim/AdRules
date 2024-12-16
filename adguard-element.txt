@@ -5,8 +5,8 @@
 ! Expires: 24 Hours
 ! Description: 该规则适用于移动端AdGuard，主要为Adguard For Android
 ! Description: 该规则提取自自定义合并后的AdGuard规则，只包含元素过滤规则
-! Version: 2024-12-15 09:15:38（北京时间）
-! Total count: 87497
+! Version: 2024-12-16 09:13:12（北京时间）
+! Total count: 87503
 ###AC_ad
 ###AD_160
 ###AD_300
@@ -18791,7 +18791,7 @@ $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odyse
 /adv_vert.js$script
 /advall.js*
 /advanced-ads-$script,stylesheet,domain=~transinfo.pl|~wordpress.org
-/advbanner/*$~image
+/advbanner.frontend.js$script
 /advcode/*
 /adver.
 /adver/bannernew/*
@@ -20116,6 +20116,7 @@ $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odyse
 /footer-ad.$~script
 /footer-tracking.js
 /footer_ad.js$script
+/footer_ad.js$script,domain=~streamruby.com
 /footer_ads.php$subdocument
 /footerads.php$script
 /footerpixel.gif?
@@ -20742,6 +20743,7 @@ $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odyse
 /js/ads/yezi
 /js/ads/youxiajiao.js
 /js/ads/zuoxiajiao.js
+/js/adv-slide-toggle.
 /js/advRotator.js$script
 /js/analitics.js
 /js/appfu.
@@ -23103,6 +23105,7 @@ $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odyse
 /web/ads/*$image
 /web/push?
 /web8/ad/*
+/webAdvert.php?ad_name=
 /webAnalytics/*
 /web_ads/*$image
 /web_analytics/*
@@ -25145,6 +25148,7 @@ $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odyse
 ://*:*/yeyue.html?k=$csp=script-src
 ://*btbtt.*/imgs.js
 ://*btbtt.*/view/image/QT_
+://*mp4*/js/wcount.js$~third-party
 ://2ip.*/member_photo/$third-party
 ://8ox.cn/$third-party
 ://a.*/ad-provider.js$third-party
@@ -30104,6 +30108,7 @@ $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odyse
 @@||l.qq.com/lview?$domain=888.sports.qq.com
 @@||l2topzone.com/ads.png
 @@||l2topzone.com/advertisement.js.php
+@@||lab.eu.amplitude.com^$xmlhttprequest,domain=bluelightcard.co.uk
 @@||labrc.pw/advstats/$xmlhttprequest
 @@||lacoste.com^*/click-analytics.js$~third-party
 @@||lacuevadeguns.com/forum/banner.gif?|
@@ -36647,6 +36652,7 @@ baidu.com##.openBox-shareEntry
 baidu.com##.opening-season-dialog
 baidu.com##.opr-zhaopin-ad-ctn
 baidu.com##.optimus
+baidu.com##.page-head-queryarea
 baidu.com##.pageLeftFixedAD
 baidu.com##.pauseadv
 baidu.com##.picad
@@ -37294,7 +37300,6 @@ bilibili.com##.btn-ctnr
 bilibili.com##.clearfix.h5-download-bar
 bilibili.com##.container > div.bili-video-card.is-rcmd:not(:has(> *))
 bilibili.com##.container > div.feed-card:not(:has(> div > *))
-bilibili.com##.container.is-version8 > .feed-card:has(>div:only-child), .container.is-version8 > .bili-video-card:has(>div:only-child)
 bilibili.com##.desktop-download-tip
 bilibili.com##.download-client-trigger.download-entry
 bilibili.com##.eva-banner
@@ -37329,6 +37334,7 @@ bilibili.com#@#.bili-dialog-m
 bilibili.com#@#.btn-ctnr
 bilibili.to###yytf
 bilinovel.com#%#//scriptlet('abort-current-inline-script', 'document.createElement', 'pagead2.googlesyndication.com')
+bilinovel.com#@#.ads_ad_box
 billboard.com#$?#.chart-list__ad { remove: true; }
 billboard.com,gaystream.pw##.a-block
 billetto.*#@#.top-banners
@@ -39315,7 +39321,6 @@ clutchpoints.com##.RzKEf
 clutchpoints.com##.cafemedia-clutchpoints-header
 clutchpoints.com##.ehgtMe.sc-ed3f1eaf-1
 clutchpoints.com##.hYrQwu
-cm.bilibili.com
 cm.jd.com
 cm.l.qq.com
 cm868.com###diy1,#diy3
@@ -39946,6 +39951,7 @@ coub.com##.viewer__sad
 coub.com#$?#.timeline-banner { remove: true; }
 counselheal.com,mobilenapps.com###vplayer_large
 countdown.co.nz##cdx-card:has(product-badge-list)
+countdown.co.nz,jns.org,nscreenmedia.com,op.gg,whoscored.com##.banner-container
 countdown.co.nz,jns.org,nscreenmedia.com,whoscored.com##.banner-container
 counter.dev,lindaikejisblog.com##.da
 counterpunch.org##.header-center
@@ -62691,6 +62697,7 @@ torrentking.eu##.mv_dir
 torrentking.eu##.rty
 torrentkitty.app,torrentkitty.tv###fixedbanner
 torrentleech.org###disableAdPic > a > img
+torrentleech.org##.login-banner
 torrentmac.net#%#//scriptlet("prevent-window-open")
 torrentproject2.*#%#//scriptlet("prevent-window-open")
 torrentsearchweb.net##div#__cpf_popup__
@@ -66944,8 +66951,6 @@ zhenhaosq.com##center,div.a_pt,div.a_pb,div.t_f
 zhentube.com###custom_html-38
 zhibo8.cc###m_adv
 zhibo8.cc###popautoapp
-zhibo8.cc##.ad_box_250
-zhibo8.cc#@##ad_box
 zhiboche.com##div#span_baiduad1,div.topad
 zhicheng.com##.mad_bt
 zhicheng.com##.mad_top
@@ -73925,6 +73930,7 @@ zzzyk.com###Tinfo
 ||espn.$removeparam=RuleNumber,doc
 ||espn.$removeparam=appsrc,doc
 ||espn.com^$removeparam=ex_cid
+||esports-world.jp/js/banner.event.js
 ||estadion.pl/_next/image?url=https%3A%2F%2Fapi.estadion.pl%2Fimg%2Fads%2F
 ||estore.jp/beacon/
 ||et-code.ru
@@ -75681,7 +75687,7 @@ zzzyk.com###Tinfo
 ||hdslb.com/*-tracker.js
 ||hdslb.com/bfs/ad/
 ||hdslb.com/bfs/cm/cm-sdk/static/js/bili-collect.js^$empty
-||hdslb.com/bfs/sycp/creative_img/$image
+||hdslb.com/bfs/cm/cm-sdk/static/js/pc.js^$script
 ||hdslb.com/js/bfd.js
 ||hdslb.com/js/core-v5/picment.
 ||hdthevid.online/mavennofile.js
@@ -75901,6 +75907,7 @@ zzzyk.com###Tinfo
 ||hjapi.com/v1/pageSoftText?
 ||hjfile.cn/analytics/site/TrackEvent.js
 ||hjfile.cn/analytics/site/TrackEvent.js!Title: anti-AD for AdGuard
+||hjfile.cn/analytics/site/TrackEvent.jschild)
 ||hjfile.cn/lib/hui/footer/0.1.0/footer.js
 ||hjfile.cn/lib/uzhi/uzt.
 ||hjfile.cn/site/hj-lzs/
@@ -83402,7 +83409,7 @@ zzzyk.com###Tinfo
 ||somd5.com/tijiao.php^
 ||somquery.sqrt-5041.de/tv/tracking-event
 ||son-video.com^$removeparam=ae
-||sonar.viously.com^$domain=~aufeminin.com|~futura-sciences.com|~marmiton.org|~melty.fr|~nextplz.fr
+||sonar.viously.com^$domain=~aufeminin.com|~futura-sciences.com|~gamekult.com|~lesnumeriques.com|~marmiton.org|~melty.fr|~nextplz.fr
 ||songsongyun.com/ads/
 ||sonic-ui.highereducation.com^$domain=mydegreeguide.com
 ||sonichits.com/tf.php
@@ -87325,7 +87332,6 @@ zzzyk.com###Tinfo
 ||zhhbqg.com/ee/*.js
 ||zhhbqg.com/ww/*.js
 ||zhhbqg.com/xxgg/*.js
-||zhibo8.cc/js/adv-slide-toggle.js
 ||zhiboche.com/check.
 ||zhibok8.com/images/*.gif
 ||zhibok8.com/js/di
