@@ -12,6 +12,8 @@
 
 - 2024.8.8 更新：AdGuard For Android由于耗电、网络延迟等因素，已不再使用，随缘检测上游规则有效性。
 
+- 2025.2.25更新：检测上游规则有效性，更新合并去重脚本。PS：本仓库只负责上游脚本的合并去重，规则有问题的建议向对应上游仓库提交。
+
 ### 规则说明
 
 | 名称            | 描述                                                         | 订阅                                                                                  |
@@ -41,7 +43,6 @@
 |                          | [秋风广告规则](https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Adblock-Rule/main/AWAvenue-Adblock-Rule.txt)                                                                                     |
 |                          | [GOODBYEADS Rules](https://raw.githubusercontent.com/8680/GOODBYEADS/master/data/rules/adblock.txt)                                                                                                    |
 |                          | [百度超级净化](https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt) @坂本大佬                                                                                                  |
-|                          | [d3Host List by d3ward](https://raw.githubusercontent.com/d3ward/toolz/master/src/d3host.adblock)                                                                                                      |
 | 元素过滤规则，推荐移动端 | [adgk 规则](https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt) @坂本大佬                                                                                                              |
 |                          | [Anti-AD for Adguard](https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-adguard.txt)                                                                                   |
 |                          | [主要去除手机盗版网站广告](https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt) @酷安：大萌主                                                                                          |
