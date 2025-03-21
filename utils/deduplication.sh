@@ -197,7 +197,7 @@ cat ../mod/element.txt ../mod/dns.txt tmp-allow.txt adblock_uni*.txt |
 
 # 合并AdKiller过滤规则
 cat tmp-adblock.txt ublock*.txt adblock_full*.txt |
-	egrep -v '^\!|\！|\[\(com\^)' |
+	egrep -v '^\!|\！|\[|(com\^$)' |
 	egrep -v 'abort-|override|trusted-|rpnt|strip-fetch|json-prune\ |replace=|removeheader|app=|\$cookie|\$nerwork|urlskip=' |
 	awk 'length <=100' |
 	sort | uniq -i >pre-filter.txt
@@ -205,7 +205,7 @@ python3 ../../utils/deduplication.py pre-filter.txt
 
 # 合并AdKiller-Lite过滤规则
 cat tmp-adblock.txt adblock_lite*.txt |
-	egrep -v '^\!|\！|\[|(com\^)' |
+	egrep -v '^\!|\！|\[|(com\^$)' |
 	awk 'length <=100' |
 	sort | uniq -i >pre-filter-lite.txt
 python3 ../../utils/deduplication.py pre-filter-lite.txt
@@ -234,7 +234,7 @@ cat ../mod/dns.txt tmp-allow.txt dns_uni*.txt |
 
 # 合并AdGuard过滤规则
 cat tmp-adblock.txt tmp-dns.txt adguard*.txt adblock_ag*.txt |
-	egrep -v '^\!|\！|\[|(\.com\^)|(com\^)' |
+	egrep -v '^\!|\！|\[|(\.com\^$)|(com\^$)' |
 	awk 'length <=100' |
 	sort | uniq -i >pre-adguard.txt
 python3 ../../utils/deduplication.py pre-adguard.txt
