@@ -5,8 +5,8 @@
 ! Expires: 24 Hours
 ! Description: 该规则适用于移动端浏览器，如via, Vivaldi, X Browser
 ! Description: 该规则合并自EasyList Lite, Easylist China, CJX's Annoyance List, 乘风视频过滤规则, Adblock Warning Removal List, 酷安大萌主的规则, 去APP下载广告规则, 百度超级净化和一些额外规则
-! Version: 2025-05-07 09:14:03（北京时间）
-! Total count: 32030
+! Version: 2025-05-08 09:14:29（北京时间）
+! Total count: 32042
 ###ADtip
 ###Ad_windows
 ###ChapterView > .slide-baidu
@@ -1319,6 +1319,7 @@ $doc,removeparam=source_location
 $doc,removeparam=src,domain=citi.com
 $doc,removeparam=sspUserID
 $doc,removeparam=st,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
+$doc,removeparam=taboola_hm
 $doc,removeparam=taid
 $doc,removeparam=targetid,domain=~myanonamouse.net
 $doc,removeparam=tk,domain=indeed.com
@@ -1541,7 +1542,6 @@ $removeparam=ad_name
 $removeparam=ad_pvid
 $removeparam=ad_start
 $removeparam=ad_sub,domain=homo.xxx
-$removeparam=ad_type
 $removeparam=adblock,domain=reddit.app.link
 $removeparam=adcampaigngroup
 $removeparam=adcid
@@ -2472,7 +2472,6 @@ $removeparam=svisitor
 $removeparam=sxsrf
 $removeparam=szredirectid
 $removeparam=ta_partner_did
-$removeparam=taboola_hm
 $removeparam=taboola_id
 $removeparam=tag,domain=argos.co.uk|habitat.co.uk|tv2.no|support.github.com
 $removeparam=tag_ids,domain=shein.com
@@ -4308,6 +4307,7 @@ $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odyse
 /js/easyAD.js
 /js/easyAD2.js
 /js/ec_connectorDelivery.js$script,domain=cpasbien.io
+/js/gd.js
 /js/gg0.js
 /js/gg123/*
 /js/ggtop.js
@@ -4654,6 +4654,7 @@ $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odyse
 /tigtag_custom/include/couplet.
 /tigtag_custom/include/popup.
 /tisai/img/nav_980_90.gif
+/tj/tongji.js?v=$third-party
 /tm00738.bj.
 /to8to_pc/chunks/slide_and_popup_
 /topad.
@@ -11983,6 +11984,7 @@ cctime.com##.nav_banner
 cctime.com,doyo.cn###top_banner
 cctv.com###bgAd_div
 cctv.com##.anime_ewm
+cctv.com,douyin.com,douyu.com##+js(aeld,/visibilitychange|pagehide/)
 cctv.com,www.douyu.com##+js(aeld,/visibilitychange|pagehide/)
 cdn.tiv.pw###Advertisement1
 cdn.tiv.pw##.drt
@@ -13891,6 +13893,7 @@ huya.com##.component-ab
 huya.com##.end-ab-banner
 huya.com##.end-ab-wrap
 huya.com##.huya-ab
+huya.com##.huya-ab,#hy-ad,#hy-ab,#huya-ab
 huya.com##.jump-to-phone
 huya.com##.main-ab-close-mode
 huya.com##.new-reward-ab-wrap
@@ -24862,6 +24865,12 @@ zzzyk.com###Tinfo
 ||ipv6.google.com*/search$removeparam=oq,doc
 ||ipv6.google.com*/search?$doc,removeparam=client
 ||ipv6.google.com*/search?$doc,removeparam=sclient
+||ipv6.google.com^$doc,removeparam=dpr
+||ipv6.google.com^$doc,removeparam=fbs
+||ipv6.google.com^$doc,removeparam=ictx
+||ipv6.google.com^$doc,removeparam=no_sw_cr
+||ipv6.google.com^$doc,removeparam=tfu
+||ipv6.google.com^$doc,removeparam=zx
 ||ipyhf.icu^
 ||iqede.xyz^
 ||iqgessh.icu^
@@ -27731,6 +27740,7 @@ zzzyk.com###Tinfo
 ||pojkhufef.xyz^
 ||polfaqgvsd.net^
 ||policy.video.ptqy.gitv.tv^
+||polyfill-js.cn^
 ||pond5.com^$removeparam=dd_referrer
 ||poontown.net/Webservices/jsParseLinks.aspx$script,third-party
 ||poontown.net/visitScript/$script,third-party
@@ -30768,7 +30778,9 @@ zzzyk.com###Tinfo
 ||www.google.$doc,removeparam=dpr
 ||www.google.$doc,removeparam=fbs
 ||www.google.$doc,removeparam=ictx
+||www.google.$doc,removeparam=no_sw_cr
 ||www.google.$doc,removeparam=tfu
+||www.google.$doc,removeparam=zx
 ||www.google.*/search$removeparam=oq,doc
 ||www.google.*/search?$doc,removeparam=client
 ||www.google.*/search?$doc,removeparam=sclient
