@@ -5,8 +5,8 @@
 ! Expires: 24 Hours
 ! Description: 该规则适用于移动端浏览器，如via, Vivaldi, X Browser
 ! Description: 该规则合并自EasyList Lite, Easylist China, CJX's Annoyance List, 乘风视频过滤规则, Adblock Warning Removal List, 酷安大萌主的规则, 去APP下载广告规则, 百度超级净化和一些额外规则
-! Version: 2025-05-14 09:13:58（北京时间）
-! Total count: 31803
+! Version: 2025-05-15 09:12:04（北京时间）
+! Total count: 31844
 ###ADtip
 ###Ad_windows
 ###ChapterView > .slide-baidu
@@ -1126,6 +1126,7 @@ $doc,removeparam=/^kk=\w{6,}-\w{10,}-\w{5,}$/
 $doc,removeparam=/^matomo_.*$/
 $doc,removeparam=/^mpid=.*$/i,domain=~miguvideo.*
 $doc,removeparam=/^mtm_.*$/
+$doc,removeparam=/^mtm_.*$/,domain=~redir.tradedoubler.com
 $doc,removeparam=/^network=webgains$/i
 $doc,removeparam=/^otm_.*$/
 $doc,removeparam=/^outputType=amp$/
@@ -1462,11 +1463,14 @@ $removeparam=__hs
 $removeparam=__hsfp
 $removeparam=__hssc
 $removeparam=__hstc
+$removeparam=__io_lv
 $removeparam=__s
 $removeparam=__s,doc
 $removeparam=__twitter_impression
 $removeparam=__vfz,domain=venturebeat.com
 $removeparam=_amp,domain=latimes.com
+$removeparam=_bdadid
+$removeparam=_bhlid
 $removeparam=_biz_l
 $removeparam=_biz_s
 $removeparam=_biz_t
@@ -1489,6 +1493,7 @@ $removeparam=_hosted_id
 $removeparam=_hsenc
 $removeparam=_hsmi
 $removeparam=_idts
+$removeparam=_io_session_id
 $removeparam=_kuid
 $removeparam=_kx
 $removeparam=_mak_partner_campaign
@@ -1508,6 +1513,11 @@ $removeparam=_rdr
 $removeparam=_ref,domain=fanatics.com|nhl.com
 $removeparam=_rlid
 $removeparam=_sacat,domain=~ebay.*
+$removeparam=_sgm_action
+$removeparam=_sgm_campaign
+$removeparam=_sgm_pinned
+$removeparam=_sgm_source
+$removeparam=_sgm_term
 $removeparam=_sid
 $removeparam=_source_page
 $removeparam=_t,domain=shein.com
@@ -1554,10 +1564,18 @@ $removeparam=adgrpid
 $removeparam=adj_adgroup
 $removeparam=adj_campaign
 $removeparam=adj_creative
+$removeparam=adjust_adgroup
+$removeparam=adjust_campaign
+$removeparam=adjust_creative
+$removeparam=adjust_referrer
+$removeparam=adjust_tracker
+$removeparam=adjust_tracker_limit
 $removeparam=admitad_uid
 $removeparam=adnxs_id
 $removeparam=adnxs_uid
 $removeparam=adobe_mc
+$removeparam=adobe_mc_ref
+$removeparam=adobe_mc_sdid
 $removeparam=adp,domain=shein.com
 $removeparam=adposition
 $removeparam=adref,domain=ancestry.*|wolfram.com|wolframalpha.com
@@ -1699,6 +1717,9 @@ $removeparam=bcsessionid
 $removeparam=bctid
 $removeparam=beeswax_id
 $removeparam=belboon
+$removeparam=bemobdata
+$removeparam=beyond_uzcvid
+$removeparam=beyond_uzmcvid
 $removeparam=bidswitch_ssp_id
 $removeparam=bih
 $removeparam=biw
@@ -1711,6 +1732,7 @@ $removeparam=bsencid
 $removeparam=bsw_custom_parameter
 $removeparam=bsw_param
 $removeparam=bsw_user_id
+$removeparam=btag
 $removeparam=btnG,domain=www.google.*|ipv6.google.com
 $removeparam=btsid
 $removeparam=bx_uid
@@ -1748,6 +1770,7 @@ $removeparam=cj_webid
 $removeparam=cjbatcheventid
 $removeparam=cjdata
 $removeparam=cje
+$removeparam=cjevent
 $removeparam=cjeventid
 $removeparam=cjid
 $removeparam=cjpid
@@ -1775,8 +1798,10 @@ $removeparam=client-ts
 $removeparam=clkInTab,domain=ocado.com
 $removeparam=cm_ainfo
 $removeparam=cm_cat
+$removeparam=cm_cr
 $removeparam=cm_ite
 $removeparam=cm_lm
+$removeparam=cm_me
 $removeparam=cm_muid
 $removeparam=cm_pla
 $removeparam=cm_re
@@ -1812,11 +1837,14 @@ $removeparam=csrcl2
 $removeparam=cstrackid
 $removeparam=ct,domain=nextdoor.com
 $removeparam=ctc,domain=avantlink.com
-$removeparam=cuid
+$removeparam=cuid,domain=~dynamicyield.com
 $removeparam=custlixnkid
 $removeparam=cvid,domain=chinadaily.com.cn|eastday.com|msn.cn|msn.com|tianqi.com|yiyouliao.com
 $removeparam=cvosrc
 $removeparam=cx_artPos
+$removeparam=cx_click
+$removeparam=cx_recsOrder
+$removeparam=cx_recsWidget
 $removeparam=cx_testId
 $removeparam=cx_testVariant
 $removeparam=cxt,domain=twitter.com|x.com
@@ -1883,7 +1911,9 @@ $removeparam=eid,doc,denyallow=embed.tapkal.fi|myanimelist.net,domain=greatrun.o
 $removeparam=elqTrack
 $removeparam=email_work_card
 $removeparam=embeds_referring_euri
+$removeparam=emcs_t
 $removeparam=eml,domain=endesa.com|scholastic.com
+$removeparam=ems_dl
 $removeparam=epi2,domain=tradedoubler.com
 $removeparam=epik
 $removeparam=ex-src
@@ -1891,7 +1921,9 @@ $removeparam=ex_uid
 $removeparam=exactag_uk
 $removeparam=expected_cookie
 $removeparam=extcmp
+$removeparam=external_click_id
 $removeparam=f_id,domain=admitad.com
+$removeparam=famad_xuid
 $removeparam=fb_action_ids
 $removeparam=fb_action_types
 $removeparam=fb_comment_id
@@ -2026,12 +2058,16 @@ $removeparam=int_source
 $removeparam=intcid,domain=cbsnews.com
 $removeparam=intcmp
 $removeparam=intlid,domain=hotels.com
+$removeparam=ir_adid
+$removeparam=ir_campaignid
 $removeparam=ir_cid
+$removeparam=ir_partnerid
 $removeparam=iradid
 $removeparam=iradtype
 $removeparam=ircid
 $removeparam=irclicid
 $removeparam=irclid
+$removeparam=irgwc
 $removeparam=irmpname
 $removeparam=irmptype
 $removeparam=irpid
@@ -2143,6 +2179,7 @@ $removeparam=mt,domain=media-cdn.costco.ca|media-cdn.costco.com
 $removeparam=mt_click_id,domain=mail.ru|vkplay.ru
 $removeparam=mt_exid
 $removeparam=mt_exuid
+$removeparam=mt_link_id
 $removeparam=mt_uuid
 $removeparam=mv_pc,domain=fragrancenet.com
 $removeparam=mweb_loid,domain=reddit.app.link
@@ -2231,6 +2268,8 @@ $removeparam=partneruserid
 $removeparam=pbref,domain=pinkbike.com
 $removeparam=pc_i
 $removeparam=pcrid
+$removeparam=personaclick_input_query
+$removeparam=personaclick_search_query
 $removeparam=pfr,domain=msn.com
 $removeparam=piggybackCookie
 $removeparam=pj_creativeid
@@ -2356,6 +2395,7 @@ $removeparam=rpp_cid
 $removeparam=rs,domain=gamereactor.*
 $removeparam=rss,domain=marketwatch.com|sn.dk|ted.com
 $removeparam=rt,domain=lendgo.com|bilibili.com
+$removeparam=rtkcid
 $removeparam=rx_c,domain=cvshealth.*
 $removeparam=rx_group,domain=cvshealth.*
 $removeparam=rx_job,domain=cvshealth.*
@@ -2425,6 +2465,7 @@ $removeparam=sp_medium
 $removeparam=sp_source
 $removeparam=spm
 $removeparam=spm,domain=~twitcasting.tv
+$removeparam=spot_im_redirect_source
 $removeparam=spr,domain=media-cdn.costco.ca|media-cdn.costco.com
 $removeparam=sr_id,domain=reddit.app.link
 $removeparam=sr_name,domain=reddit.app.link
@@ -2552,6 +2593,7 @@ $removeparam=u_c1
 $removeparam=u_code
 $removeparam=uact,domain=www.google.*|ipv6.google.com
 $removeparam=ucf_user_id
+$removeparam=uls_trackid
 $removeparam=unicorn_click_id
 $removeparam=uniq_req_id
 $removeparam=unruly_id
@@ -2562,6 +2604,7 @@ $removeparam=usg,domain=~translate.googleusercontent.com|~google.*
 $removeparam=usource
 $removeparam=usqp,domain=gstatic.com|cdn.ampproject.org
 $removeparam=utmid
+$removeparam=uzcid
 $removeparam=variationId
 $removeparam=vc_lpp
 $removeparam=ved,domain=reddit.com|reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
@@ -6865,6 +6908,7 @@ $~xmlhttprequest,removeparam=r,domain=tv2.no|linode.com|ledger.*|mrgay.com|odyse
 @@||cgmodel.com/plugin/share/
 @@||cgtips.org^$generichide
 @@||chaintv.xyz/homestatic/js/adjs.js
+@@||challenges.cloudflare.com^$stealth
 @@||chan.sankakucomplex.com^$generichide
 @@||changyan.sohu.com/debug/cookie?
 @@||changyou.com^$generichide
@@ -16218,7 +16262,6 @@ sdamgia.ru#$#abort-on-property-read Object.prototype.getRenderToElement
 sdo.com##.mod-public-ads
 se.pl###adb_popup
 sea-group.org###text-7
-search.smzdm.com###elevator > LI:first-child
 searchenginereports.net#$#abort-current-inline-script $ go_top
 searchenginereports.net#$#abort-on-property-read adsbygoogle
 secretmine.net###main-content > br
@@ -16424,12 +16467,8 @@ smashboards.com##.premiumContain
 smm.cn##.ad_front_container
 smm.cn##.common-jinzhu-wrap
 smm.cn##.top_taishan_jinzhu
-smzdm.com###elevator > LI:first-child
 smzdm.com###footer_layer
 smzdm.com###global-search > DIV.search-inner.z-clearfix > DIV.download:last-child
-smzdm.com###index-elevator > LI:nth-child(3)
-smzdm.com###index-elevator > li:nth-of-type(1)
-smzdm.com###index-elevator > li:nth-of-type(2)
 smzdm.com##.J_copy.btn-open-app
 smzdm.com##.J_index_wall
 smzdm.com##.J_ota
@@ -16447,6 +16486,7 @@ smzdm.com##.new-zone
 smzdm.com##.see-all
 smzdm.com##.side-stuff
 smzdm.com##.top-applink
+smzdm.com#?#li:has(i.icon-mobile)
 smzdm.com#@#.comment_share
 smzy.com###showa
 smzy.com##.u-gs-btn2
@@ -19720,7 +19760,6 @@ zzzyk.com###Tinfo
 ||amazon.$~xmlhttprequest,removeparam=qid
 ||amazon.*/artists/$removeparam=tag,doc
 ||amazon.*/dp/$removeparam=rps,doc
-||amazon.*/dp/$removeparam=s,doc
 ||amazon.*/dp/$removeparam=tag,doc
 ||amazon.*/primeday/$removeparam=mfadid
 ||amazon.*/primeday/$removeparam=tag
@@ -22527,6 +22566,7 @@ zzzyk.com###Tinfo
 ||eatnontf.icu^
 ||eaus2watcab01.blob.core.windows.net^
 ||eaus2watcab02.blob.core.windows.net^
+||ebay.$removeparam=_skw
 ||ebay.$removeparam=abcId
 ||ebay.$removeparam=bu
 ||ebay.$removeparam=campid
@@ -22667,6 +22707,7 @@ zzzyk.com###Tinfo
 ||elsynmlw.fun^
 ||eltdeh.top^
 ||eluocs.xyz^
+||em.dynamicyield.com^$removeparam=tag_ids
 ||emag.ro^$removeparam=recid
 ||emag.ro^$removeparam=scenario_ID
 ||emilyz.top^
