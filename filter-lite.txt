@@ -5,8 +5,8 @@
 ! Expires: 24 Hours
 ! Description: 该规则适用于移动端浏览器，如via, Vivaldi, X Browser
 ! Description: 该规则合并自EasyList Lite, Easylist China, CJX's Annoyance List, 乘风视频过滤规则, Adblock Warning Removal List, 酷安大萌主的规则, 去APP下载广告规则, 百度超级净化和一些额外规则
-! Version: 2025-11-30 09:23:49（北京时间）
-! Total count: 31500
+! Version: 2025-12-01 09:28:21（北京时间）
+! Total count: 31505
 ###ADtip
 ###Ad_windows
 ###ChapterView > .slide-baidu
@@ -1081,11 +1081,9 @@
 #@#.afs_ads
 #@#.has-ad
 $doc,domain=bilibili.com|querie.me,removeparam=timestamp
-$doc,domain=youtube.com,removeparam=embeds_referring_origin
 $doc,image,removeparam=/^=$/,domain=discord.com|discordapp.net|amazon.*|adressa.no|polarismedia.no
 $doc,removeparam=/^.*affcid.*$/i
 $doc,removeparam=/^ICID=.*$/i,domain=~api.mapbox.com|~microsoft.com
-$doc,removeparam=/^OCID=.*$/i,domain=~youtube.com|~reiseauskunft.bahn.de|~msn.com
 $doc,removeparam=/^Offers\.com.*$/
 $doc,removeparam=/^WT\..*$/i
 $doc,removeparam=/^WT_.*$/i
@@ -1153,7 +1151,6 @@ $doc,removeparam=/^source=pepperjam$/
 $doc,removeparam=/^source=rss$/
 $doc,removeparam=/^source=tradedoubler$/
 $doc,removeparam=/^source=webgains$/
-$doc,removeparam=/^src=Linkfire$/,domain=apple.com|youtube.com
 $doc,removeparam=/^src=aff$/
 $doc,removeparam=/^src=rss$/
 $doc,removeparam=/^stm_.*$/,domain=~redir.tradedoubler.com
@@ -1213,6 +1210,7 @@ $doc,removeparam=asgtbndr
 $doc,removeparam=awc
 $doc,removeparam=bb,domain=indeed.com
 $doc,removeparam=bbaid
+$doc,removeparam=bp,domain=youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 $doc,removeparam=bpli,domain=blogger.com
 $doc,removeparam=bxid
 $doc,removeparam=campaignid
@@ -1568,6 +1566,7 @@ $removeparam=_zucks_suid
 $removeparam=a_aid
 $removeparam=a_fid
 $removeparam=ab,domain=fanatics.com|hbr.org|nhl.com
+$removeparam=ab_channel,domain=youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 $removeparam=acampID
 $removeparam=acid,domain=lenovo.com
 $removeparam=acontext
@@ -1945,6 +1944,7 @@ $removeparam=effi_id2
 $removeparam=eid,doc,denyallow=embed.tapkal.fi|myanimelist.net,domain=greatrun.org|mcafee.com
 $removeparam=elqTrack
 $removeparam=email_work_card
+$removeparam=embeds_euri,domain=youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 $removeparam=embeds_referring_euri
 $removeparam=emcs_t
 $removeparam=eml,domain=endesa.com|scholastic.com
@@ -2494,7 +2494,7 @@ $removeparam=soc_src
 $removeparam=soc_trk
 $removeparam=sourceID,domain=gamestop.com|verizon.com
 $removeparam=sourceType,domain=vitaminshoppe.com|aliexpress.com
-$removeparam=sourceid,domain=~google.*|~youtube.com
+$removeparam=source_ve_path,domain=youtube.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 $removeparam=spJobID
 $removeparam=spLa
 $removeparam=spMailingID
@@ -18884,6 +18884,9 @@ zzzyk.com###Tinfo
 ||ad.doubleclick.net^$~object-subrequest,third-party
 ||ad.gmw.cn^
 ||ad.hpplay.cn^
+||ad.iot.360.cn^
+||ad.jia.360.cn^
+||ad.life.360.cn^
 ||ad.mail.ru^
 ||ad.mazc.org^
 ||ad.qingting.fm^
@@ -18958,6 +18961,7 @@ zzzyk.com###Tinfo
 ||ads-marketing-vivofs.vivo.com.cn^
 ||ads-pixiv.net^
 ||ads.
+||ads.cup.com.cn^
 ||ads.google.cn^
 ||ads.huan.tv^
 ||ads.icloseli.cn^
@@ -19528,6 +19532,7 @@ zzzyk.com###Tinfo
 ||apple886.com/subs/*.js
 ||appledaily.hk/banners/subscription/
 ||applinzi.com^$domain=soyunpan.com
+||applog-perf.uc.cn^
 ||applog.lc.quark.cn^
 ||applog.uc.cn^
 ||appmetrica.yandex.ru^
@@ -23931,6 +23936,7 @@ zzzyk.com###Tinfo
 ||i7pnx0t.cn^
 ||i8.chinanews.com^$subdocument
 ||iabao.com/sladewap.js
+||iadmusicmat.music.126.net^
 ||iads.xinmin.cn^
 ||iaindu.cn^
 ||iaiqk.top^
@@ -26933,6 +26939,7 @@ zzzyk.com###Tinfo
 ||pbcdn.com/data/attachment/album/$image
 ||pbmp.ali213.net/
 ||pbmp.ali213.net/js/
+||pbs.twimg.com^$removeparam=/^name=small$/
 ||pbtech.$removeparam=qr
 ||pbtsjh.xyz^
 ||pbvdlb.xyz^
@@ -28968,6 +28975,8 @@ zzzyk.com###Tinfo
 ||thisismoney.co.uk^$removeparam=molReferrerUrl
 ||thnuvgme.icu^
 ||thoohizoogli.xyz^
+||threads.com^$removeparam=slof
+||threads.com^$removeparam=xmt
 ||thrzbf.xyz^
 ||thunderbird.net^$removeparam=src
 ||thvx9i.icu^
@@ -30973,11 +30982,6 @@ zzzyk.com###Tinfo
 ||youtube.com/embed/wqLWTeNBEEQ?
 ||youtube.com/get_midroll_info?
 ||youtube.com/iframe_api$domain=nownews.com
-||youtube.com^$doc,removeparam=bp
-||youtube.com^$removeparam=ab_channel
-||youtube.com^$removeparam=embeds_euri
-||youtube.com^$removeparam=source_ve_path
-||youtube.com^$removeparam=sub_confirmation
 ||youtubee.top^
 ||youxi.baidu.com/tips/bdtips_min.js
 ||youyiya.com/Tpl/mobile/js/you
@@ -31506,3 +31510,4 @@ zzzyk.com###Tinfo
 ~houdask.com###kfivtwin
 ~hrtsea.com##.widget_ui_ads
 ~weibo.com##.con_ad
+﻿! Title: ➗ Actually Legitimate URL Shortener Tool
