@@ -1,16 +1,57 @@
-#!/bin/sh
+#!/usr/bin/env bash
+set -euo pipefail
 
-# Create temporary folder
-echo '新建TMP文件夹...'
-mkdir -p ./rules/tmp/
-cd ./rules/tmp
-echo '新建TMP文件夹完成'
+########################
+# 基础路径
+########################
+ROOT="$(cd "$(dirname "$(dirname "$0")")" && pwd)"
+UTIL="$ROOT/utils"
+RULES="$ROOT/rules"
+TMP="$RULES/tmp"
 
-# Start Download Filter File
-echo '开始下载规则...'
+mkdir -p "$TMP"
+
+echo "==> 使用临时目录: $TMP"
+
+########################
+# 并发控制
+########################
+PARALLEL=8
+RETRY=3
+
+########################
+# 下载函数
+########################
+download_group() {
+	local prefix="$1"
+	shift
+	for url in "$@"; do
+		printf "%s|%s\n" "$prefix" "$url"
+	done
+}
+
+download_all() {
+	local taskfile="$1"
+
+	cat "$taskfile" | \
+	xargs -P "$PARALLEL" -n 1 -I {} bash -c '
+	IFS="|" read prefix url <<< "{}"
+	name=$(basename "$url")
+	out="'$TMP'/${prefix}-${name}"
+	echo "  -> 下载 $url"
+	curl -L --retry '"$RETRY"' --retry-delay 2 \
+	     --connect-timeout 30 \
+	     -o "$out" "$url"
+	'
+}
+
+########################
+# 规则 URL 定义
+########################
+
 
 # uBlock Origin规则
-ublock=(
+UBLOCK=(
 	# uBlock filters – Ads
 	"https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt"
 	# uBlock filters – Badware risks
@@ -45,7 +86,7 @@ ublock=(
 )
 
 # Adguard For Android 规则
-adguard=(
+ADGUARD=(
 	# 基础过滤器
 	"https://filters.adtidy.org/android/filters/2_optimized.txt"
 	# 中文过滤器
@@ -53,7 +94,7 @@ adguard=(
 )
 
 # 元素过滤规则
-adblock_uni=(
+ADBLOCK_UNI=(
 	# 乘风 广告过滤规则，适用于UBO或ADG
 	"https://raw.githubusercontent.com/xinggsf/Adblock-Plus-Rule/master/rule.txt"
 	# 乘风 视频过滤规则，适用于UBO或ADG
@@ -68,7 +109,7 @@ adblock_uni=(
 )
 
 # 元素过滤规则 (AdGuard)
-adblock_ag=(
+ADBLOCK_AG=(
 	# Anti-AD for Adguard
 	"https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-adguard.txt"
 	# adgk规则 @坂本大佬
@@ -84,21 +125,21 @@ adblock_ag=(
 )
 
 # 元素过滤规则 (PC)
-adblock_full=(
+ADBLOCK_FULL=(
 	# halflife规则，[推荐桌面端]合并自乘风视频广告过滤规则、Easylist、EasylistChina、EasyPrivacy、CJX'sAnnoyance，以及补充的一些规则
-	"https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-pc.txt"
+	"https://raw.githubusercontent.com/sbwml/halflife-list/refs/heads/master/ad-pc.txt"
 	# halflife规则，合并自Adblock Warning Removal List、ABP filters、anti-adblock-killer-filters
-	"https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-edentw.txt"
+	"https://raw.githubusercontent.com/sbwml/halflife-list/refs/heads/master/ad-edentw.txt"
 	# I don't care about cookies
 	"https://www.i-dont-care-about-cookies.eu/abp/"
 )
 
 # 元素过滤规则 (Mobile)
-adblock_lite=(
+ADBLOCK_LITE=(
 	# halflife规则，[推荐移动端]合并自乘风视频广告过滤规则、EasylistChina、EasylistLite、CJX'sAnnoyance，以及补充的一些规则
-	"https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt"
+	"https://raw.githubusercontent.com/sbwml/halflife-list/refs/heads/master/ad.txt"
 	# halflife规则，合并自Adblock Warning Removal List、ABP filters、anti-adblock-killer-filters
-	"https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad-edentw.txt"
+	"https://raw.githubusercontent.com/sbwml/halflife-list/refs/heads/master/ad-edentw.txt"
 	# 百度超级净化 @坂本大佬
 	"https://raw.githubusercontent.com/banbendalao/ADgk/master/kill-baidu-ad.txt"
 	# 主要去除手机盗版网站广告 @酷安：大萌主
@@ -112,7 +153,7 @@ adblock_lite=(
 )
 
 # HOSTS过滤
-hosts=(
+HOSTS=(
 	# 大圣净化规则
 	"https://raw.githubusercontent.com/jdlingyu/ad-wars/master/hosts"
 	# NoCoin adblock list
@@ -124,7 +165,7 @@ hosts=(
 )
 
 # DNS通用过滤规则
-dns_uni=(
+DNS_UNI=(
 	# AdGuard DNS filter
 	"https://filters.adtidy.org/android/filters/15_optimized.txt"
 	# Cats-Team 自定义过滤规则
@@ -134,7 +175,7 @@ dns_uni=(
 )
 
 # DNS (AdGuard Home)过滤规则
-dns_agh=(
+DNS_AGH=(
 	# Anti-AD for AdGuardHome（DNS过滤）
 	"https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt"
 	# Online Malicious URL Blocklist Domain-based (AdGuard Home)
@@ -148,150 +189,82 @@ dns_agh=(
 )
 
 # 白名单规则
-allow=(
+ALLOW=(
 	# AdGuard Chinese Filters whitelist
 	"https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/ChineseFilter/sections/allowlist.txt"
 	# GOODBYEADS Rules
-	"https://github.com/8680/GOODBYEADS/raw/refs/heads/master/data/rules/allow.txt"
+	"https://raw.githubusercontent.com/8680/GOODBYEADS/refs/heads/master/data/rules/allow.txt"
 )
 
-for i in "${!ublock[@]}" "${!adguard[@]}" "${!adblock_uni[@]}" "${!adblock_ag[@]}" "${!adblock_full[@]}" "${!adblock_lite[@]}" "${!hosts[@]}" "${!dns_uni[@]}" "${!dns_agh[@]}" "${!allow[@]}"; do
-	curl --parallel --parallel-immediate -k -L -C - -o "ublock${i}.txt" --connect-timeout 60 -s "${ublock[$i]}" &
-	curl --parallel --parallel-immediate -k -L -C - -o "adguard${i}.txt" --connect-timeout 60 -s "${adguard[$i]}" &
-	curl --parallel --parallel-immediate -k -L -C - -o "adblock_uni${i}.txt" --connect-timeout 60 -s "${adblock_uni[$i]}" &
-	curl --parallel --parallel-immediate -k -L -C - -o "adblock_ag${i}.txt" --connect-timeout 60 -s "${adblock_ag[$i]}" &
-	curl --parallel --parallel-immediate -k -L -C - -o "adblock_full${i}.txt" --connect-timeout 60 -s "${adblock_full[$i]}" &
-	curl --parallel --parallel-immediate -k -L -C - -o "adblock_lite${i}.txt" --connect-timeout 60 -s "${adblock_lite[$i]}" &
-	curl --parallel --parallel-immediate -k -L -C - -o "hosts${i}.txt" --connect-timeout 60 -s "${hosts[$i]}" &
-	curl --parallel --parallel-immediate -k -L -C - -o "dns_uni${i}.txt" --connect-timeout 60 -s "${dns_uni[$i]}" &
-	curl --parallel --parallel-immediate -k -L -C - -o "dns_agh${i}.txt" --connect-timeout 60 -s "${dns_agh[$i]}" &
-	curl --parallel --parallel-immediate -k -L -C - -o "allow${i}.txt" --connect-timeout 60 -s "${allow[$i]}" &
-done
+# 生成下载任务
+TASKS="$TMP/tasks.txt"
+: >"$TASKS"
 
-# 等待下载完成
-wait
+download_group ublock "${UBLOCK[@]}" >>"$TASKS"
+download_group adguard "${ADGUARD[@]}" >>"$TASKS"
+download_group adblock_uni "${ADBLOCK_UNI[@]}" >>"$TASKS"
+download_group adblock_full "${ADBLOCK_FULL[@]}" >>"$TASKS"
+download_group adblock_lite "${ADBLOCK_LITE[@]}" >>"$TASKS"
+download_group hosts "${HOSTS[@]}" >>"$TASKS"
+download_group dns_uni "${DNS_UNI[@]}" >>"$TASKS"
+download_group dns_agh "${DNS_AGH[@]}" >>"$TASKS"
+download_group allow "${ALLOW[@]}" >>"$TASKS"
 
-echo '规则下载完成'
+echo "==> 开始下载规则"
+download_all "$TASKS"
+echo "==> 下载完成"
 
-# Start Merge and Duplicate Removal
-echo 开始合并
-# 预处理自定义规则
-sort ../mod/static.txt -u -o ../mod/static.txt
-cat ../mod/static.txt |
-	egrep -v '^\!|\！|\[' |
-	egrep '^@@|\|\|.*(\^)$' |
-	egrep -v '\/|\$' |
-	sort | uniq -i >../mod/dns.txt
-comm -23 ../mod/static.txt ../mod/dns.txt |
-	sort | uniq -i >../mod/element.txt
+# 开始规则合并
+awk -f $UTIL/rules-compiler.awk \
+$ROOT/rules/mod/static.txt \
+$TMP/hosts*.txt \
+$TMP/ublock*.txt \
+$TMP/adblock_*.txt \
+$TMP/adguard*.txt
 
-# 合并白名单规则
-cat allow*.txt |
-	egrep '^@@\|\|?[^\^=\/:]+?\^([^\/=\*]+)?$' |
-	sort | uniq -i >tmp-allow.txt
+add_title(){
+	VERSION_LINE="! Version: $(TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S')（北京时间）"
 
-# 合并通用过滤规则
-cat ../mod/element.txt ../mod/dns.txt tmp-allow.txt adblock_uni*.txt |
-	egrep -v '^\!|\！|\[' |
-	sort | uniq -i >tmp-adblock.txt
+	FILES=(
+		filter.txt
+		filter-lite.txt
+		adguard.txt
+		adguard-element.txt
+		adguard-dns.txt
+		dns.txt
+		hosts
+	)
 
-# 合并AdKiller过滤规则
-cat tmp-adblock.txt ublock*.txt adblock_full*.txt |
-	egrep -v '^\!|\！|\[|(com\^$)' |
-	egrep -v 'abort-|override|trusted-|rpnt|strip-fetch|json-prune\ |replace=|removeheader|app=|\$cookie|\$nerwork|urlskip=' |
-	awk 'length <=100' |
-	sort | uniq -i >pre-filter.txt
-python3 ../../utils/deduplication.py pre-filter.txt
+	for name in "${FILES[@]}"; do
+		# 防止空匹配
+		# 当前目录中的规则文件
+		src="./$name"
+		[ -f "$src" ] || continue
 
-# 合并AdKiller-Lite过滤规则
-cat tmp-adblock.txt adblock_lite*.txt |
-	egrep -v '^\!|\！|\[|(com\^$)' |
-	awk 'length <=100' |
-	sort | uniq -i >pre-filter-lite.txt
-python3 ../../utils/deduplication.py pre-filter-lite.txt
+		title_file="$RULES/title/$name"
+		out_file="$TMP/$name.tmp"
 
-# 合并HOSTS过滤规则并转化为DNS过滤规则
-cat hosts*.txt |
-	egrep -v '^((#.*)|(\s*))$' |
-	egrep -v '^[0-9\.:]+\s+(ip6\-)?(localhost|loopback)$' |
-	egrep -v '0.0.0.0 0.0.0.0' |
-	egrep -v '#' |
-	sed 's/127.0.0.1/0.0.0.0/' |
-	sed 's/::/0.0.0.0/g' |
-	sed 's/  / /' |
-	egrep '^(0.0.0.0 )' |
-	awk 'length <=100' |
-	sort | uniq -i >pre-hosts.txt
-python3 ../../utils/deduplication.py pre-hosts.txt
-cat pre-hosts.txt |
-	sed 's/0.0.0.0 /||/g' |
-	sed 's/$/&\^/g' >tmp-hosts-dns.txt
+		{
+			# 写入标题文件（如果存在）
+			if [[ -f "$title_file" ]]; then
+				cat "$title_file"
+			fi
 
-# 合并DNS通用过滤规则
-cat ../mod/dns.txt tmp-allow.txt dns_uni*.txt |
-	egrep -v '^#|\!|\！|\[' |
-	sort | uniq -i >tmp-dns.txt
+			# 写入Version 行
+			echo "$VERSION_LINE"
 
-# 合并AdGuard过滤规则
-cat tmp-adblock.txt tmp-dns.txt adguard*.txt adblock_ag*.txt |
-	egrep -v '^\!|\！|\[|(\.com\^$)|(com\^$)' |
-	awk 'length <=100' |
-	sort | uniq -i >pre-adguard.txt
-python3 ../../utils/deduplication.py pre-adguard.txt
+			# 写入规则
+			cat "$src"
+		} >"$out_file"
 
-# 分别提取AdGuard DNS规则和元素过滤规则
-cat pre-adguard.txt tmp-hosts-dns.txt |
-	egrep '^(\|\||@@\|\|)?[^\^=\/:]+?\^([^\/=\*]+)?$' |
-	awk 'length <=100' |
-	sort | uniq -i >pre-adguard-dns.txt
-python3 ../../utils/deduplication.py pre-adguard-dns.txt
-sort pre-adguard.txt -o pre-adguard.txt
-sort pre-adguard-dns.txt -o pre-adguard-dns.txt
-comm -23 pre-adguard.txt pre-adguard-dns.txt |
-	awk 'length <=100' |
-	sort | uniq -i >pre-adguard-element.txt
-python3 ../../utils/deduplication.py pre-adguard-element.txt
+		# 删除原规则文件
+		rm -f "$src"
+		# 覆盖最终文件
+		mv "$out_file" "$ROOT/$name"
+	done
 
-# 合并DNS (AdGuard Home)过滤规则
-cat tmp-dns.txt tmp-hosts-dns.txt dns_agh*.txt tmp-allow.txt |
-	egrep -v '^#|\!|\！|\[' |
-	awk 'length <=100' |
-	sort | uniq -i >pre-dns.txt
-python3 ../../utils/deduplication.py pre-dns.txt
+	rm -rf "$TMP"
+	echo "✔ 规则合并完成"
+}
 
-# Move to Pre Filter
-echo '移动规则到Pre目录'
-cd ../
-mkdir -p ./pre
-mkdir -p ./tpdate
-mv ./tmp/pre-*.txt ./pre
-rm -rf ./tmp
-cd ./pre
-echo '移动完成'
-
-echo '规则合并去重处理完成'
-
-# Start Add title and date
-
-# 先处理HOSTS规则
-cp ../../utils/title/hosts.txt ../tpdate/hosts
-echo "# Version: $(TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S')（北京时间）" >>../tpdate/hosts
-n=$(cat pre-hosts.txt | wc -l)
-echo "# Total count: $n" >>../tpdate/hosts
-cat ../tpdate/hosts ../mod/hosts ./pre-hosts.txt >../../hosts
-rm ./pre-hosts.txt
-
-# 再处理剩下的规则
-diffFile="$(ls | sort -u)"
-for i in $diffFile; do
-	n=$(cat $i | wc -l)
-	new=$(echo "$i" | sed 's/pre-//g')
-	echo "! Version: $(TZ=UTC-8 date +'%Y-%m-%d %H:%M:%S')（北京时间）" >../tpdate/$i-tpdate.txt
-	echo "! Total count: $n" >>../tpdate/$i-tpdate.txt
-	cat ../../utils/title/$new ../tpdate/$i-tpdate.txt ./$i |
-		sed '/^$/d' >../../$new
-done
-cd ../
-rm -rf ./pre ./tpdate
-echo '规则处理完成'
-exit
+add_title
