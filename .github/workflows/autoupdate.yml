@@ -1,0 +1,33 @@
+name: Update Rules
+on:
+  schedule:
+    - cron: "0 16 * * *"
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run deduplication script
+        run: |
+          bash ./utils/deduplication.sh
+          mkdir -p public
+          mv filter.txt filter-lite.txt adguard.txt adguard-element.txt adguard-dns.txt dns.txt hosts public/
+          cp README.md public/
+
+      - name: Deploy to Release Branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: release
+          publish_dir: ./public
+          force_orphan: true
+          keep_files: false
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
